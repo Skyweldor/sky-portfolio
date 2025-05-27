@@ -1,0 +1,59 @@
+/* src/components/EmojiExplosion.css */
+.emoji-explosion {
+  position: absolute;
+  pointer-events: none;
+  animation-fill-mode: forwards;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 24px;
+  animation: explode 1s ease-out;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* Individual animations for each emoji for variety and direction */
+.emoji-0 {
+  --x: 50px;
+  --y: 0px;
+  animation-timing-function: ease-in;
+}
+
+.emoji-1 {
+  --x: -50px;
+  --y: 0px;
+  animation-timing-function: ease-out;
+}
+
+.emoji-2 {
+  --x: 0px;
+  --y: -50px;
+}
+
+.emoji-3 {
+  --x: 0px;
+  --y: 50px;
+}
+
+.emoji-4 {
+  --x: 35px;
+  --y: -35px;
+}
+
+.emoji-5 {
+  --x: -35px;
+  --y: 35px;
+}
+
+/* ... Add more for each emoji if needed */

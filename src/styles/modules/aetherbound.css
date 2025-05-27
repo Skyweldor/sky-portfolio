@@ -1,0 +1,40 @@
+/* Aetherbound Game Styles */
+
+.aetherbound-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 120px;
+  color: #fff;
+  background-color: #1a1a1a;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.aetherbound-column {
+  flex: 1;
+  border: 2px solid #00b3ff;
+  padding: 20px;
+  position: relative;
+}
+
+.aetherbound-container {
+  border: 1px solid red;
+  padding-top: 100px;
+  background-color: blue;
+  position: relative;
+  z-index: 9999;
+}
+
+.gameNavbar .nav-link {
+  color: #00b3ff !important;
+}
+
+.gameNavbar .navbar-text {
+  color: #00b3ff !important;
+} 

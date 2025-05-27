@@ -1,0 +1,172 @@
+/* Sticker Store Page Styles */
+
+/* Sticker Collections Section */
+.sticker-collections {
+  padding: 50px 0;
+  position: relative;
+  background-color: #FFF;
+  border: 5px solid #000;
+}
+
+.sticker-collections-bx {
+  background: #FFF;
+  border: 5px solid #000;
+  text-align: center;
+  padding: 30px;
+  margin: 10px;
+}
+
+.sticker-collections h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.sticker-collections p {
+  color: #000;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sticker-slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sticker-slider .item {
+  background-color: #FFD700;
+  border: 5px solid #000;
+  padding: 20px;
+}
+
+.sticker-slider .item img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sticker-slider .item h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.background-image-left-stickers {
+  display: none;
+}
+
+/* Color Background Classes */
+.red-background {
+  background-color: #D70000;
+}
+
+.blue-background {
+  background-color: #000099;
+}
+
+.yellow-background {
+  background-color: #FFD700;
+}
+
+.white-background {
+  background-color: #FFFFFF;
+}
+
+/* Sticker Store Section */
+.sticker-store {
+  padding: 50px 0;
+  position: relative;
+  background-color: #FFF;
+  border: 5px solid #000;
+}
+
+.sticker-store h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
+
+.sticker-store p {
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+
+.sticker-store .nav.nav-pills {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.sticker-store .nav.nav-pills .nav-item {
+  margin: 0;
+}
+
+.sticker-store .nav.nav-pills .nav-link {
+  background-color: transparent;
+  padding: 17px 20px;
+  color: #000000;
+  font-size: var(--fs-400);
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+  border-bottom: 3px solid #000000;
+  flex-grow: 1;
+  text-transform: uppercase;
+}
+
+.sticker-store .nav.nav-pills .nav-link.active {
+  background-color: #FFD700;
+}
+
+.nav-link#sticker-tabs-tab-pets {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 0px 0px;
+}
+
+.nav-link#sticker-tabs-tab-welcomeTo {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 0px 0px;
+}
+
+.nav-link#sticker-tabs-tab-yearOne {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 0px 0px;
+}
+
+.sticker-store .proj-imgbx {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 5px solid #000000;
+  background-color: #FFD700;
+}
+
+.sticker-store .proj-txtx {
+  position: absolute;
+  top: 50%;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+  width: 100%;
+  background-color: transparent;
+  color: #000000;
+}
+
+.sticker-store .proj-txtx h4,
+.sticker-store .proj-txtx span {
+  color: #000000;
+} 

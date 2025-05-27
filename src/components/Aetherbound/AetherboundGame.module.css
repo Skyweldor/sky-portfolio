@@ -1,0 +1,269 @@
+:root {
+    --color-bg-dark: #121212;
+    --color-bg-panel: #1a1a1a;
+    --color-primary: #00b3ff;
+    --color-secondary: #00ff00;
+    --color-text-light: #fff;
+    --color-text-dark: #121212;
+    --glow-primary: 0 0 10px var(--color-primary);
+    --glow-primary-strong: 0 0 20px var(--color-primary);
+    --glow-secondary: 0 0 10px var(--color-secondary);
+  }
+  
+  .aetherboundLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-dark);
+    padding: 0;
+    max-width: 1200px;
+    margin: 80px auto 0 auto;
+  }
+  
+  .mainContent {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  /* We'll define columns more explicitly:
+     - Side columns: fixed width (60px)
+     - Player/Enemy columns: flex:1
+     - Middle column: flex:2 */
+  .sideColumn {
+    width: 60px;
+    min-width: 60px;
+    flex: 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid var(--color-primary);
+    background: rgba(26,26,26,0.7);
+    box-shadow: var(--glow-primary);
+    border-radius: 8px;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    justify-content: flex-start;
+  }
+  
+  .playerColumn {
+    flex: 1;
+  }
+  
+  .middleColumn {
+    flex: 2;
+  }
+  
+  .enemyColumn {
+    flex: 1;
+  }
+  
+  .aetherboundColumn {
+    border: 1px solid var(--color-primary);
+    background: rgba(26,26,26,0.7);
+    box-shadow: var(--glow-primary);
+    border-radius: 8px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    position: relative;
+  }
+  
+  /* Entity Name and Bars */
+  .entityName {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .entityName span {
+    font-family: 'DotGothic16', sans-serif;
+    color: var(--color-text-light);
+    text-shadow: var(--glow-primary), var(--glow-primary-strong);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  /* Bars in a row */
+  .barRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0; /* adds top and bottom margin */
+  }
+  
+  .hpBarContainer, .staminaBarContainer {
+    flex: 1;
+    background: #333;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    min-width: 80px;
+  }
+  
+  .hpBarFill {
+    background: var(--color-primary);
+    height: 100%;
+  }
+  
+  .staminaBarFill {
+    background: #00d7ff;
+    height: 100%;
+  }
+  
+  .columnImage {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 100%;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    box-shadow: var(--glow-primary);
+  }
+  
+  /* Action buttons under image */
+  .actionsArea {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  
+  .actionButton {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: 'Centra', sans-serif;
+    text-shadow: 0 0 5px var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .actionButton:hover {
+    background-color: #00d7ff;
+    box-shadow: 0 0 20px #00d7ff;
+  }
+  
+  /* partIcon placeholders */
+  .partIcon {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: var(--glow-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 2px;
+  }
+  
+  /* If a part is attached, we can show its name or highlight */
+  .partIcon.attached {
+    background-color: var(--color-secondary);
+    box-shadow: var(--glow-secondary);
+  }
+  
+  /* Middle column battleground + log */
+  .combatLog {
+    background: #000;
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: var(--glow-primary);
+    padding: 10px;
+  }
+  
+  .logEntry {
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 2px 0;
+    color: var(--color-text-light);
+  }
+  
+  /* Overlays */
+  .overlayPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .panelContent {
+    background: rgba(18,18,18,0.9);
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--glow-primary-strong);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    font-family: 'Centra', sans-serif;
+    color: var(--color-text-light);
+    text-shadow: var(--glow-primary);
+  }
+  
+  .panelContent h2 {
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 2rem;
+    text-shadow: var(--glow-primary-strong);
+    margin-bottom: 20px;
+  }
+  
+  .inventoryList, .inventoryItem {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .inventoryItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .inventoryPanel {
+    z-index: 2000;
+  }
+  .townPanel {
+    z-index: 2000;
+  }
+  .topPanel {
+    z-index: 3000;
+  }
+  

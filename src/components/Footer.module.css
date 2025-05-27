@@ -1,0 +1,32 @@
+/* Compact Footer Styles */
+.footer {
+  background-color: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;              /* minimal padding */
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  color: #b8b8b8;
+  font-size: 14px;
+  margin: 0;                    /* remove default paragraph margins */
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Optional: Add subtle glow effect to match theme */
+.copyright:hover {
+  color: #fff;
+  transition: color 0.3s ease;
+} 

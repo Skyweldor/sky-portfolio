@@ -1,0 +1,55 @@
+.kits-carousel-section {
+    padding: 2rem;
+    background-color: #fffafc; /* a soft pink or neutral background? */
+    text-align: center;
+  }
+  .carousel-title {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: var(--maroon);
+    margin-bottom: 1rem;
+  }
+  .carousel-title .subtext {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  .kit-slide {
+    padding: 1rem;
+  }
+  
+  .kit-image-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  .kit-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* ensures image fills the circle */
+  }
+  .carousel-button {
+    display: inline-block;
+    background-color: var(--gold);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  .carousel-button:hover {
+    background-color: #b88a54;
+  }
+  /* Adjust slick-dots / arrows if desired with override CSS */
+  
+  .kit-card {
+    background: url('../images/beige_017.jpg') center/cover no-repeat;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  

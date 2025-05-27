@@ -2,17 +2,20 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Textfit } from "react-textfit";
 import computerIcon from "../assets/img/computer_icon_00.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
+import kuromiFlyerShowcase from '../assets/img/Kuromi-Flyer-Showcase-01.png';
 
-export const GameShowcase = ({ gameTitle, gameDescription, gameSplash}) => {
+export const GameShowcase = ({ gameTitle, gameTagline, gameSplash, gameDescription, gameBackground}) => {
     
+    const backgroundImage = `url(${gameBackground})`;
+
     return (
-        <section className="banner">
+        <section className="banner" style={{backgroundImage: backgroundImage}}>
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">{gameDescription}</span>
+                        <span className="tagline">{gameTagline}</span>
                                 <h1>{gameTitle}</h1>
-                                <p>Building tomorrow's games - today.</p>
+                                <p>{gameDescription}</p>
                         <div className="center">
                             <button onClick={ () => console.log("Let's connect pressed")}>Let's Connect! <ArrowRightCircle size={25} /></button>
                         </div>

@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# Sky Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A multi-purpose React application featuring a professional portfolio, e-commerce stores, and an interactive RPG game.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+### Portfolio Site
+- **Futuristic Design**: Cyberpunk-inspired aesthetic with neon glow effects
+- **Enhanced Navigation**: Scroll-based opacity and blur effects
+- **Project Showcase**: Interactive project cards with hover effects
+- **Skills Display**: Animated skill presentation
 
-### `npm start`
+### Sticker Store
+- **Mondrian Design**: Bold, geometric design inspired by Piet Mondrian
+- **Shopping Cart**: Full cart functionality with quantity management
+- **Product Categories**: Organized by pets, welcome messages, and year one themes
+- **Interactive Cards**: Hover effects and popup details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Makeup Microsite
+- **Luxury Aesthetic**: Glass morphism and metallic gold accents
+- **Particle Effects**: Animated background particles
+- **Product Carousel**: Smooth product kit displays
+- **Modern UI**: Contemporary design with elegant typography
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Aetherbound Game
+- **Complete RPG System**: Turn-based combat with stats and progression
+- **Inventory Management**: Item usage and equipment system
+- **Part Customization**: Attachable creature parts system
+- **Quest System**: Town interactions and specializations
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/sky-portfolio.git
+cd sky-portfolio
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+```bash
+npm start
+```
 
-### `npm run eject`
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+sky-portfolio/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/            # Images, fonts, and media
+│   │   ├── components/        # React components
+│   │   │   ├── Aetherbound/   # Game components
+│   │   │   ├── makeup/        # Makeup site components
+│   │   │   └── archived/      # Archived components
+│   │   ├── styles/            # Modular CSS files
+│   │   │   ├── components/    # Component-specific styles
+│   │   │   ├── pages/         # Page-specific styles
+│   │   │   └── modules/       # Feature module styles
+│   │   └── App.js            # Main application component
+│   ├── docs/                  # Documentation
+│   │   ├── api/              # Component API docs
+│   │   └── style-guides/     # Design system guides
+│   └── CHANGELOG_CLEANUP.md   # Cleanup documentation
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎨 Design Philosophy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Each subsite maintains its own unique visual identity:
 
-## Learn More
+- **Portfolio**: Cyberpunk aesthetic with neon glows and dark themes
+- **Sticker Store**: Mondrian-inspired with bold colors and geometric shapes
+- **Makeup Site**: Luxury design with glass morphism and metallic accents
+- **Aetherbound**: Sci-fi RPG styling with cyan highlights and dark backgrounds
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Frontend**: React 18, React Router, Bootstrap 5
+- **Styling**: Modular CSS, CSS Variables, Flexbox/Grid
+- **Effects**: TSParticles, React Slick, Custom animations
+- **State Management**: React Context API, useState/useEffect hooks
 
-### Code Splitting
+## 📚 Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Component API Documentation](./docs/api/component-api.md)
+- [Portfolio Style Guide](./docs/style-guides/portfolio-style-guide.md)
+- [Sticker Store Style Guide](./docs/style-guides/sticker-store-style-guide.md)
+- [Makeup Site Style Guide](./docs/style-guides/makeup-site-style-guide.md)
+- [Aetherbound Style Guide](./docs/style-guides/aetherbound-style-guide.md)
 
-### Analyzing the Bundle Size
+## 🔧 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### Making a Progressive Web App
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application is configured for deployment to [jairdreams.com](http://jairdreams.com).
 
-### Advanced Configuration
+To build for production:
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 Recent Updates
 
-### Deployment
+### Code Cleanup Phase 1 (December 2024)
+- ✅ Enhanced navigation scroll effects
+- ✅ Modularized CSS architecture (1191 lines → 9 focused files)
+- ✅ Removed all commented code and console.logs
+- ✅ Created comprehensive documentation
+- ✅ Established component API documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤝 Contributing
 
-### `npm run build` fails to minify
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+
+This project is private and proprietary.
+
+## 🎮 Navigation
+
+- `/` - Main portfolio homepage
+- `/stickers` - Sticker store with shopping cart
+- `/makeup` - Luxury makeup microsite
+- `/aetherbound` - Interactive RPG game
+- `/blog` - Blog section (placeholder)
+- `/prototype` - Development prototype area

@@ -5,19 +5,27 @@ import Popup from "./Popup";
 import { Banner } from "./Banner";
 import { GameShowcase } from "./GameShowcase";
 
-export const ProjectCard = ({ title, description, imgUrl }) => {
+export const ProjectCard = ({ title, description, imgUrl, details, backgroundImage }) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {
-        setIsOpen(!isOpen);
-    };
+          setIsOpen(!isOpen);
+          if (!isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+      };
+      
 
     const gameProject = [
         {
             gameTitle: title,
-            gameDescription: description,
+            gameTagline: description,
             gameSplash: imgUrl,
+            gameDescription: details,
+            gameBackground: backgroundImage
         },
     ];
 

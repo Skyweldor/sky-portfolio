@@ -1,0 +1,95 @@
+/* Cart Display Styles */
+
+.cart-display {
+  border: 5px solid #000;
+  padding: 20px;
+  margin: 20px;
+  background-color: #FFF;
+  width: 100%;
+  max-width: 800px;
+  border-right: 5px solid #000;
+}
+
+.cart-display h3 {
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.cart-display ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-display li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-display img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.quantity-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.quantity-buttons button {
+  margin: 0 5px;
+}
+
+.cart-debug {
+  margin-top: 20px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.cart-debug strong {
+  color: #D70000;
+}
+
+/* Mondrian-inspired color blocks */
+.cart-display .cart-items li:nth-child(odd) {
+  background-color: #FFD700;
+}
+
+.cart-display .cart-items li:nth-child(even) {
+  background-color: #D70000;
+}
+
+.cart-display .cart-items li:nth-child(3n) {
+  background-color: #0000D7;
+}
+
+/* Additional CSS to ensure the name, buttons, and quantity are aligned on the same line */
+.cart-item {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item img {
+  flex-shrink: 0;
+}
+
+.item-name {
+  margin-right: auto;
+}
+
+.quantity-buttons span {
+  margin: 0 10px;
+} 

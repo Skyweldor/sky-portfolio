@@ -1,0 +1,195 @@
+   .gameNavbar {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #00b3ff;
+  }
+  
+  .gameNavbar button, 
+  .gameNavbar .nav-link {
+    background: none;
+    color: #00b3ff !important; 
+    border: 1px solid #00b3ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-shadow: 0 0 5px #00b3ff;
+    box-shadow: 0 0 10px #00b3ff;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .gameNavbar button:hover, 
+  .gameNavbar .nav-link:hover {
+    background-color: #00b3ff;
+    color: #00b3ff !important;
+    box-shadow: 0 0 20px #00b3ff;
+  }
+  
+ .gameNavbar.navbar-dark .nav-link,
+.gameNavbar.navbar-dark .navbar-text {
+  color: #00b3ff !important;
+}
+
+.gameNavbar.navbar-dark .nav-link:hover {
+  color: #00b3ff !important;
+  background-color: transparent !important;
+  border-color: #00b3ff !important;
+}
+
+/* --- Navigation States ---------------------------------------------------- */
+.navTransparent {                   /* default, page-top */
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: backdrop-filter .32s ease, background-color .32s ease;
+}
+
+.navGlass {                         /* after scroll threshold */
+  background: rgba(0, 0, 0, 0.01);                     /* light-cyan tint */
+  backdrop-filter: blur(7px) saturate(180%);             /* "clear plastic" */
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,.15);         /* crisp edge */
+}
+
+/* optional: darker theme fallback if backdrop-filter unsupported */
+@supports not (backdrop-filter: blur(1px)) {
+  .navGlass { background: rgba(34, 34, 34, .88); }
+}
+
+/* Scroll Progress Bar */
+.navWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+/* ---------------------------------------------------------------
+   A. BLOOMY PROGRESS BAR
+   --------------------------------------------------------------- */
+.navWrapper::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 4px;
+  width: var(--scrollProgress, 0%);
+  pointer-events: none;
+  /* ← gradient from cyan → violet as before */
+  background: linear-gradient(90deg, #00eaff 0%, #9f00ff 100%);
+  /* neon bloom */
+  filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #9f00ff);
+  transition: width .15s linear;
+}
+
+/* Dynamic Shadow Elevation */
+.elevated {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.18);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Glass Effect with Parallax */
+.glassEffect {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgICAgPGZlVHVyYnVsZW5jZSBiYXNlRnJlcXVlbmN5PSIwLjkiIG51bU9jdGF2ZXM9IjQiIC8+CiAgICAgIDxmZUNvbG9yTWF0cml4IHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsdGVyPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iMC4wMiIvPgo8L3N2Zz4=');
+  background-attachment: fixed;
+  background-size: 200px 200px;
+  position: relative;
+}
+
+.glassEffect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Cursor Morph Effect */
+.cursorDot {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #00b3ff;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 0.12s ease-out, opacity 0.25s;
+  opacity: 0;
+  z-index: 10000;
+  background: radial-gradient(circle, rgba(0, 179, 255, 0.1) 0%, transparent 70%);
+}
+
+.cursorDot.visible {
+  opacity: 1;
+}
+
+/* Enhanced hover effects - NO SCALING, just color/glow */
+:global(.nav-hover) a {
+  transition: all 0.3s ease;
+}
+
+:global(.nav-hover) a:hover {
+  color: #00b3ff !important;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  /* NO transform/scale! */
+}
+
+/* ---------------------------------------------------------------
+   B. GLOW FOR NAVBAR TEXT & TOGGLER
+   --------------------------------------------------------------- */
+.glowLink {
+  position: relative;
+  color: #fff !important;
+  text-shadow:
+      0 0 4px #00eaff,
+      0 0 8px #00eaff,
+      0 0 12px #9f00ff;   /* Bayshore magenta edge */
+  transition: text-shadow .25s ease, opacity .25s ease;
+}
+.glowLink:hover,
+.glowLink:focus {
+  opacity: 1;
+  text-shadow:
+      0 0 6px #00eaff,
+      0 0 12px #00eaff,
+      0 0 24px #9f00ff,
+      0 0 36px #9f00ff;
+}
+
+/* mobile hamburger icon bloom */
+.navbar-dark .navbar-toggler-icon,
+.navbar .navbar-toggler-icon {
+  border-bottom-color:#fff;
+  filter: drop-shadow(0 0 4px #00eaff) drop-shadow(0 0 8px #9f00ff);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navGlass {
+    background: rgba(0, 0, 0, 0.95);     /* darker on mobile for readability */
+  }
+  
+  .glowLink {
+    font-size: 14px;                     /* smaller font on mobile */
+    padding: 8px 12px;
+  }
+  
+  .cursorDot {
+    display: none;                       /* hide custom cursor on mobile */
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursorDot,
+  .glassEffect {
+    display: none;
+  }
+  
+  .navWrapper::after {
+    transition: none;
+  }
+}

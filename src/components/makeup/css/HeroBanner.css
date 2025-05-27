@@ -1,0 +1,151 @@
+:root {
+    --maroon: #4d0d1a;
+    /* or a deeper shade if you prefer */
+    --rose-pink: #fde9e7;
+    /* subtle, romantic pink */
+    --gold: #cfa16b;
+    /* your chosen gold accent */
+    --text-light: #ffffff;
+    /* white for text on dark backgrounds */
+
+    --heading-font: 'LavishFont', serif;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+.embossed-text {
+    /* Light highlight on top-left, darker shadow on bottom-right */
+    text-shadow:
+        -1px -1px 0 #f1e0c3,
+        /* highlight color, can be a pale gold or off-white */
+        1px 1px 0 #a3753f;
+    /* shadow color, can be a deeper gold or brown */
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg,
+            #cfa16b 10%,
+            #d2a35d 25%,
+            #cfa16b 40%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer .5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+
+.hero-banner {
+    /* If the texture is a large, decorative image */
+    background: url('../images/pink_ink_030.jpg') center/cover no-repeat;
+    min-height: 80vh;
+    color: #fff;
+    /* or your desired color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Overlay using a pseudo-element */
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* top, right, bottom, left = 0 */
+    background: rgba(0, 0, 0, 0.3);
+    /* or a gradient */
+    /* Example: background: linear-gradient(rgba(0,0,0,0.3), rgba(77,13,26,0.4)); */
+    z-index: 0;
+}
+
+.foil-text {
+    font-family: "LavishFont", serif;
+    background: linear-gradient(to right, #cfa16b, #d2a35d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    /*background: url('../images/beige_018.jpg') center/cover no-repeat;
+    /* for a subtle effect, you might tone down opacity or brightness:
+       background-color: rgba(255,255,255,0.7);
+       background-blend-mode: multiply; 
+    */
+    /*background-color: rgba(255, 255, 255, 0.1);*/
+    background-blend-mode: multiply;
+    max-width: 600px;
+    /* so it doesn't span too wide */
+    border-radius: 8px;
+    /* optional for a nicer shape */
+}
+
+
+.hero-title {
+    background: linear-gradient(to right, #cfa16b, #d2a35d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--heading-font);
+    color: var(--text-light);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-family: var(--body-font);
+    color: var(--text-light);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    font-family: var(--body-font);
+    background-color: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.hero-button:hover {
+    background-color: #b88a54;
+    /* Slightly darker gold */
+}
+
+.offerings-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* allows wrapping if space is limited */
+    gap: 0.5rem;
+    color: var(--gold);
+    /* or your brand's gold color */
+    margin: 1rem 0;
+    font-size: 1rem;
+    /* adjust as needed */
+    font-family: var(--body-font);
+}
+
+.offerings-bar span {
+    white-space: nowrap;
+    /* keeps items from breaking oddly */
+}

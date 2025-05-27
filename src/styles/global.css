@@ -1,0 +1,222 @@
+/* Global Styles and Resets */
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Centra:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* Custom Font Definitions */
+@font-face {
+  font-family: Centra;
+  src: url('../assets/font/CentraNo2-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('../assets/font/CentraNo2-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('../assets/font/CentraNo2-Book.ttf');
+  font-weight: 400;
+}
+
+.custom-lux-font {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* CSS Variables */
+:root {
+  --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --fs-500: clamp(1.35rem, calc(1.21rem + 0.7vw), 1.75rem);
+  --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+  --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+  --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+  --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+}
+
+@media (min-width: 40em) {
+  :root {
+    --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+    --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+    --fs-500: clamp(1.35rem, calc(1.21rem + 0.7vw), 1.75rem);
+    --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+    --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+    --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+    --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+  }
+}
+
+@media (max-width: 427px) {
+  :root {
+    --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+    --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+    --fs-500: clamp(1.35rem, calc(1.21rem + 0.7vw), 1.75rem);
+    --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+    --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+    --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+    --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+  }
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+  height: 100%;                 /* ensure html takes full height */
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
+  min-height: 100vh;            /* minimum full viewport height */
+  margin: 0;                    /* remove any default margins */
+  padding: 0;                   /* remove any default padding */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+  main .container {
+    max-width: 100%;
+    padding: 0 150px;
+  }
+}
+
+/* App Base Styles */
+.App {
+  text-align: center;
+}
+
+/* React Root Container Fix */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure main content grows and footer stays at bottom */
+#root > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root > div > div:first-child {
+  flex: 1;                      /* main content takes available space */
+}
+
+#root footer {
+  margin-top: auto;             /* push footer to bottom */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Common Animations */
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+} 

@@ -10,6 +10,11 @@ import rtsIcon2 from "../assets/img/tank_high_res_01.png";
 import unrealVR1 from "../assets/img/vr_opus.png";
 import flyerIcon1 from "../assets/img/flyer_icon_01.png";
 import roboIcon1 from "../assets/img/robo_icon_00.png";
+import kuromiBackground from "../assets/img/Kuromi-Flyer-Showcase-01.png"
+import opusBackground from "../assets/img/OPUS_VR_Showcase_01.png"
+import scaredBackground from "../assets/img/Sky_Is_Scared_Showcase_01.png"
+import languageBackground from "../assets/img/LanguageLink_Showcase_01.png"
+import carapaceBackground from "../assets/img/Camp_Carapace_Showcase_01.png"
 import { ProjectCard } from "./ProjectCard";
 import { Banner } from "./Banner";
 import Popup from "./Popup";
@@ -25,14 +30,18 @@ export const Projects = () => {
 
     const projectsUnity = [
         {
-            title: "Example_00",
-            description: "Unity Example_00",
-            imgUrl: headerImg,
+            title: "LanguageLink",
+            description: "Teach and Study English!",
+            imgUrl: languageBackground,
+            details: "Find out more!",
+            backgroundImage: "[insert url]",
         },
         {
             title: "Robo-Battler",
             description: "Grind for XP!",
             imgUrl: roboIcon1,
+            details: "Find out more!",
+            backgroundImage: "[insert URL]",
         },
 
     ];
@@ -41,25 +50,33 @@ export const Projects = () => {
         {
             title: "Kuromi Flyer",
             description: "Plane Platformer",
-            imgUrl: flyerIcon1,
+            imgUrl: kuromiBackground,
+            details: "Find out more!",
+            backgroundImage: "[insert url]",
         },
         {
             title: "Opus - VR",
             description: "Nanite + Lumen VR",
-            imgUrl: unrealVR1,
+            imgUrl: opusBackground,
+            details: "Find out more!",
+            backgroundImage: "[insert url]",
         },
         {
-            title: "Holo-RTS",
-            description: "Unreal 5.1 - RTS",
-            imgUrl: rtsIcon2,
+            title: "Camp Carapace",
+            description: "Found Footage Horror",
+            imgUrl: carapaceBackground,
+            details: "Find out more!",
+            backgroundImage: "[insert url]",
         },
     ]
 
     const projectsRoblox = [
         {
             title: "Sky's Scared",
-            description: "a Roblox Horror Game",
-            imgUrl: headerImg,
+            description: "a Roblox Horror Game Engine",
+            imgUrl: scaredBackground,
+            details: "Find out more!",
+            backgroundImage: scaredBackground,
         },
     ]
 

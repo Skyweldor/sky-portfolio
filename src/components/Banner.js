@@ -1,72 +1,65 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap"
+import { Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg"
-import computerIcon from "../assets/img/computer_icon_00.png";
-import Popup from "./Popup";
-import { Textfit } from "react-textfit";
+import { useNavigate } from "react-router-dom";
+import styles from "./Banner.module.css";
 
 export const Banner = () => {
-    const [loopNum, setLoopNum] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [text, setText] = useState('');
-    const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const [index, setIndex] = useState(1);
-    const toRotate = ["Game Developer", "Curriculum Writer", "Fortnite Enthusiast"]
-    const period = 2000;
+    /* ————————————————————————————————————————
+       typing-animation logic for both texts
+    —————————————————————————————————————————— */
+    const [text, setText] = useState("");
+    const [subText, setSubText] = useState("");
+    const toRotate = ["SynthCity DigiLabs"];
+    const subRotate = ["Interactive"];
+    const navigate = useNavigate();
 
     useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, delta);
+        let i = 0;
+        let j = 0;
+        
+        // Type main title first
+        const titleInterval = setInterval(() => {
+            setText(toRotate[0].slice(0, i++));
+            if (i > toRotate[0].length) {
+                clearInterval(titleInterval);
+                
+                // Start typing subtitle after a short delay
+                setTimeout(() => {
+                    const subInterval = setInterval(() => {
+                        setSubText(subRotate[0].slice(0, j++));
+                        if (j > subRotate[0].length) clearInterval(subInterval);
+                    }, 65);
+                }, 200); // 200ms delay before subtitle starts
+            }
+        }, 65);
+        
+        return () => clearInterval(titleInterval);
+    }, []);
 
-        return () => { clearInterval(ticker) };
-    }, [text])
-
-    const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
-        setText(updatedText);
-
-        if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2);
-        }
-
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setIndex(prevIndex => prevIndex - 1);
-            setDelta(period);
-        } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setIndex(1);
-            setDelta(100);
-        } else {
-            setIndex(prevIndex => prevIndex + 1);
-        }
-    }
+    /* ————————————————————————————————————————
+       HANDLERS
+    —————————————————————————————————————————— */
+    const goToCatalog = () => navigate("/catalog");
 
     return (
-        <section className="banner" id="home">
+        <section className={styles.banner} id="home">
             <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">Sky Games LLC</span>
-                                <h1>{"Hi! We're a webcoded \n"} <span className="wrap">{text}</span></h1>
-                                <p>Building tomorrow's games - today.</p>
-                        <div className="center">
-                            <button onClick={ () => console.log("Let's connect pressed")}>Let's Connect! <ArrowRightCircle size={25} /></button>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div>
-                            <img src={computerIcon} alt="Header Img" />
-                        </div>
-                    </Col>
+                <Row className={`${styles.bannerRow} align-items-center`}>
+                    {/* group title + subtitle so alignment is relative to the text block */}
+                    <div className={styles.titleGroup}>
+                        <h1 className={styles.title}><span className="wrap">{text}</span></h1>
+                        <h2 className={styles.interactive}><span className="wrap">{subText}</span></h2>
+                    </div>
+
+                    {/* isolate CTA in its own flex wrapper so Row doesn't stretch it */}
+                    <div className={styles.ctaWrap}>
+                        <button className={styles.cta} onClick={goToCatalog}>
+                            Check&nbsp;Out&nbsp;Our&nbsp;Catalog! <ArrowRightCircle size={25} />
+                        </button>
+                    </div>
                 </Row>
             </Container>
         </section>
-    )
-}
+    );
+};
