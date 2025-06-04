@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Col } from "react-bootstrap";
-import { Textfit } from "react-textfit";
+// Removed react-textfit dependency
 import Popup from "./Popup";
 import { GameShowcase } from "./GameShowcase";
 import { CartContext } from './CartContext';
@@ -40,10 +40,8 @@ export const StickerCard = ({ title, description, imgUrl, details, backgroundIma
                     />}
                     <img src={imgUrl} alt={title} />
                     <div className="proj-txtx">
-                        <Textfit>
-                            <h4>{title}</h4>
-                            <span>{description}</span>
-                        </Textfit>
+                        <h4>{title}</h4>
+                        <span>{description}</span>
                     </div>
                 </a>
                 <button onClick={handleAddToCart}>Add to Cart</button> {/* Add to Cart button */}

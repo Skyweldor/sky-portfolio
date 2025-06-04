@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Textfit } from "react-textfit";
+// Removed unused react-textfit dependency
 import computerIcon from "../assets/img/computer_icon_00.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import kuromiFlyerShowcase from '../assets/img/Kuromi-Flyer-Showcase-01.png';

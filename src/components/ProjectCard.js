@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Col } from "react-bootstrap";
-import { Textfit } from "react-textfit";
+// Removed react-textfit dependency
 import Popup from "./Popup";
 import { Banner } from "./Banner";
 import { GameShowcase } from "./GameShowcase";
@@ -50,10 +50,8 @@ export const ProjectCard = ({ title, description, imgUrl, details, backgroundIma
                     />}
                     <img src={imgUrl} />
                     <div className="proj-txtx">
-                        <Textfit>
-                            <h4>{title}</h4>
-                            <span>{description}</span>
-                        </Textfit>
+                        <h4>{title}</h4>
+                        <span>{description}</span>
                     </div>
                 </a>
             </div>
