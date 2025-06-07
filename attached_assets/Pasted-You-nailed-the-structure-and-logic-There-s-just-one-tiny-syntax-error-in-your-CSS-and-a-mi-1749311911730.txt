@@ -1,0 +1,112 @@
+You **nailed the structure and logic!** There’s just one **tiny syntax error** in your CSS, and a minor best-practice tweak for mobile layout:
+
+---
+
+## **CSS Fixes:**
+
+### 1. **Syntax Issue**
+
+You have an **extra closing curly brace `}`** after your desktop media query (before `.showcase-image`).
+**Remove that `}`** so your CSS is valid.
+
+**Change this:**
+
+```css
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+}
+```
+
+**To this:**
+
+```css
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+```
+
+---
+
+### 2. **(Optional) Make the Image and Button Stack Nicely on Mobile**
+
+You’ve already got `flex-direction: column;` for `.showcase-content` by default, so it’ll stack! If you want the image to appear **above** or **below** the text on mobile, just keep your current order. If you want the image **above** the text on mobile, swap the divs in your JSX.
+
+---
+
+### 3. **(Optional) Add Some Margin on the Image at Mobile**
+
+If you want a bit of space between button and image when stacked, tweak:
+
+```css
+.showcase-image-container {
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .showcase-image-container {
+    margin-top: 0;
+  }
+}
+```
+
+*(You already have this.)*
+
+---
+
+## **Quick Summary of What You Have Now**
+
+* **On desktop:** Text (left, wide) and image (right, fixed width) are side-by-side, “magazine spread” style.
+* **On mobile:** Text, then button, then image all stack vertically.
+* **No more width constraints on the text!**
+
+---
+
+## **Final Copy (cleaned up CSS portion):**
+
+```css
+@media (min-width: 900px) {
+  .showcase-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  
+  .showcase-text-group {
+    flex: 2;
+    min-width: 0;
+  }
+  
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+```
+
+*(Just be sure to remove the stray closing brace.)*
+
+---
+
+**That’s it!**
+Reload, and you should have a perfect, responsive, side-by-side layout on desktop and stacked layout on mobile—exactly the “magazine” effect you’re after. If you want further tweaks (like image overlap or negative margins for extra flair), just let me know!
