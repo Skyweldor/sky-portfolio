@@ -124,18 +124,38 @@
   .showcase-content {
     flex-direction: row;
     align-items: flex-start;
-    gap: 48px;
+    gap: 40px;
   }
   
   .showcase-text-group {
-    flex: 2;
+    flex: 2.5;
     min-width: 0;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: none;
+  }
+  
+  .showcase-title,
+  .showcase-description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  
+  .showcase-description {
+    max-width: 700px;
+  }
+  
+  .showcase-button-container {
+    justify-content: flex-start;
   }
   
   .showcase-image-container {
     flex: 1;
     margin-top: 0;
-    max-width: 420px;
+    max-width: 400px;
     min-width: 200px;
     align-items: flex-start;
     justify-content: flex-end;
