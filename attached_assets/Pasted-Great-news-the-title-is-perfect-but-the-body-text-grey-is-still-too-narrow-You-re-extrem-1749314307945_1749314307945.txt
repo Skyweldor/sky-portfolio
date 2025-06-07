@@ -1,0 +1,133 @@
+Great news: **the title is perfect, but the body text (“grey”) is still too narrow.**
+You’re extremely close—the culprit is a CSS rule that is forcing the text block to center in a narrow column, even though your flex is correct.
+
+Let’s get this 100% “magazine” and immersive.
+
+---
+
+# **What’s Wrong?**
+
+* Your `.showcase-description` and `.showcase-text-group` are still centered as a column, not left-aligned across the full available width.
+* The reason:
+
+  * **A default `margin: 0 auto` or inherited `text-align: center` is being applied** somewhere, especially at desktop sizes.
+  * **Max-width:** While `max-width: 700px;` is usually good, your actual container is wider, so it feels boxed.
+
+---
+
+# **How To Fix (Step-by-Step):**
+
+## **1. Remove “max-width” for Full-Bleed**
+
+If you want the description to go **as wide as the left column allows** (matching the “magazine” effect):
+
+```css
+@media (min-width: 900px) {
+  .showcase-description {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+```
+
+* This will remove any previous max-width, making the text span the full column.
+
+---
+
+## **2. Remove Centering for the Text Group**
+
+Add this to `.showcase-text-group` to ensure alignment is left and occupies the flex width:
+
+```css
+@media (min-width: 900px) {
+  .showcase-text-group {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+```
+
+---
+
+## **3. Ensure Container Padding is Reasonable**
+
+Optionally, in `.showcase-content`, set horizontal padding to something comfortable (like `32px` or `2vw`). If you want the text truly edge-to-edge in the modal, decrease it.
+
+---
+
+## **4. Avoid Conflicting Responsive Rules**
+
+**You have:**
+
+```css
+@media (max-width: 768px) {
+  .showcase-content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+```
+
+This is good for mobile, but for desktop, don’t apply `text-align: center` anywhere on `.showcase-content` or `.showcase-text-group`.
+
+---
+
+## **5. (Optional) Slight Max Width for Ultra-Large Monitors**
+
+If you don’t want the text to be too wide (which makes it harder to read), try:
+
+```css
+@media (min-width: 1200px) {
+  .showcase-description {
+    max-width: 900px;
+  }
+}
+```
+
+But try without a max-width first to see the full-breadth effect!
+
+---
+
+# **Copy-Paste Patch**
+
+**Add or replace in your CSS:**
+
+```css
+@media (min-width: 900px) {
+  .showcase-text-group {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  .showcase-description {
+    max-width: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+```
+
+**(Leave mobile rules unchanged.)**
+
+---
+
+# **Summary**
+
+* Remove all max-widths/centering on `.showcase-description` for desktop.
+* Make `.showcase-text-group` a true flex column, full width.
+* Confirm left-alignment.
+* Your text will now **fill the column, like a proper magazine spread**.
+
+---
+
+**Try this out!**
+If it still feels slightly boxed, let me know and I’ll give you the next level of polish (like a subtle background, drop shadow, or negative margin for edge-to-edge text).
