@@ -10,13 +10,8 @@ export const ProjectCard = ({ title, description, imgUrl, details, backgroundIma
     const [isOpen, setIsOpen] = useState(false);
 
     const togglePopup = () => {
-          setIsOpen(!isOpen);
-          if (!isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-      };
+        setIsOpen(!isOpen);
+    };
       
 
     const gameProject = [
@@ -32,7 +27,7 @@ export const ProjectCard = ({ title, description, imgUrl, details, backgroundIma
     return (
         <Col size={12} sm={6} md={4}>
             <div className="proj-imgbx">
-                <a href="#skills" onClick={togglePopup}>
+                <div style={{cursor: 'pointer'}} onClick={togglePopup}>
                     {isOpen && <Popup
                         content={
                             <div>
@@ -54,7 +49,7 @@ export const ProjectCard = ({ title, description, imgUrl, details, backgroundIma
                         <h4>{title}</h4>
                         <span>{description}</span>
                     </div>
-                </a>
+                </div>
             </div>
         </Col>
     )

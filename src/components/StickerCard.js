@@ -17,7 +17,6 @@ export const StickerCard = ({ title, description, imgUrl, details, backgroundIma
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
-        document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     };
 
     const gameProject = [
@@ -33,7 +32,7 @@ export const StickerCard = ({ title, description, imgUrl, details, backgroundIma
     return (
         <Col size={12} sm={6} md={4}>
             <div className="proj-imgbx">
-                <a href="#skills" onClick={togglePopup}>
+                <div style={{cursor: 'pointer'}} onClick={togglePopup}>
                     {isOpen && <Popup
                         content={<div>{gameProject.map((project, index) => <GameShowcase key={index} {...project} />)}</div>}
                         handleClose={togglePopup}
@@ -43,7 +42,7 @@ export const StickerCard = ({ title, description, imgUrl, details, backgroundIma
                         <h4>{title}</h4>
                         <span>{description}</span>
                     </div>
-                </a>
+                </div>
                 <button onClick={handleAddToCart}>Add to Cart</button> {/* Add to Cart button */}
             </div>
         </Col>

@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Popup = props => {
+    
+    useEffect(() => {
+        // Prevent body scroll when popup is open
+        document.body.style.overflow = 'hidden';
+        
+        // Handle ESC key
+        const handleEscKey = (event) => {
+            if (event.key === 'Escape') {
+                handleClose(event);
+            }
+        };
+        
+        document.addEventListener('keydown', handleEscKey);
+        
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.removeEventListener('keydown', handleEscKey);
+        };
+    }, []);
     
     const stopPropagation = (event) => {
         event.stopPropagation();
@@ -8,6 +28,7 @@ const Popup = props => {
 
     const handleClose = (event) => {
         event.stopPropagation();
+        document.body.style.overflow = 'auto'; // Restore scroll
         props.handleClose();
     };
 
