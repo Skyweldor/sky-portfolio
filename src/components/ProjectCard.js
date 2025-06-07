@@ -37,9 +37,10 @@ export const ProjectCard = ({ title, description, imgUrl, details, backgroundIma
                         content={
                             <div>
                                 {
-                                    gameProject.map((project) => {
+                                    gameProject.map((project, index) => {
                                         return (
                                             <GameShowcase
+                                                key={index}
                                                 {...project}
                                             />
                                         )

@@ -56,12 +56,15 @@
 }
 
 .showcase-description {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #e0e0e0;
-  line-height: 1.6;
+  line-height: 1.5;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: 30px;
-  max-width: 90%;
+  max-width: 95%;
+  text-align: justify;
+  letter-spacing: 0.3px;
+  font-weight: 400;
 }
 
 .showcase-button-container {
