@@ -34,6 +34,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
 .showcase-tagline {
@@ -116,6 +117,32 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 3px solid rgba(255, 255, 255, 0.2);
+
+
+/* Desktop Layout - Side by Side */
+@media (min-width: 900px) {
+  .showcase-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  
+  .showcase-text-group {
+    flex: 2;
+    min-width: 0;
+  }
+  
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
 }
 
 .showcase-image {

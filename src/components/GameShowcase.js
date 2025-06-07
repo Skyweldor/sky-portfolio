@@ -11,13 +11,15 @@ export const GameShowcase = ({ gameTitle, gameTagline, gameSplash, gameDescripti
             <div className="showcase-overlay">
                 <Container fluid>
                     <div className="showcase-content">
-                        <span className="showcase-tagline">{gameTagline}</span>
-                        <h1 className="showcase-title">{gameTitle}</h1>
-                        <p className="showcase-description">{gameDescription}</p>
-                        <div className="showcase-button-container">
-                            <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
-                                Find out more! <ArrowRightCircle size={25} />
-                            </button>
+                        <div className="showcase-text-group">
+                            <span className="showcase-tagline">{gameTagline}</span>
+                            <h1 className="showcase-title">{gameTitle}</h1>
+                            <p className="showcase-description">{gameDescription}</p>
+                            <div className="showcase-button-container">
+                                <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
+                                    Find out more! <ArrowRightCircle size={25} />
+                                </button>
+                            </div>
                         </div>
                         <div className="showcase-image-container">
                             <div className="showcase-image-wrapper">
