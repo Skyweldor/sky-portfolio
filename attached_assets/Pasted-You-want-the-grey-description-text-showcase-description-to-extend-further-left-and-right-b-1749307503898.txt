@@ -1,0 +1,84 @@
+You want the **grey description text** (`showcase-description`) to extend further left and right—**beyond the width of the title**, making better use of the popup's horizontal space and eliminating awkward empty margins.
+
+Here's how you can do it:
+
+---
+
+## 1. **Widen `.showcase-description` Beyond Title**
+
+* Remove or **increase `max-width`** for `.showcase-description`.
+* **Reduce `font-size`** a touch for a cleaner look.
+* Optionally, **increase the parent container’s width** or adjust its padding if it’s too constrained.
+
+---
+
+### **Edit in `game-showcase.css`:**
+
+```css
+.showcase-description {
+  font-size: 0.88rem;               /* Slightly smaller */
+  color: #e0e0e0;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+  max-width: 98%;                   /* Widen the text block */
+  width: 98vw;                      /* Allow to stretch wider */
+  margin-left: -2vw;                /* Pull left edge out */
+  margin-right: -2vw;               /* Pull right edge out */
+  text-align: justify;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  transition: font-size 0.2s, max-width 0.2s;
+}
+
+/* Responsive: Don't overflow on small screens */
+@media (max-width: 768px) {
+  .showcase-description {
+    max-width: 98vw;
+    margin-left: -4vw;
+    margin-right: -4vw;
+    font-size: 0.96rem;
+  }
+}
+```
+
+---
+
+## 2. **Optional: Tweak the Parent for Even More Space**
+
+If the popup's parent (e.g. `.showcase-content` or `.game-showcase`) is still too narrow, increase its `padding` or `width` accordingly.
+
+**Example:**
+
+```css
+.showcase-content {
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+}
+```
+
+---
+
+## 3. **Visual Result**
+
+* The grey text will now extend much closer to the popup’s left and right edges, making it feel fuller and more balanced.
+* The title remains centered/narrow, but the description spans wider.
+
+---
+
+## 4. **Accessibility Note**
+
+Keep text readable: don’t go so wide that the line length becomes hard to follow on ultra-wide screens. The above values (98vw with negative margin) fill the box but keep it reasonable.
+
+---
+
+### **Summary of your changes:**
+
+* `.showcase-description` width increased (and negative margins used).
+* Font-size slightly reduced.
+* Responsive tweaks for mobile.
+
+---
+
+Let me know if you want the text to extend all the way to the popup’s border, or just a bit past the title for a subtle effect. You can adjust the `max-width` and negative margins for fine-tuning!
