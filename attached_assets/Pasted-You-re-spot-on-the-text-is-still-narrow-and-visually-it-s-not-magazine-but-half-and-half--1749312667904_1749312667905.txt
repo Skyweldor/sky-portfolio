@@ -1,0 +1,141 @@
+You're **spot on**—the text is still narrow, and visually, it’s not “magazine” but “half-and-half.”
+**Why?**
+Because the text and image are in a 2:1 flex layout, but the text itself is still center-aligned and constrained—so it doesn’t breathe.
+
+Let’s fix this so your text area feels **full, immersive, and modern**:
+
+---
+
+## **The Problem**
+
+1. **Narrow Text Box:**
+   The text inside `.showcase-text-group` is being **centered and constrained**, not taking full advantage of its available width.
+
+2. **Center Alignment:**
+   Both your heading and text are `text-align: center` (inherited from mobile/responsive or a container).
+
+---
+
+## **The Solution:**
+
+### 1. **Left-Align Text on Desktop**
+
+Make the title and description left-aligned for `.showcase-text-group` on desktop.
+
+```css
+@media (min-width: 900px) {
+  .showcase-text-group {
+    flex: 2;
+    min-width: 0;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: none;
+  }
+
+  .showcase-title,
+  .showcase-description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+```
+
+### 2. **Expand the Text Block**
+
+* Remove any `max-width` on the text or `.showcase-description` for desktop.
+* Optionally, **increase the `flex` on `.showcase-text-group`** to `flex: 2.5` and `flex: 1` for the image for a bigger text area.
+
+```css
+@media (min-width: 900px) {
+  .showcase-content {
+    gap: 40px;
+  }
+  .showcase-text-group {
+    flex: 2.5;
+  }
+  .showcase-image-container {
+    flex: 1;
+    max-width: 400px;
+  }
+}
+```
+
+### 3. **Adjust Image and Button**
+
+* The image container is fine, but if you want the image to “float,” you can add a slight negative margin on desktop for overlap, or a box-shadow/glow for drama.
+
+---
+
+## **Optional Polish (Highly Recommended)**
+
+**Add a comfortable maximum width for text (for readability), but much wider than before:**
+
+```css
+@media (min-width: 900px) {
+  .showcase-description {
+    max-width: 700px; /* or 90%, adjust to taste */
+  }
+}
+```
+
+**Remove center alignment for `.showcase-title` on desktop.**
+
+---
+
+## **Copy-Paste Example**
+
+Add this **after your desktop media query**:
+
+```css
+@media (min-width: 900px) {
+  .showcase-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .showcase-text-group {
+    flex: 2.5;
+    min-width: 0;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: none;
+  }
+  .showcase-title,
+  .showcase-description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  .showcase-description {
+    max-width: 700px;
+  }
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 400px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+```
+
+---
+
+## **Result**
+
+* Text is **left-aligned** and wider, filling its column elegantly.
+* Image sits to the right, looking like a proper "magazine" spread.
+* No more “centered and boxed-in” feeling.
+
+---
+
+## **Try This, Then Reload.**
+
+If you want extra visual drama (like image overlap, floating, or background effects), let me know your aesthetic vision and I’ll walk you through it!
