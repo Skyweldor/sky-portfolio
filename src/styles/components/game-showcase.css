@@ -29,8 +29,9 @@
 }
 
 .showcase-content {
-  padding: 20px;
+  padding: 20px 16px;
   z-index: 10;
+  width: 100%;
 }
 
 .showcase-tagline {
@@ -56,15 +57,19 @@
 }
 
 .showcase-description {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: #e0e0e0;
-  line-height: 1.5;
+  line-height: 1.6;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: 30px;
-  max-width: 95%;
+  max-width: 98%;
+  width: 98%;
+  margin-left: -2vw;
+  margin-right: -2vw;
   text-align: justify;
   letter-spacing: 0.3px;
   font-weight: 400;
+  transition: font-size 0.2s, max-width 0.2s;
 }
 
 .showcase-button-container {
@@ -131,8 +136,10 @@
   }
   
   .showcase-description {
-    font-size: 1rem;
-    max-width: 100%;
+    font-size: 0.96rem;
+    max-width: 98vw;
+    margin-left: -4vw;
+    margin-right: -4vw;
   }
   
   .showcase-content {
