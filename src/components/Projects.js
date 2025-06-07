@@ -34,14 +34,14 @@ export const Projects = () => {
             description: "Teach and Study English!",
             imgUrl: languageBackground,
             details: "Find out more!",
-            backgroundImage: "[insert url]",
+            backgroundImage: languageBackground,
         },
         {
             title: "Robo-Battler",
             description: "Grind for XP!",
             imgUrl: roboIcon1,
             details: "Find out more!",
-            backgroundImage: "[insert URL]",
+            backgroundImage: roboIcon1,
         },
 
     ];
@@ -52,21 +52,21 @@ export const Projects = () => {
             description: "Plane Platformer",
             imgUrl: kuromiBackground,
             details: "Find out more!",
-            backgroundImage: "[insert url]",
+            backgroundImage: kuromiBackground,
         },
         {
             title: "Opus - VR",
             description: "Nanite + Lumen VR",
             imgUrl: opusBackground,
             details: "Find out more!",
-            backgroundImage: "[insert url]",
+            backgroundImage: opusBackground,
         },
         {
             title: "Camp Carapace",
             description: "Found Footage Horror",
             imgUrl: carapaceBackground,
             details: "Find out more!",
-            backgroundImage: "[insert url]",
+            backgroundImage: carapaceBackground,
         },
     ]
 

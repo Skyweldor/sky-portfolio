@@ -179,30 +179,43 @@
 
 .box {
   position: relative;
-  width: 70%;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   height: auto;
-  max-height: 70vh;
-  margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
-  overflow: auto;
+  max-height: 85vh;
+  margin-top: calc(100vh - 90vh - 20px);
+  background: #000;
+  border-radius: 15px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
 
 .close-icon {
   content: 'x';
   cursor: pointer;
   position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
+  right: calc(5% - 15px);
+  top: calc(100vh - 90vh - 40px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  line-height: 20px;
+  line-height: 30px;
   text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.close-icon:hover {
+  background: rgba(255, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
 }
