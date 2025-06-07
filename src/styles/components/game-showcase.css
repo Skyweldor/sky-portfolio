@@ -161,6 +161,23 @@
     justify-content: flex-end;
     padding: 0;
   }
+  
+  .showcase-text-group {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .showcase-description {
+    max-width: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 .showcase-image {
