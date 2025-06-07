@@ -1,0 +1,82 @@
+You are correct—**the text block is still constrained to a narrow column**, not filling the horizontal space as expected.
+This means that something higher up in your component/layout hierarchy (likely the flexbox or a container div) is still **restricting the width of `.showcase-description`**.
+
+Let's fix that **with precision**:
+
+---
+
+## 1. **Check the Parent Layout**
+
+* Most likely, `.showcase-content` or a parent is using `display: flex`, `max-width`, or `margin: 0 auto` to center/narrow its contents.
+
+---
+
+## 2. **Quick Debug CSS Solution**
+
+**Try this:**
+Add the following style to your `.showcase-content` **and** `.showcase-description` to ensure they are both as wide as possible.
+
+```css
+.showcase-content {
+  width: 100%;
+  max-width: 100% !important;  /* override any Bootstrap or parent limit */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block;
+}
+
+.showcase-description {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block;
+}
+```
+
+*You can temporarily set a background color (e.g. `background: rgba(255,0,0,0.2);`) to visualize the true width of these blocks for debugging.*
+
+---
+
+## 3. **Flexbox/Column Trap**
+
+* If the parent uses `display: flex; flex-direction: column; align-items: center;`, it will **center all children** and constrain their widths.
+* Solution: Add `align-items: stretch;` or set the description's width/max-width to `100%` as above.
+
+---
+
+## 4. **Advanced: Cascade Upwards if Needed**
+
+If this still doesn't work, inspect the modal in your browser dev tools. Check for any parents with `max-width`, `width`, `padding`, or centering rules. Sometimes a `container` or `modal-content` class will be limiting children to `600px` or so.
+
+---
+
+## 5. **Practical Example**
+
+If your popup/modal uses a wrapper like this:
+
+```css
+.popup-modal-content {
+  max-width: 650px;  /* This constrains your text! */
+  margin: 0 auto;
+}
+```
+
+You must **increase or remove** that max-width, or your description will always be squished.
+
+---
+
+### **Final Recipe:**
+
+1. Remove or increase any `max-width` on `.showcase-content` **and its parent(s)**.
+2. Set `.showcase-description { width: 100%; max-width: 100%; margin: 0 auto; }`
+3. Inspect the modal with dev tools for any inherited restrictions.
+
+---
+
+#### **If you want, paste the CSS/JSX for the popup/modal wrapper itself and I’ll pinpoint exactly what to fix!**
+
+---
+
+**TL;DR:**
+Your text can’t expand because a parent is constraining the width. Set `width: 100%`/`max-width: 100%` and remove any `max-width`/`margin: auto` on parents, especially the modal container! Let me know if you want a more tailored solution with your modal’s parent code.

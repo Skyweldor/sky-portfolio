@@ -1,0 +1,128 @@
+Perfect! Here’s exactly **why the text isn’t filling the pop-up**, and how to fix it.
+
+---
+
+## **Problem:**
+
+Your main text content is inside:
+
+```jsx
+<Col xs={12} md={6} xl={7} className="showcase-content">
+```
+
+* On desktop, **it’s only 7/12 (about 58%) of the width**.
+* The image takes the other 5/12 (about 42%).
+* No matter what CSS you add, the text can never be wider than this column.
+
+---
+
+## **Solution:**
+
+**If you want your text to fill nearly the entire width of the popup/modal (not just a "left column")…**
+
+### **Option 1: Single Column Layout in Popup**
+
+**Most flexible.**
+Showcase image below or above text (mobile friendly, easiest full width).
+
+```jsx
+// Replace the <Row> and <Col> structure in GameShowcase.js with just this:
+<Container fluid>
+  <div className="showcase-content">
+    <span className="showcase-tagline">{gameTagline}</span>
+    <h1 className="showcase-title">{gameTitle}</h1>
+    <p className="showcase-description">{gameDescription}</p>
+    <div className="showcase-button-container">
+      <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
+        Find out more! <ArrowRightCircle size={25} />
+      </button>
+    </div>
+    <div className="showcase-image-container">
+      <div className="showcase-image-wrapper">
+        <img src={gameSplash} alt="Game Screenshot" className="showcase-image" />
+      </div>
+    </div>
+  </div>
+</Container>
+```
+
+* Now, all content is full width by default.
+* **Remove the `<Row>` and `<Col>` components.**
+* Adjust styling in your CSS as needed.
+
+---
+
+### **Option 2: Text Column Spans Nearly the Whole Row**
+
+**If you want the image on the right, but text should be much wider:**
+Change this:
+
+```jsx
+<Col xs={12} md={6} xl={7} className="showcase-content">
+```
+
+to this:
+
+```jsx
+<Col xs={12} md={12} xl={12} className="showcase-content">
+```
+
+And in the image container column:
+
+```jsx
+{/* Remove this column or display:none if you want the image below for mobile */}
+```
+
+**Or**: Just use the single column layout for the pop-up!
+
+---
+
+## **Which to Choose?**
+
+* **Magazine look (text left, image right, but full-width text)**: Set both columns to `xl={12}` for now, or switch to a single column for the popup only.
+* **Full spread for popup**: Remove the grid/columns.
+
+---
+
+## **Bonus:**
+
+To keep things flexible, you can use:
+
+* `display: flex; flex-direction: column;` in `.showcase-content`
+* Or stack image below for mobile with media queries.
+
+---
+
+## **Copy-Paste Fix (for the popup):**
+
+**In `GameShowcase.js`:**
+
+```jsx
+<Container fluid>
+  <div className="showcase-content">
+    <span className="showcase-tagline">{gameTagline}</span>
+    <h1 className="showcase-title">{gameTitle}</h1>
+    <p className="showcase-description">{gameDescription}</p>
+    <div className="showcase-button-container">
+      <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
+        Find out more! <ArrowRightCircle size={25} />
+      </button>
+    </div>
+    <div className="showcase-image-container">
+      <div className="showcase-image-wrapper">
+        <img src={gameSplash} alt="Game Screenshot" className="showcase-image" />
+      </div>
+    </div>
+  </div>
+</Container>
+```
+
+---
+
+## **Summary**
+
+* **Remove the grid columns.**
+* Use a single column/full width for popup content.
+* Now your description will expand to the full width!
+
+If you want, I can provide a polished version with image placement tweaks for desktop/mobile—just let me know your visual preference.
