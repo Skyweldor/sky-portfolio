@@ -120,6 +120,24 @@
   border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
+.showcase-text-panel {
+  background: rgba(16, 16, 16, 0.74);
+  border-radius: 18px;
+  box-shadow: 0 6px 36px rgba(0, 0, 0, 0.18);
+  padding: 2.3rem 2.2rem 2.2rem 2.2rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 720px;
+  border-left: 5px solid rgba(0, 179, 255, 0.25);
+}
+
+@media (max-width: 900px) {
+  .showcase-text-panel {
+    padding: 1.2rem 1rem;
+    max-width: 100%;
+  }
+}
+
 /* Desktop Layout - Side by Side */
 @media (min-width: 900px) {
   .showcase-content {
