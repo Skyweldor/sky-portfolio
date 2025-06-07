@@ -1,0 +1,149 @@
+**Great job on the progress!**
+Now, let's get the **floating image and text side-by-side** on desktop, but still stack vertically on mobile. This is a classic two-column layout, but you want **full control** (not Bootstrap's grid).
+
+---
+
+## Here’s How to Do It
+
+### 1. **CSS: Flex Row Layout for Desktop**
+
+Change `.showcase-content` to use `flex-direction: row` on wider screens, and keep `column` on mobile.
+
+**Update your CSS:**
+
+```css
+.showcase-content {
+  padding: 20px 16px;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Default: stack on mobile */
+  gap: 32px; /* space between text and image */
+}
+
+@media (min-width: 900px) {
+  .showcase-content {
+    flex-direction: row;        /* Side-by-side on desktop */
+    align-items: flex-start;    /* Align image to top */
+    gap: 48px;                  /* More breathing room */
+  }
+  .showcase-text-group {
+    flex: 2;                    /* Take more space than image */
+    min-width: 0;
+  }
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;           /* Set a max width for image */
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+```
+
+---
+
+### 2. **JSX: Wrap Text and Image in Separate Divs**
+
+**Update your `GameShowcase.js`:**
+
+```jsx
+<Container fluid>
+  <div className="showcase-content">
+    <div className="showcase-text-group">
+      <span className="showcase-tagline">{gameTagline}</span>
+      <h1 className="showcase-title">{gameTitle}</h1>
+      <p className="showcase-description">{gameDescription}</p>
+      <div className="showcase-button-container">
+        <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
+          Find out more! <ArrowRightCircle size={25} />
+        </button>
+      </div>
+    </div>
+    <div className="showcase-image-container">
+      <div className="showcase-image-wrapper">
+        <img src={gameSplash} alt="Game Screenshot" className="showcase-image" />
+      </div>
+    </div>
+  </div>
+</Container>
+```
+
+* **Add a new div:** `.showcase-text-group` wraps the tagline, title, description, and button.
+* Image stays in its container.
+
+---
+
+### 3. **(Optional) Polish and Adjust**
+
+* You can further adjust `flex` values to get the balance you want between text and image.
+* `gap` controls the spacing between text and image columns.
+
+---
+
+### 4. **Result**
+
+* **On desktop:** Text and image are side-by-side, each taking their share of space.
+* **On mobile:** They stack, keeping it easy to read and scroll.
+
+---
+
+### **Copy-Paste Summary**
+
+**CSS (add/replace):**
+
+```css
+.showcase-content {
+  /* ...existing styles... */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .showcase-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  .showcase-text-group {
+    flex: 2;
+    min-width: 0;
+  }
+  .showcase-image-container {
+    flex: 1;
+    margin-top: 0;
+    max-width: 420px;
+    min-width: 200px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+```
+
+**JSX (inside `<div className="showcase-content">`):**
+
+```jsx
+<div className="showcase-text-group">
+  <span className="showcase-tagline">{gameTagline}</span>
+  <h1 className="showcase-title">{gameTitle}</h1>
+  <p className="showcase-description">{gameDescription}</p>
+  <div className="showcase-button-container">
+    <button className="showcase-button" onClick={() => console.log("Find out more pressed")}>
+      Find out more! <ArrowRightCircle size={25} />
+    </button>
+  </div>
+</div>
+<div className="showcase-image-container">
+  <div className="showcase-image-wrapper">
+    <img src={gameSplash} alt="Game Screenshot" className="showcase-image" />
+  </div>
+</div>
+```
+
+---
+
+Let me know if you want to tweak the proportions or image size, but **this will give you the classic “magazine spread” look, text + floating image side-by-side!**
