@@ -1,0 +1,121 @@
+You’ve absolutely **nailed** the structure and layout—now you’re up against the classic “contrast/readability over image backgrounds” design challenge. Here’s how modern sites solve this *elegantly and automatically* for every project:
+
+---
+
+## 1. **Add a True Text Panel for Contrast**
+
+A semi-transparent, dark panel behind the text will guarantee readability, regardless of the background color.
+
+**How to do it:**
+
+**Add a wrapper for all text inside `.showcase-content`:**
+
+```jsx
+<div className="showcase-content">
+  <div className="showcase-text-panel">
+    {/* ...all your text goes here... */}
+  </div>
+  {/* image container stays outside this */}
+</div>
+```
+
+**Add this CSS:**
+
+```css
+.showcase-text-panel {
+  background: rgba(16, 16, 16, 0.74); /* slightly lighter than pure black */
+  border-radius: 18px;
+  box-shadow: 0 6px 36px rgba(0,0,0,0.18);
+  padding: 2.3rem 2.2rem 2.2rem 2.2rem;
+  margin-bottom: 1.5rem;
+  /* Responsive: On desktop, stretch to fit available width */
+  width: 100%;
+  max-width: 720px;
+  /* Optional: add a border or accent */
+  border-left: 5px solid #00b3ff40;
+}
+@media (max-width: 900px) {
+  .showcase-text-panel {
+    padding: 1.2rem 1rem;
+    max-width: 100%;
+  }
+}
+```
+
+This will **always** make your text readable. Adjust opacity or color as you like.
+
+---
+
+## 2. **(Optional) Automatic Color Overlay**
+
+For a more dynamic/auto feel, consider a **darker linear-gradient overlay** on `.showcase-overlay`, or use a blur effect (see below for modern CSS).
+
+* **Linear-gradient dark overlay**:
+
+  ```css
+  .showcase-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(16,16,24,0.88) 25%, rgba(16,16,24,0.34) 100%);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .showcase-overlay {
+    position: relative;
+    z-index: 1;
+  }
+  .showcase-content, .showcase-image-container {
+    position: relative;
+    z-index: 2;
+  }
+  ```
+
+  * This lets the background peek through, but your text column is always crisp.
+
+---
+
+## 3. **(Optional) Modern Blur Panel (Frosted Glass Look)**
+
+* **CSS only:**
+
+  ```css
+  .showcase-text-panel {
+    background: rgba(16, 16, 16, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 18px;
+    padding: 2.3rem 2.2rem;
+    box-shadow: 0 6px 36px rgba(0,0,0,0.22);
+    color: #f3f3f3;
+  }
+  ```
+
+---
+
+## 4. **Other Pro Touches**
+
+* Add a subtle **1px border** or a soft colored glow.
+* For *each game*, you could set a custom panel color (e.g., blueish for Kuromi, gold for OPUS) for a signature style, but the black/grey panel will work universally.
+* If you want to let more of the background show, just drop the opacity (e.g. `rgba(24,24,24,0.5)`).
+
+---
+
+## **Result**
+
+* **Text is always readable.**
+* **Design feels premium and intentional.**
+* **Every game looks good without hand-tweaking overlays per background.**
+
+---
+
+### **TL;DR**
+
+* **Add a `.showcase-text-panel`** to wrap your text.
+* **Use a semi-transparent dark background** + a border/box-shadow for style.
+* Consider an additional `.showcase-overlay::before` for dynamic overlay across the whole modal, but the text panel is the industry-standard fix.
+
+---
+
+Let me know if you want to see a “before/after” code snippet or a single combined sample file! This is exactly what modern portfolio sites (and game launchers) use for bulletproof readability.
