@@ -22,6 +22,21 @@
     color: var(--color-bg-dark) !important;
     box-shadow: 0 0 20px var(--color-primary);
   }
+
+/* Mobile game mode consistency */
+@media (max-width: 768px) {
+  .gameNavbar button,
+  .gameNavbar .nav-link {
+    padding: 8px 12px;                   /* adequate touch targets */
+    margin: 5px 3px;                     /* spacing for touch interaction */
+    font-size: 14px;                     /* slightly smaller but still readable */
+  }
+  
+  .gameNavbar {
+    background-color: var(--color-bg-panel);
+    backdrop-filter: blur(5px);          /* light blur for mobile game mode */
+  }
+}
   
  .gameNavbar.navbar-dark .nav-link,
 .gameNavbar.navbar-dark .navbar-text {
@@ -171,16 +186,23 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navGlass {
-    background: rgba(0, 0, 0, 0.95);     /* darker on mobile for readability */
+    background: rgba(0, 0, 0, 0.25);                     /* consistent with desktop glass effect */
+    backdrop-filter: blur(10px) saturate(180%);          /* maintain glass morphism on mobile */
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
   }
   
   .glowLink {
-    font-size: 14px;                     /* smaller font on mobile */
-    padding: 8px 12px;
+    font-size: 16px;                     /* maintain readable size, not too small */
+    padding: 10px 15px;                  /* adequate touch targets for mobile */
   }
   
   .cursorDot {
     display: none;                       /* hide custom cursor on mobile */
+  }
+  
+  /* Ensure mobile navbar maintains the SynthCity theme */
+  .navTransparent {
+    background: rgba(0, 0, 0, 0);        /* fully transparent on mobile too */
   }
 }
 

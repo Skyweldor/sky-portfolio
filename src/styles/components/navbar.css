@@ -173,4 +173,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
+}
+
+/* Mobile-specific enhancements for SynthCity theme */
+@media (max-width: 768px) {
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-size: 16px;                     /* maintain readable size */
+    padding: 12px 20px;                  /* adequate spacing for touch */
+    margin: 4px 0;                       /* vertical spacing between links */
+  }
+  
+  /* Maintain neon glow effects on mobile */
+  nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+  nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    text-shadow: 0 0 10px var(--color-highlight), 0 0 20px var(--color-highlight);
+  }
+  
+  /* Mobile hamburger should maintain theme consistency */
+  nav.navbar .navbar-toggler-icon {
+    filter: drop-shadow(0 0 4px #00b3ff) drop-shadow(0 0 8px #00b3ff);
+  }
 } 
