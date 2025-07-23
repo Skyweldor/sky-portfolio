@@ -18,12 +18,12 @@
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
-  color: #fff;
-  box-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff;
+  color: var(--color-text-light);
+  box-shadow: 0 0 10px var(--color-primary),
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-primary),
+    0 0 80px var(--color-primary),
+    0 0 120px var(--color-primary);
 }
 
 .banner h1 {
@@ -34,17 +34,17 @@
   margin-top: 40px;
   margin-bottom: 20px;
   display: block;
-  color: #fff;
-  font-family: 'DotGothic16', sans-serif;
-  text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff;
+  color: var(--color-text-light);
+  font-family: var(--heading-font);
+  text-shadow: 0 0 10px var(--color-primary),
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-primary),
+    0 0 80px var(--color-primary),
+    0 0 120px var(--color-primary);
 }
 
 .banner p {
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -52,7 +52,7 @@
 }
 
 .banner button {
-  color: #fff;
+  color: var(--color-text-light);
   font-weight: 700;
   font-size: 20px;
   margin-top: 32px;
@@ -95,7 +95,7 @@
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .banner-stickers h1 {
@@ -105,11 +105,11 @@
   line-height: 1;
   margin-bottom: 20px;
   display: block;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .banner-stickers p {
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -117,7 +117,7 @@
 }
 
 .banner-stickers button {
-  color: #fff;
+  color: var(--color-text-light);
   font-weight: 700;
   font-size: 20px;
   margin-top: 32px;
