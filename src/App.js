@@ -10,19 +10,19 @@ import './styles/modules/cart.css';
 import './styles/modules/aetherbound.css';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import StickersHomePage from './components/StickersHomePage';
-import BlogPage from './components/BlogPage';
-import { NavBar } from './components/NavBar';
-import Footer from './components/Footer';
+import Homepage from './components/portfolio/Homepage';
+import StickersHomePage from './components/stickerShop/StickersHomePage';
+import BlogPage from './components/portfolio/BlogPage';
+import { NavBar } from './components/common/NavBar';
+import Footer from './components/common/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import EmojiExplosion from './components/EmojiExplosion';
-import IWCClientTrackerPrototype from './components/IWC_Prototype';
+import EmojiExplosion from './components/features/emoji/EmojiExplosion';
+import IWCClientTrackerPrototype from './components/portfolio/IWC_Prototype';
 
 // Import your game component
-import AetherboundGame from './components/Aetherbound/AetherboundGame';
+import AetherboundGame from './components/aetherbound/AetherboundGame';
 // Import your new makeup page
-import MakeupHomePage from './components/makeup/MakeupHomepage';
+import MakeupHomePage from './components/beautyCare/MakeupHomepage';
 
 function App() {
   const [explosions, setExplosions] = useState([]);

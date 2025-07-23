@@ -1,14 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
-import meter1 from "../assets/img/meter1.svg"
-import meter2 from "../assets/img/meter2.svg"
-import meter3 from "../assets/img/meter3.svg"
-import unityIcon from "../assets/img/unity_icon_01.png"
-import unrealIcon from "../assets/img/unreal_icon_02.png"
-import robloxIcon from "../assets/img/roblox_icon_01.png"
-import colorSharp from "../assets/img/color-sharp.png"
-import colorSharpHolo1 from "../assets/img/color-sharp-holo-01.png";
+import meter1 from "../../assets/img/meter1.svg"
+import meter2 from "../../assets/img/meter2.svg"
+import meter3 from "../../assets/img/meter3.svg"
+import unityIcon from "../../assets/img/unity_icon_01.png"
+import unrealIcon from "../../assets/img/unreal_icon_02.png"
+import robloxIcon from "../../assets/img/roblox_icon_01.png"
+import colorSharp from "../../assets/img/color-sharp.png"
+import colorSharpHolo1 from "../../assets/img/color-sharp-holo-01.png";
 
 export const Skills = () => {
     const responsive = {

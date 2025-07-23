@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav, TabContainer, TabContent } from "react-bootstrap";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
-import headerImg from "../assets/img/header-img.svg";
-import rtsIcon1 from "../assets/img/tank_low_res_02.png";
-import rtsIcon2 from "../assets/img/tank_high_res_01.png";
-import unrealVR1 from "../assets/img/vr_opus.png";
-import flyerIcon1 from "../assets/img/flyer_icon_01.png";
-import roboIcon1 from "../assets/img/robo_icon_00.png";
-import kuromiBackground from "../assets/img/Kuromi-Flyer-Showcase-01.png"
-import opusBackground from "../assets/img/OPUS_VR_Showcase_01.png"
-import scaredBackground from "../assets/img/Sky_Is_Scared_Showcase_01.png"
-import languageBackground from "../assets/img/LanguageLink_Showcase_01.png"
-import carapaceBackground from "../assets/img/Camp_Carapace_Showcase_01.png"
-import { ProjectCard } from "./ProjectCard";
-import { Banner } from "./Banner";
-import Popup from "./Popup";
-import colorSharpHolo2 from "../assets/img/color-sharp-holo-02.png";
+import projImg1 from "../../assets/img/project-img1.png";
+import projImg2 from "../../assets/img/project-img2.png";
+import projImg3 from "../../assets/img/project-img3.png";
+import colorSharp2 from "../../assets/img/color-sharp2.png";
+import headerImg from "../../assets/img/header-img.svg";
+import rtsIcon1 from "../../assets/img/tank_low_res_02.png";
+import rtsIcon2 from "../../assets/img/tank_high_res_01.png";
+import unrealVR1 from "../../assets/img/vr_opus.png";
+import flyerIcon1 from "../../assets/img/flyer_icon_01.png";
+import roboIcon1 from "../../assets/img/robo_icon_00.png";
+import kuromiBackground from "../../assets/img/Kuromi-Flyer-Showcase-01.png"
+import opusBackground from "../../assets/img/OPUS_VR_Showcase_01.png"
+import scaredBackground from "../../assets/img/Sky_Is_Scared_Showcase_01.png"
+import languageBackground from "../../assets/img/LanguageLink_Showcase_01.png"
+import carapaceBackground from "../../assets/img/Camp_Carapace_Showcase_01.png"
+import { ProjectCard } from "../common/ProjectCard";
+import { Banner } from "../common/Banner";
+import Popup from "../common/Popup";
+import colorSharpHolo2 from "../../assets/img/color-sharp-holo-02.png";
 
 export const Projects = () => {
 

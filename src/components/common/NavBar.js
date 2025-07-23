@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
+import logo from '../../assets/img/logo.svg';
 import styles from './NavBar.module.css';
 
 export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTraining, globalXP }) => {

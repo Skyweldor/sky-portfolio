@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 // Removed react-textfit dependency
 import Popup from "./Popup";
 import { Banner } from "./Banner";
-import { GameShowcase } from "./GameShowcase";
+import { GameShowcase } from "../portfolio/GameShowcase";
 
 export const ProjectCard = ({ title, description, imgUrl, details, backgroundImage }) => {
 
