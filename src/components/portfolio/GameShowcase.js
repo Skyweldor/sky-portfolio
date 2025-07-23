@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import "../styles/components/game-showcase.css";
+import "../../styles/components/game-showcase.css";
 
 export const GameShowcase = ({ gameTitle, gameTagline, gameSplash, gameDescription, gameBackground}) => {
     
