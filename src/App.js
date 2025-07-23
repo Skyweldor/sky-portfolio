@@ -1,6 +1,4 @@
 import './styles/global.css';
-import './styles/components/navbar.css';
-import './styles/components/banner.css';
 import './styles/components/skills.css';
 import './styles/components/projects.css';
 import './styles/pages/stickers.css';

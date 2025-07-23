@@ -3,7 +3,7 @@
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: var(--color-bg-dark);
   overflow: hidden;             /* prevent background images from extending beyond section */
 }
 
@@ -11,15 +11,15 @@
   font-size: 45px;
   font-weight: 550;
   text-align: center;
-  text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff;
+  text-shadow: 0 0 10px var(--color-primary),
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-primary),
+    0 0 80px var(--color-primary),
+    0 0 120px var(--color-primary);
 }
 
 .project p {
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -44,7 +44,7 @@
   background-color: transparent;
   border-radius: 0;
   padding: 17px 0;
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   width: 100%;
   font-size: var(--fs-400);
   letter-spacing: 0.8px;
@@ -72,7 +72,7 @@
 
 .project .nav.nav-pills .nav-link.active {
   border: 1px solid rgba(255, 255, 255, 1);
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .nav-link#projects-tabs-tab-first {
@@ -137,7 +137,7 @@
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
-  color: #fff;                    /* white text */
+  color: var(--color-text-light); /* white text */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);  /* subtle shadow for readability */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -151,7 +151,7 @@
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
-  color: #fff;                    /* white text */
+  color: var(--color-text-light); /* white text */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);  /* subtle shadow for readability */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -189,7 +189,7 @@
   height: auto;
   max-height: 85vh;
   margin-top: calc(100vh - 90vh - 20px);
-  background: #000;
+  background: var(--color-bg-dark);
   border-radius: 15px;
   padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -205,7 +205,7 @@
   right: calc(5% - 15px);
   top: calc(100vh - 90vh - 40px);
   background: rgba(0, 0, 0, 0.8);
-  color: white;
+  color: var(--color-text-light);
   width: 35px;
   height: 35px;
   border-radius: 50%;

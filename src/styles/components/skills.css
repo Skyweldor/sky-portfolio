@@ -6,7 +6,7 @@
 }
 
 .skill-bx {
-  background: #151515;
+  background: var(--color-bg-panel);
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -16,15 +16,15 @@
 .skill h2 {
   font-size: 45px;
   font-weight: 600;
-  text-shadow: 0 0 10px #00b3ff,
-    0 0 20px #00b3ff,
-    0 0 40px #00b3ff,
-    0 0 80px #00b3ff,
-    0 0 120px #00b3ff;
+  text-shadow: 0 0 10px var(--color-primary),
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-primary),
+    0 0 80px var(--color-primary),
+    0 0 120px var(--color-primary);
 }
 
 .skill p {
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
