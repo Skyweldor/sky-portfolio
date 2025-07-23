@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { Col } from "react-bootstrap";
 // Removed react-textfit dependency
-import Popup from "./Popup";
-import { GameShowcase } from "./GameShowcase";
-import { CartContext } from './CartContext';
+import Popup from "../common/Popup";
+import { GameShowcase } from "../portfolio/GameShowcase";
+import { CartContext } from '../features/cart/CartContext';
 
 export const StickerCard = ({ title, description, imgUrl, details, backgroundImage }) => {
     const { addToCart } = useContext(CartContext); // Destructure addToCart from context
