@@ -34,7 +34,7 @@
       0 0 80px var(--color-primary);
   margin: 40px 0 10px;
   position: relative;           /* enable ::after positioning */
-  word-break: break-word;       /* allow text to wrap on small screens */
+  word_break: break-word;       /* allow text to wrap on small screens */
 }
 
 /* neon underline */
@@ -135,4 +135,145 @@
   box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
 }
 .cta svg { transition: margin-left .25s }
-.cta:hover svg { margin-left: 8px } 
+.cta:hover svg { margin-left: 8px }
+```
+
+```css
+/* keep existing banner background, only trimmed for brevity */
+.banner {
+  margin-top: 0;
+  padding: 260px 0 120px;
+  background: url("../../assets/img/banner-bg-4.png") top/cover no-repeat;
+  text-align: center;           /* centre everything inside banner */
+  overflow-x: hidden;           /* prevent horizontal scroll on mobile */
+}
+
+/* Mobile responsive padding */
+@media (max-width: 768px) {
+  .banner {
+    padding: 120px 20px 80px;   /* reduced padding on mobile */
+  }
+}
+
+/* stack children vertically inside the Row */
+.bannerRow {
+  display: flex;          /* Row is already flex, but we want … */
+  flex-direction: column; /* …column flow instead of row flow   */
+  align-items: center;    /* keep everything horizontally centred */
+}
+
+/* main DigiLabs title (unchanged from your old h1) */
+.title {
+  font-family: "DotGothic16", sans-serif;
+  font-size: clamp(3rem, 10vw, 130px);  /* responsive font size */
+  font-weight: 550;
+  color: #fff;
+  text-shadow:
+      0 0 10px #00b3ff,
+      0 0 20px #00b3ff,
+      0 0 40px #00b3ff,
+      0 0 80px #00b3ff;
+  margin: 40px 0 10px;
+  position: relative;           /* enable ::after positioning */
+  word-break: break-word;       /* allow text to wrap on small screens */
+}
+
+/* neon underline */
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;            /* full word-width */
+  bottom: -18px;                /* tweak gap */
+  height: 4px;
+  background: linear-gradient(90deg,#00eaff 0%,#9f00ff 100%);
+  filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #9f00ff);
+}
+
+/* -----------------------------------------------
+   GROUP WRAPPER AROUND TITLE + SUBTITLE
+   ----------------------------------------------- */
+.titleGroup {
+  position: relative;
+  display: inline-block; /* lets subtitle position relative to title width */
+  margin: 0 auto 120px auto;    /* add bottom margin to create space for CTA */
+  max-width: 100%;              /* prevent overflow on mobile */
+  padding: 0 20px;              /* add horizontal padding */
+}
+
+@media (max-width: 768px) {
+  .titleGroup {
+    margin-bottom: 60px;        /* less margin on mobile */
+  }
+}
+
+/* precise subtitle */
+.interactive {
+  font-family: "DotGothic16", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 48px);  /* responsive font size */
+  font-weight: 500;
+  color: #ffffff;                       /* Bayshore pink-violet */
+  text-shadow:
+      0 0 6px #ff29ff,
+      0 0 12px #b000ff,
+      0 0 24px #7303ff;
+  position: absolute;
+  bottom: -62px;          /* sits below underline – tweak if font-size changes */
+  right: 0;               /* flush against title's right edge */
+  transform: translateX(-35%);  /* nudge left so "e" sits under the S – tweak % */
+  margin: 0;              /* let absolute positioning handle spacing */
+}
+
+/* Mobile adjustments for subtitle */
+@media (max-width: 768px) {
+  .interactive {
+    position: static;           /* remove absolute positioning on mobile */
+    transform: none;            /* reset transform */
+    text-align: center;         /* center on mobile */
+    margin-top: 20px;
+  }
+}
+
+/* -----------------------------------------------
+   CTA WRAPPER AND BUTTON
+   ----------------------------------------------- */
+.ctaWrap {                      /* NEW */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;                /* spacing handled by titleGroup bottom margin */
+  position: relative;
+  z-index: 10;                  /* ensure it's above other elements */
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  padding: 18px 34px;
+  border: 2px solid #00b3ff;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+  flex: 0 0 auto;               /* stays snug */
+  width: auto !important;
+  margin: 0;                    /* centre handled by wrapper now */
+  white-space: nowrap;          /* prevent text wrapping */
+}
+
+@media (max-width: 768px) {
+  .cta {
+    font-size: 16px;            /* smaller font on mobile */
+    padding: 14px 24px;         /* smaller padding */
+  }
+}
+.cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+}
+.cta svg { transition: margin-left .25s }
+.cta:hover svg { margin-left: 8px }
