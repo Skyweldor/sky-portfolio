@@ -2,7 +2,7 @@
 .banner {
   margin-top: 0;
   padding: 260px 0 120px;
-  background: url("../assets/img/banner-bg-4.png") top/cover no-repeat;
+  background: url("../../assets/img/banner-bg-4.png") top/cover no-repeat;
   text-align: center;           /* centre everything inside banner */
   overflow-x: hidden;           /* prevent horizontal scroll on mobile */
 }
@@ -26,12 +26,12 @@
   font-family: "DotGothic16", sans-serif;
   font-size: clamp(3rem, 10vw, 130px);  /* responsive font size */
   font-weight: 550;
-  color: #fff;
+  color: var(--color-text-light);
   text-shadow:
-      0 0 10px #00b3ff,
-      0 0 20px #00b3ff,
-      0 0 40px #00b3ff,
-      0 0 80px #00b3ff;
+      0 0 10px var(--color-primary),
+      0 0 20px var(--color-primary),
+      0 0 40px var(--color-primary),
+      0 0 80px var(--color-primary);
   margin: 40px 0 10px;
   position: relative;           /* enable ::after positioning */
   word-break: break-word;       /* allow text to wrap on small screens */
@@ -44,8 +44,8 @@
   left: 0; right: 0;            /* full word-width */
   bottom: -18px;                /* tweak gap */
   height: 4px;
-  background: linear-gradient(90deg,#00eaff 0%,#9f00ff 100%);
-  filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #9f00ff);
+  background: linear-gradient(90deg,var(--color-highlight) 0%,var(--color-accent) 100%);
+  filter: drop-shadow(0 0 6px var(--color-highlight)) drop-shadow(0 0 12px var(--color-accent));
 }
 
 /* -----------------------------------------------
@@ -70,8 +70,8 @@
   font-family: "DotGothic16", sans-serif;
   font-size: clamp(1.5rem, 5vw, 48px);  /* responsive font size */
   font-weight: 500;
-  color: #ffffff;                       /* Bayshore pink-violet */
-  text-shadow: 
+  color: var(--color-text-light);                       /* Bayshore pink-violet */
+  text-shadow:
       0 0 6px #ff29ff,
       0 0 12px #b000ff,
       0 0 24px #7303ff;
@@ -110,11 +110,11 @@
   gap: 10px;
   background: transparent;
   padding: 18px 34px;
-  border: 2px solid #00b3ff;
+  border: 2px solid var(--color-primary);
   border-radius: 6px;
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-text-light);
   letter-spacing: 0.8px;
   cursor: pointer;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -132,7 +132,7 @@
 }
 .cta:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
 }
 .cta svg { transition: margin-left .25s }
 .cta:hover svg { margin-left: 8px } 

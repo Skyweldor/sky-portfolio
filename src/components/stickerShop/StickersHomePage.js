@@ -1,15 +1,15 @@
 import React from 'react';
-import { Banner } from './Banner';
-import { Skills } from './Skills';
-import { Projects } from './Projects';
+import { Banner } from '../common/Banner';
+import { Skills } from '../portfolio/Skills';
+import { Projects } from '../portfolio/Projects';
 import { StickerBanner } from './StickerBanner';
 import { StickerCollections } from './StickerCollections'
 import { StickerStore } from './StickerStore';
-import { CartProvider } from './CartContext';
-import { CartDisplay } from './CartDisplay';
+import { CartProvider } from '../features/cart/CartContext';
+import { CartDisplay } from '../features/cart/CartDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function IWCClientTrackerPrototype() {
+function StickersHomePage() {
   return (
     <CartProvider>
       <div className="App">
@@ -25,4 +25,13 @@ function IWCClientTrackerPrototype() {
   );
 }
 
-export default IWCClientTrackerPrototype;
+export default StickersHomePage;
+
+const BannerStickers = () => {
+  return (
+    <div className="banner-stickers">
+      <Banner />
+      {/* ... any other modifications or additions for the stickers banner ... */}
+    </div>
+  );
+}

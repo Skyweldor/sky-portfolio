@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
+import logo from '../../assets/img/logo.svg';
 import styles from './NavBar.module.css';
 
 export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTraining, globalXP }) => {
@@ -110,7 +110,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
             >
                 <Container>
                     <Navbar.Brand href="#home">
-                        <img src={logo} alt="Logo" style={{width:'100px', filter: isGameMode ? 'drop-shadow(0 0 5px #00b3ff)' : ''}}/>
+                        <img src={logo} alt="Logo" style={{width:'100px', filter: isGameMode ? 'drop-shadow(0 0 5px var(--color-primary))' : ''}}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
                         <span className="navbar-toggler-icon"></span>
@@ -120,8 +120,8 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                           {isGameMode ? (
                             <>
                               <Nav.Link onClick={onToggleInventory}>Inventory</Nav.Link>
-                              <Nav.Link style={{color:'#00b3ff', fontWeight:'bold', opacity:'1'}} onClick={onToggleTown}>Town</Nav.Link>
-                              <Nav.Link style={{color:'#00b3ff', fontWeight:'bold'}} onClick={onToggleTraining}>Training</Nav.Link>
+                              <Nav.Link style={{color:'var(--color-primary)', fontWeight:'bold', opacity:'1'}} onClick={onToggleTown}>Town</Nav.Link>
+                              <Nav.Link style={{color:'var(--color-primary)', fontWeight:'bold'}} onClick={onToggleTraining}>Training</Nav.Link>
                             </>
                           ) : (
                             <>
@@ -132,7 +132,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                           )}
                         </Nav>
                         {isGameMode && (
-                          <span className="navbar-text" style={{marginLeft:'20px', color:'#00b3ff', fontWeight:'bold'}}>
+                          <span className="navbar-text" style={{marginLeft:'20px', color:'var(--color-primary)', fontWeight:'bold'}}>
                             XP: {globalXP}
                           </span>
                         )}

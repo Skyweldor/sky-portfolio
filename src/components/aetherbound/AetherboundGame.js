@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavBar } from '../NavBar';
+import { NavBar } from '../common/NavBar';
 import { creatures } from './creatures';
 import { parts as allParts } from './parts';
 import styles from './AetherboundGame.module.css';
