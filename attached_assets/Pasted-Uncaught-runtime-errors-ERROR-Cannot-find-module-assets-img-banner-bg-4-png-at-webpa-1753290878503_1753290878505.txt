@@ -1,0 +1,38 @@
+Uncaught runtime errors:
+×
+ERROR
+Cannot find module '../assets/img/banner-bg-4.png'
+    at webpackMissingModule (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:113)
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:217)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4522:259)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.js (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:2726:76)
+ERROR
+Cannot find module '../assets/img/banner-bg-4.png'
+    at webpackMissingModule (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:113)
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:217)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4522:259)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.js (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:2726:76)
+ERROR
+Cannot find module '../assets/img/banner-bg-4.png'
+    at webpackMissingModule (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:113)
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[6].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4237:217)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.module.css (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:4522:259)
+    at options.factory (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51864:31)
+    at __webpack_require__ (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51287:33)
+    at fn (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:51521:21)
+    at ./src/components/common/Banner.js (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_portfolio_Projects_js-src_components_portfolio_Skills_js.chunk.js:2726:76)
