@@ -3,7 +3,7 @@
 ## Navigation Components
 
 ### NavBar
-**Location**: `src/components/NavBar.js`
+**Location**: `src/components/common/NavBar.js`
 
 **Props**:
 - `isGameMode` (boolean): Determines if navbar should use game styling
@@ -36,7 +36,7 @@
 ## Banner Components
 
 ### Banner
-**Location**: `src/components/Banner.js`
+**Location**: `src/components/common/Banner.js`
 
 **Props**: None
 
@@ -47,7 +47,7 @@
 - Neon glow text effects
 
 ### StickerBanner
-**Location**: `src/components/StickerBanner.js`
+**Location**: `src/components/stickerShop/StickerBanner.js`
 
 **Props**: None
 
@@ -59,7 +59,7 @@
 ## Shopping Cart Components
 
 ### CartContext
-**Location**: `src/components/CartContext.js`
+**Location**: `src/components/features/cart/CartContext.js`
 
 **Provides**:
 - `cart` (array): Current cart items
@@ -69,7 +69,7 @@
 - `decreaseQuantity(itemTitle)`: Decrease item quantity
 
 ### CartDisplay
-**Location**: `src/components/CartDisplay.js`
+**Location**: `src/components/features/cart/CartDisplay.js`
 
 **Props**: Uses CartContext
 
@@ -80,7 +80,7 @@
 - Mondrian color scheme
 
 ### StickerCard
-**Location**: `src/components/StickerCard.js`
+**Location**: `src/components/stickerShop/StickerCard.js`
 
 **Props**:
 - `title` (string): Sticker title
@@ -97,7 +97,7 @@
 ## Game Components
 
 ### AetherboundGame
-**Location**: `src/components/Aetherbound/AetherboundGame.js`
+**Location**: `src/components/aetherbound/AetherboundGame.js`
 
 **Props**: None
 
@@ -109,7 +109,7 @@
 - Part attachment system
 
 ### InventoryPanel
-**Location**: `src/components/Aetherbound/InventoryPanel.js`
+**Location**: `src/components/aetherbound/InventoryPanel.js`
 
 **Props**:
 - `inventory` (array): Player inventory items
@@ -119,7 +119,7 @@
 - `onAttachPart(partItem)`: Callback for part attachment
 
 ### TownPanel
-**Location**: `src/components/Aetherbound/TownPanel.js`
+**Location**: `src/components/aetherbound/TownPanel.js`
 
 **Props**:
 - `onClose()`: Callback to close panel
@@ -137,7 +137,7 @@
 ## Makeup Site Components
 
 ### HeroSection
-**Location**: `src/components/makeup/HeroSection.jsx`
+**Location**: `src/components/beautyCare/HeroSection.jsx`
 
 **Props**: None
 
@@ -149,7 +149,7 @@
 - Scrolling ticker
 
 ### KitsCarousel
-**Location**: `src/components/makeup/KitsCarousel.jsx`
+**Location**: `src/components/beautyCare/KitsCarousel.jsx`
 
 **Props**: None
 
@@ -159,7 +159,7 @@
 - Product kit display
 
 ### FeaturedSplit
-**Location**: `src/components/makeup/FeaturedSplit.jsx`
+**Location**: `src/components/beautyCare/FeaturedSplit.jsx`
 
 **Props**: None
 
@@ -171,21 +171,21 @@
 ## Utility Components
 
 ### EmojiExplosion
-**Location**: `src/components/EmojiExplosion.js`
+**Location**: `src/components/features/emoji/EmojiExplosion.js`
 
 **Props**:
 - `position` (object): {x, y} coordinates
 - `onAnimationEnd()`: Callback when animation completes
 
 ### Popup
-**Location**: `src/components/Popup.js`
+**Location**: `src/components/common/Popup.js`
 
 **Props**:
 - `content` (ReactNode): Content to display
 - `handleClose()`: Callback to close popup
 
 ### ProjectCard
-**Location**: `src/components/ProjectCard.js`
+**Location**: `src/components/common/ProjectCard.js`
 
 **Props**:
 - `title` (string): Project title
