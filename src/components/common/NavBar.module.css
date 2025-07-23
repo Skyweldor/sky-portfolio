@@ -1,37 +1,37 @@
-   .gameNavbar {
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #00b3ff;
+  .gameNavbar {
+    background-color: var(--color-bg-panel);
+    border-bottom: 2px solid var(--color-primary);
   }
   
-  .gameNavbar button, 
+  .gameNavbar button,
   .gameNavbar .nav-link {
     background: none;
-    color: #00b3ff !important; 
-    border: 1px solid #00b3ff;
+    color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary);
     padding: 5px 10px;
     border-radius: 4px;
-    text-shadow: 0 0 5px #00b3ff;
-    box-shadow: 0 0 10px #00b3ff;
+    text-shadow: 0 0 5px var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
     margin: 0 5px;
     cursor: pointer;
   }
   
-  .gameNavbar button:hover, 
+  .gameNavbar button:hover,
   .gameNavbar .nav-link:hover {
-    background-color: #00b3ff;
-    color: #00b3ff !important;
-    box-shadow: 0 0 20px #00b3ff;
+    background-color: var(--color-primary);
+    color: var(--color-bg-dark) !important;
+    box-shadow: 0 0 20px var(--color-primary);
   }
   
  .gameNavbar.navbar-dark .nav-link,
 .gameNavbar.navbar-dark .navbar-text {
-  color: #00b3ff !important;
+  color: var(--color-primary) !important;
 }
 
 .gameNavbar.navbar-dark .nav-link:hover {
-  color: #00b3ff !important;
+  color: var(--color-primary) !important;
   background-color: transparent !important;
-  border-color: #00b3ff !important;
+  border-color: var(--color-primary) !important;
 }
 
 /* --- Navigation States ---------------------------------------------------- */
@@ -75,9 +75,9 @@
   width: var(--scrollProgress, 0%);
   pointer-events: none;
   /* ← gradient from cyan → violet as before */
-  background: linear-gradient(90deg, #00eaff 0%, #9f00ff 100%);
+  background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent) 100%);
   /* neon bloom */
-  filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #9f00ff);
+  filter: drop-shadow(0 0 6px var(--color-highlight)) drop-shadow(0 0 12px var(--color-accent));
   transition: width .15s linear;
 }
 
@@ -114,7 +114,7 @@
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 2px solid #00b3ff;
+  border: 2px solid var(--color-primary);
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: difference;
@@ -134,8 +134,8 @@
 }
 
 :global(.nav-hover) a:hover {
-  color: #00b3ff !important;
-  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff;
+  color: var(--color-primary) !important;
+  text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
   /* NO transform/scale! */
 }
 
@@ -144,28 +144,28 @@
    --------------------------------------------------------------- */
 .glowLink {
   position: relative;
-  color: #fff !important;
+  color: var(--color-text-light) !important;
   text-shadow:
-      0 0 4px #00eaff,
-      0 0 8px #00eaff,
-      0 0 12px #9f00ff;   /* Bayshore magenta edge */
+      0 0 4px var(--color-highlight),
+      0 0 8px var(--color-highlight),
+      0 0 12px var(--color-accent);   /* Bayshore magenta edge */
   transition: text-shadow .25s ease, opacity .25s ease;
 }
 .glowLink:hover,
 .glowLink:focus {
   opacity: 1;
   text-shadow:
-      0 0 6px #00eaff,
-      0 0 12px #00eaff,
-      0 0 24px #9f00ff,
-      0 0 36px #9f00ff;
+      0 0 6px var(--color-highlight),
+      0 0 12px var(--color-highlight),
+      0 0 24px var(--color-accent),
+      0 0 36px var(--color-accent);
 }
 
 /* mobile hamburger icon bloom */
 .navbar-dark .navbar-toggler-icon,
 .navbar .navbar-toggler-icon {
-  border-bottom-color:#fff;
-  filter: drop-shadow(0 0 4px #00eaff) drop-shadow(0 0 8px #9f00ff);
+  border-bottom-color: var(--color-text-light);
+  filter: drop-shadow(0 0 4px var(--color-highlight)) drop-shadow(0 0 8px var(--color-accent));
 }
 
 /* Mobile Responsiveness */

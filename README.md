@@ -60,20 +60,23 @@ npm start
 sky-portfolio/
 ├── public/                 # Static assets
 ├── src/
-│   ├── assets/            # Images, fonts, and media
-│   │   ├── components/        # React components
-│   │   │   ├── Aetherbound/   # Game components
-│   │   │   ├── makeup/        # Makeup site components
-│   │   │   └── archived/      # Archived components
-│   │   ├── styles/            # Modular CSS files
-│   │   │   ├── components/    # Component-specific styles
-│   │   │   ├── pages/         # Page-specific styles
-│   │   │   └── modules/       # Feature module styles
-│   │   └── App.js            # Main application component
-│   ├── docs/                  # Documentation
-│   │   ├── api/              # Component API docs
-│   │   └── style-guides/     # Design system guides
-│   └── CHANGELOG_CLEANUP.md   # Cleanup documentation
+│   ├── assets/             # Images, fonts, and media
+│   ├── components/
+│   │   ├── common/         # Shared UI across subsites
+│   │   ├── features/       # Reusable feature modules
+│   │   ├── portfolio/      # Portfolio-specific sections
+│   │   ├── stickerShop/    # Sticker store sections
+│   │   ├── beautyCare/     # Makeup microsite sections
+│   │   ├── aetherbound/    # RPG game components
+│   │   └── minigames/      # Optional game components
+│   ├── pages/              # Top-level routed pages
+│   ├── config/             # Routing and context providers
+│   ├── themes/             # Color and font themes
+│   └── styles/             # Global and modular CSS
+├── docs/                   # Documentation
+│   ├── api/                # Component API docs
+│   └── style-guides/       # Design system guides
+└── CHANGELOG_CLEANUP.md
 ```
 
 ## 🎨 Design Philosophy
@@ -91,6 +94,30 @@ Each subsite maintains its own unique visual identity:
 - **Styling**: Modular CSS, CSS Variables, Flexbox/Grid
 - **Effects**: TSParticles, React Slick, Custom animations
 - **State Management**: React Context API, useState/useEffect hooks
+
+## 🖌️ Theming System
+
+Theme files live in `src/themes` and define color and font variables. The
+`ThemeProvider` from `src/config/themeContext.jsx` applies these values as CSS
+variables on the document root. Each page wraps its layout in a provider with the
+appropriate theme:
+
+```jsx
+import ThemeProvider from '../config/themeContext';
+import stickerTheme from '../themes/stickerTheme';
+
+export default function StickerShop() {
+  return (
+    <ThemeProvider theme={stickerTheme}>
+      <StickersHomePage />
+    </ThemeProvider>
+  );
+}
+```
+
+Shared components like the navigation bar and footer reference these CSS
+variables so different subsites can be reskinned just by swapping the theme
+object.
 
 ## 📚 Documentation
 

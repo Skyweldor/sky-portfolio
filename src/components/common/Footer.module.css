@@ -1,6 +1,6 @@
 /* Compact Footer Styles */
 .footer {
-  background-color: #000;
+  background-color: var(--color-bg-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px 0;              /* minimal padding */
   margin: 0;
@@ -18,7 +18,7 @@
 }
 
 .copyright {
-  color: #b8b8b8;
+  color: var(--color-text-dark);
   font-size: 14px;
   margin: 0;                    /* remove default paragraph margins */
   letter-spacing: 0.5px;
@@ -27,6 +27,6 @@
 
 /* Optional: Add subtle glow effect to match theme */
 .copyright:hover {
-  color: #fff;
+  color: var(--color-text-light);
   transition: color 0.3s ease;
 } 
