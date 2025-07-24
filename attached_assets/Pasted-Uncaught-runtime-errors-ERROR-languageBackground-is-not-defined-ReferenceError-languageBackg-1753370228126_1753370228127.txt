@@ -1,0 +1,41 @@
+Uncaught runtime errors:
+×
+ERROR
+languageBackground is not defined
+ReferenceError: languageBackground is not defined
+    at StickerStore (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_features_cart_CartDisplay_js-src_components_stickerShop_StickerBanner_js-src_c-653390.chunk.js:1061:13)
+    at renderWithHooks (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:25865:22)
+    at mountIndeterminateComponent (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:29151:17)
+    at beginWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:30447:20)
+    at HTMLUnknownElement.callCallback (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15457:18)
+    at Object.invokeGuardedCallbackDev (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15501:20)
+    at invokeGuardedCallback (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15558:35)
+    at beginWork$1 (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:35432:11)
+    at performUnitOfWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34679:16)
+    at workLoopConcurrent (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34667:9)
+ERROR
+languageBackground is not defined
+ReferenceError: languageBackground is not defined
+    at StickerStore (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_features_cart_CartDisplay_js-src_components_stickerShop_StickerBanner_js-src_c-653390.chunk.js:1061:13)
+    at renderWithHooks (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:25865:22)
+    at mountIndeterminateComponent (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:29151:17)
+    at beginWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:30447:20)
+    at HTMLUnknownElement.callCallback (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15457:18)
+    at Object.invokeGuardedCallbackDev (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15501:20)
+    at invokeGuardedCallback (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:15558:35)
+    at beginWork$1 (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:35432:11)
+    at performUnitOfWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34679:16)
+    at workLoopSync (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34602:9)
+ERROR
+languageBackground is not defined
+ReferenceError: languageBackground is not defined
+    at StickerStore (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/src_components_features_cart_CartDisplay_js-src_components_stickerShop_StickerBanner_js-src_c-653390.chunk.js:1061:13)
+    at renderWithHooks (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:25865:22)
+    at mountIndeterminateComponent (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:29151:17)
+    at beginWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:30447:20)
+    at beginWork$1 (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:35410:18)
+    at performUnitOfWork (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34679:16)
+    at workLoopSync (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34602:9)
+    at renderRootSync (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34575:11)
+    at recoverFromConcurrentError (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:34067:24)
+    at performConcurrentWorkOnRoot (https://59cea59c-9bc3-4e6b-99d3-25331560fe69-00-2a9ww5jye3sb3.spock.replit.dev/static/js/bundle.js:33979:26)
