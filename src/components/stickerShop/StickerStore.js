@@ -28,71 +28,6 @@ import yearOneSticker04 from "../../assets/img/stickers/year_one/year_one_04_sti
 
 export const StickerStore = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    };
-
-    //const [cart, setCart] = useContext(CartContext);
-
-    /*const addToCart = (sticker) => {
-        // Function to add sticker to cart
-        // Update cart state and interact with Shopify API
-    };*/
-
-    const projectsUnity = [
-        {
-            title: "LanguageLink",
-            description: "Teach and Study English!",
-            imgUrl: languageBackground,
-            details: "Find out more!",
-            backgroundImage: "[insert url]",
-        },
-        {
-            title: "Robo-Battler",
-            description: "Grind for XP!",
-            imgUrl: roboIcon1,
-            details: "Find out more!",
-            backgroundImage: "[insert URL]",
-        },
-
-    ];
-
-    const projectsUnreal = [
-        {
-            title: "Kuromi Flyer",
-            description: "Plane Platformer",
-            imgUrl: kuromiBackground,
-            details: "Find out more!",
-            backgroundImage: "[insert url]",
-        },
-        {
-            title: "Opus - VR",
-            description: "Nanite + Lumen VR",
-            imgUrl: opusBackground,
-            details: "Find out more!",
-            backgroundImage: "[insert url]",
-        },
-        {
-            title: "Camp Carapace",
-            description: "Found Footage Horror",
-            imgUrl: carapaceBackground,
-            details: "Find out more!",
-            backgroundImage: "[insert url]",
-        },
-    ]
-
-    const projectsRoblox = [
-        {
-            title: "Sky's Scared",
-            description: "a Roblox Horror Game Engine",
-            imgUrl: scaredBackground,
-            details: "Find out more!",
-            backgroundImage: scaredBackground,
-        },
-    ]
-
     // Define sticker arrays
     // Completing the 'petsStickers' array
     const petsStickers = [
@@ -167,7 +102,7 @@ export const StickerStore = () => {
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharpHolo2} />
+            
         </section>
     )
 }
