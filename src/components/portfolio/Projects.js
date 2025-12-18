@@ -127,7 +127,121 @@ Engine Components:
 • Extensive documentation and video tutorial series`,
             backgroundImage: scaredBackground,
         },
+        {
+            title: "mini-RC-Racer",
+            description: "High-speed RC racing action",
+            imgUrl: headerImg,
+            details: `Take control of miniature remote-controlled vehicles in this fast-paced Roblox racing experience. Navigate challenging tracks, perform stunts, and compete against other players in various RC racing modes.
+
+Racing Features:
+• Multiple RC vehicle types with unique handling characteristics
+• Custom track builder for creating and sharing your own courses
+• Time trial and multiplayer race modes
+• Stunt system with tricks and aerial maneuvers
+• Vehicle customization with paint jobs and performance upgrades
+• Leaderboards tracking fastest lap times and stunt scores
+• Physics-based handling for realistic RC car movement`,
+            backgroundImage: scaredBackground,
+        },
     ]
+
+    // ========================================
+    // WEB/BROWSER PROJECTS
+    // ========================================
+    const projectsWeb = [
+        {
+            title: "VrBrowserLab",
+            description: "Cross-platform VR experience",
+            imgUrl: headerImg,
+            details: `A cutting-edge WebXR experiment bringing VR experiences to any browser. VrBrowserLab combines desktop WASD controls with full VR headset support, featuring PS1-style retro graphics and innovative locomotion systems.
+
+Technical Features:
+• Cross-platform compatibility - desktop or VR headset
+• WASD movement for desktop users
+• Hand tracking and gesture controls for VR
+• Teleportation and arm-swing locomotion options
+• PS1-inspired low-poly aesthetic with modern effects
+• Spatial audio implementation
+• Built with React Three Fiber and WebXR
+• No installation required - runs directly in browser`,
+            backgroundImage: kuromiBackground,
+        },
+        {
+            title: "iso-squares-game",
+            description: "Turn-based isometric strategy",
+            imgUrl: headerImg,
+            details: `A strategic territory-building game where players take turns placing cubes on a shared isometric grid. Expand your territory by forming larger shapes to score points and dominate the board.
+
+Gameplay Features:
+• Turn-based multiplayer strategy gameplay
+• Isometric 3D view with smooth camera controls
+• Territory expansion mechanics - build 2×2, 3×3, and 4×4 formations
+• Scoring system rewarding strategic placement
+• Real-time online multiplayer
+• AI opponent for solo play
+• Minimalist visual design focused on clear gameplay
+• Built with React, Three.js, and TypeScript`,
+            backgroundImage: opusBackground,
+        },
+        {
+            title: "AsyncHeroes-MVP",
+            description: "Multiplayer resource gathering",
+            imgUrl: headerImg,
+            details: `A persistent 2D multiplayer game where players gather resources, construct buildings, and develop their settlement asynchronously. Progress continues even when you're offline thanks to Firebase real-time database integration.
+
+Game Systems:
+• Resource gathering mechanics - wood, stone, and food
+• Building construction system with multiple structure types
+• Persistent world that evolves over time
+• Firebase authentication and real-time database
+• Asynchronous multiplayer - see other players' progress
+• Built with React, TypeScript, and Phaser game engine
+• Mobile-friendly touch controls
+• Cross-device progression sync`,
+            backgroundImage: languageBackground,
+        },
+        {
+            title: "Trick-or-Treat-3D",
+            description: "Halloween neighborhood adventure",
+            imgUrl: headerImg,
+            details: `A festive 3D browser game where you navigate a spooky neighborhood collecting candy on Halloween night. Time your trick-or-treating perfectly while avoiding hazards and discovering hidden treats.
+
+Halloween Features:
+• 3D neighborhood environment to explore
+• Multiple houses with unique candy rewards
+• Time management mechanics - visit houses before they close
+• Costume customization system
+• Hidden collectibles and secret paths
+• Spooky atmospheric effects and lighting
+• Playable directly in browser with TypeScript
+• Seasonal content and holiday theming`,
+            backgroundImage: scaredBackground,
+        },
+    ];
+
+    // ========================================
+    // MOBILE PROJECTS
+    // ========================================
+    const projectsMobile = [
+        {
+            title: "pocket-pal",
+            description: "Virtual pet for Razr outer screen",
+            imgUrl: headerImg,
+            details: `A unique virtual pet companion designed specifically for the Motorola Razr's outer screen (1066×1056). Care for your pixel-art "invader" avatar with a circular HUD interface optimized for the foldable's cover display.
+
+Pet Features:
+• Pixel-art virtual pet with retro charm
+• Circular HUD design perfect for Razr outer screen
+• Pet care mechanics - feeding, playing, and training
+• Persistent data storage with DataStore
+• Stats tracking and pet progression system
+• Cover and inner screen responsive design
+• Built with Kotlin and Jetpack Compose
+• Idle animations and reactive pet behaviors
+• Unique form factor optimization for foldable phones`,
+            backgroundImage: carapaceBackground,
+        },
+    ];
 
     return (
         <section className="project" id="projects">
@@ -147,6 +261,12 @@ Engine Components:
                                     </Nav.Item>
                                     <Nav.Item>
                                         <Nav.Link eventKey="third">Roblox</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="web">Web/Browser</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="mobile">Mobile</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
                                 <Tab.Content>
@@ -182,6 +302,34 @@ Engine Components:
                                         <Row>
                                             {
                                                 projectsRoblox.map((project, index) => {
+                                                    return (
+                                                        <ProjectCard
+                                                            key={index}
+                                                            {...project}
+                                                        />
+                                                    )
+                                                })
+                                            }
+                                        </Row>
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="web">
+                                        <Row>
+                                            {
+                                                projectsWeb.map((project, index) => {
+                                                    return (
+                                                        <ProjectCard
+                                                            key={index}
+                                                            {...project}
+                                                        />
+                                                    )
+                                                })
+                                            }
+                                        </Row>
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="mobile">
+                                        <Row>
+                                            {
+                                                projectsMobile.map((project, index) => {
                                                     return (
                                                         <ProjectCard
                                                             key={index}
