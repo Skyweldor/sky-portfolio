@@ -80,6 +80,107 @@
 }
 
 /* ---------------------------------------------------------------
+   NAVBAR LAYOUT: Logo Left | Links Center | CTA Right
+   --------------------------------------------------------------- */
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brandLeft {
+  flex: 0 0 auto;
+  min-width: 140px; /* reserve space even when logo hidden */
+}
+
+.navCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navRight {
+  flex: 0 0 auto;
+  min-width: 140px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto; /* Push to far right */
+}
+
+/* CTA Button - Neon glow style matching nav links */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  color: var(--color-text-light);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  text-shadow:
+      0 0 4px var(--color-highlight),
+      0 0 8px var(--color-highlight),
+      0 0 12px var(--color-accent);
+  box-shadow:
+      0 0 4px var(--color-primary),
+      inset 0 0 8px rgba(0, 179, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  color: var(--color-text-light);
+  text-decoration: none;
+  text-shadow:
+      0 0 6px var(--color-highlight),
+      0 0 12px var(--color-highlight),
+      0 0 24px var(--color-accent),
+      0 0 36px var(--color-accent);
+  box-shadow:
+      0 0 10px var(--color-primary),
+      0 0 20px var(--color-primary),
+      0 0 40px var(--color-primary),
+      inset 0 0 12px rgba(0, 179, 255, 0.2);
+  border-color: var(--color-highlight);
+  transform: translateY(-2px);
+}
+
+/* Mobile: Stack layout */
+@media (max-width: 1199px) {
+  .navCenter {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    width: 100%;
+    margin: 16px 0;
+    gap: 4px;
+    align-items: stretch;
+  }
+
+  .navRight {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+  }
+}
+
+/* ---------------------------------------------------------------
    A. BLOOMY PROGRESS BAR
    --------------------------------------------------------------- */
 .navWrapper::after {

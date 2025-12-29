@@ -75,17 +75,11 @@
   color: var(--color-text-light);
 }
 
-.nav-link#projects-tabs-tab-first {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0px 0px 0px 0px;
-}
-
-.nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0px 0px 0px 0px;
-}
-
-.nav-link#projects-tabs-tab-third {
+.nav-link#projects-tabs-tab-first,
+.nav-link#projects-tabs-tab-second,
+.nav-link#projects-tabs-tab-third,
+.nav-link#projects-tabs-tab-web,
+.nav-link#projects-tabs-tab-mobile {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0px 0px 0px 0px;
 }

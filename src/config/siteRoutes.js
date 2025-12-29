@@ -8,6 +8,7 @@ const Prototype = lazy(() => import('../pages/Prototype'));
 const Aetherbound = lazy(() => import('../pages/Aetherbound'));
 const BeautyCare = lazy(() => import('../pages/BeautyCare'));
 const MiniGames = lazy(() => import('../pages/MiniGames'));
+const Catalog = lazy(() => import('../pages/Catalog'));
 
 export default function SiteRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function SiteRoutes() {
           <Route path="/aetherbound" element={<Aetherbound />} />
           <Route path="/makeup" element={<BeautyCare />} />
           <Route path="/minigames" element={<MiniGames />} />
+          <Route path="/catalog" element={<Catalog />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -1,0 +1,103 @@
+/* NavLogo - Compact branding for navbar */
+
+.logoContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    line-height: 1;
+    padding: 4px 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Visibility states */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+}
+
+.title {
+    font-family: "DotGothic16", sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 550;
+    color: var(--color-text-light);
+    text-shadow:
+        0 0 4px var(--color-primary),
+        0 0 8px var(--color-primary),
+        0 0 16px var(--color-primary);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.underline {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 2px;
+    background: linear-gradient(90deg, var(--color-highlight) 0%, var(--color-accent) 100%);
+    filter: drop-shadow(0 0 3px var(--color-highlight)) drop-shadow(0 0 6px var(--color-accent));
+}
+
+.interactive {
+    font-family: "DotGothic16", sans-serif;
+    font-size: clamp(0.55rem, 1.2vw, 0.7rem);
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-shadow:
+        0 0 3px #ff29ff,
+        0 0 6px #b000ff,
+        0 0 12px #7303ff;
+    align-self: flex-end;
+    margin-top: 1px;
+    letter-spacing: 0.3px;
+}
+
+/* Game mode - enhanced cyan glow */
+.gameMode .title {
+    text-shadow:
+        0 0 5px var(--color-primary),
+        0 0 10px var(--color-primary),
+        0 0 20px var(--color-primary),
+        0 0 30px var(--color-primary);
+}
+
+.gameMode .underline {
+    filter: drop-shadow(0 0 4px var(--color-highlight)) drop-shadow(0 0 8px var(--color-accent));
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .logoContainer {
+        padding: 2px 0;
+    }
+
+    .title {
+        font-size: 0.85rem;
+    }
+
+    .interactive {
+        font-size: 0.5rem;
+    }
+
+    .underline {
+        height: 1.5px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+    .title {
+        font-size: 0.75rem;
+    }
+
+    .interactive {
+        font-size: 0.45rem;
+    }
+}

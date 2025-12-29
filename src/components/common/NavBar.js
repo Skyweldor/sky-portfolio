@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from '../../assets/img/logo.svg';
+import { Link } from "react-router-dom";
+import { NavLogo } from './NavLogo';
 import styles from './NavBar.module.css';
 
 export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTraining, globalXP }) => {
     const [scrolled, setScrolled] = useState(false);
+    const [showLogo, setShowLogo] = useState(false);
     const [shadowClass, setShadowClass] = useState("");
     const ticking = useRef(false);
     const navbarRef = useRef(null);
@@ -27,6 +29,9 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
             } else {
                 setScrolled(false);
             }
+
+            // Show logo after scrolling past hero section (~200px when title starts leaving)
+            setShowLogo(currentScrollY > 200);
             
             // Dynamic shadow
             setShadowClass(currentScrollY > 0 ? styles.elevated : "");
@@ -108,15 +113,19 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                 style={navbarStyle}
                 id="main-nav"
             >
-                <Container>
-                    <Navbar.Brand href="#home">
-                        <img src={logo} alt="Logo" style={{width:'100px', filter: isGameMode ? 'drop-shadow(0 0 5px var(--color-primary))' : ''}}/>
+                <Container className={styles.navContainer}>
+                    {/* Left: Logo */}
+                    <Navbar.Brand href="#home" className={styles.brandLeft}>
+                        <NavLogo isGameMode={isGameMode} visible={showLogo} />
                     </Navbar.Brand>
+
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
                         <span className="navbar-toggler-icon"></span>
                     </Navbar.Toggle>
+
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        {/* Center: Nav Links */}
+                        <Nav className={styles.navCenter}>
                           {isGameMode ? (
                             <>
                               <Nav.Link onClick={onToggleInventory}>Inventory</Nav.Link>
@@ -131,11 +140,19 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                             </>
                           )}
                         </Nav>
-                        {isGameMode && (
-                          <span className="navbar-text" style={{marginLeft:'20px', color:'var(--color-primary)', fontWeight:'bold'}}>
-                            XP: {globalXP}
-                          </span>
-                        )}
+
+                        {/* Right: CTA or Game XP */}
+                        <div className={styles.navRight}>
+                          {isGameMode ? (
+                            <span className="navbar-text" style={{color:'var(--color-primary)', fontWeight:'bold'}}>
+                              XP: {globalXP}
+                            </span>
+                          ) : (
+                            <Link to="/catalog" className={styles.ctaButton}>
+                              Downloads
+                            </Link>
+                          )}
+                        </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
