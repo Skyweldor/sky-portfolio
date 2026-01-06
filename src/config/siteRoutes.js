@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+const GlobeLanding = lazy(() => import('../pages/GlobeLanding'));
 const Portfolio = lazy(() => import('../pages/Portfolio'));
 const StickerShop = lazy(() => import('../pages/StickerShop'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -15,7 +16,8 @@ export default function SiteRoutes() {
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Portfolio />} />
+          <Route path="/" element={<GlobeLanding />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/stickers" element={<StickerShop />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/prototype" element={<Prototype />} />

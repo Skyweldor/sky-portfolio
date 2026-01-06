@@ -1,0 +1,138 @@
+/* ==========================================================
+   Globe Landing Page - SynthCity Digilabs
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=swap');
+
+/* --------------------------------------------------
+   MAIN CONTAINER
+-------------------------------------------------- */
+.globe-landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #020924;
+  animation: globeFadeIn 1s ease-out forwards;
+}
+
+/* Background cover */
+.globe-background-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #020924;
+  z-index: 1;
+}
+
+/* --------------------------------------------------
+   GLOBE CONTAINER
+-------------------------------------------------- */
+.globe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  min-height: 300px;
+  animation: floatAnimation 10s ease-in-out infinite;
+}
+
+.globe-container canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+  cursor: grab;
+}
+
+.globe-container canvas:active {
+  cursor: grabbing;
+}
+
+/* --------------------------------------------------
+   CSS2D LABELS (3D positioned HTML elements)
+-------------------------------------------------- */
+.css2d-label {
+  color: #00ddff;
+  font-weight: bold;
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------
+   LOADING INDICATOR
+-------------------------------------------------- */
+.globe-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ddff;
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
+  z-index: 100;
+}
+
+.globe-loading-indicator:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  border: 2px solid #00ddff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, pulseBorder 2s infinite alternate;
+}
+
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 5px rgba(0, 221, 255, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(0, 221, 255, 0.8); }
+}
+
+@keyframes globeFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes globeFadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Page exit transition */
+.globe-page-exit {
+  animation: globeFadeOut 0.5s ease-in forwards;
+}
+
+/* --------------------------------------------------
+   HIDE FOOTER ON GLOBE PAGE
+-------------------------------------------------- */
+.globe-landing ~ footer,
+.globe-landing + footer {
+  display: none !important;
+}

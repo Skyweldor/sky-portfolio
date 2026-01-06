@@ -1,0 +1,300 @@
+/* ==========================================================
+   Interactive Globe - Standalone Styles
+   SynthCity Digilabs
+   ========================================================== */
+
+/* --------------------------------------------------
+   FONT IMPORTS
+-------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700&display=swap');
+
+/* --------------------------------------------------
+   ROOT VARIABLES (extracted from SynthCity theme)
+-------------------------------------------------- */
+:root {
+  /* Fonts */
+  --heading-font: "Akzidenz Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body-font-mono: "IBM Plex Mono", "Courier New", Courier, monospace;
+
+  /* Colors */
+  --clr-white: #FFFFFF;
+  --clr-black: #000000;
+  --clr-teal: #0FFFC0;
+  --primary-cyan: #00ddff;
+  --bg-primary: #020924;
+  --accent-teal: #0FFFC0;
+}
+
+/* --------------------------------------------------
+   GLOBAL RESETS
+-------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+/* Override body styles for full-screen canvas */
+body, html {
+  height: 100vh !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background-color: #020924 !important;
+  color: var(--clr-white);
+  font-family: var(--body-font-mono);
+  font-size: 16px;
+  line-height: 1.5;
+  position: fixed !important;
+  animation: fadeInPage 1s ease-out forwards;
+}
+
+/* --------------------------------------------------
+   MAIN WRAPPER (matches Flask template structure)
+-------------------------------------------------- */
+main {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* --------------------------------------------------
+   GLOBE CONTAINER
+-------------------------------------------------- */
+
+/* Main container for Three.js canvas */
+#globe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  min-height: 300px;
+  animation: floatAnimation 10s ease-in-out infinite;
+}
+
+/* Canvas element created by Three.js */
+#globe-container canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+  cursor: grab;
+}
+
+#globe-container canvas:active {
+  cursor: grabbing;
+}
+
+/* Background cover */
+#background-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #020924;
+  z-index: 1;
+}
+
+/* --------------------------------------------------
+   CSS2D LABELS (3D positioned HTML elements)
+-------------------------------------------------- */
+
+/* Base label styling */
+.css2d-label {
+  color: #00ddff;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* Navigation link styling */
+.css2d-nav {
+  color: #00ddff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 15px;
+  margin: 0 10px;
+  background: rgba(0, 10, 30, 0.7);
+  border-radius: 4px;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------
+   SERVICE LABELS
+-------------------------------------------------- */
+
+.service-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.service-label {
+  position: absolute;
+  color: #00ddff;
+  font-family: var(--body-font-mono);
+  font-size: 1.2rem;
+  text-shadow:
+    0 0 10px rgba(0, 221, 255, 0.7),
+    0 0 20px rgba(0, 221, 255, 0.3);
+  text-decoration: none;
+  line-height: 1.4;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: calc(var(--index) * 0.2s);
+}
+
+.service-label.left-side {
+  left: 10%;
+  text-align: right;
+  transform: translateX(-20px);
+}
+
+.service-label.right-side {
+  right: 10%;
+  text-align: left;
+  transform: translateX(20px);
+}
+
+.service-label:hover {
+  color: #ffffff;
+  transform: scale(1.05) translateZ(0);
+  text-shadow:
+    0 0 10px rgba(0, 221, 255, 0.9),
+    0 0 20px rgba(0, 221, 255, 0.6),
+    0 0 30px rgba(0, 221, 255, 0.4);
+}
+
+/* Set animation delays for service labels */
+.service-label:nth-child(1) { --index: 1; }
+.service-label:nth-child(2) { --index: 2; }
+.service-label:nth-child(3) { --index: 3; }
+.service-label:nth-child(4) { --index: 4; }
+.service-label:nth-child(5) { --index: 5; }
+
+/* --------------------------------------------------
+   LOADING INDICATOR
+-------------------------------------------------- */
+
+#loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ddff;
+  font-family: var(--body-font-mono);
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
+  z-index: 10;
+}
+
+/* Loading spinner */
+#loading-indicator:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  border: 2px solid #00ddff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, pulse-border 2s infinite alternate;
+}
+
+/* --------------------------------------------------
+   DEBUG PANEL
+-------------------------------------------------- */
+
+#debug-info {
+  font-family: var(--body-font-mono);
+  z-index: 9999;
+}
+
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 5px rgba(0, 221, 255, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(0, 221, 255, 0.8); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; transform: translate(-50%, 0) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, 0) scale(1.05); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInPage {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOutPage {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Page transition for leaving */
+.page-exit {
+  animation: fadeOutPage 0.5s ease-in forwards;
+}
+
+/* Link transitions */
+a {
+  transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+-------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .service-label.left-side {
+    left: 5%;
+  }
+
+  .service-label.right-side {
+    right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-label {
+    font-size: 0.9rem;
+  }
+
+  .service-label.left-side {
+    left: 3%;
+  }
+
+  .service-label.right-side {
+    right: 3%;
+  }
+}

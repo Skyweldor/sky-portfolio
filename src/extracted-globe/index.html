@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Interactive 3D Globe Visualization - SynthCity Digilabs">
+  <title>SynthCity Digilabs - Interactive Globe</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="globe.css">
+</head>
+<body>
+  <main>
+    <!-- Full page background cover -->
+    <div id="background-cover"></div>
+
+    <!-- Debug info for troubleshooting (hidden by default) -->
+    <div id="debug-info" style="position: absolute; bottom: 10px; left: 10px; z-index: 100;
+         background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px; font-size: 12px;
+         font-family: monospace; color: white; max-width: 400px; display: none;">
+      <div id="debug-status">Status: Initializing...</div>
+      <div id="debug-threejs">Three.js: Checking...</div>
+      <div id="debug-container">Container: Checking...</div>
+      <div id="debug-error"></div>
+      <button onclick="document.getElementById('debug-info').style.display='none'">Close</button>
+    </div>
+
+    <!-- Container for the Three.js Scene -->
+    <div id="globe-container"></div>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator">Loading 3D Globe...</div>
+  </main>
+
+  <!-- Three.js Library (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
+
+  <!-- Post-processing libraries for bloom effect -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+
+  <!-- Globe visualization script -->
+  <script src="globe.js"></script>
+</body>
+</html>
