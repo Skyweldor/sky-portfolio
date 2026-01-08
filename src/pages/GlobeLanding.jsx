@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GlobeMobileMenu from '../components/common/GlobeMobileMenu';
 
 /**
  * Globe Landing Page - Using dynamic imports for Three.js modules
@@ -90,27 +91,112 @@ const globeStyles = `
     font-family: "IBM Plex Mono", "Courier New", monospace !important;
   }
 
-  #loading-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #00ddff;
-    font-size: 1.2rem;
-    text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
-    z-index: 100;
+  /* PDA-Styled Loading Overlay */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #020924;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
   }
 
-  #loading-indicator:before {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 40px;
+  .loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pda-loading {
+    max-width: 360px;
+    width: 90%;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.97) 0%, rgba(0, 10, 30, 0.99) 100%);
+    border: 2px solid rgba(0, 221, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 221, 255, 0.3), inset 0 0 50px rgba(0, 221, 255, 0.03);
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pda-loading .scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 221, 255, 0.02) 2px,
+      rgba(0, 221, 255, 0.02) 4px
+    );
+    pointer-events: none;
+  }
+
+  .pda-loading .header {
+    text-align: center;
+    color: #00ddff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
+  }
+
+  .pda-loading .spinner {
+    width: 50px;
+    height: 50px;
     margin: 0 auto 20px;
-    border: 2px solid #00ddff;
-    border-top: 2px solid transparent;
+    border: 3px solid rgba(0, 221, 255, 0.2);
+    border-top: 3px solid #00ddff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    box-shadow: 0 0 15px rgba(0, 221, 255, 0.4);
+  }
+
+  .pda-loading .status {
+    text-align: center;
+    color: #00ddff;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-shadow: 0 0 8px rgba(0, 221, 255, 0.6);
+    min-height: 20px;
+  }
+
+  .pda-loading .progress-container {
+    background: rgba(0, 221, 255, 0.1);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .pda-loading .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00ddff, #00eaff);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
+  }
+
+  .pda-loading .progress-text {
+    text-align: right;
+    color: rgba(0, 221, 255, 0.6);
+    font-size: 11px;
+  }
+
+  .pda-loading .footer {
+    text-align: center;
+    color: rgba(0, 221, 255, 0.4);
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-top: 20px;
   }
 
   @keyframes spin {
@@ -132,6 +218,44 @@ export default function GlobeLanding() {
   const containerRef = useRef(null);
   const navigate = useNavigate();
   const initialized = useRef(false);
+
+  // Detect mobile/tablet for conditional menu rendering
+  const [isMobileDevice, setIsMobileDevice] = useState(() => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return isMobile;
+  });
+
+  // Loading state for phased progress
+  const [loadingState, setLoadingState] = useState({
+    isLoading: true,
+    phase: 'init',
+    progress: 0,
+    text: 'Initializing Systems...'
+  });
+
+  const LOADING_PHASES = {
+    init: { progress: 0, text: 'Initializing Systems...' },
+    modules: { progress: 15, text: 'Loading Modules...' },
+    scene: { progress: 30, text: 'Constructing Environment...' },
+    globe: { progress: 45, text: 'Generating Globe Mesh...' },
+    labels: { progress: 60, text: 'Loading Interface...' },
+    font: { progress: 75, text: 'Downloading Typography...' },
+    particles: { progress: 85, text: 'Spawning Particles...' },
+    bloom: { progress: 95, text: 'Applying Effects...' },
+    ready: { progress: 100, text: 'System Online' }
+  };
+
+  const updateLoadingPhase = (phase) => {
+    const phaseData = LOADING_PHASES[phase];
+    if (phaseData) {
+      setLoadingState(prev => ({
+        ...prev,
+        phase,
+        progress: phaseData.progress,
+        text: phaseData.text
+      }));
+    }
+  };
 
   useEffect(() => {
     if (initialized.current) return;
@@ -161,6 +285,7 @@ export default function GlobeLanding() {
     const loadGlobe = async () => {
       try {
         // Dynamic imports for Three.js and its modules
+        updateLoadingPhase('modules');
         const THREE = await import('three');
         const { FontLoader } = await import('three/examples/jsm/loaders/FontLoader');
         const { TextGeometry } = await import('three/examples/jsm/geometries/TextGeometry');
@@ -170,6 +295,7 @@ export default function GlobeLanding() {
         const { UnrealBloomPass } = await import('three/examples/jsm/postprocessing/UnrealBloomPass');
         const { ShaderPass } = await import('three/examples/jsm/postprocessing/ShaderPass');
 
+        updateLoadingPhase('scene');
         const container = containerRef.current;
         if (!container) return;
 
@@ -179,10 +305,84 @@ export default function GlobeLanding() {
         // Device detection
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         const isTablet = isMobile && Math.min(window.innerWidth, window.innerHeight) > 480;
-        const isLowEndDevice = isMobile || (window.devicePixelRatio < 2 && window.innerWidth < 768);
-        const segmentCount = isLowEndDevice ? 32 : 64;
-        const useAntialias = !isLowEndDevice;
-        const particleCount = isLowEndDevice ? 100 : 300;
+
+        // Enhanced device capability detection
+        const detectQualityTier = () => {
+          const deviceMemory = navigator.deviceMemory || 4;
+          const hardwareConcurrency = navigator.hardwareConcurrency || 4;
+          const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+          const connectionSpeed = connection?.effectiveType || '4g';
+
+          // GPU capability via WebGL
+          let gpuTier = 'high';
+          try {
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (gl) {
+              const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+              const renderer = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
+              const lowEndGPUs = ['Mali-4', 'Adreno 3', 'PowerVR SGX', 'Intel HD Graphics 4'];
+              const midEndGPUs = ['Mali-T', 'Adreno 4', 'Adreno 5', 'Intel HD Graphics 5', 'Intel UHD'];
+              if (lowEndGPUs.some(gpu => renderer.includes(gpu))) {
+                gpuTier = 'low';
+              } else if (midEndGPUs.some(gpu => renderer.includes(gpu))) {
+                gpuTier = 'medium';
+              }
+            }
+          } catch (e) {
+            gpuTier = 'medium';
+          }
+
+          // Scoring system
+          let score = 100;
+          if (isMobile) score -= 20;
+          if (deviceMemory < 4) score -= 30;
+          if (hardwareConcurrency < 4) score -= 20;
+          if (connectionSpeed === 'slow-2g' || connectionSpeed === '2g') score -= 15;
+          if (connectionSpeed === '3g') score -= 5;
+          if (gpuTier === 'low') score -= 25;
+          if (gpuTier === 'medium') score -= 10;
+          if (window.devicePixelRatio < 1.5) score -= 10;
+
+          if (score >= 70) return 'high';
+          if (score >= 40) return 'medium';
+          return 'low';
+        };
+
+        const qualityTier = detectQualityTier();
+
+        // Quality settings by tier (bloom always enabled - mission critical)
+        const QUALITY_SETTINGS = {
+          high: {
+            segmentCount: 64,
+            particleCount: 300,
+            useAntialias: true,
+            pixelRatio: Math.min(window.devicePixelRatio, 2),
+            bloomStrength: 0.7,
+            bloomRadius: 0.2
+          },
+          medium: {
+            segmentCount: 48,
+            particleCount: 200,
+            useAntialias: true,
+            pixelRatio: Math.min(window.devicePixelRatio, 1.5),
+            bloomStrength: 0.5,
+            bloomRadius: 0.15
+          },
+          low: {
+            segmentCount: 32,
+            particleCount: 100,
+            useAntialias: false,
+            pixelRatio: 1,
+            bloomStrength: 0.3,
+            bloomRadius: 0.1
+          }
+        };
+
+        const quality = QUALITY_SETTINGS[qualityTier];
+        const segmentCount = quality.segmentCount;
+        const useAntialias = quality.useAntialias;
+        const particleCount = quality.particleCount;
 
         // Scene
         const scene = new THREE.Scene();
@@ -249,7 +449,7 @@ export default function GlobeLanding() {
         // WebGL Renderer
         const renderer = new THREE.WebGLRenderer({ antialias: useAntialias });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        if (!isLowEndDevice) renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(quality.pixelRatio);
         container.appendChild(renderer.domElement);
 
         // CSS2D Renderer
@@ -276,6 +476,7 @@ export default function GlobeLanding() {
         enableBloom(floorGrid, 0.7);
 
         // Globe Group
+        updateLoadingPhase('globe');
         const globeGroup = new THREE.Group();
         scene.add(globeGroup);
 
@@ -342,77 +543,84 @@ export default function GlobeLanding() {
         const equatorTextGroup = new THREE.Group();
         scene.add(equatorTextGroup);
 
-        // Navigation links
-        const navContainer = new THREE.Object3D();
-        navContainer.position.set(0, 2.5, 0);
-        scene.add(navContainer);
+        // Only show floating CSS2D labels on desktop (mobile/tablet uses hamburger menu)
+        updateLoadingPhase('labels');
+        const showFloatingLabels = !isMobile && !isTablet;
 
-        Object.entries(config.navigationLinks).forEach(([text, url], index) => {
-          const anchor = new THREE.Object3D();
-          anchor.position.x = (index - 1) * 3.0;
-          navContainer.add(anchor);
+        if (showFloatingLabels) {
+          // Navigation links
+          const navContainer = new THREE.Object3D();
+          navContainer.position.set(0, 2.5, 0);
+          scene.add(navContainer);
 
-          const div = document.createElement('div');
-          div.className = 'css2d-label';
-          div.textContent = text;
-          div.style.cssText = 'font-family:"IBM Plex Mono","Courier New",monospace;color:#00ddff;font-size:18px;padding:4px 20px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid rgba(0,221,255,0.3);pointer-events:auto;cursor:pointer;text-shadow:0 0 10px rgba(0,221,255,0.9);transition:all 0.2s ease;';
-          div.style.setProperty('font-weight', '700', 'important');
+          Object.entries(config.navigationLinks).forEach(([text, url], index) => {
+            const anchor = new THREE.Object3D();
+            anchor.position.x = (index - 1) * 3.0;
+            navContainer.add(anchor);
 
-          div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.9)'; div.style.transform = 'scale(1.1)'; };
-          div.onmouseleave = () => { div.style.background = 'rgba(0,10,30,0.7)'; div.style.transform = 'scale(1)'; };
-          div.onclick = () => handleNavigation(url);
+            const div = document.createElement('div');
+            div.className = 'css2d-label';
+            div.textContent = text;
+            div.style.cssText = 'font-family:"IBM Plex Mono","Courier New",monospace;color:#00ddff;font-size:18px;padding:4px 20px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid rgba(0,221,255,0.3);pointer-events:auto;cursor:pointer;text-shadow:0 0 10px rgba(0,221,255,0.9);transition:all 0.2s ease;';
+            div.style.setProperty('font-weight', '700', 'important');
 
-          anchor.add(new CSS2DObject(div));
-        });
-
-        // Service label containers
-        const leftContainer = new THREE.Object3D();
-        leftContainer.position.set(isMobile ? -3 : -5.5, isMobile ? -1.5 : 0, 0);
-        scene.add(leftContainer);
-
-        const rightContainer = new THREE.Object3D();
-        rightContainer.position.set(isMobile ? 3 : 5.5, isMobile ? -1.5 : 0, 0);
-        scene.add(rightContainer);
-
-        // Service labels
-        const services = [
-          { text: "Game Development", side: "left" },
-          { text: "Quantitative Finance", side: "left" },
-          { text: "Tutoring", side: "left" },
-          { text: "Make-Up/Skincare E-Commerce", side: "right" },
-          { text: "Stickers E-Commerce", side: "right" }
-        ];
-
-        const leftItems = services.filter(s => s.side === 'left');
-        const rightItems = services.filter(s => s.side === 'right');
-
-        const createLabel = (item, idx, parent) => {
-          const anchor = new THREE.Object3D();
-          anchor.position.y = 1.2 * (1 - idx);
-          parent.add(anchor);
-
-          const url = config.serviceLinks[item.text] || '#';
-          const disabled = !url || url === '#';
-
-          const div = document.createElement('div');
-          div.className = 'css2d-label';
-          div.textContent = item.text;
-          div.style.cssText = `font-family:"IBM Plex Mono","Courier New",monospace;color:${disabled ? '#446688' : '#00ddff'};font-size:16px;padding:4px 12px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid ${disabled ? 'rgba(68,102,136,0.3)' : 'rgba(0,221,255,0.3)'};pointer-events:auto;cursor:${disabled ? 'default' : 'pointer'};text-shadow:0 0 8px ${disabled ? 'rgba(68,102,136,0.5)' : 'rgba(0,221,255,0.7)'};transition:all 0.2s ease;`;
-          div.style.setProperty('font-weight', '700', 'important');
-
-          if (!disabled) {
-            div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.85)'; div.style.transform = 'scale(1.1)'; };
+            div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.9)'; div.style.transform = 'scale(1.1)'; };
             div.onmouseleave = () => { div.style.background = 'rgba(0,10,30,0.7)'; div.style.transform = 'scale(1)'; };
             div.onclick = () => handleNavigation(url);
-          }
 
-          anchor.add(new CSS2DObject(div));
-        };
+            anchor.add(new CSS2DObject(div));
+          });
 
-        leftItems.forEach((item, i) => createLabel(item, i, leftContainer));
-        rightItems.forEach((item, i) => createLabel(item, i, rightContainer));
+          // Service label containers
+          const leftContainer = new THREE.Object3D();
+          leftContainer.position.set(-5.5, 0, 0);
+          scene.add(leftContainer);
+
+          const rightContainer = new THREE.Object3D();
+          rightContainer.position.set(5.5, 0, 0);
+          scene.add(rightContainer);
+
+          // Service labels
+          const services = [
+            { text: "Game Development", side: "left" },
+            { text: "Quantitative Finance", side: "left" },
+            { text: "Tutoring", side: "left" },
+            { text: "Make-Up/Skincare E-Commerce", side: "right" },
+            { text: "Stickers E-Commerce", side: "right" }
+          ];
+
+          const leftItems = services.filter(s => s.side === 'left');
+          const rightItems = services.filter(s => s.side === 'right');
+
+          const createLabel = (item, idx, parent) => {
+            const anchor = new THREE.Object3D();
+            anchor.position.y = 1.2 * (1 - idx);
+            parent.add(anchor);
+
+            const url = config.serviceLinks[item.text] || '#';
+            const disabled = !url || url === '#';
+
+            const div = document.createElement('div');
+            div.className = 'css2d-label';
+            div.textContent = item.text;
+            div.style.cssText = `font-family:"IBM Plex Mono","Courier New",monospace;color:${disabled ? '#446688' : '#00ddff'};font-size:16px;padding:4px 12px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid ${disabled ? 'rgba(68,102,136,0.3)' : 'rgba(0,221,255,0.3)'};pointer-events:auto;cursor:${disabled ? 'default' : 'pointer'};text-shadow:0 0 8px ${disabled ? 'rgba(68,102,136,0.5)' : 'rgba(0,221,255,0.7)'};transition:all 0.2s ease;`;
+            div.style.setProperty('font-weight', '700', 'important');
+
+            if (!disabled) {
+              div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.85)'; div.style.transform = 'scale(1.1)'; };
+              div.onmouseleave = () => { div.style.background = 'rgba(0,10,30,0.7)'; div.style.transform = 'scale(1)'; };
+              div.onclick = () => handleNavigation(url);
+            }
+
+            anchor.add(new CSS2DObject(div));
+          };
+
+          leftItems.forEach((item, i) => createLabel(item, i, leftContainer));
+          rightItems.forEach((item, i) => createLabel(item, i, rightContainer));
+        }
 
         // Load font and create 3D text
+        updateLoadingPhase('font');
         const fontLoader = new FontLoader();
         fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
           const text = "[ SYNTHCITY DIGILABS[]SYNTHCITY DIGILABS ]";
@@ -464,6 +672,7 @@ export default function GlobeLanding() {
         });
 
         // Particles
+        updateLoadingPhase('particles');
         const particleGeom = new THREE.BufferGeometry();
         const count = Math.floor(particleCount * (isMobile ? 1.5 : 1));
         const positions = new Float32Array(count * 3);
@@ -492,13 +701,14 @@ export default function GlobeLanding() {
         enableBloom(particles, 1.4);
 
         // Selective bloom setup with two composers
+        updateLoadingPhase('bloom');
         renderer.toneMapping = THREE.ReinhardToneMapping;
         renderer.toneMappingExposure = 1.0;
 
-        // Bloom parameters - final tuned values
+        // Bloom parameters - use quality tier settings (bloom always enabled)
         const bloomParams = {
-          strength: 0.7,
-          radius: 0.2,
+          strength: quality.bloomStrength,
+          radius: quality.bloomRadius,
           threshold: 0.2
         };
 
@@ -560,42 +770,146 @@ export default function GlobeLanding() {
         // Set bloom texture AFTER creating ShaderPass (avoids clone error)
         blendPass.uniforms.bloomTexture.value = bloomComposer.renderTarget2.texture;
 
-        // Interaction
+        // Interaction - only enable drag-to-rotate on desktop
         let isDragging = false, prevX = 0, prevY = 0, rotX = 0, rotY = 0, autoRotate = true;
+        const enableDragRotation = !isMobile && !isTablet;
 
-        container.onmousedown = (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; autoRotate = false; };
-        document.onmousemove = (e) => { if (isDragging) { rotX = (e.clientY - prevY) * 0.0005; rotY = (e.clientX - prevX) * 0.0005; prevX = e.clientX; prevY = e.clientY; }};
-        document.onmouseup = () => { if (isDragging) { isDragging = false; setTimeout(() => autoRotate = true, 3000); }};
+        if (enableDragRotation) {
+          container.onmousedown = (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; autoRotate = false; };
+          document.onmousemove = (e) => { if (isDragging) { rotX = (e.clientY - prevY) * 0.0005; rotY = (e.clientX - prevX) * 0.0005; prevX = e.clientX; prevY = e.clientY; }};
+          document.onmouseup = () => { if (isDragging) { isDragging = false; setTimeout(() => autoRotate = true, 3000); }};
+        } else {
+          // Remove grab cursor on touch devices
+          container.style.cursor = 'default';
+        }
 
-        // Touch events
-        container.ontouchstart = (e) => {
-          if (e.touches.length === 1) {
-            isDragging = true;
-            prevX = e.touches[0].clientX;
-            prevY = e.touches[0].clientY;
-            autoRotate = false;
-          }
-        };
-        container.ontouchmove = (e) => {
-          if (isDragging && e.touches.length === 1) {
-            rotX = (e.touches[0].clientY - prevY) * 0.0005;
-            rotY = (e.touches[0].clientX - prevX) * 0.0005;
-            prevX = e.touches[0].clientX;
-            prevY = e.touches[0].clientY;
-          }
-        };
-        container.ontouchend = () => { if (isDragging) { isDragging = false; setTimeout(() => autoRotate = true, 3000); }};
+        // Touch gestures for mobile/tablet (pinch-to-zoom, double-tap reset)
+        if (isMobile || isTablet) {
+          let initialPinchDistance = null;
+          let currentZoom = camera.position.z;
+          const MIN_ZOOM = 4;
+          const MAX_ZOOM = 20;
+          let lastTap = 0;
+          const DOUBLE_TAP_DELAY = 300;
 
-        // Resize
+          const getDistance = (touch1, touch2) => {
+            const dx = touch1.clientX - touch2.clientX;
+            const dy = touch1.clientY - touch2.clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+          };
+
+          const resetCameraView = () => {
+            const targetZ = isMobile && !isTablet ? 15 : isTablet ? 12 : 6;
+            const targetY = isMobile && !isTablet ? 2.0 : isTablet ? 1.0 : 0.5;
+            const startZ = camera.position.z;
+            const startY = camera.position.y;
+            const duration = 500;
+            const startTime = performance.now();
+
+            const animateReset = (currentTime) => {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+
+              camera.position.z = startZ + (targetZ - startZ) * eased;
+              camera.position.y = startY + (targetY - startY) * eased;
+
+              if (progress < 1) {
+                requestAnimationFrame(animateReset);
+              } else {
+                currentZoom = camera.position.z;
+              }
+            };
+
+            requestAnimationFrame(animateReset);
+
+            // Haptic feedback
+            if (navigator.vibrate) {
+              navigator.vibrate([50, 50, 50]);
+            }
+          };
+
+          // Pinch-to-zoom
+          container.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+              initialPinchDistance = getDistance(e.touches[0], e.touches[1]);
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          container.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2 && initialPinchDistance !== null) {
+              const currentDistance = getDistance(e.touches[0], e.touches[1]);
+              const scale = initialPinchDistance / currentDistance;
+
+              let newZoom = currentZoom * scale;
+              newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, newZoom));
+
+              camera.position.z = newZoom;
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          container.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) {
+              initialPinchDistance = null;
+              currentZoom = camera.position.z;
+            }
+
+            // Double-tap detection
+            if (e.touches.length === 0 && e.changedTouches.length === 1) {
+              const currentTime = new Date().getTime();
+              const tapLength = currentTime - lastTap;
+
+              if (tapLength < DOUBLE_TAP_DELAY && tapLength > 0) {
+                resetCameraView();
+                e.preventDefault();
+              }
+              lastTap = currentTime;
+            }
+          });
+        }
+
+        // Resize and orientation handling
+        let lastWidth = window.innerWidth;
+
         const onResize = () => {
-          camera.aspect = window.innerWidth / window.innerHeight;
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          const isLandscape = width > height;
+          const isTabletLandscape = isTablet && isLandscape;
+          const significantChange = Math.abs(width - lastWidth) > 100;
+
+          camera.aspect = width / height;
           camera.updateProjectionMatrix();
-          renderer.setSize(window.innerWidth, window.innerHeight);
-          labelRenderer.setSize(window.innerWidth, window.innerHeight);
-          bloomComposer.setSize(window.innerWidth, window.innerHeight);
-          finalComposer.setSize(window.innerWidth, window.innerHeight);
+          renderer.setSize(width, height);
+          labelRenderer.setSize(width, height);
+          bloomComposer.setSize(width, height);
+          finalComposer.setSize(width, height);
+
+          // Tablet landscape: shift globe slightly and adjust camera
+          if (isTabletLandscape) {
+            globeGroup.position.x = -1;
+            camera.position.set(0, 0.8, 10);
+          } else if (isTablet) {
+            globeGroup.position.x = 0;
+            camera.position.set(0, 1.0, 12);
+          }
+
+          // Detect iPad Split View or significant width change
+          if (significantChange && isTablet) {
+            const isSplitView = width < 700;
+            // Menu handles navigation in split view - globe stays centered
+            if (isSplitView) {
+              globeGroup.position.x = 0;
+            }
+          }
+
+          lastWidth = width;
         };
+
         window.addEventListener('resize', onResize);
+        window.addEventListener('orientationchange', () => setTimeout(onResize, 100));
 
         // Animation
         let time = 0;
@@ -640,14 +954,19 @@ export default function GlobeLanding() {
 
         animate();
 
-        // Hide loading
-        const loading = document.getElementById('loading-indicator');
-        if (loading) loading.style.display = 'none';
+        // Show "ready" briefly then fade out loading overlay
+        updateLoadingPhase('ready');
+        setTimeout(() => {
+          setLoadingState(prev => ({ ...prev, isLoading: false }));
+        }, 500);
 
       } catch (err) {
         console.error('Globe init error:', err);
-        const loading = document.getElementById('loading-indicator');
-        if (loading) loading.textContent = 'Error: ' + err.message;
+        setLoadingState(prev => ({
+          ...prev,
+          text: 'Error: ' + err.message,
+          progress: 0
+        }));
       }
     };
 
@@ -663,9 +982,24 @@ export default function GlobeLanding() {
   return (
     <div className="globe-page">
       <div id="background-cover" />
-      <div id="loading-indicator">Loading 3D Globe...</div>
-      <div ref={containerRef} id="globe-container" />
 
+      {/* PDA-Styled Loading Overlay */}
+      <div className={`loading-overlay ${!loadingState.isLoading ? 'fade-out' : ''}`}>
+        <div className="pda-loading">
+          <div className="scanlines" />
+          <div className="header">[ SYNTHCITY DIGILABS ]</div>
+          <div className="spinner" />
+          <div className="status">{loadingState.text}</div>
+          <div className="progress-container">
+            <div className="progress-bar" style={{ width: `${loadingState.progress}%` }} />
+          </div>
+          <div className="progress-text">{loadingState.progress}%</div>
+          <div className="footer">// INITIALIZING //</div>
+        </div>
+      </div>
+
+      <div ref={containerRef} id="globe-container" />
+      {isMobileDevice && <GlobeMobileMenu />}
     </div>
   );
 }

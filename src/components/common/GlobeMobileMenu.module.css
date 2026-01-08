@@ -1,0 +1,275 @@
+/* Floating Hamburger Button */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: rgba(0, 20, 40, 0.8);
+  border: 1px solid rgba(0, 221, 255, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 221, 255, 0.3);
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background: rgba(0, 30, 60, 0.9);
+  border-color: rgba(0, 221, 255, 0.8);
+  box-shadow: 0 0 25px rgba(0, 221, 255, 0.5);
+  outline: none;
+}
+
+.hamburger.pulse {
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 221, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 221, 255, 0.7), 0 0 50px rgba(0, 221, 255, 0.3);
+  }
+}
+
+/* Hamburger Lines */
+.line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #00ddff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+}
+
+/* Transform to X when open */
+.hamburger.open .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* PDA Panel */
+.pdaPanel {
+  position: relative;
+  width: 280px;
+  max-width: 85vw;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 20, 40, 0.97) 0%, rgba(0, 10, 30, 0.99) 100%);
+  border-left: 2px solid rgba(0, 221, 255, 0.5);
+  box-shadow: -5px 0 30px rgba(0, 221, 255, 0.2), inset 5px 0 50px rgba(0, 221, 255, 0.03);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 80px 20px 30px;
+  animation: slideIn 0.3s ease;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scanlines overlay */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 221, 255, 0.02) 2px,
+    rgba(0, 221, 255, 0.02) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Headers */
+.pdaHeader,
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 221, 255, 0.2);
+}
+
+.sectionHeader {
+  margin-top: 24px;
+}
+
+.bracket {
+  color: #00ddff;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+}
+
+.headerText {
+  color: #00ddff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
+}
+
+/* Menu Items */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(0, 10, 30, 0.5);
+  border: 1px solid rgba(0, 221, 255, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.menuItem:hover:not(.disabled),
+.menuItem:focus:not(.disabled) {
+  background: rgba(0, 30, 60, 0.8);
+  border-color: rgba(0, 221, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 221, 255, 0.3);
+  transform: translateX(4px);
+  outline: none;
+}
+
+.menuItem:active:not(.disabled) {
+  transform: translateX(4px) scale(0.98);
+  box-shadow: 0 0 20px rgba(0, 221, 255, 0.5);
+}
+
+/* Long-press active state for tablet hover simulation */
+.menuItem.longPressActive {
+  background: rgba(0, 40, 80, 0.9);
+  border-color: rgba(0, 221, 255, 0.7);
+  box-shadow: 0 0 25px rgba(0, 221, 255, 0.5), inset 0 0 15px rgba(0, 221, 255, 0.1);
+  transform: translateX(6px) scale(1.02);
+}
+
+.menuItem.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.itemPrefix {
+  color: #00ddff;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(0, 221, 255, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.menuItem:hover:not(.disabled) .itemPrefix {
+  transform: translateX(2px);
+}
+
+.itemText {
+  color: #00ddff;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(0, 221, 255, 0.5);
+}
+
+.menuItem.disabled .itemText {
+  color: #446688;
+  text-shadow: none;
+}
+
+.statusTag {
+  margin-left: auto;
+  font-size: 9px;
+  color: #446688;
+  background: rgba(68, 102, 136, 0.2);
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.pdaFooter {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 221, 255, 0.1);
+  text-align: center;
+}
+
+.footerText {
+  color: rgba(0, 221, 255, 0.4);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-height: 600px) {
+  .pdaPanel {
+    padding-top: 70px;
+  }
+
+  .menuItem {
+    padding: 10px 12px;
+  }
+
+  .sectionHeader {
+    margin-top: 16px;
+  }
+}
