@@ -1,55 +1,105 @@
-/* Floating Hamburger Button */
+/* Holographic Hamburger Button - integrated into scene */
 .hamburger {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  background: rgba(0, 20, 40, 0.8);
-  border: 1px solid rgba(0, 221, 255, 0.5);
-  border-radius: 8px;
+  top: 24px;
+  right: 24px;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(0, 221, 255, 0.3);
 }
 
-.hamburger:hover,
+/* Holographic frame decoration */
+.hamburger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(0, 221, 255, 0.25);
+  clip-path: polygon(
+    0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px)
+  );
+  transition: all 0.3s ease;
+}
+
+/* Corner accents */
+.hamburger::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background:
+    linear-gradient(135deg, rgba(0, 221, 255, 0.4) 0%, transparent 50%) top left,
+    linear-gradient(-135deg, rgba(0, 221, 255, 0.4) 0%, transparent 50%) top right,
+    linear-gradient(45deg, rgba(0, 221, 255, 0.4) 0%, transparent 50%) bottom left,
+    linear-gradient(-45deg, rgba(0, 221, 255, 0.4) 0%, transparent 50%) bottom right;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover::before,
+.hamburger:focus::before {
+  border-color: rgba(0, 221, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 221, 255, 0.3), inset 0 0 15px rgba(0, 221, 255, 0.1);
+}
+
+.hamburger:hover::after,
+.hamburger:focus::after {
+  background:
+    linear-gradient(135deg, rgba(0, 221, 255, 0.8) 0%, transparent 50%) top left,
+    linear-gradient(-135deg, rgba(0, 221, 255, 0.8) 0%, transparent 50%) top right,
+    linear-gradient(45deg, rgba(0, 221, 255, 0.8) 0%, transparent 50%) bottom left,
+    linear-gradient(-45deg, rgba(0, 221, 255, 0.8) 0%, transparent 50%) bottom right;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+}
+
 .hamburger:focus {
-  background: rgba(0, 30, 60, 0.9);
-  border-color: rgba(0, 221, 255, 0.8);
-  box-shadow: 0 0 25px rgba(0, 221, 255, 0.5);
   outline: none;
 }
 
-.hamburger.pulse {
-  animation: pulseHint 2s ease-in-out infinite;
+.hamburger.pulse::before {
+  animation: pulseFrame 2s ease-in-out infinite;
 }
 
-@keyframes pulseHint {
+@keyframes pulseFrame {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 221, 255, 0.3);
+    border-color: rgba(0, 221, 255, 0.25);
+    box-shadow: none;
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 221, 255, 0.7), 0 0 50px rgba(0, 221, 255, 0.3);
+    border-color: rgba(0, 221, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 221, 255, 0.4), inset 0 0 10px rgba(0, 221, 255, 0.1);
   }
 }
 
-/* Hamburger Lines */
+/* Hamburger Lines - holographic style */
 .line {
   display: block;
-  width: 22px;
-  height: 2px;
-  background: #00ddff;
-  border-radius: 2px;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #00ddff 20%, #00ddff 80%, transparent 100%);
+  border-radius: 0;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+  box-shadow: 0 0 6px rgba(0, 221, 255, 0.8), 0 0 12px rgba(0, 221, 255, 0.4);
+  position: relative;
 }
 
 /* Transform to X when open */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './GlobeMobileMenu.module.css';
 
@@ -20,11 +20,14 @@ const MENU_CONFIG = {
   ]
 };
 
-export default function GlobeMobileMenu() {
+export default function GlobeMobileMenu({ onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(true);
   const [activeItem, setActiveItem] = useState(null);
   const navigate = useNavigate();
+
+  // Store long-press timers in a ref to avoid mutating config objects
+  const longPressTimers = useRef({});
 
   // Hide hint after first interaction or timeout
   useEffect(() => {
@@ -39,15 +42,35 @@ export default function GlobeMobileMenu() {
     setTimeout(() => setActiveItem(null), 2000);
   }, []);
 
+  // Start long-press timer
+  const startLongPress = useCallback((itemId) => {
+    longPressTimers.current[itemId] = setTimeout(() => handleLongPress(itemId), 500);
+  }, [handleLongPress]);
+
+  // Cancel long-press timer
+  const cancelLongPress = useCallback((itemId) => {
+    if (longPressTimers.current[itemId]) {
+      clearTimeout(longPressTimers.current[itemId]);
+      delete longPressTimers.current[itemId];
+    }
+  }, []);
+
   const handleNavigation = (url, disabled) => {
     if (disabled || !url || url === '#') return;
 
     setIsOpen(false);
-    document.body.classList.add('page-exit');
-    setTimeout(() => {
-      document.body.classList.remove('page-exit');
-      navigate(url);
-    }, 500);
+
+    // Use the provided navigation handler if available (for transition overlay)
+    if (onNavigate) {
+      onNavigate(url);
+    } else {
+      // Fallback to direct navigation
+      document.body.classList.add('page-exit');
+      setTimeout(() => {
+        document.body.classList.remove('page-exit');
+        navigate(url);
+      }, 500);
+    }
   };
 
   const handleToggle = () => {
@@ -102,12 +125,9 @@ export default function GlobeMobileMenu() {
                     key={idx}
                     className={`${styles.menuItem} ${activeItem === itemId ? styles.longPressActive : ''}`}
                     onClick={() => handleNavigation(item.url, false)}
-                    onTouchStart={() => {
-                      const timer = setTimeout(() => handleLongPress(itemId), 500);
-                      item._timer = timer;
-                    }}
-                    onTouchEnd={() => clearTimeout(item._timer)}
-                    onTouchCancel={() => clearTimeout(item._timer)}
+                    onTouchStart={() => startLongPress(itemId)}
+                    onTouchEnd={() => cancelLongPress(itemId)}
+                    onTouchCancel={() => cancelLongPress(itemId)}
                   >
                     <span className={styles.itemPrefix}>&gt;</span>
                     <span className={styles.itemText}>{item.text}</span>
@@ -131,14 +151,9 @@ export default function GlobeMobileMenu() {
                     className={`${styles.menuItem} ${item.disabled ? styles.disabled : ''} ${activeItem === itemId ? styles.longPressActive : ''}`}
                     onClick={() => handleNavigation(item.url, item.disabled)}
                     disabled={item.disabled}
-                    onTouchStart={() => {
-                      if (!item.disabled) {
-                        const timer = setTimeout(() => handleLongPress(itemId), 500);
-                        item._timer = timer;
-                      }
-                    }}
-                    onTouchEnd={() => clearTimeout(item._timer)}
-                    onTouchCancel={() => clearTimeout(item._timer)}
+                    onTouchStart={() => !item.disabled && startLongPress(itemId)}
+                    onTouchEnd={() => cancelLongPress(itemId)}
+                    onTouchCancel={() => cancelLongPress(itemId)}
                   >
                     <span className={styles.itemPrefix}>&gt;</span>
                     <span className={styles.itemText}>{item.text}</span>
@@ -162,12 +177,9 @@ export default function GlobeMobileMenu() {
                     key={idx}
                     className={`${styles.menuItem} ${activeItem === itemId ? styles.longPressActive : ''}`}
                     onClick={() => handleNavigation(item.url, false)}
-                    onTouchStart={() => {
-                      const timer = setTimeout(() => handleLongPress(itemId), 500);
-                      item._timer = timer;
-                    }}
-                    onTouchEnd={() => clearTimeout(item._timer)}
-                    onTouchCancel={() => clearTimeout(item._timer)}
+                    onTouchStart={() => startLongPress(itemId)}
+                    onTouchEnd={() => cancelLongPress(itemId)}
+                    onTouchCancel={() => cancelLongPress(itemId)}
                   >
                     <span className={styles.itemPrefix}>&gt;</span>
                     <span className={styles.itemText}>{item.text}</span>
@@ -178,7 +190,7 @@ export default function GlobeMobileMenu() {
 
             {/* Footer */}
             <div className={styles.pdaFooter}>
-              <span className={styles.footerText}>// SYNTHCITY DIGILABS //</span>
+              <span className={styles.footerText}>{'// SYNTHCITY DIGILABS //'}</span>
             </div>
           </div>
         </div>

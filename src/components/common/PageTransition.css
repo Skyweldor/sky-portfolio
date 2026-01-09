@@ -1,0 +1,233 @@
+/* ==========================================================
+   Page Transition Overlay - Neon Bloom Aesthetic
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #020924 0%, #010612 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: visible;
+  overflow: hidden;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* Scanlines */
+.page-transition-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 221, 255, 0.015) 2px,
+    rgba(0, 221, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Neon vignette */
+.page-transition-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(0, 221, 255, 0.03) 70%, rgba(0, 221, 255, 0.08) 100%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 221, 255, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.page-transition-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Grid floor */
+.page-transition-grid {
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 40%;
+  background:
+    linear-gradient(90deg, transparent 0%, transparent 49%, rgba(0, 221, 255, 0.1) 49%, rgba(0, 221, 255, 0.1) 51%, transparent 51%, transparent 100%),
+    linear-gradient(0deg, rgba(0, 221, 255, 0.2) 0%, transparent 100%);
+  background-size: 80px 100%, 100% 100%;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center bottom;
+  opacity: 0.6;
+  animation: transitionGridPulse 4s ease-in-out infinite;
+}
+
+@keyframes transitionGridPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* Content container */
+.page-transition-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Header */
+.page-transition-header {
+  text-align: center;
+  color: #00ddff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  text-shadow:
+    0 0 10px rgba(0, 221, 255, 0.8),
+    0 0 20px rgba(0, 221, 255, 0.5),
+    0 0 40px rgba(0, 221, 255, 0.3);
+  animation: transitionHeaderGlow 2s ease-in-out infinite;
+}
+
+@keyframes transitionHeaderGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(0, 221, 255, 0.8),
+      0 0 20px rgba(0, 221, 255, 0.5),
+      0 0 40px rgba(0, 221, 255, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(0, 221, 255, 1),
+      0 0 30px rgba(0, 221, 255, 0.7),
+      0 0 60px rgba(0, 221, 255, 0.4);
+  }
+}
+
+/* Spinner container */
+.page-transition-spinner-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 50px;
+}
+
+/* Main spinner */
+.page-transition-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(0, 221, 255, 0.15);
+  border-top: 2px solid #00ddff;
+  border-radius: 50%;
+  animation: transitionSpin 1s linear infinite;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 20px rgba(0, 221, 255, 0.5),
+    0 0 40px rgba(0, 221, 255, 0.3),
+    inset 0 0 20px rgba(0, 221, 255, 0.1);
+}
+
+/* Outer spinner (reverse) */
+.page-transition-spinner-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(0, 221, 255, 0.1);
+  border-top: 1px solid rgba(0, 221, 255, 0.4);
+  border-radius: 50%;
+  animation: transitionSpinReverse 2s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+/* Glowing core */
+.page-transition-spinner-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #00ddff 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: transitionCorePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes transitionSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes transitionSpinReverse {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes transitionCorePulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Status text */
+.page-transition-status {
+  text-align: center;
+  color: #00ddff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow:
+    0 0 10px rgba(0, 221, 255, 0.7),
+    0 0 20px rgba(0, 221, 255, 0.4);
+  min-height: 24px;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.page-transition-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(0, 221, 255, 0.3);
+  font-size: 10px;
+  letter-spacing: 3px;
+  animation: transitionFooterFlicker 4s ease-in-out infinite;
+}
+
+@keyframes transitionFooterFlicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  52% { opacity: 0.2; }
+  54% { opacity: 0.5; }
+}

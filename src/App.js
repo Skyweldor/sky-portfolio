@@ -5,12 +5,12 @@ import './styles/pages/stickers.css';
 import './styles/pages/blog.css';
 import './styles/modules/cart.css';
 import './styles/modules/aetherbound.css';
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './components/common/Footer';
 import PageTransition from './components/common/PageTransition';
-import EmojiExplosion from './components/features/emoji/EmojiExplosion';
+import { TransitionProvider, useTransition } from './context/TransitionContext';
 import { lazy, Suspense } from 'react';
 
 // Lazy load all pages
@@ -24,41 +24,34 @@ const BeautyCare = lazy(() => import('./pages/BeautyCare'));
 const MiniGames = lazy(() => import('./pages/MiniGames'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 
-// Layout component that conditionally shows footer and handles transitions
+// Global transition overlay that responds to context
+// Only renders when transition is active to avoid any blocking
+function GlobalTransition() {
+  const { transition } = useTransition();
+  // Early return - render nothing when not showing
+  if (!transition.show) return null;
+  return <PageTransition show={true} text={transition.text} />;
+}
+
+// Layout component that conditionally shows footer
 function Layout({ children }) {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
   return (
     <>
-      <PageTransition key={location.pathname}>
-        {children}
-      </PageTransition>
+      {children}
       {!isLandingPage && <Footer />}
     </>
   );
 }
 
 function App() {
-  const [explosions, setExplosions] = useState([]);
-
-  const handleMouseClick = (e) => {
-    const newExplosion = {
-      x: e.clientX + window.scrollX,
-      y: e.clientY + window.scrollY
-    };
-    setExplosions(prev => [...prev, newExplosion]);
-  };
-
-  const handleAnimationEnd = (explosionToRemove) => {
-    setExplosions(prev => prev.filter(exp => exp !== explosionToRemove));
-  };
-
   return (
-    <div onClick={handleMouseClick}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <TransitionProvider>
         <Layout>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<GlobeLanding />} />
               <Route path="/portfolio" element={<Portfolio />} />
@@ -72,16 +65,9 @@ function App() {
             </Routes>
           </Suspense>
         </Layout>
-      </BrowserRouter>
-      {/*If you want emoji explosions, uncomment:
-      {explosions.map((explosion, index) => (
-        <EmojiExplosion
-          key={index}
-          position={explosion}
-          onAnimationEnd={() => handleAnimationEnd(explosion)}
-        />
-      ))}*/}
-    </div>
+        <GlobalTransition />
+      </TransitionProvider>
+    </BrowserRouter>
   );
 }
 

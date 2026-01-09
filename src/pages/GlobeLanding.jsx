@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GlobeMobileMenu from '../components/common/GlobeMobileMenu';
+import { useTransition } from '../context/TransitionContext';
+import './GlobeLanding.css';
 
 /**
  * Globe Landing Page - Using dynamic imports for Three.js modules
@@ -30,58 +32,9 @@ const GLOBE_CONFIG = {
   }
 };
 
-// CSS styles inline (font loaded via <link> element for reliability)
+// Additional runtime styles for dynamically created elements (CSS2D labels)
+// Main styles are in GlobeLanding.css which is imported at the top
 const globeStyles = `
-  .globe-page {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #020924;
-    font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
-  }
-
-  .globe-page * {
-    box-sizing: border-box;
-  }
-
-  #globe-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    animation: floatAnimation 10s ease-in-out infinite;
-  }
-
-  @keyframes floatAnimation {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  #globe-container canvas {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    outline: none;
-    cursor: grab;
-  }
-
-  #background-cover {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #020924;
-    z-index: 1;
-  }
-
   .css2d-label {
     color: #00ddff;
     font-weight: bold;
@@ -89,128 +42,6 @@ const globeStyles = `
     white-space: nowrap;
     transition: all 0.2s ease;
     font-family: "IBM Plex Mono", "Courier New", monospace !important;
-  }
-
-  /* PDA-Styled Loading Overlay */
-  .loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #020924;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: opacity 0.5s ease;
-  }
-
-  .loading-overlay.fade-out {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .pda-loading {
-    max-width: 360px;
-    width: 90%;
-    padding: 28px;
-    background: linear-gradient(135deg, rgba(0, 20, 40, 0.97) 0%, rgba(0, 10, 30, 0.99) 100%);
-    border: 2px solid rgba(0, 221, 255, 0.5);
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 221, 255, 0.3), inset 0 0 50px rgba(0, 221, 255, 0.03);
-    font-family: "IBM Plex Mono", "Courier New", monospace;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .pda-loading .scanlines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 221, 255, 0.02) 2px,
-      rgba(0, 221, 255, 0.02) 4px
-    );
-    pointer-events: none;
-  }
-
-  .pda-loading .header {
-    text-align: center;
-    color: #00ddff;
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
-    text-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
-  }
-
-  .pda-loading .spinner {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 20px;
-    border: 3px solid rgba(0, 221, 255, 0.2);
-    border-top: 3px solid #00ddff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    box-shadow: 0 0 15px rgba(0, 221, 255, 0.4);
-  }
-
-  .pda-loading .status {
-    text-align: center;
-    color: #00ddff;
-    font-size: 13px;
-    margin-bottom: 16px;
-    text-shadow: 0 0 8px rgba(0, 221, 255, 0.6);
-    min-height: 20px;
-  }
-
-  .pda-loading .progress-container {
-    background: rgba(0, 221, 255, 0.1);
-    border-radius: 4px;
-    height: 8px;
-    overflow: hidden;
-    margin-bottom: 8px;
-  }
-
-  .pda-loading .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #00ddff, #00eaff);
-    border-radius: 4px;
-    transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 221, 255, 0.7);
-  }
-
-  .pda-loading .progress-text {
-    text-align: right;
-    color: rgba(0, 221, 255, 0.6);
-    font-size: 11px;
-  }
-
-  .pda-loading .footer {
-    text-align: center;
-    color: rgba(0, 221, 255, 0.4);
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 20px;
-  }
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .page-exit {
-    animation: fadeOut 0.5s ease-in forwards;
-  }
-
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
   }
 `;
 
@@ -220,44 +51,64 @@ export default function GlobeLanding() {
   const initialized = useRef(false);
 
   // Detect mobile/tablet for conditional menu rendering
-  const [isMobileDevice, setIsMobileDevice] = useState(() => {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    return isMobile;
+  const [isMobileDevice] = useState(() => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   });
 
   // Loading state for phased progress
   const [loadingState, setLoadingState] = useState({
     isLoading: true,
+    hidden: false, // Completely remove from DOM after fade
     phase: 'init',
     progress: 0,
     text: 'Initializing Systems...'
   });
 
-  const LOADING_PHASES = {
-    init: { progress: 0, text: 'Initializing Systems...' },
-    modules: { progress: 15, text: 'Loading Modules...' },
-    scene: { progress: 30, text: 'Constructing Environment...' },
-    globe: { progress: 45, text: 'Generating Globe Mesh...' },
-    labels: { progress: 60, text: 'Loading Interface...' },
-    font: { progress: 75, text: 'Downloading Typography...' },
-    particles: { progress: 85, text: 'Spawning Particles...' },
-    bloom: { progress: 95, text: 'Applying Effects...' },
-    ready: { progress: 100, text: 'System Online' }
-  };
+  // Global transition context for navigation
+  const { startTransition } = useTransition();
+  const startTransitionRef = useRef(startTransition);
 
-  const updateLoadingPhase = (phase) => {
-    const phaseData = LOADING_PHASES[phase];
-    if (phaseData) {
-      setLoadingState(prev => ({
-        ...prev,
-        phase,
-        progress: phaseData.progress,
-        text: phaseData.text
-      }));
-    }
-  };
+  // Handle navigation with transition overlay
+  const handleNavigate = useCallback((url) => {
+    if (!url || url === '#') return;
+
+    // Show global transition overlay
+    startTransitionRef.current('Navigating...');
+
+    // Navigate after brief delay for transition to appear
+    setTimeout(() => {
+      navigate(url);
+    }, 600);
+  }, [navigate]);
+
+  // Keep ref updated for useEffect to access
+  startTransitionRef.current = startTransition;
 
   useEffect(() => {
+    // Loading phases defined inside useEffect to avoid dependency warning
+    const LOADING_PHASES = {
+      init: { progress: 0, text: 'Initializing Systems...' },
+      modules: { progress: 15, text: 'Loading Modules...' },
+      scene: { progress: 30, text: 'Constructing Environment...' },
+      globe: { progress: 45, text: 'Generating Globe Mesh...' },
+      labels: { progress: 60, text: 'Loading Interface...' },
+      font: { progress: 75, text: 'Downloading Typography...' },
+      particles: { progress: 85, text: 'Spawning Particles...' },
+      bloom: { progress: 95, text: 'Applying Effects...' },
+      ready: { progress: 100, text: 'System Online' }
+    };
+
+    const updateLoadingPhase = (phase) => {
+      const phaseData = LOADING_PHASES[phase];
+      if (phaseData) {
+        setLoadingState(prev => ({
+          ...prev,
+          phase,
+          progress: phaseData.progress,
+          text: phaseData.text
+        }));
+      }
+    };
     if (initialized.current) return;
     initialized.current = true;
 
@@ -272,14 +123,19 @@ export default function GlobeLanding() {
     styleEl.textContent = globeStyles;
     document.head.appendChild(styleEl);
 
-    // Custom navigation handler that uses React Router
+    // Custom navigation handler that uses React Router with transition overlay
     const handleNavigation = (url) => {
       if (!url || url === '#') return;
-      document.body.classList.add('page-exit');
+
+      // Use the global transition context
+      if (startTransitionRef.current) {
+        startTransitionRef.current('Navigating...');
+      }
+
+      // Navigate after transition appears
       setTimeout(() => {
-        document.body.classList.remove('page-exit');
         navigate(url);
-      }, 500);
+      }, 600);
     };
 
     const loadGlobe = async () => {
@@ -408,15 +264,6 @@ export default function GlobeLanding() {
           }
         };
 
-        // Disable bloom on object (won't glow)
-        const disableBloom = (obj) => {
-          if (!obj) return;
-          obj.layers.disable(BLOOM_LAYER);
-          if (obj.children) {
-            obj.children.forEach(child => disableBloom(child));
-          }
-        };
-
         // Darken non-bloomed objects before bloom pass
         const darkenNonBloomed = (obj) => {
           if (obj.isMesh || obj.isLine || obj.isPoints) {
@@ -457,6 +304,7 @@ export default function GlobeLanding() {
         labelRenderer.setSize(window.innerWidth, window.innerHeight);
         labelRenderer.domElement.style.position = 'absolute';
         labelRenderer.domElement.style.top = '0';
+        labelRenderer.domElement.style.left = '0';
         labelRenderer.domElement.style.pointerEvents = 'none';
         container.appendChild(labelRenderer.domElement);
 
@@ -958,6 +806,10 @@ export default function GlobeLanding() {
         updateLoadingPhase('ready');
         setTimeout(() => {
           setLoadingState(prev => ({ ...prev, isLoading: false }));
+          // After fade animation completes (500ms), hide from DOM entirely
+          setTimeout(() => {
+            setLoadingState(prev => ({ ...prev, hidden: true }));
+          }, 600);
         }, 500);
 
       } catch (err) {
@@ -983,23 +835,38 @@ export default function GlobeLanding() {
     <div className="globe-page">
       <div id="background-cover" />
 
-      {/* PDA-Styled Loading Overlay */}
-      <div className={`loading-overlay ${!loadingState.isLoading ? 'fade-out' : ''}`}>
-        <div className="pda-loading">
-          <div className="scanlines" />
-          <div className="header">[ SYNTHCITY DIGILABS ]</div>
-          <div className="spinner" />
-          <div className="status">{loadingState.text}</div>
-          <div className="progress-container">
-            <div className="progress-bar" style={{ width: `${loadingState.progress}%` }} />
+      {/* Full-Screen Loading Overlay with Neon Bloom */}
+      {!loadingState.hidden && (
+        <div className={`loading-overlay ${!loadingState.isLoading ? 'fade-out' : ''}`}>
+          {/* Perspective grid floor */}
+          <div className="loading-grid" />
+
+          <div className="pda-loading">
+            <div className="header">[ SYNTHCITY DIGILABS ]</div>
+
+            {/* Multi-ring spinner with glowing core */}
+            <div className="spinner-container">
+              <div className="spinner-outer" />
+              <div className="spinner" />
+              <div className="spinner-core" />
+            </div>
+
+            <div className="status">{loadingState.text}</div>
+
+            <div className="progress-wrapper">
+              <div className="progress-container">
+                <div className="progress-bar" style={{ width: `${loadingState.progress}%` }} />
+              </div>
+              <div className="progress-text">{loadingState.progress}%</div>
+            </div>
+
+            <div className="footer">{'// INITIALIZING //'}</div>
           </div>
-          <div className="progress-text">{loadingState.progress}%</div>
-          <div className="footer">// INITIALIZING //</div>
         </div>
-      </div>
+      )}
 
       <div ref={containerRef} id="globe-container" />
-      {isMobileDevice && <GlobeMobileMenu />}
+      {isMobileDevice && <GlobeMobileMenu onNavigate={handleNavigate} />}
     </div>
   );
 }
