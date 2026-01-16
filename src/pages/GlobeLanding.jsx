@@ -10,17 +10,11 @@ import './GlobeLanding.css';
 
 // Updated configuration for our routes
 const GLOBE_CONFIG = {
-  // Top navigation - matching original labels
-  navigationLinks: {
-    'Home': '/',
-    'Skills': '/portfolio',
-    'Projects': '/portfolio'
-  },
   serviceLinks: {
     'Game Development': '/portfolio',
     'Quantitative Finance': '#',
     'Tutoring': '#',
-    'Make-Up/Skincare E-Commerce': '/makeup',
+    'Make-Up/Skincare E-Commerce': '#',
     'Stickers E-Commerce': '/stickers'
   },
   debug: false,
@@ -396,29 +390,6 @@ export default function GlobeLanding() {
         const showFloatingLabels = !isMobile && !isTablet;
 
         if (showFloatingLabels) {
-          // Navigation links
-          const navContainer = new THREE.Object3D();
-          navContainer.position.set(0, 2.5, 0);
-          scene.add(navContainer);
-
-          Object.entries(config.navigationLinks).forEach(([text, url], index) => {
-            const anchor = new THREE.Object3D();
-            anchor.position.x = (index - 1) * 3.0;
-            navContainer.add(anchor);
-
-            const div = document.createElement('div');
-            div.className = 'css2d-label';
-            div.textContent = text;
-            div.style.cssText = 'font-family:"IBM Plex Mono","Courier New",monospace;color:#00ddff;font-size:18px;padding:4px 20px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid rgba(0,221,255,0.3);pointer-events:auto;cursor:pointer;text-shadow:0 0 10px rgba(0,221,255,0.9);transition:all 0.2s ease;';
-            div.style.setProperty('font-weight', '700', 'important');
-
-            div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.9)'; div.style.transform = 'scale(1.1)'; };
-            div.onmouseleave = () => { div.style.background = 'rgba(0,10,30,0.7)'; div.style.transform = 'scale(1)'; };
-            div.onclick = () => handleNavigation(url);
-
-            anchor.add(new CSS2DObject(div));
-          });
-
           // Service label containers
           const leftContainer = new THREE.Object3D();
           leftContainer.position.set(-5.5, 0, 0);

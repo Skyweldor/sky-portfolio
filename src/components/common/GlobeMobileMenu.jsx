@@ -3,19 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import styles from './GlobeMobileMenu.module.css';
 
 const MENU_CONFIG = {
-  navigation: [
-    { text: 'Home', url: '/' },
-    { text: 'Skills', url: '/portfolio' },
-    { text: 'Projects', url: '/portfolio' },
-    { text: 'Downloads', url: '/catalog' }
-  ],
   services: [
     { text: 'Game Development', url: '/portfolio' },
     { text: 'Quantitative Finance', url: '#', disabled: true },
     { text: 'Tutoring', url: '#', disabled: true }
   ],
   ecommerce: [
-    { text: 'Make-Up/Skincare', url: '/makeup' },
+    { text: 'Make-Up/Skincare', url: '#', disabled: true },
     { text: 'Stickers', url: '/stickers' }
   ]
 };
@@ -109,35 +103,8 @@ export default function GlobeMobileMenu({ onNavigate }) {
             {/* Scanline effect */}
             <div className={styles.scanlines} />
 
-            {/* Header */}
-            <div className={styles.pdaHeader}>
-              <span className={styles.bracket}>[</span>
-              <span className={styles.headerText}>NAVIGATION</span>
-              <span className={styles.bracket}>]</span>
-            </div>
-
-            {/* Navigation Section */}
-            <div className={styles.section}>
-              {MENU_CONFIG.navigation.map((item, idx) => {
-                const itemId = `nav-${idx}`;
-                return (
-                  <button
-                    key={idx}
-                    className={`${styles.menuItem} ${activeItem === itemId ? styles.longPressActive : ''}`}
-                    onClick={() => handleNavigation(item.url, false)}
-                    onTouchStart={() => startLongPress(itemId)}
-                    onTouchEnd={() => cancelLongPress(itemId)}
-                    onTouchCancel={() => cancelLongPress(itemId)}
-                  >
-                    <span className={styles.itemPrefix}>&gt;</span>
-                    <span className={styles.itemText}>{item.text}</span>
-                  </button>
-                );
-              })}
-            </div>
-
             {/* Services Section */}
-            <div className={styles.sectionHeader}>
+            <div className={styles.pdaHeader}>
               <span className={styles.bracket}>[</span>
               <span className={styles.headerText}>SERVICES</span>
               <span className={styles.bracket}>]</span>
