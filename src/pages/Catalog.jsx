@@ -2,6 +2,8 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { NavBar } from '../components/common/NavBar';
 import Footer from '../components/common/Footer';
+import DownloadCard from '../components/catalog/DownloadCard';
+import { CATALOG_ITEMS } from '../data/catalogData';
 
 const Catalog = () => {
   return (
@@ -24,19 +26,25 @@ const Catalog = () => {
               0 0 20px var(--color-primary),
               0 0 40px var(--color-primary)
             `,
-            marginBottom: '40px'
+            marginBottom: '12px'
           }}>
             Downloads
           </h1>
           <p style={{
             textAlign: 'center',
             color: 'var(--color-text-dark)',
-            fontSize: '18px',
+            fontSize: '16px',
             maxWidth: '600px',
-            margin: '0 auto'
+            margin: '0 auto 40px auto'
           }}>
-            Coming soon - downloadable games, demos, and resources from SynthCity DigiLabs.
+            Game demos, asset packs, dev tools, and documentation from SynthCity DigiLabs.
           </p>
+
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            {CATALOG_ITEMS.map((item) => (
+              <DownloadCard key={item.id} {...item} />
+            ))}
+          </div>
         </Container>
       </section>
       <Footer />

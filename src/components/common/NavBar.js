@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NavLogo } from './NavLogo';
+import { NavGlobe } from './NavGlobe';
+import { useScrollToSection } from '../../hooks/useScrollToSection';
 import styles from './NavBar.module.css';
 
 export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTraining, globalXP }) => {
@@ -10,6 +12,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
     const [shadowClass, setShadowClass] = useState("");
     const ticking = useRef(false);
     const navbarRef = useRef(null);
+    const scrollToSection = useScrollToSection();
 
     useEffect(() => {
         // Scroll progress bar
@@ -22,7 +25,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
         // Combined scroll handler with RAF throttling
         const updateScroll = () => {
             const currentScrollY = window.scrollY;
-            
+
             // Existing scroll behavior for class
             if (currentScrollY > 50) {
                 setScrolled(true);
@@ -32,28 +35,28 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
 
             // Show logo after scrolling past hero section (~200px when title starts leaving)
             setShowLogo(currentScrollY > 200);
-            
+
             // Dynamic shadow
             setShadowClass(currentScrollY > 0 ? styles.elevated : "");
-            
+
             // Scroll progress
             setProgress();
-            
+
             // Parallax effect for glass texture
             if (navbarRef.current) {
                 navbarRef.current.style.backgroundPositionY = `calc(-${currentScrollY * 0.4}px)`;
             }
-            
+
             ticking.current = false;
         };
-        
+
         const onScroll = () => {
             if (!ticking.current) {
                 window.requestAnimationFrame(updateScroll);
                 ticking.current = true;
             }
         };
-        
+
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
@@ -68,12 +71,12 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
         const move = (e) => {
             dot.style.transform = `translate(${e.clientX - 18}px, ${e.clientY - 18}px)`;
         };
-        
+
         const enter = () => {
             document.body.classList.add('nav-hover');
             dot.classList.add(styles.visible);
         };
-        
+
         const leave = () => {
             document.body.classList.remove('nav-hover');
             dot.classList.remove(styles.visible);
@@ -95,7 +98,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
             dot.remove();
         };
     }, []);
-    
+
     const navbarClasses = [
       scrolled ? styles.navGlass : styles.navTransparent,
       isGameMode ? styles.gameNavbar : "",
@@ -106,25 +109,34 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
 
     return (
         <div className={`${styles.navWrapper} position-fixed w-100`}>
-            <Navbar 
+            <Navbar
                 ref={navbarRef}
-                expand="xl" 
-                className={`navbar navbar-expand-lg navbar-dark ${navbarClasses}`} 
+                expand="xl"
+                className={`navbar navbar-expand-lg navbar-dark ${navbarClasses}`}
                 style={navbarStyle}
                 id="main-nav"
             >
                 <Container className={styles.navContainer}>
-                    {/* Left: Logo */}
-                    <Navbar.Brand href="#home" className={styles.brandLeft}>
-                        <NavLogo isGameMode={isGameMode} visible={showLogo} />
-                    </Navbar.Brand>
+                    {/* Left: Globe + Logo + Section Links */}
+                    <div className={styles.brandLeft}>
+                        <NavGlobe size={36} />
+                        <Navbar.Brand as="div" className={styles.brandLogo}>
+                            <NavLogo isGameMode={isGameMode} visible={showLogo} />
+                        </Navbar.Brand>
+                        {!isGameMode && (
+                          <div className={styles.desktopOnlyLinks}>
+                            <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
+                            <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
+                          </div>
+                        )}
+                    </div>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
                         <span className="navbar-toggler-icon"></span>
                     </Navbar.Toggle>
 
                     <Navbar.Collapse id="basic-navbar-nav">
-                        {/* Center: Nav Links */}
+                        {/* Center: Game mode links OR mobile section links */}
                         <Nav className={styles.navCenter}>
                           {isGameMode ? (
                             <>
@@ -133,11 +145,10 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                               <Nav.Link style={{color:'var(--color-primary)', fontWeight:'bold'}} onClick={onToggleTraining}>Training</Nav.Link>
                             </>
                           ) : (
-                            <>
-                              <Nav.Link className={styles.glowLink} href="#home">Home</Nav.Link>
-                              <Nav.Link className={styles.glowLink} href="#skills">Skills</Nav.Link>
-                              <Nav.Link className={styles.glowLink} href="#projects">Projects</Nav.Link>
-                            </>
+                            <div className={styles.mobileOnlyLinks}>
+                              <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
+                              <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
+                            </div>
                           )}
                         </Nav>
 

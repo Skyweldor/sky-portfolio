@@ -13,7 +13,9 @@
       "Bash(npm install:*)",
       "Bash(git commit:*)",
       "Bash(git fetch:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git -C /c/Users/Shadow/Desktop/SynthCity_Interactive/sky-portfolio log --oneline -10)",
+      "Bash(npx react-scripts build)"
     ]
   }
 }

@@ -80,7 +80,7 @@
 }
 
 /* ---------------------------------------------------------------
-   NAVBAR LAYOUT: Logo Left | Links Center | CTA Right
+   NAVBAR LAYOUT: [Globe Logo Skills Projects] ---- [Downloads]
    --------------------------------------------------------------- */
 .navContainer {
   display: flex;
@@ -90,17 +90,38 @@
 }
 
 .brandLeft {
-  flex: 0 0 auto;
-  min-width: 140px; /* reserve space even when logo hidden */
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
 }
 
-.navCenter {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.brandLogo {
+  flex: 0 0 auto;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Desktop-only inline section links (next to logo) */
+.desktopOnlyLinks {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* Mobile-only section links (inside hamburger collapse) */
+.mobileOnlyLinks {
+  display: none;
+}
+
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navRight {
@@ -156,9 +177,18 @@
 
 /* Mobile: Stack layout */
 @media (max-width: 1199px) {
+  .desktopOnlyLinks {
+    display: none;
+  }
+
+  .mobileOnlyLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
   .navCenter {
-    position: static;
-    transform: none;
     flex-direction: column;
     width: 100%;
     margin: 16px 0;
@@ -266,6 +296,13 @@
       0 0 8px var(--color-highlight),
       0 0 12px var(--color-accent);   /* Bayshore magenta edge */
   transition: text-shadow .25s ease, opacity .25s ease;
+  /* Button reset for <button> elements */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
 }
 .glowLink:hover,
 .glowLink:focus {
