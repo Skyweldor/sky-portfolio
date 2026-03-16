@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { NavLogo } from './NavLogo';
 import { NavGlobe } from './NavGlobe';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
@@ -13,6 +13,16 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
     const ticking = useRef(false);
     const navbarRef = useRef(null);
     const scrollToSection = useScrollToSection();
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleLogoClick = () => {
+        if (location.pathname === '/portfolio') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            navigate('/portfolio');
+        }
+    };
 
     useEffect(() => {
         // Scroll progress bar
@@ -120,7 +130,12 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                     {/* Left: Globe + Logo + Section Links */}
                     <div className={styles.brandLeft}>
                         <NavGlobe size={36} />
-                        <Navbar.Brand as="div" className={styles.brandLogo}>
+                        <Navbar.Brand
+                            as="div"
+                            className={styles.brandLogo}
+                            onClick={handleLogoClick}
+                            style={{ cursor: 'pointer' }}
+                        >
                             <NavLogo isGameMode={isGameMode} visible={showLogo} />
                         </Navbar.Brand>
                         {!isGameMode && (

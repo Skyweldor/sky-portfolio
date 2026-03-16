@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { NavBar } from '../components/common/NavBar';
-import Footer from '../components/common/Footer';
 import DownloadCard from '../components/catalog/DownloadCard';
 import { CATALOG_ITEMS } from '../data/catalogData';
 
@@ -47,7 +46,6 @@ const Catalog = () => {
           </div>
         </Container>
       </section>
-      <Footer />
     </div>
   );
 };
