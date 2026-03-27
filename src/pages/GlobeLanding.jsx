@@ -14,7 +14,7 @@ const GLOBE_CONFIG = {
     'Game Development': '/portfolio',
     'Quantitative Finance': '#',
     'Tutoring': '#',
-    'Make-Up/Skincare E-Commerce': '#',
+    'Make-Up/Skincare E-Commerce': '/makeup',
     'Stickers E-Commerce': '/stickers'
   },
   debug: false,

@@ -1,0 +1,361 @@
+/* ============================================================
+   TeamRosterCard — Compact card with hover-reveal overlay
+   Model is the hero. Data slides in on hover. Click to lock.
+   ============================================================ */
+
+/* ==================== CARD SHELL ==================== */
+
+.card {
+  background: rgba(0, 5, 15, 0.9);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(0, 234, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.1);
+}
+
+/* Locked state — overlay stays open without hover */
+.cardLocked {
+  border-color: rgba(0, 234, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+}
+
+.cardLocked .detailOverlay {
+  transform: translateY(0);
+}
+
+.cardLocked .infoStrip {
+  opacity: 0;
+}
+
+/* ==================== TITLE BAR ==================== */
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(0, 10, 25, 0.95);
+  border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+}
+
+.titleBarDots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed    { background: #ff5f57; }
+.dotYellow { background: #ffbd2e; }
+.dotGreen  { background: #28c940; }
+
+.titleBarPath {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== MODEL AREA ==================== */
+
+.modelArea {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==================== INFO STRIP (always visible) ==================== */
+
+.infoStrip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: linear-gradient(transparent, rgba(0, 5, 15, 0.95) 40%);
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide the name strip when hovering (detail overlay takes over) */
+.card:hover .infoStrip {
+  opacity: 0;
+}
+
+.nameBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.monName {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+.monLevel {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #00eaff;
+}
+
+.typeBadges {
+  display: flex;
+  gap: 6px;
+}
+
+.typeBadge {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+/* ==================== DETAIL OVERLAY (hover / click-lock) ==================== */
+
+.detailOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 5, 15, 0.93);
+  border-top: 1px solid rgba(0, 234, 255, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  backdrop-filter: blur(6px);
+}
+
+.card:hover .detailOverlay {
+  transform: translateY(0);
+}
+
+.detailInner {
+  padding: 12px 16px 10px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+.detailInner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.detailInner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.detailInner::-webkit-scrollbar-thumb {
+  background: rgba(0, 234, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* ==================== ID GRID ==================== */
+
+.idGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.idKey {
+  color: #00eaff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.idKey::before {
+  content: '> ';
+}
+
+.idVal {
+  color: #ffffff;
+}
+
+.dim {
+  color: #b8b8b8;
+  font-size: 10px;
+}
+
+/* ==================== MOVES + STATS SIDE BY SIDE ==================== */
+
+.moveStatRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.moveSide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.statSide {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ==================== MOVESET GRID ==================== */
+
+.moveGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.moveBadge {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  padding: 5px 6px;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: default;
+  white-space: nowrap;
+}
+
+/* ==================== STATS BLOCK ==================== */
+
+.statLine {
+  display: flex;
+  align-items: baseline;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.statLabel {
+  color: #00eaff;
+  width: 28px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.statBar {
+  letter-spacing: -1px;
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.barEmpty {
+  color: rgba(255, 255, 255, 0.12);
+  letter-spacing: -1px;
+}
+
+.statValue {
+  color: #ffffff;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* ==================== LOCK HINT ==================== */
+
+.lockHint {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(0, 234, 255, 0.4);
+  text-align: right;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .card {
+    border-radius: 0;
+  }
+
+  .titleBarPath {
+    font-size: 11px;
+  }
+
+  .detailInner {
+    padding: 10px 12px 8px;
+  }
+
+  .idGrid {
+    font-size: 10px;
+  }
+
+  .moveStatRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .moveSide {
+    width: 100%;
+  }
+
+  .statLine {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .monName {
+    font-size: 14px;
+  }
+
+  .monLevel {
+    font-size: 11px;
+  }
+
+  .idGrid {
+    font-size: 10px;
+  }
+
+  .statBar {
+    margin: 0 3px;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .detailOverlay {
+    transition: none;
+  }
+
+  .infoStrip {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+}

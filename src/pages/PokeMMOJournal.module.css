@@ -1,0 +1,371 @@
+/* ============================================================
+   PokeMMO Journal — Blog post entry
+   ============================================================ */
+
+.pageWrapper {
+  --bg: #0d0f1a;
+  --surface: #13162b;
+  --border: #2a2f52;
+  --accent: #f5c842;
+  --accent2: #5b8cff;
+  --accent3: #ff6b6b;
+  --text: #d4d8f0;
+  --text-muted: #6b7199;
+  --type-water: #5b8cff;
+  --type-bug: #8bc34a;
+  --type-poison: #ab47bc;
+  --type-normal: #9e9e9e;
+  --type-flying: #80d8ff;
+  --type-rock: #a1887f;
+  --type-ground: #d4a574;
+
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(91,140,255,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(245,200,66,0.05) 0%, transparent 50%);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* CRT scanline overlay */
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+/* ==================== BACK LINK ==================== */
+
+.backLinkRow {
+  margin-bottom: 32px;
+}
+
+.backLink {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent2);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(245,200,66,0.4);
+  text-decoration: none;
+}
+
+/* ==================== HEADER ==================== */
+
+.blogHeader {
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 40px;
+}
+
+.blogName {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: var(--accent2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.postTitle {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(14px, 2.5vw, 22px);
+  color: var(--accent);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(245,200,66,0.3);
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.postDate {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+.tag {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 2px;
+}
+
+/* ==================== BODY TEXT ==================== */
+
+.postBody p {
+  margin-bottom: 1.6em;
+  color: var(--text);
+}
+
+.postBody p em {
+  color: #b0b8e8;
+  font-style: italic;
+}
+
+/* Drop cap on first paragraph */
+.dropCap::first-letter {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.75;
+  margin: 8px 12px 0 0;
+  color: var(--accent);
+  text-shadow: 2px 2px 0 rgba(245,200,66,0.2);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+
+.sectionLabel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 52px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sectionLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ==================== CALLOUT ==================== */
+
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  padding: 20px 24px;
+  margin: 32px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout p {
+  margin: 0;
+  font-style: italic;
+  color: #b0b8e8;
+}
+
+.calloutLabel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+/* ==================== BATTLE LOG ==================== */
+
+.battleLog {
+  background: #080a14;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  line-height: 2.2;
+}
+
+.logLine {
+  color: var(--text-muted);
+}
+
+.logHighlight {
+  color: var(--accent);
+}
+
+.logDamage {
+  color: var(--accent3);
+}
+
+.logCatch {
+  color: #69f0ae;
+}
+
+/* ==================== TEAM GRID ==================== */
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  margin: 28px 0 40px;
+}
+
+.pokeCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 14px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.pokeCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.pokeCard[data-type="water"]::before   { background: var(--type-water); }
+.pokeCard[data-type="bug"]::before     { background: var(--type-bug); }
+.pokeCard[data-type="flying"]::before  { background: var(--type-flying); }
+.pokeCard[data-type="rock"]::before    { background: var(--type-rock); }
+
+.pokeCard:hover {
+  border-color: var(--accent);
+}
+
+.pokeName {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.pokeLevel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.typeBadges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.typeBadge {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  padding: 3px 7px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.typeWater  { background: rgba(91,140,255,0.2);  color: var(--type-water);  border: 1px solid rgba(91,140,255,0.3); }
+.typeBug    { background: rgba(139,195,74,0.2);  color: var(--type-bug);    border: 1px solid rgba(139,195,74,0.3); }
+.typePoison { background: rgba(171,71,188,0.2);  color: #ce93d8;            border: 1px solid rgba(171,71,188,0.3); }
+.typeNormal { background: rgba(158,158,158,0.15);color: var(--type-normal); border: 1px solid rgba(158,158,158,0.3); }
+.typeFlying { background: rgba(128,216,255,0.15);color: var(--type-flying); border: 1px solid rgba(128,216,255,0.3); }
+.typeRock   { background: rgba(161,136,127,0.2); color: var(--type-rock);   border: 1px solid rgba(161,136,127,0.3); }
+.typeGround { background: rgba(212,165,116,0.2); color: var(--type-ground); border: 1px solid rgba(212,165,116,0.3); }
+
+.pokeAbility {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ==================== FOOTER ==================== */
+
+.postFooter {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nextLabel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+.nextHint {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent2);
+  margin-top: 6px;
+}
+
+.badgeCount {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 3px;
+}
+
+.badgeCount span {
+  color: var(--text-muted);
+  display: block;
+  font-size: 7px;
+  margin-top: 4px;
+}
+
+/* ==================== HIGHLIGHT TEXT ==================== */
+
+.highlightText {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 500px) {
+  .postTitle {
+    font-size: 13px;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pageWrapper::before {
+    display: none;
+  }
+}

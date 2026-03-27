@@ -1,0 +1,124 @@
+.scrollRow {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollRow::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollRow::-webkit-scrollbar-track {
+  background: rgba(0, 10, 30, 0.4);
+  border-radius: 3px;
+}
+
+.scrollRow::-webkit-scrollbar-thumb {
+  background: rgba(0, 179, 255, 0.3);
+  border-radius: 3px;
+}
+
+.thumbBtn {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border: 2px solid rgba(0, 179, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  transition: all 0.25s ease;
+}
+
+.thumbBtn:hover {
+  border-color: var(--color-highlight);
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.3);
+}
+
+.thumb {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Lightbox overlay --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 179, 255, 0.2);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.lightboxClose:hover {
+  opacity: 1;
+}
+
+.lightboxPrev,
+.lightboxNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 10, 30, 0.6);
+  border: 1px solid rgba(0, 179, 255, 0.3);
+  color: var(--color-text-light);
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lightboxPrev:hover,
+.lightboxNext:hover {
+  background: rgba(0, 179, 255, 0.15);
+  border-color: var(--color-highlight);
+}
+
+.lightboxPrev {
+  left: 20px;
+}
+
+.lightboxNext {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .thumb {
+    width: 160px;
+    height: 100px;
+  }
+}

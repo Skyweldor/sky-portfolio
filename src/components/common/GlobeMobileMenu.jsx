@@ -9,7 +9,7 @@ const MENU_CONFIG = {
     { text: 'Tutoring', url: '#', disabled: true }
   ],
   ecommerce: [
-    { text: 'Make-Up/Skincare', url: '#', disabled: true },
+    { text: 'Make-Up/Skincare', url: '/makeup' },
     { text: 'Stickers', url: '/stickers' }
   ]
 };

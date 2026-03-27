@@ -40,7 +40,7 @@ export const Banner = () => {
     /* ————————————————————————————————————————
        HANDLERS
     —————————————————————————————————————————— */
-    const goToCatalog = () => navigate("/catalog");
+    const goToCatalog = () => navigate("/downloads");
 
     return (
         <section className={styles.banner} id="home">

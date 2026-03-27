@@ -1,0 +1,66 @@
+.regionNav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 2;
+  margin-top: 12px;
+}
+
+.navLabel {
+  color: #00eaff;
+  flex-shrink: 0;
+}
+
+.regionLinks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.separator {
+  color: #3a3f5c;
+  margin: 0 2px;
+}
+
+.regionLink {
+  color: #b8b8b8;
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.regionLink:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+  text-decoration: none;
+}
+
+.currentRegion {
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .regionNav {
+    font-size: 11px;
+    gap: 2px;
+  }
+
+  .navLabel {
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .regionNav {
+    font-size: 10px;
+  }
+}

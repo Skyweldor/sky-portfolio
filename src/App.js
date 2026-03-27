@@ -23,6 +23,14 @@ const Aetherbound = lazy(() => import('./pages/Aetherbound'));
 const BeautyCare = lazy(() => import('./pages/BeautyCare'));
 const MiniGames = lazy(() => import('./pages/MiniGames'));
 const Catalog = lazy(() => import('./pages/Catalog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
+const KantoPokedex = lazy(() => import('./pages/KantoPokedex'));
+const JohtoPokedex = lazy(() => import('./pages/JohtoPokedex'));
+const HoennPokedex = lazy(() => import('./pages/HoennPokedex'));
+const SinnohPokedex = lazy(() => import('./pages/SinnohPokedex'));
+const UnovaPokedex = lazy(() => import('./pages/UnovaPokedex'));
+const PokeMMOJournal = lazy(() => import('./pages/PokeMMOJournal'));
+const PokeMMOJournal2 = lazy(() => import('./pages/PokeMMOJournal2'));
 
 // Global transition overlay that responds to context
 // Only renders when transition is active to avoid any blocking
@@ -37,11 +45,12 @@ function GlobalTransition() {
 function Layout({ children }) {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
+  const isMakeupSite = location.pathname.startsWith('/makeup');
 
   return (
     <>
       {children}
-      {!isLandingPage && <Footer />}
+      {!isLandingPage && !isMakeupSite && <Footer />}
     </>
   );
 }
@@ -61,7 +70,15 @@ function App() {
               <Route path="/aetherbound" element={<Aetherbound />} />
               <Route path="/makeup" element={<BeautyCare />} />
               <Route path="/minigames" element={<MiniGames />} />
-              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/downloads" element={<Catalog />} />
+              <Route path="/downloads/:id" element={<BlogDetail />} />
+              <Route path="/blog/kanto-pokedex" element={<KantoPokedex />} />
+              <Route path="/blog/johto-pokedex" element={<JohtoPokedex />} />
+              <Route path="/blog/hoenn-pokedex" element={<HoennPokedex />} />
+              <Route path="/blog/sinnoh-pokedex" element={<SinnohPokedex />} />
+              <Route path="/blog/unova-pokedex" element={<UnovaPokedex />} />
+              <Route path="/blog/pokemmo-journal-1" element={<PokeMMOJournal />} />
+              <Route path="/blog/pokemmo-journal-2" element={<PokeMMOJournal2 />} />
             </Routes>
           </Suspense>
         </Layout>

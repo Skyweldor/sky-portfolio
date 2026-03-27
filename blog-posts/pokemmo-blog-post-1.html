@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>First Steps in Kanto — A PokeMMO Journal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f1a;
+      --surface: #13162b;
+      --border: #2a2f52;
+      --accent: #f5c842;
+      --accent2: #5b8cff;
+      --accent3: #ff6b6b;
+      --text: #d4d8f0;
+      --text-muted: #6b7199;
+      --type-water: #5b8cff;
+      --type-bug: #8bc34a;
+      --type-poison: #ab47bc;
+      --type-normal: #9e9e9e;
+      --type-flying: #80d8ff;
+      --type-rock: #a1887f;
+      --type-ground: #d4a574;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(91,140,255,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 90%, rgba(245,200,66,0.05) 0%, transparent 50%);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ── Scanline overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* ── Header ── */
+    .blog-header {
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 40px;
+    }
+
+    .blog-name {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px;
+      color: var(--accent2);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .post-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(14px, 2.5vw, 22px);
+      color: var(--accent);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-shadow: 0 0 30px rgba(245,200,66,0.3);
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .post-date {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--text-muted);
+    }
+
+    .tag {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 2px;
+    }
+
+    /* ── Drop cap ── */
+    .post-body > p:first-of-type::first-letter {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 3.5em;
+      float: left;
+      line-height: 0.75;
+      margin: 8px 12px 0 0;
+      color: var(--accent);
+      text-shadow: 2px 2px 0 rgba(245,200,66,0.2);
+    }
+
+    /* ── Body text ── */
+    .post-body p {
+      margin-bottom: 1.6em;
+      color: var(--text);
+    }
+
+    .post-body p em {
+      color: #b0b8e8;
+      font-style: italic;
+    }
+
+    /* ── Section headers ── */
+    .section-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 52px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+    }
+
+    /* ── Callout box ── */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      margin: 32px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout p {
+      margin: 0;
+      font-style: italic;
+      color: #b0b8e8;
+    }
+
+    .callout-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--accent);
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Team card grid ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+      margin: 28px 0 40px;
+    }
+
+    .poke-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px 14px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .poke-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+
+    .poke-card.water::before  { background: var(--type-water); }
+    .poke-card.bug::before    { background: var(--type-bug); }
+    .poke-card.flying::before { background: var(--type-flying); }
+    .poke-card.rock::before   { background: var(--type-rock); }
+
+    .poke-card:hover { border-color: var(--accent); }
+
+    .poke-name {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .poke-level {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .type-badges {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .type-badge {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px;
+      padding: 3px 7px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .type-badge.water  { background: rgba(91,140,255,0.2);  color: var(--type-water);  border: 1px solid rgba(91,140,255,0.3); }
+    .type-badge.bug    { background: rgba(139,195,74,0.2);  color: var(--type-bug);    border: 1px solid rgba(139,195,74,0.3); }
+    .type-badge.poison { background: rgba(171,71,188,0.2);  color: #ce93d8;            border: 1px solid rgba(171,71,188,0.3); }
+    .type-badge.normal { background: rgba(158,158,158,0.15);color: var(--type-normal); border: 1px solid rgba(158,158,158,0.3);}
+    .type-badge.flying { background: rgba(128,216,255,0.15);color: var(--type-flying); border: 1px solid rgba(128,216,255,0.3);}
+    .type-badge.rock   { background: rgba(161,136,127,0.2); color: var(--type-rock);   border: 1px solid rgba(161,136,127,0.3);}
+    .type-badge.ground { background: rgba(212,165,116,0.2); color: var(--type-ground); border: 1px solid rgba(212,165,116,0.3);}
+
+    .poke-ability {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Battle log ── */
+    .battle-log {
+      background: #080a14;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      line-height: 2.2;
+    }
+
+    .battle-log-line { color: var(--text-muted); }
+    .battle-log-line.highlight { color: var(--accent); }
+    .battle-log-line.damage { color: var(--accent3); }
+    .battle-log-line.catch { color: #69f0ae; }
+    .battle-log-line.evolve { color: var(--accent2); }
+
+    /* ── Horizontal rule ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 44px 0;
+    }
+
+    /* ── Footer ── */
+    .post-footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: gap;
+      gap: 16px;
+    }
+
+    .next-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--text-muted);
+    }
+
+    .next-hint {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--accent2);
+      margin-top: 6px;
+    }
+
+    .badge-count {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--accent);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 3px;
+    }
+
+    .badge-count span {
+      color: var(--text-muted);
+      display: block;
+      font-size: 7px;
+      margin-top: 4px;
+    }
+
+    /* ── Highlight text ── */
+    strong {
+      color: #edf0ff;
+      font-weight: 600;
+    }
+
+    .highlight-text {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 500px) {
+      .post-title { font-size: 13px; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="blog-header">
+      <div class="blog-name">&#9670; PokeMMO Journal</div>
+      <h1 class="post-title">First Steps in Kanto:<br/>Humbled by a Weedle</h1>
+      <div class="post-meta">
+        <span class="post-date">Entry 001 &mdash; March 2026</span>
+        <span class="tag">Kanto</span>
+        <span class="tag">Badges: 1</span>
+        <span class="tag">Beginner</span>
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      <p>
+        There is a particular kind of arrogance that comes with being a Pokémon veteran. You've played the games before — maybe many times. You know the routes, you remember the gyms, you understand type matchups in your sleep. So when you fire up PokeMMO for the first time and step out of Pallet Town with a Squirtle at your side, you feel ready. Comfortable, even.
+      </p>
+
+      <p>
+        Viridian Forest had other plans.
+      </p>
+
+      <div class="section-label">The Humbling</div>
+
+      <p>
+        It happened fast. A wild Weedle — level 9, nothing remarkable — appeared in the tall grass. I'd seen Weedle a hundred times before. Low-level bug, weak stats, generally something you one-shot and move on from. What I didn't know, and had no reason to expect, is that PokeMMO reworks Pokémon learnsets. This Weedle had <strong>Bug Bite</strong> — 60 base power, STAB, and enough punch at that point in the game to put my Squirtle down before I could process what was happening.
+      </p>
+
+      <div class="battle-log">
+        <div class="battle-log-line">Wild WEEDLE appeared!</div>
+        <div class="battle-log-line highlight">Go! SQUIRTLE!</div>
+        <div class="battle-log-line">&gt; SQUIRTLE used Bubble...</div>
+        <div class="battle-log-line">Wild WEEDLE used BUG BITE!</div>
+        <div class="battle-log-line damage">It's super effective!</div>
+        <div class="battle-log-line damage">SQUIRTLE fainted.</div>
+        <div class="battle-log-line">&nbsp;</div>
+        <div class="battle-log-line">...oh.</div>
+      </div>
+
+      <p>
+        The lesson was immediate and delivered without sympathy: <em>PokeMMO is not FireRed</em>. The familiar shell is there — the routes, the towns, the music, the pixel art — but underneath it the game has been reworked in ways that quietly punish assumptions. Wild Pokémon can carry moves from higher levels. Learnsets are altered. Gym leaders have stronger teams. The engine is familiar, but the game is new.
+      </p>
+
+      <p>
+        I respect it, honestly. Nothing reawakens your attention to a game you think you already know like getting flattened by something that should have been trivial.
+      </p>
+
+      <div class="section-label">The Team Takes Shape</div>
+
+      <p>
+        Before reaching Pewter City, the roster started coming together piece by piece. Squirtle — my starter, a reliable Water-type tank with a move in Bite at level 18 that will eventually let him threaten Psychic-types — was the foundation. Then came a <strong>Pidgey</strong> on Route 2, caught at level 7. Unremarkable at that stage, but Pidgey's Bug resistance (quarter damage from Bug-type moves) made it immediately useful as a Viridian Forest answer. And its line eventually becomes fast, which matters.
+      </p>
+
+      <p>
+        Then — partly out of spite for what had happened to me — I caught a Weedle of my own.
+      </p>
+
+      <p>
+        I let it reach level 9 before evolving it, specifically so it could learn Bug Bite. As a Beedrill it came out of Kakuna already knowing <strong>Twineedle</strong> as a starting move — PokeMMO's updated version of the classic learnset — so the evolution gave me a Bug-type attacker with two STAB moves and genuine offensive presence before Pewter City. With Swarm as its ability, a pinched Beedrill hits hard.
+      </p>
+
+      <div class="callout">
+        <div class="callout-label">&#9632; Journal Note</div>
+        <p>Twineedle has a 20% chance per hit to inflict poison — two hits means roughly 36% combined. Against certain gym trainers this has already won battles that looked close on paper.</p>
+      </div>
+
+      <p>
+        The real surprise of the early game came at <strong>Mt. Moon</strong>, where I caught an <strong>Onix</strong>. At level 8 it already has Stealth Rock — an entry hazard that becomes quietly devastating as the game goes on — and its Rock Head ability means no recoil damage. It's an Onix, so the ceiling feels limited at first glance, but for right now it absorbs hits and sets up hazards and that is genuinely useful. Squirtle, meanwhile, had evolved into Wartortle by the time we cleared Mt. Moon, which felt like a small milestone worth marking.
+      </p>
+
+      <div class="section-label">Brock</div>
+
+      <p>
+        The first gym was, in fairness, designed to be straightforward for a Water starter. Brock's Geodude and Onix buckle to Water Gun and later Water Pulse without much drama. The Boulder Badge brought the level cap up to 26 and, critically, unlocked the <strong>Running Shoes</strong> — handed over by a man in glasses just east of Pewter City, who stops you as you try to leave. A small quality-of-life moment, but a welcome one after every route feeling slightly too slow.
+      </p>
+
+      <p>
+        One badge. Route 3 cleared. Mt. Moon navigated. Cerulean City reached.
+      </p>
+
+      <div class="section-label">Current Party</div>
+
+      <div class="team-grid">
+        <div class="poke-card water">
+          <div class="poke-name">Wartortle</div>
+          <div class="poke-level">Lv. 19</div>
+          <div class="type-badges">
+            <span class="type-badge water">Water</span>
+          </div>
+          <div class="poke-ability">Torrent</div>
+        </div>
+        <div class="poke-card bug">
+          <div class="poke-name">Beedrill</div>
+          <div class="poke-level">Lv. 12</div>
+          <div class="type-badges">
+            <span class="type-badge bug">Bug</span>
+            <span class="type-badge poison">Poison</span>
+          </div>
+          <div class="poke-ability">Swarm</div>
+        </div>
+        <div class="poke-card flying">
+          <div class="poke-name">Pidgey</div>
+          <div class="poke-level">Lv. 10</div>
+          <div class="type-badges">
+            <span class="type-badge normal">Normal</span>
+            <span class="type-badge flying">Flying</span>
+          </div>
+          <div class="poke-ability">Tangled Feet</div>
+        </div>
+        <div class="poke-card rock">
+          <div class="poke-name">Onix</div>
+          <div class="poke-level">Lv. 8</div>
+          <div class="type-badges">
+            <span class="type-badge rock">Rock</span>
+            <span class="type-badge ground">Ground</span>
+          </div>
+          <div class="poke-ability">Rock Head</div>
+        </div>
+      </div>
+
+      <div class="section-label">What PokeMMO Actually Is</div>
+
+      <p>
+        For anyone reading this who hasn't tried it: PokeMMO is a fan-made MMO that runs on the ROMs of FireRed, Emerald, Platinum, HeartGold, and Black — five regions, all accessible on a single character, with a shared player-driven economy, a level cap system tied to gym badges, and a breeding mechanic where the parents are <em>consumed</em> to create the offspring. That last part is deliberate. It creates perpetual demand, keeps the market moving, and makes every well-bred Pokémon worth something.
+      </p>
+
+      <p>
+        There is no fast-forward button. No speed multiplier. If you're coming from emulators where 4x speed is a keystroke away, that adjustment is real. The trade-off is that the world is populated — there are other trainers running the same routes, other players visible in towns, a functioning economy where Safari Zone items and rare catches have actual value. It feels like something, in a way that a solo emulator playthrough eventually stops feeling like.
+      </p>
+
+      <p>
+        Cerulean City awaits. Misty's Starmie is reportedly no pushover in PokeMMO's reworked version. I imagine I'll find out the hard way.
+      </p>
+
+    </div>
+
+    <footer class="post-footer">
+      <div>
+        <div class="next-label">Up next &mdash;</div>
+        <div class="next-hint">Cerulean City &amp; the Misty Problem</div>
+      </div>
+      <div class="badge-count">
+        &#9632; 1 / 8 BADGES
+        <span>Kanto</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

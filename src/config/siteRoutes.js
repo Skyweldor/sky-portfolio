@@ -10,6 +10,7 @@ const Aetherbound = lazy(() => import('../pages/Aetherbound'));
 const BeautyCare = lazy(() => import('../pages/BeautyCare'));
 const MiniGames = lazy(() => import('../pages/MiniGames'));
 const Catalog = lazy(() => import('../pages/Catalog'));
+const PokeMMOJournal2 = lazy(() => import('../pages/PokeMMOJournal2'));
 
 export default function SiteRoutes() {
   return (
@@ -24,7 +25,8 @@ export default function SiteRoutes() {
           <Route path="/aetherbound" element={<Aetherbound />} />
           <Route path="/makeup" element={<BeautyCare />} />
           <Route path="/minigames" element={<MiniGames />} />
-          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/downloads" element={<Catalog />} />
+          <Route path="/blog/pokemmo-journal-2" element={<PokeMMOJournal2 />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

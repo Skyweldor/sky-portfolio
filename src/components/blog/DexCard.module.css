@@ -1,0 +1,302 @@
+/* ============================================================
+   DexCard — Individual Pokédex sprite tile
+   XL layout: vertical flank (name + dex#) | sprite + badges
+   ============================================================ */
+
+.card {
+  position: relative;
+  background: rgba(0, 5, 15, 0.85);
+  border: 1px solid rgba(0, 234, 255, 0.15);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: visible;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--type-color, rgba(0, 234, 255, 0.5));
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--type-color, #00eaff);
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.15), 0 0 24px rgba(0, 234, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ── Left flank — vertical name + dex number ── */
+.flank {
+  width: 24px;
+  flex-shrink: 0;
+  background: rgba(0, 234, 255, 0.03);
+  border-right: 1px solid rgba(0, 234, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+.flankName {
+  font-family: 'DotGothic16', monospace;
+  font-size: 11px;
+  color: #d4d8f0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(100% - 50px);
+  user-select: none;
+}
+
+.dexNumber {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #6b7199;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.5px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* ── Card body — sprite + type badges ── */
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px 8px;
+  min-width: 0;
+}
+
+/* Sprite */
+.spriteWrapper {
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.sprite {
+  width: 128px;
+  height: 128px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  object-fit: contain;
+  transform-origin: center center;
+  position: relative;
+}
+
+.card:hover .sprite {
+  transform: scale(2) translateY(-16px);
+  z-index: 50;
+  filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.3));
+}
+
+/* Type badges */
+.typeBadges {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.typeBadge {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--badge-bg, rgba(0, 234, 255, 0.12));
+  color: var(--badge-color, #00eaff);
+  border: 1px solid var(--badge-border, rgba(0, 234, 255, 0.25));
+}
+
+/* ============================================================
+   Hover tooltip — nature info
+   Absolutely positioned, doesn't affect grid layout
+   ============================================================ */
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  background: rgba(2, 8, 20, 0.96);
+  border: 1px solid rgba(0, 234, 255, 0.35);
+  border-radius: 6px;
+  padding: 12px 14px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 234, 255, 0.1);
+}
+
+/* Arrow — hidden on mobile where tooltip is repositioned */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 234, 255, 0.35);
+}
+
+.card:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltipHeader {
+  font-family: 'DotGothic16', monospace;
+  font-size: 12px;
+  color: #00eaff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.tooltipDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 234, 255, 0.15);
+  margin: 6px 0;
+}
+
+.tooltipRow {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.tooltipKey {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: #00eaff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  min-width: 48px;
+}
+
+.tooltipValue {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #c8ccdf;
+}
+
+.tooltipBoost {
+  color: #8bc34a;
+}
+
+.tooltipLower {
+  color: #ff6b35;
+}
+
+.tooltipNotes {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: #6b7199;
+  font-style: italic;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 480px) {
+  .flank {
+    width: 18px;
+  }
+
+  .flankName {
+    font-size: 9px;
+  }
+
+  .dexNumber {
+    font-size: 9px;
+  }
+
+  .cardBody {
+    padding: 8px 6px 6px;
+  }
+
+  .spriteWrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sprite {
+    width: 80px;
+    height: 80px;
+  }
+
+  .typeBadge {
+    font-size: 7px;
+    padding: 2px 5px;
+  }
+
+  .tooltip {
+    position: fixed;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(260px, calc(100vw - 32px));
+    padding: 10px 12px;
+  }
+
+  .tooltip::after {
+    display: none;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .sprite {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .sprite {
+    transform: none;
+  }
+
+  .tooltip {
+    transition: none;
+  }
+}

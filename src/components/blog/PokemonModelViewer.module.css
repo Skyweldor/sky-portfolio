@@ -1,0 +1,73 @@
+/* ============================================================
+   PokemonModelViewer — 3D OBJ viewer for Pokemon Quest models
+   Dark terminal-panel aesthetic with type-colored accent glow
+   ============================================================ */
+
+.viewerContainer {
+  position: relative;
+  width: 100%;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000a19;
+}
+
+.canvas {
+  width: 100%;
+  height: 240px;
+  display: block;
+}
+
+/* ── Loading overlay ── */
+
+.loadingOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 10, 25, 0.92);
+  z-index: 10;
+}
+
+.loadingText {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00eaff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── Error overlay ── */
+
+.errorOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 10, 25, 0.92);
+  z-index: 10;
+}
+
+.errorText {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #ff4444;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .loadingText {
+    animation: none;
+  }
+}

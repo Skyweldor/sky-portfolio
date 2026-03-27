@@ -1,0 +1,405 @@
+/* ============================================================
+   PokeMMOJournal2 — "The Team So Far" (Entry 002)
+   Terminal-panel aesthetic matching KantoPokedex
+   ============================================================ */
+
+.pageWrapper {
+  --color-primary: #00b3ff;
+  --color-accent: #9f00ff;
+  --color-highlight: #00eaff;
+  --color-bg-dark: #000000;
+  --color-bg-panel: #121212;
+  --color-text-light: #ffffff;
+  --color-text-dark: #b8b8b8;
+
+  background-color: var(--color-bg-dark);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(0, 179, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(159, 0, 255, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+/* CRT scanline overlay */
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ==================== BACK LINK ==================== */
+
+.backLinkRow {
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+.backLink {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--color-highlight);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.backLink:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--color-highlight);
+  text-decoration: none;
+}
+
+/* ==================== TERMINAL PANELS ==================== */
+
+.terminalPanel {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  background: rgba(0, 5, 15, 0.9);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0, 10, 25, 0.95);
+  border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+}
+
+.titleBarDots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed    { background: #ff5f57; }
+.dotYellow { background: #ffbd2e; }
+.dotGreen  { background: #28c940; }
+
+.titleBarPath {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--color-text-dark);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.terminalBody {
+  padding: 24px 24px 20px;
+}
+
+/* ==================== KEY-VALUE LINES ==================== */
+
+.kvLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-text-light);
+}
+
+.kvKey {
+  color: var(--color-highlight);
+  min-width: 170px;
+  flex-shrink: 0;
+}
+
+.kvSep {
+  color: var(--color-text-dark);
+  flex-shrink: 0;
+}
+
+.kvValue {
+  color: var(--color-text-light);
+  word-break: break-word;
+}
+
+/* ==================== SECTION HEADERS ==================== */
+
+.sectionHeader {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 10px;
+  color: var(--color-highlight);
+  margin-bottom: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(0, 234, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sectionHeader::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 234, 255, 0.3), transparent);
+}
+
+/* ==================== BLINKING CURSOR ==================== */
+
+.cursorLine {
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.blinkingCursor {
+  color: var(--color-highlight);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ==================== TAG BADGES ==================== */
+
+.tagBadge {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  margin-right: 6px;
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 2px;
+  color: var(--color-highlight);
+  background: rgba(0, 234, 255, 0.06);
+  letter-spacing: 0.5px;
+}
+
+/* ==================== INTRO / PROSE TEXT ==================== */
+
+.descPrompt {
+  font-family: 'Courier New', monospace;
+  color: var(--color-highlight);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.introText {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #d4d8f0;
+  margin-bottom: 14px;
+}
+
+.introText:last-of-type {
+  margin-bottom: 0;
+}
+
+/* First paragraph — block layout for drop cap */
+.introTextFirst {
+  display: block;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #d4d8f0;
+  margin-bottom: 14px;
+}
+
+/* Drop cap on first paragraph */
+.introDropCap {
+  display: inline;
+}
+
+.introDropCap::first-letter {
+  font-family: 'DotGothic16', monospace;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.75;
+  margin: 8px 12px 0 0;
+  color: var(--color-highlight);
+  text-shadow: 2px 2px 0 rgba(0, 234, 255, 0.2);
+}
+
+/* ==================== CLOSING TEXT ==================== */
+
+.closingText {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #d4d8f0;
+  margin-bottom: 14px;
+}
+
+.closingText:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ==================== ROSTER SECTION ==================== */
+
+.rosterSection {
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+
+/* ==================== POST FOOTER ==================== */
+
+.postFooter {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 234, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nextLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--color-text-dark);
+}
+
+.nextHint {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--color-highlight);
+  margin-top: 4px;
+}
+
+.badgeCount {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #28c940;
+  background: rgba(0, 10, 25, 0.7);
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-align: right;
+}
+
+.badgeCount span {
+  color: var(--color-text-dark);
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .terminalPanel {
+    margin-left: -12px;
+    margin-right: -12px;
+    border-radius: 0;
+    max-width: none;
+  }
+
+  .terminalBody {
+    padding: 16px 14px 14px;
+  }
+
+  .kvLine {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .kvKey {
+    min-width: 130px;
+  }
+
+  .titleBarPath {
+    font-size: 11px;
+  }
+
+  .backLinkRow {
+    padding-left: 4px;
+  }
+
+  .introText,
+  .introTextFirst,
+  .closingText {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .rosterSection {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kvKey {
+    min-width: 110px;
+    font-size: 11px;
+  }
+
+  .kvValue,
+  .kvSep {
+    font-size: 11px;
+  }
+
+  .introText,
+  .introTextFirst,
+  .closingText {
+    font-size: 16px;
+  }
+
+  .introDropCap::first-letter {
+    font-size: 2.8em;
+  }
+
+  .tagBadge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .postFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .blinkingCursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .pageWrapper::before {
+    display: none;
+  }
+}

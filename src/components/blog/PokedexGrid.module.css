@@ -1,0 +1,161 @@
+/* ============================================================
+   PokedexGrid — Filterable sprite grid with search
+   ============================================================ */
+
+/* Filter bar */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 234, 255, 0.2) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filterBar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.filterBar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.filterBar::-webkit-scrollbar-thumb {
+  background: rgba(0, 234, 255, 0.2);
+  border-radius: 2px;
+}
+
+.filterBtn {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  padding: 4px 10px;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  border-radius: 3px;
+  background: rgba(0, 5, 15, 0.6);
+  color: #6b7199;
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.filterBtn:hover {
+  color: #d4d8f0;
+  border-color: rgba(0, 234, 255, 0.4);
+}
+
+.filterBtnActive {
+  color: var(--active-color, #00eaff);
+  border-color: var(--active-color, #00eaff);
+  background: var(--active-bg, rgba(0, 234, 255, 0.1));
+  box-shadow: 0 0 8px var(--active-glow, rgba(0, 234, 255, 0.15));
+}
+
+/* Search row */
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.searchPrompt {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #00eaff;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.searchInput {
+  flex: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #d4d8f0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+  padding: 4px 0;
+  outline: none;
+  caret-color: #00eaff;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: #3a3f5c;
+}
+
+.searchInput:focus {
+  border-bottom-color: rgba(0, 234, 255, 0.5);
+}
+
+.resultCount {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #6b7199;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Empty state */
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+}
+
+.emptyText {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #6b7199;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .filterBtn {
+    font-size: 8px;
+    padding: 3px 7px;
+  }
+
+  .searchInput {
+    font-size: 12px;
+  }
+
+  .resultCount {
+    font-size: 9px;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .filterBtn,
+  .searchInput {
+    transition: none;
+  }
+}

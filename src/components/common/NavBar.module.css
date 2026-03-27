@@ -296,6 +296,7 @@
       0 0 8px var(--color-highlight),
       0 0 12px var(--color-accent);   /* Bayshore magenta edge */
   transition: text-shadow .25s ease, opacity .25s ease;
+  text-decoration: none;
   /* Button reset for <button> elements */
   background: none;
   border: none;
@@ -306,6 +307,7 @@
 }
 .glowLink:hover,
 .glowLink:focus {
+  text-decoration: none;
   opacity: 1;
   text-shadow:
       0 0 6px var(--color-highlight),

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Controller, Archive, Tools, FileEarmarkPdf } from 'react-bootstrap-icons';
 import styles from './DownloadCard.module.css';
 
@@ -9,7 +10,7 @@ const ICON_MAP = {
   docs: FileEarmarkPdf,
 };
 
-const DownloadCard = ({ title, description, tags, fileSize, downloadUrl, type }) => {
+const DownloadCard = ({ id, title, description, tags, fileSize, type }) => {
   const IconComponent = ICON_MAP[type] || Controller;
 
   return (
@@ -30,9 +31,9 @@ const DownloadCard = ({ title, description, tags, fileSize, downloadUrl, type })
 
       <div className={styles.actionArea}>
         <span className={styles.fileSize}>{fileSize}</span>
-        <a href={downloadUrl} className={styles.downloadBtn}>
-          Download
-        </a>
+        <Link to={`/downloads/${id}`} className={styles.downloadBtn}>
+          View Details
+        </Link>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as THREE from 'three';
 import styles from './NavGlobe.module.css';
 
-export const NavGlobe = ({ size = 36 }) => {
+export const NavGlobe = ({ size = 36, color = 0x00ddff, ringColor, navigateTo = '/' }) => {
     const canvasRef = useRef(null);
     const frameRef = useRef(null);
     const navigate = useNavigate();
@@ -28,9 +28,10 @@ export const NavGlobe = ({ size = 36 }) => {
         camera.position.z = 3;
 
         // Wireframe globe
+        const resolvedRingColor = ringColor !== undefined ? ringColor : color;
         const geometry = new THREE.SphereGeometry(1, 16, 16);
         const material = new THREE.MeshBasicMaterial({
-            color: 0x00ddff,
+            color: color,
             wireframe: true,
             transparent: true,
             opacity: 0.7,
@@ -41,7 +42,7 @@ export const NavGlobe = ({ size = 36 }) => {
         // Equatorial ring for visual interest
         const ringGeo = new THREE.RingGeometry(1.15, 1.18, 48);
         const ringMat = new THREE.MeshBasicMaterial({
-            color: 0x00ddff,
+            color: resolvedRingColor,
             transparent: true,
             opacity: 0.3,
             side: THREE.DoubleSide,
@@ -73,16 +74,16 @@ export const NavGlobe = ({ size = 36 }) => {
             ringMat.dispose();
             renderer.dispose();
         };
-    }, [size]);
+    }, [size, color, ringColor]);
 
     const handleClick = () => {
-        navigate('/');
+        navigate(navigateTo);
     };
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            navigate('/');
+            navigate(navigateTo);
         }
     };
 

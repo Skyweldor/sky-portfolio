@@ -1,0 +1,59 @@
+/* ============================================================
+   HeroPlaceholder — Cyberpunk gradient hero with grid overlay
+   ============================================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Grid line overlay via pseudo-element */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(0, 234, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 234, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-family: 'DotGothic16', monospace;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #ffffff;
+  text-align: center;
+  text-shadow:
+    0 0 12px rgba(0, 234, 255, 0.6),
+    0 0 30px rgba(0, 234, 255, 0.3);
+  padding: 24px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ========== Type gradients ========== */
+
+.demo {
+  background: linear-gradient(135deg, #00eaff 0%, #001a33 100%);
+}
+
+.tool {
+  background: linear-gradient(135deg, #ff29ff 0%, #1a0033 100%);
+}
+
+.asset {
+  background: linear-gradient(135deg, #9f00ff 0%, #0d001a 100%);
+}
+
+.docs {
+  background: linear-gradient(135deg, #00b3ff 0%, #001433 100%);
+}

@@ -16,6 +16,20 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
     const location = useLocation();
     const navigate = useNavigate();
 
+    // Show logo immediately on pages without a hero section (catalog, blog, etc.)
+    const isHeroPage = location.pathname === '/' || location.pathname === '/portfolio';
+    const isHeroPageRef = useRef(isHeroPage);
+    isHeroPageRef.current = isHeroPage;
+
+    useEffect(() => {
+        if (!isHeroPage) {
+            setShowLogo(true);
+        } else {
+            // Reset to scroll-based behavior on hero pages
+            setShowLogo(window.scrollY > 200);
+        }
+    }, [isHeroPage]);
+
     const handleLogoClick = () => {
         if (location.pathname === '/portfolio') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -43,8 +57,10 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                 setScrolled(false);
             }
 
-            // Show logo after scrolling past hero section (~200px when title starts leaving)
-            setShowLogo(currentScrollY > 200);
+            // Only toggle logo on hero pages; non-hero pages always show it
+            if (isHeroPageRef.current) {
+                setShowLogo(currentScrollY > 200);
+            }
 
             // Dynamic shadow
             setShadowClass(currentScrollY > 0 ? styles.elevated : "");
@@ -142,6 +158,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                           <div className={styles.desktopOnlyLinks}>
                             <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
                             <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
+                            <Link to="/blog" className={styles.glowLink}>Blog</Link>
                           </div>
                         )}
                     </div>
@@ -163,6 +180,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                             <div className={styles.mobileOnlyLinks}>
                               <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
                               <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
+                              <Link to="/blog" className={styles.glowLink}>Blog</Link>
                             </div>
                           )}
                         </Nav>
@@ -174,7 +192,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                               XP: {globalXP}
                             </span>
                           ) : (
-                            <Link to="/catalog" className={styles.ctaButton}>
+                            <Link to="/downloads" className={styles.ctaButton}>
                               Downloads
                             </Link>
                           )}

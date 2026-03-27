@@ -6,6 +6,7 @@ import './css/HeroSection.css';
 import lipstick from './images/lipstick_example_00.png';
 import lipstick_processed from './images/lipstick_example_00_processed.png';
 import { Link } from 'react-router-dom';
+import { NavGlobe } from '../common/NavGlobe';
 
 const HeroSection = () => {
   const particlesInit = async (main) => {
@@ -81,8 +82,8 @@ const HeroSection = () => {
       {/* NAV + LOGO ROW */}
       <div className="hero-nav-row">
         <div className="logo-area">
+          <NavGlobe size={32} color={0xE2B84B} ringColor={0xEBC9A4} navigateTo="/" />
           <h1 className="shimmer-text">ELEVATE</h1>
-          {/* Could be an <img> if you have a logo image */}
         </div>
         <nav className="hero-nav">
           <ul>

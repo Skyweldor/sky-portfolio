@@ -1,0 +1,598 @@
+/* ============================================================
+   BlogDetailLayoutC — "Neon Terminal" (Dev-Log / Retro-Tech)
+   ============================================================ */
+
+/* --- CSS variables (scoped) --- */
+.pageWrapper {
+  --color-primary: #00b3ff;
+  --color-accent: #9f00ff;
+  --color-highlight: #00eaff;
+  --color-bg-dark: #000000;
+  --color-bg-panel: #121212;
+  --color-text-light: #ffffff;
+  --color-text-dark: #b8b8b8;
+
+  background-color: var(--color-bg-dark);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(0, 179, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(159, 0, 255, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+/* Full-page CRT scanline overlay */
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ======================== BACK LINK ======================== */
+
+.backLinkRow {
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+.backLink {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--color-highlight);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.backLink:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--color-highlight);
+  text-decoration: none;
+}
+
+/* ================== TERMINAL PANEL CHROME ================== */
+
+.terminalPanel {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  background: rgba(0, 5, 15, 0.9);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Title bar */
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0, 10, 25, 0.95);
+  border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+}
+
+.titleBarDots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed    { background: #ff5f57; }
+.dotYellow { background: #ffbd2e; }
+.dotGreen  { background: #28c940; }
+
+.titleBarPath {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--color-text-dark);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Terminal body */
+.terminalBody {
+  padding: 24px 24px 20px;
+}
+
+/* ==================== KEY-VALUE LINES ==================== */
+
+.kvLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-text-light);
+}
+
+.kvKey {
+  color: var(--color-highlight);
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.kvSep {
+  color: var(--color-text-dark);
+  flex-shrink: 0;
+}
+
+.kvValue {
+  color: var(--color-text-light);
+  word-break: break-word;
+}
+
+.statusAvailable {
+  color: #28c940;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+.statusComingSoon {
+  color: #ffbd2e;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+/* ================= DOWNLOAD BAR (PROGRESS) ================= */
+
+.downloadBar {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: rgba(0, 234, 255, 0.08);
+  border: 1px solid rgba(0, 234, 255, 0.35);
+  border-radius: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.downloadBar:hover {
+  border-color: var(--color-highlight);
+  box-shadow:
+    0 0 12px rgba(0, 234, 255, 0.35),
+    0 0 30px rgba(0, 234, 255, 0.15);
+  text-decoration: none;
+  animation: downloadPulse 1.5s ease-in-out infinite;
+}
+
+.downloadBarFill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 234, 255, 0.15) 0%,
+    rgba(0, 234, 255, 0.08) 100%
+  );
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+
+.downloadBar:hover .downloadBarFill {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 234, 255, 0.25) 0%,
+    rgba(0, 234, 255, 0.12) 100%
+  );
+}
+
+.downloadBarText {
+  position: relative;
+  z-index: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-highlight);
+  letter-spacing: 1px;
+}
+
+@keyframes downloadPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(0, 234, 255, 0.35),
+      0 0 30px rgba(0, 234, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 234, 255, 0.55),
+      0 0 50px rgba(0, 234, 255, 0.25);
+  }
+}
+
+/* Disabled download bar (Coming Soon) */
+.downloadBarDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.downloadBarDisabled .downloadBarText {
+  color: var(--color-text-dark);
+}
+
+/* ==================== BLINKING CURSOR ==================== */
+
+.cursorLine {
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.blinkingCursor {
+  color: var(--color-highlight);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* =================== CONTENT SECTIONS =================== */
+
+.contentSection {
+  margin-bottom: 36px;
+}
+
+.contentSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionHeader {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 10px;
+  color: var(--color-highlight);
+  margin-bottom: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(0, 234, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sectionHeader::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 234, 255, 0.3), transparent);
+}
+
+/* ====================== HERO IMAGE ====================== */
+
+.heroWrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CRT scanline overlay */
+.scanlineOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 50%,
+    rgba(0, 0, 0, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 1;
+}
+
+/* ==================== DESCRIPTION ==================== */
+
+.descParagraph {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #d4d8f0;
+  margin-bottom: 14px;
+}
+
+.descParagraph:last-child {
+  margin-bottom: 0;
+}
+
+/* First paragraph — block layout for drop cap support */
+.descParagraphFirst {
+  display: block;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #d4d8f0;
+  margin-bottom: 14px;
+}
+
+.descParagraphFirst:last-child {
+  margin-bottom: 0;
+}
+
+.descPrompt {
+  font-family: 'Courier New', monospace;
+  color: var(--color-highlight);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Drop cap on first paragraph's text */
+.descTextFirst {
+  display: inline;
+}
+
+.descTextFirst::first-letter {
+  font-family: 'DotGothic16', monospace;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.75;
+  margin: 8px 12px 0 0;
+  color: var(--color-highlight);
+  text-shadow: 2px 2px 0 rgba(0, 234, 255, 0.2);
+}
+
+/* ===================== CALLOUT BOX ===================== */
+
+.calloutBox {
+  border-left: 3px solid var(--color-highlight);
+  background: rgba(0, 10, 25, 0.7);
+  padding: 20px 24px;
+  margin: 28px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.calloutLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-highlight);
+  margin-bottom: 8px;
+}
+
+.calloutText {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-style: italic;
+  color: #b0b8e8;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===================== FEATURES ===================== */
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.featureNum {
+  font-family: 'Courier New', monospace;
+  color: var(--color-highlight);
+  font-size: 14px;
+  flex-shrink: 0;
+  line-height: 1.7;
+}
+
+.featureText {
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #d4d8f0;
+}
+
+/* ==================== CHANGELOG ==================== */
+
+.changelogStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.changelogEntry {
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  border-radius: 6px;
+  padding: 16px;
+  background: rgba(0, 10, 25, 0.5);
+}
+
+.changelogHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.changelogVersion {
+  color: var(--color-highlight);
+  font-weight: 700;
+}
+
+.changelogDate {
+  color: var(--color-text-dark);
+  font-size: 13px;
+}
+
+.changelogNotes {
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+/* ============== SYSTEM REQUIREMENTS ============== */
+
+.sysReqText {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  font-family: 'Courier New', monospace;
+  padding: 12px 16px;
+  background: rgba(0, 10, 25, 0.5);
+  border: 1px solid rgba(0, 234, 255, 0.15);
+  border-radius: 4px;
+  margin: 0;
+}
+
+/* ================ RELATED SECTION ================ */
+
+.relatedSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .terminalPanel {
+    margin-left: -12px;
+    margin-right: -12px;
+    border-radius: 0;
+    max-width: none;
+  }
+
+  .terminalBody {
+    padding: 16px 14px 14px;
+  }
+
+  .kvLine {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .kvKey {
+    min-width: 120px;
+  }
+
+  .titleBarPath {
+    font-size: 11px;
+  }
+
+  .downloadBarText {
+    font-size: 12px;
+  }
+
+  .backLinkRow {
+    padding-left: 4px;
+  }
+
+  .relatedSection {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .descParagraph,
+  .descParagraphFirst {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 480px) {
+  .kvKey {
+    min-width: 100px;
+    font-size: 11px;
+  }
+
+  .kvValue {
+    font-size: 11px;
+  }
+
+  .kvSep {
+    font-size: 11px;
+  }
+
+  .featureItem {
+    font-size: 14px;
+  }
+
+  .changelogHeader {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .descParagraph,
+  .descParagraphFirst {
+    font-size: 16px;
+  }
+
+  .descTextFirst::first-letter {
+    font-size: 2.8em;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .blinkingCursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .downloadBar:hover {
+    animation: none;
+  }
+
+  .scanlineOverlay {
+    display: none;
+  }
+
+  .pageWrapper::before {
+    display: none;
+  }
+}
