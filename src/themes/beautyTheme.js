@@ -8,8 +8,8 @@ const beautyTheme = {
     'color-text-dark': '#666666'
   },
   fonts: {
-    'heading-font': 'Playfair Display, serif',
-    'body-font': 'Montserrat, sans-serif'
+    'heading-font': "'Playfair Display', serif",
+    'body-font': "'Montserrat', sans-serif"
   }
 };
 

@@ -1,6 +1,7 @@
 // FeaturedSplit.jsx
 import React from 'react';
 import './css/FeaturedSplit.css';
+import pinkBeauty from './images/products/pink_beauty.jpeg';
 
 const FeaturedSplit = () => {
   return (
@@ -8,8 +9,8 @@ const FeaturedSplit = () => {
       <div className="image-col">
         <div className="circle-bg"></div>
         <img
-          src="path-to-focal-product.jpg"
-          alt="Focal Product"
+          src={pinkBeauty}
+          alt="Featured skincare product — berry white eye serum"
           className="focal-product-img"
         />
       </div>

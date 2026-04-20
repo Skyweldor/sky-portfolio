@@ -17,20 +17,20 @@ import { lazy, Suspense } from 'react';
 const GlobeLanding = lazy(() => import('./pages/GlobeLanding'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const StickerShop = lazy(() => import('./pages/StickerShop'));
-const Blog = lazy(() => import('./pages/Blog'));
+const Blog = lazy(() => import('./pages/blog/Blog'));
 const Prototype = lazy(() => import('./pages/Prototype'));
 const Aetherbound = lazy(() => import('./pages/Aetherbound'));
 const BeautyCare = lazy(() => import('./pages/BeautyCare'));
 const MiniGames = lazy(() => import('./pages/MiniGames'));
 const Catalog = lazy(() => import('./pages/Catalog'));
-const BlogDetail = lazy(() => import('./pages/BlogDetail'));
-const KantoPokedex = lazy(() => import('./pages/KantoPokedex'));
-const JohtoPokedex = lazy(() => import('./pages/JohtoPokedex'));
-const HoennPokedex = lazy(() => import('./pages/HoennPokedex'));
-const SinnohPokedex = lazy(() => import('./pages/SinnohPokedex'));
-const UnovaPokedex = lazy(() => import('./pages/UnovaPokedex'));
-const PokeMMOJournal = lazy(() => import('./pages/PokeMMOJournal'));
-const PokeMMOJournal2 = lazy(() => import('./pages/PokeMMOJournal2'));
+const BlogDetail = lazy(() => import('./pages/blog/BlogDetail'));
+const KantoPokedex = lazy(() => import('./pages/pokedex/KantoPokedex'));
+const JohtoPokedex = lazy(() => import('./pages/pokedex/JohtoPokedex'));
+const HoennPokedex = lazy(() => import('./pages/pokedex/HoennPokedex'));
+const SinnohPokedex = lazy(() => import('./pages/pokedex/SinnohPokedex'));
+const UnovaPokedex = lazy(() => import('./pages/pokedex/UnovaPokedex'));
+const PokeMMOJournal = lazy(() => import('./pages/blog/PokeMMOJournal'));
+const PokeMMOJournal2 = lazy(() => import('./pages/blog/PokeMMOJournal2'));
 
 // Global transition overlay that responds to context
 // Only renders when transition is active to avoid any blocking

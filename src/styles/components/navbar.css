@@ -182,15 +182,26 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 12px 20px;                  /* adequate spacing for touch */
     margin: 4px 0;                       /* vertical spacing between links */
   }
-  
+
   /* Maintain neon glow effects on mobile */
   nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
   nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     text-shadow: 0 0 10px var(--color-highlight), 0 0 20px var(--color-highlight);
   }
-  
+
   /* Mobile hamburger should maintain theme consistency */
   nav.navbar .navbar-toggler-icon {
     filter: drop-shadow(0 0 4px var(--color-primary)) drop-shadow(0 0 8px var(--color-primary));
+  }
+}
+
+/* Small phone breakpoint */
+@media (max-width: 480px) {
+  nav.navbar {
+    padding: 12px 16px;
+  }
+
+  nav.navbar.scrolled {
+    padding: 12px 16px;
   }
 } 

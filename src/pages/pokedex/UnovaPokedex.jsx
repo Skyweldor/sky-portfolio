@@ -1,25 +1,26 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavBar } from '../components/common/NavBar';
-import PokedexGrid from '../components/blog/PokedexGrid';
-import RegionNav from '../components/blog/RegionNav';
-import { KANTO_DEX, KANTO_TYPES } from '../data/kantoDexData';
-import { KANTO_NATURES } from '../data/kantoNatureData';
-import styles from './KantoPokedex.module.css';
+import { NavBar } from '../../components/common/NavBar';
+import PokedexGrid from '../../components/blog/PokedexGrid';
+import RegionNav from '../../components/blog/RegionNav';
+import { UNOVA_DEX, UNOVA_TYPES } from '../../data/unovaDexData';
+import { UNOVA_NATURES } from '../../data/unovaNatureData';
+import styles from './UnovaPokedex.module.css';
 
-const KantoPokedex = () => {
+const UnovaPokedex = () => {
   return (
     <div className={styles.pageWrapper}>
       <NavBar />
       <Container>
-        {/* Back link + Region nav */}
+        {/* Back link */}
         <div className={styles.backLinkRow}>
           <Link to="/blog" className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>
-        <RegionNav currentRegion="Kanto" />
+
+        <RegionNav currentRegion="Unova" />
 
         {/* ========== TERMINAL HEADER PANEL ========== */}
         <div className={styles.terminalPanel}>
@@ -30,7 +31,7 @@ const KantoPokedex = () => {
               <span className={styles.dotGreen} />
             </div>
             <span className={styles.titleBarPath}>
-              SYNTHCITY://pokedex/kanto
+              SYNTHCITY://pokedex/unova
             </span>
           </div>
 
@@ -38,22 +39,22 @@ const KantoPokedex = () => {
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.region</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>KANTO</span>
+              <span className={styles.kvValue}>UNOVA</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.generation</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>I</span>
+              <span className={styles.kvValue}>V</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.total_entries</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>151</span>
+              <span className={styles.kvValue}>156</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.range</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>#001 — #151</span>
+              <span className={styles.kvValue}>#494 — #649</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.source</span>
@@ -84,13 +85,13 @@ const KantoPokedex = () => {
               <span className={styles.dotGreen} />
             </div>
             <span className={styles.titleBarPath}>
-              SYNTHCITY://pokedex/kanto/entries
+              SYNTHCITY://pokedex/unova/entries
             </span>
           </div>
 
           <div className={styles.terminalBody}>
             <h2 className={styles.sectionHeader}>// DEX_ENTRIES</h2>
-            <PokedexGrid pokemon={KANTO_DEX} types={KANTO_TYPES} natureData={KANTO_NATURES} />
+            <PokedexGrid pokemon={UNOVA_DEX} types={UNOVA_TYPES} natureData={UNOVA_NATURES} />
           </div>
         </div>
 
@@ -109,6 +110,7 @@ const KantoPokedex = () => {
 
           <div className={styles.terminalBody}>
             <div className={styles.footerText}>
+              <span className={styles.footerHighlight}>&gt;</span> All PokeMMO regions loaded — <span className={styles.footerHighlight}>649</span> entries indexed<br />
               <span className={styles.footerHighlight}>&gt;</span> Sprite data sourced from <span className={styles.footerHighlight}>msikma/pokesprite</span><br />
               <span className={styles.footerHighlight}>&gt;</span> Gen VIII rendering format — base forms only
             </div>
@@ -122,4 +124,4 @@ const KantoPokedex = () => {
   );
 };
 
-export default KantoPokedex;
+export default UnovaPokedex;

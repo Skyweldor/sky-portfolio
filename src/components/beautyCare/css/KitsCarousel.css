@@ -12,11 +12,15 @@
   .carousel-title .subtext {
     display: block;
     font-size: 1rem;
-    color: #666;
+    color: var(--deep-rose-brown);
     margin-top: 0.5rem;
   }
   .kit-slide {
     padding: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .kit-slide:hover {
+    transform: translateY(-4px);
   }
   
   .kit-image-wrapper {
@@ -34,22 +38,39 @@
   }
   .carousel-button {
     display: inline-block;
-    background-color: var(--gold);
-    color: #fff;
+    background: transparent;
+    color: var(--maroon);
     text-decoration: none;
     padding: 0.7rem 1.2rem;
+    border: 2px solid var(--gold);
     border-radius: 4px;
     margin-top: 0.5rem;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   .carousel-button:hover {
-    background-color: #b88a54;
+    background-color: var(--gold);
+    color: #fff;
   }
   /* Adjust slick-dots / arrows if desired with override CSS */
   
   .kit-card {
-    background: url('../images/beige_017.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/beige_017.jpg') center/cover no-repeat;
     padding: 2rem;
     border-radius: 8px;
+    color: #fff;
+  }
+
+  @media (max-width: 480px) {
+    .kits-carousel-section {
+      padding: 1rem;
+    }
+    .carousel-title {
+      font-size: 1.5rem;
+    }
+    .kit-image-wrapper {
+      width: 150px;
+      height: 150px;
+    }
   }
   

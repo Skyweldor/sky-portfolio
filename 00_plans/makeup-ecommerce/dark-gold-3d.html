@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELEVATE — Dark Gold 3D</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #ccc;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .header {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(180,150,80,0.15);
+  }
+  .header-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #d4a853, #f2d68a, #d4a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  .section {
+    padding: 3rem;
+    border-bottom: 1px solid rgba(180,150,80,0.08);
+  }
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #d4a853;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #999;
+    margin-bottom: 0.5rem;
+  }
+  .section-desc {
+    font-size: 0.8rem;
+    color: #555;
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  #three-container {
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: grab;
+    background: #050403;
+  }
+  #three-container:active { cursor: grabbing; }
+
+  .controls {
+    display: flex;
+    gap: 6px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-right: 16px;
+  }
+  .ctrl-group-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444;
+    margin-right: 4px;
+  }
+  .ctrl-btn {
+    padding: 6px 12px;
+    border: 1px solid rgba(180,150,80,0.15);
+    border-radius: 6px;
+    background: transparent;
+    color: #777;
+    font-size: 0.68rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(212,168,83,0.4);
+    color: #d4a853;
+    background: rgba(212,168,83,0.05);
+  }
+  .ctrl-btn.active {
+    border-color: #d4a853;
+    color: #d4a853;
+    background: rgba(212,168,83,0.1);
+  }
+
+  .versus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 1rem;
+  }
+  .versus-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px;
+    color: #555;
+  }
+  .versus-canvas {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .code-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1.5rem;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.7rem;
+    line-height: 1.9;
+    color: #888;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .c-prop { color: #8090dd; }
+  .c-val { color: #6ac89a; }
+  .c-old { color: #dd7070; text-decoration: line-through; opacity: 0.6; }
+  .c-new { color: #d4a853; }
+  .c-comment { color: #444; }
+
+  .swatch-row {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    margin: 0.8rem 0;
+  }
+  .swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .swatch-label {
+    font-size: 0.65rem;
+    color: #555;
+    margin-left: 10px;
+  }
+
+  .rec-box {
+    background: rgba(212,168,83,0.06);
+    border: 1px solid rgba(212,168,83,0.15);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+  }
+  .rec-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d4a853;
+    margin-bottom: 0.6rem;
+  }
+  .rec-text {
+    font-size: 0.78rem;
+    color: #888;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .section { padding: 2rem 1.5rem; }
+    .header { padding: 1.5rem; }
+    .versus { grid-template-columns: 1fr; }
+    #three-container { height: 280px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Dark Gold — 3D Fix</div>
+  <div class="header-sub">Inverted luminance</div>
+</div>
+
+<!-- BEFORE vs AFTER -->
+<div class="section">
+  <div class="section-label">Before → After</div>
+  <div class="section-title">Bright base vs. dark base — same geometry, different feel</div>
+  <div class="section-desc">
+    Left: the previous build — bright yellow-gold base with even lighting. Right: dark brown base (#3d2200) with a near-black environment, high envMapIntensity, and one strong key light. Only the surfaces that catch the light directly go bright; everything else falls to deep brown.
+  </div>
+  <div style="margin-bottom: 1rem;">
+    <div style="font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #555; margin-bottom: 6px;">Material base color</div>
+    <div class="swatch-row">
+      <div class="swatch" style="background: #d4a853;"></div>
+      <div class="swatch-label" style="color:#dd7070;text-decoration:line-through;opacity:0.6;">Before: #d4a853</div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background: #3d2200;"></div>
+      <div class="swatch-label" style="color:#d4a853;">After: #3d2200</div>
+    </div>
+  </div>
+  <div class="versus">
+    <div>
+      <div class="versus-label" style="color:#dd7070;">Before — bright base</div>
+      <div class="versus-canvas" id="before-container" style="border-radius: 12px 0 0 12px; border-right: 1px solid rgba(255,255,255,0.05); background: #080604;"></div>
+    </div>
+    <div>
+      <div class="versus-label" style="color:#d4a853;">After — dark base</div>
+      <div class="versus-canvas" id="after-container" style="border-radius: 0 12px 12px 0; background: #050403;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- INTERACTIVE DARK GOLD -->
+<div class="section">
+  <div class="section-label">Interactive</div>
+  <div class="section-title">Tunable dark gold — move mouse to rotate, use controls to tweak</div>
+  <div class="section-desc">
+    This is the corrected version. Drag to orbit. Use the controls below to dial in the exact look — the "base color" slider is the most important one.
+  </div>
+  <div id="three-container"></div>
+  <div class="controls">
+    <div class="ctrl-group">
+      <span class="ctrl-group-label">Base</span>
+      <button class="ctrl-btn" data-base="0x1a0e00">Near-black</button>
+      <button class="ctrl-btn active" data-base="0x3d2200">Dark brown</button>
+      <button class="ctrl-btn" data-base="0x5a3d10">Medium</button>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-group-label">Finish</span>
+      <button class="ctrl-btn active" data-roughness="0.15">Mirror</button>
+      <button class="ctrl-btn" data-roughness="0.3">Polished</button>
+      <button class="ctrl-btn" data-roughness="0.5">Satin</button>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-group-label">Env</span>
+      <button class="ctrl-btn active" data-env="dark">Dark studio</button>
+      <button class="ctrl-btn" data-env="medium">Medium</button>
+      <button class="ctrl-btn" data-env="bright">Bright</button>
+    </div>
+  </div>
+</div>
+
+<!-- CODE DIFF -->
+<div class="section">
+  <div class="section-label">Code Diff</div>
+  <div class="section-title">What changed — material and environment</div>
+  <div class="code-block"><span class="c-comment">/* ── Material ── */</span>
+new THREE.MeshPhysicalMaterial({
+  <span class="c-prop">color</span>:               <span class="c-old">0xd4a853</span>  →  <span class="c-new">0x3d2200</span>,    <span class="c-comment">/* dark brown base */</span>
+  <span class="c-prop">metalness</span>:           <span class="c-val">1.0</span>,                       <span class="c-comment">/* unchanged */</span>
+  <span class="c-prop">roughness</span>:           <span class="c-old">0.25</span>    →  <span class="c-new">0.15</span>,        <span class="c-comment">/* lower = sharper highlights */</span>
+  <span class="c-prop">envMapIntensity</span>:     <span class="c-old">2.0</span>     →  <span class="c-new">4.5</span>,         <span class="c-comment">/* cranked — bright spots pop harder */</span>
+  <span class="c-prop">clearcoat</span>:           <span class="c-val">0.5</span>,
+  <span class="c-prop">clearcoatRoughness</span>: <span class="c-val">0.05</span>,
+})
+
+<span class="c-comment">/* ── Environment ── */</span>
+envScene.background = <span class="c-old">0x111111</span>  →  <span class="c-new">0x010100</span>     <span class="c-comment">/* near-black ambient */</span>
+
+<span class="c-comment">/* Key light: small + bright = tight specular */</span>
+keyLightPlane.scale = <span class="c-old">(10, 10)</span>  →  <span class="c-new">(2.5, 2.5)</span>   <span class="c-comment">/* smaller = harder highlight edge */</span>
+keyLightPlane.color = <span class="c-new">0xfff8e0</span>                      <span class="c-comment">/* warm white */</span>
+
+<span class="c-comment">/* Fill light: barely visible */</span>
+fillLightPlane.color = <span class="c-old">0xffe8cc</span>  →  <span class="c-new">0x0a0800</span>    <span class="c-comment">/* almost nothing */</span>
+
+<span class="c-comment">/* ── Tone mapping ── */</span>
+renderer.<span class="c-prop">toneMappingExposure</span> = <span class="c-old">1.2</span>  →  <span class="c-new">0.9</span>     <span class="c-comment">/* pull exposure down */</span>
+
+<span class="c-comment">/* The principle: dark base × dark environment × high envMapIntensity
+   = only direct specular reflections survive as bright gold
+   = everything else falls to deep brown/black                    */</span></div>
+
+  <div class="rec-box">
+    <div class="rec-title">Why this works</div>
+    <div class="rec-text">
+      In PBR metallic rendering, the material's base color acts as the reflectance color — it tints all reflections. A bright base (#d4a853) means even dim environment reflections show up as visible gold. By dropping the base to #3d2200, dim reflections become near-invisible dark brown. Only high-intensity specular highlights — from the single key light — punch through as bright gold.<br><br>
+      This is the exact same principle as the CSS fix: <strong style="color:#eee;">widen the dynamic range by lowering the floor, not raising the ceiling.</strong>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// =============================================
+// Shared helpers
+// =============================================
+function createGoldScene(container, config) {
+  const w = container.clientWidth;
+  const h = container.clientHeight || 300;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(config.sceneBg || 0x050403);
+
+  const camera = new THREE.PerspectiveCamera(38, w / h, 0.1, 100);
+  camera.position.set(0, 0, 6.5);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = config.exposure || 0.9;
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  container.appendChild(renderer.domElement);
+
+  // Build environment
+  const pmremGen = new THREE.PMREMGenerator(renderer);
+  const envScene = new THREE.Scene();
+  envScene.background = new THREE.Color(config.envBg || 0x010100);
+
+  // Key light — small and bright for tight specular
+  const key = new THREE.Mesh(
+    new THREE.PlaneGeometry(config.keySize || 2.5, config.keySize || 2.5),
+    new THREE.MeshBasicMaterial({ color: config.keyColor || 0xfff8e0, side: THREE.DoubleSide })
+  );
+  key.position.set(2, 4, 3);
+  key.lookAt(0, 0, 0);
+  envScene.add(key);
+
+  // Secondary key — slight rim
+  const rim = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.5, 1.5),
+    new THREE.MeshBasicMaterial({ color: config.rimColor || 0xffe0a0, side: THREE.DoubleSide })
+  );
+  rim.position.set(-3, -2, 4);
+  rim.lookAt(0, 0, 0);
+  envScene.add(rim);
+
+  // Fill — very dim
+  const fill = new THREE.Mesh(
+    new THREE.PlaneGeometry(8, 8),
+    new THREE.MeshBasicMaterial({ color: config.fillColor || 0x0a0800, side: THREE.DoubleSide })
+  );
+  fill.position.set(-5, 1, -2);
+  fill.lookAt(0, 0, 0);
+  envScene.add(fill);
+
+  const envMap = pmremGen.fromScene(envScene, 0, 0.1, 100).texture;
+  scene.environment = envMap;
+
+  // Material
+  const mat = new THREE.MeshStandardMaterial({
+    color: config.baseColor || 0x3d2200,
+    metalness: 1.0,
+    roughness: config.roughness || 0.15,
+    envMapIntensity: config.envIntensity || 4.5,
+  });
+
+  // Shapes
+  const group = new THREE.Group();
+  const geos = [
+    new THREE.TorusGeometry(0.38, 0.14, 48, 96),
+    new THREE.SphereGeometry(0.44, 64, 64),
+    new THREE.TorusKnotGeometry(0.3, 0.1, 128, 32),
+    new THREE.SphereGeometry(0.4, 64, 64),
+    new THREE.TorusGeometry(0.36, 0.12, 48, 96),
+  ];
+
+  const spacing = 1.45;
+  const startX = -((geos.length - 1) * spacing) / 2;
+  geos.forEach((geo, i) => {
+    const m = new THREE.Mesh(geo, mat.clone());
+    m.position.set(startX + i * spacing, 0, 0);
+    group.add(m);
+  });
+  scene.add(group);
+
+  // Directional for extra punch
+  const dLight = new THREE.DirectionalLight(0xfff0d0, config.dirIntensity || 1.5);
+  dLight.position.set(3, 5, 4);
+  scene.add(dLight);
+
+  scene.add(new THREE.AmbientLight(0x030201, 0.3));
+
+  return { scene, camera, renderer, group, mat, pmremGen, envScene, key, rim, fill, dLight };
+}
+
+// =============================================
+// Before / After comparison
+// =============================================
+(function() {
+  // BEFORE — bright gold (old version)
+  const beforeEl = document.getElementById('before-container');
+  if (!beforeEl) return;
+  const before = createGoldScene(beforeEl, {
+    baseColor: 0xd4a853,
+    roughness: 0.25,
+    envIntensity: 2.0,
+    envBg: 0x111111,
+    keySize: 10,
+    keyColor: 0xfff5e0,
+    rimColor: 0xffd4a0,
+    fillColor: 0x1a1208,
+    exposure: 1.2,
+    dirIntensity: 1.5,
+    sceneBg: 0x080604
+  });
+
+  // AFTER — dark gold (new version)
+  const afterEl = document.getElementById('after-container');
+  const after = createGoldScene(afterEl, {
+    baseColor: 0x3d2200,
+    roughness: 0.15,
+    envIntensity: 4.5,
+    envBg: 0x010100,
+    keySize: 2.5,
+    keyColor: 0xfff8e0,
+    rimColor: 0xffe0a0,
+    fillColor: 0x0a0800,
+    exposure: 0.9,
+    dirIntensity: 1.5,
+    sceneBg: 0x050403
+  });
+
+  function animateComparison() {
+    requestAnimationFrame(animateComparison);
+    const t = Date.now() * 0.0008;
+    [before, after].forEach(s => {
+      s.group.children.forEach((child, i) => {
+        child.rotation.y += 0.004 + i * 0.001;
+        child.rotation.x += 0.002;
+        child.position.y = Math.sin(t + i * 1.3) * 0.04;
+      });
+      s.renderer.render(s.scene, s.camera);
+    });
+  }
+  animateComparison();
+})();
+
+// =============================================
+// Interactive main demo
+// =============================================
+(function() {
+  const container = document.getElementById('three-container');
+  if (!container) return;
+
+  const state = createGoldScene(container, {
+    baseColor: 0x3d2200,
+    roughness: 0.15,
+    envIntensity: 4.5,
+    envBg: 0x010100,
+    keySize: 2.5,
+    keyColor: 0xfff8e0,
+    rimColor: 0xffe0a0,
+    fillColor: 0x0a0800,
+    exposure: 0.9,
+    dirIntensity: 1.5,
+    sceneBg: 0x050403
+  });
+
+  let mouseX = 0, mouseY = 0;
+  let rotY = 0, rotX = 0;
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+  });
+
+  // Rebuild env map helper
+  function rebuildEnv(envBg, keyColor, fillColor) {
+    state.envScene.background.set(envBg);
+    state.key.material.color.set(keyColor);
+    state.fill.material.color.set(fillColor);
+    const newEnvMap = state.pmremGen.fromScene(state.envScene, 0, 0.1, 100).texture;
+    state.scene.environment = newEnvMap;
+  }
+
+  // Controls
+  document.querySelector('.controls').addEventListener('click', (e) => {
+    const btn = e.target.closest('.ctrl-btn');
+    if (!btn) return;
+
+    // Base color
+    if (btn.dataset.base) {
+      const color = parseInt(btn.dataset.base);
+      state.group.children.forEach(m => m.material.color.setHex(color));
+      btn.parentElement.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Roughness
+    if (btn.dataset.roughness) {
+      const r = parseFloat(btn.dataset.roughness);
+      state.group.children.forEach(m => { m.material.roughness = r; });
+      btn.parentElement.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Environment
+    if (btn.dataset.env) {
+      if (btn.dataset.env === 'dark') {
+        rebuildEnv(0x010100, 0xfff8e0, 0x0a0800);
+        state.renderer.toneMappingExposure = 0.9;
+        state.group.children.forEach(m => { m.material.envMapIntensity = 4.5; });
+      } else if (btn.dataset.env === 'medium') {
+        rebuildEnv(0x080604, 0xfff5e0, 0x1a1208);
+        state.renderer.toneMappingExposure = 1.0;
+        state.group.children.forEach(m => { m.material.envMapIntensity = 3.0; });
+      } else {
+        rebuildEnv(0x111111, 0xfff5e0, 0x2a2018);
+        state.renderer.toneMappingExposure = 1.1;
+        state.group.children.forEach(m => { m.material.envMapIntensity = 2.0; });
+      }
+      btn.parentElement.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    const targetRotY = mouseX * 0.6;
+    const targetRotX = -mouseY * 0.3;
+    rotY += (targetRotY - rotY) * 0.04;
+    rotX += (targetRotX - rotX) * 0.04;
+    state.group.rotation.y = rotY;
+    state.group.rotation.x = rotX;
+
+    const t = Date.now() * 0.0008;
+    state.group.children.forEach((child, i) => {
+      child.rotation.y += 0.004 + i * 0.0012;
+      child.rotation.x += 0.002;
+      child.position.y = Math.sin(t + i * 1.3) * 0.04;
+    });
+
+    state.renderer.render(state.scene, state.camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const newW = container.clientWidth;
+    const newH = container.clientHeight;
+    state.camera.aspect = newW / newH;
+    state.camera.updateProjectionMatrix();
+    state.renderer.setSize(newW, newH);
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -210,6 +210,18 @@
   }
 }
 
+/* Small phone breakpoint */
+@media (max-width: 480px) {
+  .navRight {
+    min-width: 0;
+  }
+
+  .ctaButton {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
 /* ---------------------------------------------------------------
    A. BLOOMY PROGRESS BAR
    --------------------------------------------------------------- */
@@ -330,19 +342,23 @@
     backdrop-filter: blur(10px) saturate(180%);          /* maintain glass morphism on mobile */
     -webkit-backdrop-filter: blur(10px) saturate(180%);
   }
-  
+
   .glowLink {
     font-size: 16px;                     /* maintain readable size, not too small */
     padding: 10px 15px;                  /* adequate touch targets for mobile */
   }
-  
+
   .cursorDot {
     display: none;                       /* hide custom cursor on mobile */
   }
-  
+
   /* Ensure mobile navbar maintains the SynthCity theme */
   .navTransparent {
     background: rgba(0, 0, 0, 0);        /* fully transparent on mobile too */
+  }
+
+  .navRight {
+    min-width: 100px;
   }
 }
 

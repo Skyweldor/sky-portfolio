@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEVATE — Luxury Gold Hero</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        :root {
+            --metallic-gold: #E2B84B;
+            --deep-maroon: #3d0a0a;
+            --soft-pink: #f8d8d5;
+            --debug-bg: rgba(15, 15, 15, 0.9);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050505;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), 
+                        url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+        }
+
+        /* 3D Canvas Layer */
+        .gold-title-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 100%;
+            height: 500px;
+            z-index: 5;
+            mix-blend-mode: screen; 
+            pointer-events: none;
+        }
+
+        canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Content Overlay */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            margin-top: 250px;
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .shop-btn {
+            padding: 0.8rem 2rem;
+            background: var(--deep-maroon);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* --- DEBUG PANEL --- */
+        .debug-panel {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 280px;
+            background: var(--debug-bg);
+            border: 1px solid rgba(226, 184, 75, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            z-index: 100;
+            font-size: 13px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .debug-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(226, 184, 75, 0.2);
+            padding-bottom: 8px;
+            font-weight: 600;
+            color: var(--metallic-gold);
+        }
+
+        .debug-row {
+            margin-bottom: 12px;
+        }
+
+        .debug-row label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .debug-row input[type="range"] {
+            width: 100%;
+            accent-color: var(--metallic-gold);
+            cursor: pointer;
+        }
+
+        .debug-row .val-display {
+            float: right;
+            color: var(--metallic-gold);
+            font-family: monospace;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .debug-btn {
+            flex: 1;
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            padding: 5px;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .debug-btn.active {
+            background: var(--metallic-gold);
+            color: black;
+            border-color: var(--metallic-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div id="gold-canvas" class="gold-title-container"></div>
+
+        <div class="hero-content">
+            <h2>Everyday Glamour</h2>
+            <button class="shop-btn">Shop Now</button>
+        </div>
+
+        <!-- DEBUG PANEL -->
+        <div class="debug-panel">
+            <div class="debug-header">
+                3D GOLD CONTROLS
+                <span id="fps-display"></span>
+            </div>
+            
+            <div class="debug-row">
+                <label>Gold Visibility (Exposure) <span id="exp-val" class="val-display">1.2</span></label>
+                <input type="range" id="exposure" min="0.5" max="3" step="0.1" value="1.2">
+            </div>
+
+            <div class="debug-row">
+                <label>Reflection (EnvMap) <span id="env-val" class="val-display">3.5</span></label>
+                <input type="range" id="envIntensity" min="0" max="10" step="0.5" value="3.5">
+            </div>
+
+            <div class="debug-row">
+                <label>Roughness (Finish)</label>
+                <div class="btn-group">
+                    <button class="debug-btn" onclick="setRoughness(0.05)">Mirror</button>
+                    <button class="debug-btn active" onclick="setRoughness(0.15)">Polished</button>
+                    <button class="debug-btn" onclick="setRoughness(0.4)">Satin</button>
+                </div>
+            </div>
+
+            <div class="debug-row">
+                <label>Depth (Z-Thickness) <span id="depth-val" class="val-display">0.15</span></label>
+                <input type="range" id="depth" min="0.02" max="0.5" step="0.01" value="0.15">
+            </div>
+
+            <div class="debug-row">
+                <label>Camera Zoom <span id="cam-val" class="val-display">7.0</span></label>
+                <input type="range" id="camZ" min="3" max="12" step="0.5" value="7">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let scene, camera, renderer, goldMat, textMesh, textGroup, fontObj;
+        
+        window.onload = function() {
+            const container = document.getElementById('gold-canvas');
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x000000);
+
+            camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 100);
+            camera.position.z = 7;
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.2;
+            container.appendChild(renderer.domElement);
+
+            // Create a fake environment for reflections
+            // In a full app we'd load an HDR, but we can simulate it with intensities
+            goldMat = new THREE.MeshStandardMaterial({
+                color: 0x3d2200, 
+                metalness: 1.0,
+                roughness: 0.15,
+                envMapIntensity: 3.5
+            });
+
+            // Lights positioned to create bright specular highlights
+            const keyLight = new THREE.DirectionalLight(0xfff5e0, 2.5);
+            keyLight.position.set(5, 5, 5);
+            scene.add(keyLight);
+
+            const rimLight = new THREE.DirectionalLight(0xffffff, 1.5);
+            rimLight.position.set(-5, 2, -5);
+            scene.add(rimLight);
+
+            const ambient = new THREE.AmbientLight(0x404040, 0.5);
+            scene.add(ambient);
+
+            // Loader
+            const loader = new THREE.FontLoader();
+            loader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function(font) {
+                fontObj = font;
+                createText();
+            });
+
+            function createText() {
+                if (textGroup) scene.remove(textGroup);
+                
+                const depthVal = parseFloat(document.getElementById('depth').value);
+                
+                const geometry = new THREE.TextGeometry('ELEVATE', {
+                    font: fontObj,
+                    size: 0.8,
+                    height: depthVal,
+                    curveSegments: 12,
+                    bevelEnabled: true,
+                    bevelThickness: 0.04,
+                    bevelSize: 0.03,
+                    bevelSegments: 5
+                });
+
+                geometry.computeBoundingBox();
+                const centerOffset = -0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
+                const centerYOffset = -0.5 * (geometry.boundingBox.max.y - geometry.boundingBox.min.y);
+                
+                textMesh = new THREE.Mesh(geometry, goldMat);
+                textMesh.position.x = centerOffset;
+                textMesh.position.y = centerYOffset;
+                
+                textGroup = new THREE.Group();
+                textGroup.add(textMesh);
+                scene.add(textGroup);
+            }
+
+            // Input Handlers
+            document.getElementById('exposure').oninput = (e) => {
+                renderer.toneMappingExposure = parseFloat(e.target.value);
+                document.getElementById('exp-val').innerText = e.target.value;
+            };
+
+            document.getElementById('envIntensity').oninput = (e) => {
+                goldMat.envMapIntensity = parseFloat(e.target.value);
+                document.getElementById('env-val').innerText = e.target.value;
+            };
+
+            document.getElementById('camZ').oninput = (e) => {
+                camera.position.z = parseFloat(e.target.value);
+                document.getElementById('cam-val').innerText = e.target.value;
+            };
+
+            document.getElementById('depth').oninput = (e) => {
+                document.getElementById('depth-val').innerText = e.target.value;
+                if (fontObj) createText();
+            };
+
+            window.setRoughness = (val) => {
+                goldMat.roughness = val;
+                const btns = document.querySelectorAll('.debug-btn');
+                btns.forEach(b => b.classList.remove('active'));
+                event.target.classList.add('active');
+            };
+
+            // Interaction
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) - 0.5;
+                mouseY = (e.clientY / window.innerHeight) - 0.5;
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+                if (textGroup) {
+                    textGroup.rotation.y += (mouseX * 0.8 - textGroup.rotation.y) * 0.05;
+                    textGroup.rotation.x += (mouseY * 0.4 - textGroup.rotation.x) * 0.05;
+                }
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+        };
+    </script>
+</body>
+</html>

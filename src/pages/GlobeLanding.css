@@ -369,6 +369,52 @@
   100% { opacity: 0; }
 }
 
+/* Small phone: scale down loading spinner */
+@media (max-width: 480px) {
+  .pda-loading {
+    padding: 24px;
+  }
+
+  .pda-loading .spinner-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+  }
+
+  .pda-loading .spinner {
+    width: 54px;
+    height: 54px;
+  }
+
+  .pda-loading .spinner-outer {
+    width: 68px;
+    height: 68px;
+  }
+
+  .pda-loading .spinner-core {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pda-loading .header {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 36px;
+  }
+
+  .pda-loading .status {
+    font-size: 13px;
+  }
+
+  .pda-loading .progress-text {
+    font-size: 18px;
+  }
+
+  .pda-loading .footer {
+    bottom: 24px;
+  }
+}
+
 /* --------------------------------------------------
    HIDE FOOTER ON GLOBE PAGE
 -------------------------------------------------- */

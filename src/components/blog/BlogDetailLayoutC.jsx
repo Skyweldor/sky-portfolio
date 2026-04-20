@@ -12,6 +12,13 @@ const TYPE_COLORS = {
   docs: '#00b3ff',
 };
 
+const TYPE_LABELS = {
+  demo: 'Demo',
+  asset: 'Asset Pack',
+  tool: 'Toolkit',
+  docs: 'Documentation',
+};
+
 const BlogDetailLayoutC = ({ item }) => {
   if (!item) return null;
 
@@ -32,113 +39,42 @@ const BlogDetailLayoutC = ({ item }) => {
 
         {/* ========== TERMINAL HEADER PANEL ========== */}
         <div className={styles.terminalPanel}>
-          {/* Title bar */}
-          <div className={styles.titleBar}>
-            <div className={styles.titleBarDots}>
-              <span className={styles.dotRed} />
-              <span className={styles.dotYellow} />
-              <span className={styles.dotGreen} />
-            </div>
-            <span className={styles.titleBarPath}>
-              SYNTHCITY://downloads/{item.id}
-            </span>
-          </div>
+          
 
-          {/* Terminal body */}
           <div className={styles.terminalBody}>
             <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.type</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span
-                className={styles.kvValue}
-                style={{ color: accentColor }}
-              >
+              <span className={styles.kvSep}>::&nbsp;</span>
+              <span className={styles.kvValue} style={{ color: accentColor }}>
                 {item.type.toUpperCase()}
               </span>
-            </div>
-            <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.title</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>{item.title}</span>
-            </div>
-            <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.author</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>{item.author}</span>
-            </div>
-            <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.date</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>{item.publishDate}</span>
-            </div>
-            <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.size</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
+              <span className={styles.kvSep}>::&nbsp;</span>
               <span className={styles.kvValue}>{item.fileSize}</span>
             </div>
             <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; ITEM.tags</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
+              <span className={styles.kvSep}>::&nbsp;</span>
+              <span className={styles.kvValue}>{item.title}</span>
+            </div>
+            <div className={styles.kvLine}>
+              <span className={styles.kvSep}>::&nbsp;</span>
+              <span className={styles.kvValue}>{item.author}</span>
+              <span className={styles.kvSep}>::&nbsp;</span>
+              <span className={styles.kvValue}>{item.publishDate}</span>
+              <span className={styles.kvSep}>::&nbsp;</span>
               <span className={styles.kvValue}>
                 {item.tags.map((tag) => `[${tag}]`).join(' ')}
               </span>
             </div>
-            <div className={styles.kvLine}>
-              <span className={styles.kvKey}>&gt; STATUS</span>
-              <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              {isDownloadDisabled ? (
-                <span className={styles.statusComingSoon}>COMING SOON</span>
-              ) : (
-                <span className={styles.statusAvailable}>AVAILABLE</span>
-              )}
-            </div>
+            
 
-            {/* Download button styled as progress bar */}
-            {isDownloadDisabled ? (
-              <div
-                className={`${styles.downloadBar} ${styles.downloadBarDisabled}`}
-                aria-label={`Download unavailable for ${item.title}`}
-              >
-                <span className={styles.downloadBarFill} />
-                <span className={styles.downloadBarText}>
-                  {'>'} [{'░░░░░░░░░░░░░░░░░░░░░░░░'}] COMING SOON
-                </span>
-              </div>
-            ) : (
-              <a
-                href={item.downloadUrl || '#'}
-                className={styles.downloadBar}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Download ${item.title}`}
-              >
-                <span className={styles.downloadBarFill} />
-                <span className={styles.downloadBarText}>
-                  {'>'} [{'████████████████████████'}] DOWNLOAD
-                </span>
-              </a>
-            )}
-
-            {/* Blinking cursor */}
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
-            </div>
+            
           </div>
         </div>
 
+        {/* ========== DIVIDER ========== */}
+        <div className={styles.panelDivider} />
+
         {/* ========== CONTENT PANEL ========== */}
         <div className={styles.terminalPanel}>
-          <div className={styles.titleBar}>
-            <div className={styles.titleBarDots}>
-              <span className={styles.dotRed} />
-              <span className={styles.dotYellow} />
-              <span className={styles.dotGreen} />
-            </div>
-            <span className={styles.titleBarPath}>
-              SYNTHCITY://downloads/{item.id}/details
-            </span>
-          </div>
-
           <div className={styles.terminalBody}>
             {/* // PREVIEW */}
             <div className={styles.contentSection}>
@@ -166,7 +102,6 @@ const BlogDetailLayoutC = ({ item }) => {
                 <h2 className={styles.sectionHeader}>// DESCRIPTION</h2>
                 {paragraphs.map((para, idx) => (
                   <p key={idx} className={idx === 0 ? styles.descParagraphFirst : styles.descParagraph}>
-                    <span className={styles.descPrompt}>&gt;&nbsp;</span>
                     <span className={idx === 0 ? styles.descTextFirst : undefined}>{para}</span>
                   </p>
                 ))}
@@ -220,7 +155,6 @@ const BlogDetailLayoutC = ({ item }) => {
                         </span>
                       </div>
                       <p className={styles.changelogNotes}>
-                        <span className={styles.descPrompt}>&gt;&nbsp;</span>
                         {entry.notes}
                       </p>
                     </div>

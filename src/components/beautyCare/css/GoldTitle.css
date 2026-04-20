@@ -1,0 +1,188 @@
+/* GoldTitle — 3D PBR gold text container + debug panel */
+
+.gold-title-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gold-title-canvas {
+  width: 100%;
+  height: 220px;
+  cursor: grab;
+}
+.gold-title-canvas:active {
+  cursor: grabbing;
+}
+.gold-title-canvas canvas {
+  display: block;
+  mix-blend-mode: screen;
+}
+
+/* ── Debug panel ── */
+.gold-debug-panel {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  z-index: 20;
+  min-width: 280px;
+  font-family: 'DM Sans', 'Montserrat', sans-serif;
+}
+
+.gold-debug-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 168, 83, 0.12);
+}
+.gold-debug-header span {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d4a853;
+}
+.gold-debug-header button {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.gold-debug-header button:hover {
+  color: #d4a853;
+}
+
+.gold-debug-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gold-debug-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #444;
+  min-width: 36px;
+  margin-right: 4px;
+}
+
+.gold-debug-btn {
+  padding: 5px 10px;
+  border: 1px solid rgba(180, 150, 80, 0.15);
+  border-radius: 5px;
+  background: transparent;
+  color: #666;
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+}
+.gold-debug-btn:hover {
+  border-color: rgba(212, 168, 83, 0.4);
+  color: #d4a853;
+  background: rgba(212, 168, 83, 0.05);
+}
+.gold-debug-btn.active {
+  border-color: #d4a853;
+  color: #d4a853;
+  background: rgba(212, 168, 83, 0.1);
+}
+
+.gold-debug-divider {
+  height: 1px;
+  background: rgba(212, 168, 83, 0.12);
+  margin: 0.5rem 0;
+}
+
+.gold-debug-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: rgba(212, 168, 83, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+.gold-debug-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d4a853;
+  cursor: pointer;
+}
+.gold-debug-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d4a853;
+  border: none;
+  cursor: pointer;
+}
+
+.gold-debug-value {
+  font-size: 0.6rem;
+  color: #d4a853;
+  min-width: 32px;
+  text-align: right;
+  font-family: monospace;
+}
+
+.gold-debug-hint {
+  margin-top: 0.5rem;
+  font-size: 0.58rem;
+  color: #333;
+  text-align: right;
+}
+.gold-debug-hint kbd {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-family: monospace;
+  font-size: 0.6rem;
+  color: #555;
+}
+
+/* ── Fixed debug panel (outside normal flow, always visible) ── */
+.gold-debug-fixed {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  left: auto;
+  z-index: 9999;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .gold-title-canvas {
+    height: 180px;
+  }
+  .gold-debug-panel {
+    bottom: 8px;
+    right: 8px;
+    left: 8px;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .gold-title-canvas {
+    height: 140px;
+  }
+}

@@ -360,6 +360,11 @@
 }
 
 @media (max-width: 480px) {
+  .pageWrapper {
+    padding-top: 80px;
+    padding-bottom: 48px;
+  }
+
   .kvKey {
     min-width: 110px;
     font-size: 11px;
@@ -368,6 +373,10 @@
   .kvValue,
   .kvSep {
     font-size: 11px;
+  }
+
+  .kvLine {
+    line-height: 1.7;
   }
 
   .introText,
@@ -385,9 +394,83 @@
     padding: 2px 6px;
   }
 
+  .terminalBody {
+    padding: 14px 12px 12px;
+  }
+
+  .sectionHeader {
+    font-size: 9px;
+    gap: 10px;
+  }
+
   .postFooter {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .badgeCount {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pageWrapper {
+    padding-top: 70px;
+    padding-bottom: 36px;
+  }
+
+  .terminalPanel {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .terminalBody {
+    padding: 12px 10px 10px;
+  }
+
+  .kvKey {
+    min-width: 90px;
+    font-size: 10px;
+  }
+
+  .kvValue,
+  .kvSep {
+    font-size: 10px;
+  }
+
+  .kvLine {
+    line-height: 1.6;
+  }
+
+  .introText,
+  .introTextFirst,
+  .closingText {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .introDropCap::first-letter {
+    font-size: 2.4em;
+    margin: 6px 8px 0 0;
+  }
+
+  .tagBadge {
+    font-size: 9px;
+    padding: 1px 5px;
+  }
+
+  .titleBarPath {
+    font-size: 10px;
+  }
+
+  .nextLabel,
+  .nextHint {
+    font-size: 11px;
+  }
+
+  .rosterSection {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

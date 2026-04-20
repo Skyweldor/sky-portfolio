@@ -9,13 +9,13 @@ import HeroSection from './HeroSection';
 const MakeupHomePage = () => {
   return (
     <div>
-      {/*<HeroBanner />*/}
+      {/*<HeroBanner /> — original concept; kept for reference */}
       <HeroSection />
       {/* Additional sections or components can go here */}
       <DividingBar />
       <KitsCarousel />
       <FeaturedSplit />
-      <section style={{ padding: '2rem' }}>
+      <section style={{ padding: '2rem', position: 'relative', zIndex: 1 }}>
         <h2>Welcome to Our Makeup Collections</h2>
         <p>
           Explore our curated kits, luxurious packaging, and personalized

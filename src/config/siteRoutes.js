@@ -4,13 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const GlobeLanding = lazy(() => import('../pages/GlobeLanding'));
 const Portfolio = lazy(() => import('../pages/Portfolio'));
 const StickerShop = lazy(() => import('../pages/StickerShop'));
-const Blog = lazy(() => import('../pages/Blog'));
+const Blog = lazy(() => import('../pages/blog/Blog'));
 const Prototype = lazy(() => import('../pages/Prototype'));
 const Aetherbound = lazy(() => import('../pages/Aetherbound'));
 const BeautyCare = lazy(() => import('../pages/BeautyCare'));
 const MiniGames = lazy(() => import('../pages/MiniGames'));
 const Catalog = lazy(() => import('../pages/Catalog'));
-const PokeMMOJournal2 = lazy(() => import('../pages/PokeMMOJournal2'));
+const PokeMMOJournal2 = lazy(() => import('../pages/blog/PokeMMOJournal2'));
 
 export default function SiteRoutes() {
   return (

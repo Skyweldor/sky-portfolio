@@ -231,3 +231,48 @@
   52% { opacity: 0.2; }
   54% { opacity: 0.5; }
 }
+
+/* Small phone responsiveness */
+@media (max-width: 480px) {
+  .page-transition-content {
+    padding: 24px;
+  }
+
+  .page-transition-header {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 36px;
+  }
+
+  .page-transition-spinner-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+  }
+
+  .page-transition-spinner {
+    width: 54px;
+    height: 54px;
+  }
+
+  .page-transition-spinner-outer {
+    width: 68px;
+    height: 68px;
+  }
+
+  .page-transition-spinner-core {
+    width: 14px;
+    height: 14px;
+  }
+
+  .page-transition-status {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .page-transition-footer {
+    bottom: 24px;
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}

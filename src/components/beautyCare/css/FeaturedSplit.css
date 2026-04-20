@@ -52,8 +52,26 @@
   .split-btn {
     background-color: var(--gold);
     color: #fff;
-    padding: 0.8rem 1.4rem;
+    padding: 0.8rem 1.6rem;
     border-radius: 4px;
+    border: none;
     text-decoration: none;
+    font-weight: 600;
+    font-family: var(--body-font);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .split-btn:hover {
+    background-color: #c49a3e;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .featured-split {
+      flex-direction: column;
+      text-align: center;
+    }
+    .image-col {
+      margin: 0 auto;
+    }
   }
   

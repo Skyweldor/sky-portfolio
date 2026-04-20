@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavBar } from '../components/common/NavBar';
-import PokedexGrid from '../components/blog/PokedexGrid';
-import RegionNav from '../components/blog/RegionNav';
-import { HOENN_DEX, HOENN_TYPES } from '../data/hoennDexData';
-import styles from './HoennPokedex.module.css';
+import { NavBar } from '../../components/common/NavBar';
+import PokedexGrid from '../../components/blog/PokedexGrid';
+import RegionNav from '../../components/blog/RegionNav';
+import { SINNOH_DEX, SINNOH_TYPES } from '../../data/sinnohDexData';
+import { SINNOH_NATURES } from '../../data/sinnohNatureData';
+import styles from './SinnohPokedex.module.css';
 
-const HoennPokedex = () => {
+const SinnohPokedex = () => {
   return (
     <div className={styles.pageWrapper}>
       <NavBar />
@@ -19,7 +20,7 @@ const HoennPokedex = () => {
           </Link>
         </div>
 
-        <RegionNav currentRegion="Hoenn" />
+        <RegionNav currentRegion="Sinnoh" />
 
         {/* ========== TERMINAL HEADER PANEL ========== */}
         <div className={styles.terminalPanel}>
@@ -30,7 +31,7 @@ const HoennPokedex = () => {
               <span className={styles.dotGreen} />
             </div>
             <span className={styles.titleBarPath}>
-              SYNTHCITY://pokedex/hoenn
+              SYNTHCITY://pokedex/sinnoh
             </span>
           </div>
 
@@ -38,22 +39,22 @@ const HoennPokedex = () => {
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.region</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>HOENN</span>
+              <span className={styles.kvValue}>SINNOH</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.generation</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>III</span>
+              <span className={styles.kvValue}>IV</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.total_entries</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>135</span>
+              <span className={styles.kvValue}>107</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.range</span>
               <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
-              <span className={styles.kvValue}>#252 — #386</span>
+              <span className={styles.kvValue}>#387 — #493</span>
             </div>
             <div className={styles.kvLine}>
               <span className={styles.kvKey}>&gt; DEX.source</span>
@@ -84,13 +85,13 @@ const HoennPokedex = () => {
               <span className={styles.dotGreen} />
             </div>
             <span className={styles.titleBarPath}>
-              SYNTHCITY://pokedex/hoenn/entries
+              SYNTHCITY://pokedex/sinnoh/entries
             </span>
           </div>
 
           <div className={styles.terminalBody}>
             <h2 className={styles.sectionHeader}>// DEX_ENTRIES</h2>
-            <PokedexGrid pokemon={HOENN_DEX} types={HOENN_TYPES} />
+            <PokedexGrid pokemon={SINNOH_DEX} types={SINNOH_TYPES} natureData={SINNOH_NATURES} />
           </div>
         </div>
 
@@ -109,7 +110,7 @@ const HoennPokedex = () => {
 
           <div className={styles.terminalBody}>
             <div className={styles.footerText}>
-              <span className={styles.footerHighlight}>&gt;</span> Next region: <span className={styles.footerHighlight}>Sinnoh</span> — 107 entries queued<br />
+              <span className={styles.footerHighlight}>&gt;</span> Next region: <span className={styles.footerHighlight}>Unova</span> — 156 entries queued<br />
               <span className={styles.footerHighlight}>&gt;</span> Sprite data sourced from <span className={styles.footerHighlight}>msikma/pokesprite</span><br />
               <span className={styles.footerHighlight}>&gt;</span> Gen VIII rendering format — base forms only
             </div>
@@ -123,4 +124,4 @@ const HoennPokedex = () => {
   );
 };
 
-export default HoennPokedex;
+export default SinnohPokedex;

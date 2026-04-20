@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavBar } from '../components/common/NavBar';
-import { blogPosts, pokedexRegions } from '../data/blogPostData';
+import { NavBar } from '../../components/common/NavBar';
+import { blogPosts, pokedexRegions } from '../../data/blogPostData';
 import styles from './Blog.module.css';
 
 /** Map category / status strings to badge class names. */

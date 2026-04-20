@@ -312,26 +312,28 @@
     font-size: 11px;
   }
 
-  /* Posts table: stack on mobile */
+  /* Posts table: flexible columns on tablet */
   .tableHeaderPosts {
-    grid-template-columns: 80px 1fr 80px;
+    grid-template-columns: minmax(60px, 80px) 1fr minmax(60px, 80px);
   }
 
   .tableRowPosts {
-    grid-template-columns: 80px 1fr 80px;
+    grid-template-columns: minmax(60px, 80px) 1fr minmax(60px, 80px);
   }
 
-  /* Pokedex table: reflow on mobile */
+  /* Pokedex table: flexible columns on tablet */
   .tableHeaderPokedex {
-    grid-template-columns: 1fr 60px 60px 80px;
+    grid-template-columns: 1fr minmax(50px, 60px) minmax(50px, 60px) minmax(60px, 80px);
   }
 
   .tableRowPokedex {
-    grid-template-columns: 1fr 60px 60px 80px;
+    grid-template-columns: 1fr minmax(50px, 60px) minmax(50px, 60px) minmax(60px, 80px);
   }
 
   .tableRow {
     font-size: 12px;
+    padding: 12px 8px;
+    min-height: 44px;
   }
 
   .tableHeader {
@@ -356,6 +358,8 @@
   .tableRowPosts {
     grid-template-columns: 1fr;
     gap: 4px;
+    padding: 14px 8px;
+    min-height: 44px;
   }
 
   .cellDate {
@@ -364,13 +368,15 @@
   }
 
   .tableHeaderPokedex {
-    grid-template-columns: 1fr 50px 50px 70px;
+    grid-template-columns: 1fr minmax(40px, 50px) minmax(40px, 50px) minmax(55px, 70px);
     font-size: 9px;
   }
 
   .tableRowPokedex {
-    grid-template-columns: 1fr 50px 50px 70px;
+    grid-template-columns: 1fr minmax(40px, 50px) minmax(40px, 50px) minmax(55px, 70px);
     font-size: 11px;
+    padding: 14px 8px;
+    min-height: 44px;
   }
 }
 

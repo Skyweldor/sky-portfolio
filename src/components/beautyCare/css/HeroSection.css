@@ -1,11 +1,3 @@
-:root {
-  --blush: #F8D8D5;
-  --metallic-gold: #E2B84B;
-  --rose-gold: #EBC9A4;
-  --cream-white: #FAF8F5;
-  --deep-rose-brown: #5A4E4B;
-}
-
 .animated-glow {
   /* Clamp the width relative to the viewport and max out at 320px */
   width: clamp(200px, 50%, 320px);
@@ -81,15 +73,29 @@
   /* Ensure particles don't overflow */
 }
 
-/* Ensure particles are placed absolutely, filling the hero section */
+/* Particle overlay — bokeh/luminous dust layer that softens the hero */
 .particle-overlay {
-  background: rgba(255, 0, 0, 0.1);
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Lower than the hero-section overlay */
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(4px);
+}
+
+/* Bottom fade — dissolves the hero into the content below */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, #fffafc);
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -122,8 +128,9 @@
 }
 
 .logo-area h1 {
-  font-size: 2rem;
+  font-size: 1.1rem;
   margin: 0;
+  letter-spacing: 0.25em;
 }
 
 /* NAV (pink box) */
@@ -137,6 +144,15 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* 3D Gold title container — no flex:1, sized by content (220px canvas) */
+.hero-title-3d {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MAIN HERO CONTENT (blue box + product snippet) */
@@ -167,7 +183,6 @@
 }
 
 .hero-button {
-  background-color: var(--metallic-gold);
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -176,10 +191,15 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  /* Optionally add a subtle backdrop-filter if you want a frosted look */
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+}
+
+.primary-cta {
+  font-size: 1.1rem;
+  padding: 0.9rem 2rem;
+  letter-spacing: 0.5px;
 }
 
 .hero-button::before {
@@ -246,13 +266,13 @@
   color: #f0e2c8;
 }
 
-/* Ticker bar (purple arrows) */
+/* Ticker bar — z-index 3 to stay above the bottom fade (::after z-index 2) */
 .ticker-bar {
   background-color: #000;
   color: #fff;
   padding: 0.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .ticker-bar span {
@@ -310,4 +330,54 @@
 /* Intensify the effect on hover */
 .glass-card:hover {
   box-shadow: 0 4px 40px rgba(226, 184, 75, 0.5);
+}
+
+/* Ticker animation (replaces deprecated marquee) */
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: tickerScroll 25s linear infinite;
+}
+
+.ticker-track span {
+  padding-right: 2rem;
+  font-weight: 500;
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+  .hero-nav ul {
+    gap: 0.75rem;
+  }
+  .hero-nav a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+  .hero-nav-row {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .hero-product-snippet {
+    max-width: 100%;
+  }
 }

@@ -200,7 +200,7 @@
   padding: 20px 24px;
   margin: 28px 0;
   font-family: 'Press Start 2P', monospace;
-  font-size: 8px;
+  font-size: clamp(10px, 2.5vw, 12px);
   line-height: 2.2;
 }
 
@@ -352,13 +352,136 @@
 
 /* ==================== RESPONSIVE ==================== */
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 32px 16px 60px;
+  }
+
+  .blogHeader {
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+  }
+
   .postTitle {
-    font-size: 13px;
+    font-size: clamp(12px, 3vw, 18px);
+  }
+
+  .sectionLabel {
+    font-size: 9px;
+    margin: 36px 0 16px;
+  }
+
+  .callout {
+    padding: 16px 18px;
+    margin: 24px 0;
+  }
+
+  .battleLog {
+    padding: 16px 18px;
+    margin: 20px 0;
+  }
+
+  .postBody p {
+    font-size: 17px;
+  }
+
+  .postFooter {
+    margin-top: 44px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px 12px 48px;
+  }
+
+  .blogHeader {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+  }
+
+  .postTitle {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .postMeta {
+    gap: 12px;
+  }
+
+  .sectionLabel {
+    font-size: 8px;
+    margin: 28px 0 14px;
+    gap: 10px;
+  }
+
+  .callout {
+    padding: 14px 14px;
+    margin: 20px 0;
+  }
+
+  .battleLog {
+    padding: 14px 12px;
+    margin: 16px 0;
+    line-height: 2;
   }
 
   .teamGrid {
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .pokeCard {
+    padding: 12px 10px;
+  }
+
+  .postBody p {
+    font-size: 16px;
+  }
+
+  .dropCap::first-letter {
+    font-size: 2.8em;
+    margin: 6px 8px 0 0;
+  }
+
+  .postFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 36px;
+  }
+
+  .badgeCount {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 16px 10px 40px;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .postTitle {
+    font-size: 11px;
+  }
+
+  .battleLog {
+    padding: 12px 10px;
+    overflow-x: auto;
+  }
+
+  .callout {
+    padding: 12px 12px;
+  }
+
+  .postBody p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 }
 

@@ -1,0 +1,495 @@
+/* ============================================================
+   BlogDetailLayoutD — "Journal" (Editorial / Literary)
+   Inspired by PokeMMO Journal Entry 001's warm, serif-driven
+   editorial layout with retro pixel accents.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Press+Start+2P&display=swap');
+
+/* --- CSS variables (scoped) --- */
+.pageWrapper {
+  --bg: #0d0f1a;
+  --surface: #13162b;
+  --border: #2a2f52;
+  --accent: #f5c842;
+  --accent2: #5b8cff;
+  --accent3: #ff6b6b;
+  --text: #d4d8f0;
+  --text-muted: #6b7199;
+
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(91,140,255,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(245,200,66,0.05) 0%, transparent 50%);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* CRT scanline overlay */
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+/* ==================== BACK LINK ==================== */
+
+.backLinkRow {
+  margin-bottom: 32px;
+}
+
+.backLink {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent2);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(245,200,66,0.4);
+  text-decoration: none;
+}
+
+/* ==================== HEADER ==================== */
+
+.blogHeader {
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 40px;
+}
+
+.blogName {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: var(--accent2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.postTitle {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(14px, 2.5vw, 22px);
+  color: var(--accent);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px rgba(245,200,66,0.3);
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.metaDate {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+.tag {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 2px;
+}
+
+/* ==================== HERO IMAGE ==================== */
+
+.heroWrapper {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.scanlineOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 50%,
+    rgba(0,0,0,0.03) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 1;
+}
+
+/* ==================== BODY TEXT ==================== */
+
+.postBody p {
+  margin-bottom: 1.6em;
+  color: var(--text);
+}
+
+.postBody p em {
+  color: #b0b8e8;
+  font-style: italic;
+}
+
+/* Drop cap on first paragraph */
+.dropCap::first-letter {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.75;
+  margin: 8px 12px 0 0;
+  color: var(--accent);
+  text-shadow: 2px 2px 0 rgba(245,200,66,0.2);
+}
+
+/* ==================== SECTION HEADERS ==================== */
+
+.sectionLabel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 52px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sectionLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ==================== CALLOUT ==================== */
+
+.callout {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  padding: 20px 24px;
+  margin: 32px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.callout p {
+  margin: 0;
+  font-style: italic;
+  color: #b0b8e8;
+}
+
+.calloutLabel {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+/* ==================== FEATURES LIST ==================== */
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(42,47,82,0.4);
+}
+
+.featureItem:last-child {
+  border-bottom: none;
+}
+
+.featureNum {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: var(--accent2);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.featureText {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ==================== CHANGELOG (battle-log style) ==================== */
+
+.changelogBlock {
+  background: #080a14;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(8px, 2vw, 10px);
+  line-height: 2.4;
+}
+
+.changelogLine {
+  color: var(--text-muted);
+}
+
+.changelogVersion {
+  color: var(--accent);
+}
+
+.changelogDate {
+  color: var(--accent2);
+}
+
+.changelogNotes {
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 2px 0 12px 0;
+  padding-left: 20px;
+}
+
+.changelogNotes:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== SYSTEM REQUIREMENTS ==================== */
+
+.sysReqText {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  line-height: 2;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+/* ==================== DOWNLOAD BUTTON ==================== */
+
+.downloadArea {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.downloadMeta {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+.downloadButton {
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  padding: 12px 24px;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+}
+
+.downloadButton:hover {
+  background: rgba(245,200,66,0.1);
+  box-shadow: 0 0 16px rgba(245,200,66,0.2);
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.downloadDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+/* ==================== RELATED SECTION ==================== */
+
+.relatedSection {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 32px 16px 60px;
+  }
+
+  .blogHeader {
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+  }
+
+  .postTitle {
+    font-size: clamp(12px, 3vw, 18px);
+  }
+
+  .sectionLabel {
+    font-size: 9px;
+    margin: 36px 0 16px;
+  }
+
+  .callout {
+    padding: 16px 18px;
+    margin: 24px 0;
+  }
+
+  .changelogBlock {
+    padding: 16px 18px;
+    margin: 20px 0;
+  }
+
+  .postBody p {
+    font-size: 17px;
+  }
+
+  .downloadArea {
+    margin-top: 44px;
+    padding-top: 24px;
+  }
+
+  .heroWrapper {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px 12px 48px;
+  }
+
+  .blogHeader {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+  }
+
+  .postTitle {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .postMeta {
+    gap: 12px;
+  }
+
+  .sectionLabel {
+    font-size: 8px;
+    margin: 28px 0 14px;
+    gap: 10px;
+  }
+
+  .callout {
+    padding: 14px 14px;
+    margin: 20px 0;
+  }
+
+  .changelogBlock {
+    padding: 14px 12px;
+    margin: 16px 0;
+    line-height: 2;
+  }
+
+  .postBody p {
+    font-size: 16px;
+  }
+
+  .dropCap::first-letter {
+    font-size: 2.8em;
+    margin: 6px 8px 0 0;
+  }
+
+  .downloadArea {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 36px;
+  }
+
+  .featureText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrapper {
+    padding: 16px 10px 40px;
+  }
+
+  .postTitle {
+    font-size: 11px;
+  }
+
+  .changelogBlock {
+    padding: 12px 10px;
+    overflow-x: auto;
+  }
+
+  .postBody p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pageWrapper::before {
+    display: none;
+  }
+
+  .scanlineOverlay {
+    display: none;
+  }
+}

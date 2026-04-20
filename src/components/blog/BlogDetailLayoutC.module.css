@@ -64,9 +64,22 @@
   max-width: 800px;
   margin: 0 auto 32px;
   background: rgba(0, 5, 15, 0.9);
-  border: 1px solid rgba(0, 234, 255, 0.3);
   border-radius: 8px;
   overflow: hidden;
+}
+
+/* Divider between header and content panels */
+.panelDivider {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 234, 255, 0.25) 20%,
+    rgba(0, 234, 255, 0.25) 80%,
+    transparent
+  );
 }
 
 /* Title bar */
@@ -317,7 +330,7 @@
   align-items: flex-start;
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 19px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #d4d8f0;
   margin-bottom: 14px;
 }
@@ -331,7 +344,7 @@
   display: block;
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 19px;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #d4d8f0;
   margin-bottom: 14px;
 }
@@ -543,7 +556,7 @@
 
 @media (max-width: 480px) {
   .kvKey {
-    min-width: 100px;
+    min-width: 80px;
     font-size: 11px;
   }
 

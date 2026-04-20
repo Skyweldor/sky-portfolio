@@ -1,8 +1,28 @@
 /* variables.css */
 :root {
-    --blush: #F8D8D5;
-    --metallic-gold: #E2B84B;
-    --rose-gold: #EBC9A4;
-    --cream-white: #FAF8F5;
-    --deep-rose-brown: #5A4E4B;
-  }
+  /* Core palette */
+  --blush: #F8D8D5;
+  --metallic-gold: #E2B84B;
+  --gold: #E2B84B;           /* alias — both names used across files */
+  --rose-gold: #EBC9A4;
+  --cream-white: #FAF8F5;
+  --deep-rose-brown: #5A4E4B;
+  --maroon: #4d0d1a;
+  --rose-pink: #fde9e7;
+  --burgundy: #6B1D2A;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+
+  /* Typography */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Montserrat', sans-serif;
+}
+
+/* Typography hierarchy */
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+}
+
+body, p, span, a, button {
+  font-family: var(--body-font);
+}

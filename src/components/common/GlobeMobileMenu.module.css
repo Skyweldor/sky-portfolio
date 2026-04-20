@@ -139,8 +139,7 @@
 /* PDA Panel */
 .pdaPanel {
   position: relative;
-  width: 280px;
-  max-width: 85vw;
+  width: min(280px, calc(100vw - 48px));
   height: 100%;
   background: linear-gradient(135deg, rgba(0, 20, 40, 0.97) 0%, rgba(0, 10, 30, 0.99) 100%);
   border-left: 2px solid rgba(0, 221, 255, 0.5);

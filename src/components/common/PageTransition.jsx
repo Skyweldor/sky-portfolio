@@ -95,6 +95,9 @@ export default function PageTransition({
     opacity: 0.6
   };
 
+  // Detect small viewport for responsive inline style adjustments
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 480;
+
   const contentStyle = {
     position: 'relative',
     zIndex: 10,
@@ -102,32 +105,32 @@ export default function PageTransition({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '40px'
+    padding: isMobile ? '24px' : '40px'
   };
 
   const headerStyle = {
     textAlign: 'center',
     color: '#00ddff',
-    fontSize: '14px',
+    fontSize: isMobile ? '11px' : '14px',
     fontWeight: 700,
-    letterSpacing: '4px',
-    marginBottom: '60px',
+    letterSpacing: isMobile ? '2px' : '4px',
+    marginBottom: isMobile ? '36px' : '60px',
     textShadow: '0 0 10px rgba(0, 221, 255, 0.8), 0 0 20px rgba(0, 221, 255, 0.5), 0 0 40px rgba(0, 221, 255, 0.3)'
   };
 
   const spinnerContainerStyle = {
     position: 'relative',
-    width: '120px',
-    height: '120px',
-    marginBottom: '50px'
+    width: isMobile ? '80px' : '120px',
+    height: isMobile ? '80px' : '120px',
+    marginBottom: isMobile ? '30px' : '50px'
   };
 
   const spinnerOuterStyle = {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '100px',
-    height: '100px',
+    width: isMobile ? '68px' : '100px',
+    height: isMobile ? '68px' : '100px',
     border: '1px solid rgba(0, 221, 255, 0.1)',
     borderTop: '1px solid rgba(0, 221, 255, 0.4)',
     borderRadius: '50%',
@@ -139,8 +142,8 @@ export default function PageTransition({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '80px',
-    height: '80px',
+    width: isMobile ? '54px' : '80px',
+    height: isMobile ? '54px' : '80px',
     border: '2px solid rgba(0, 221, 255, 0.15)',
     borderTop: '2px solid #00ddff',
     borderRadius: '50%',
@@ -153,8 +156,8 @@ export default function PageTransition({
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '20px',
-    height: '20px',
+    width: isMobile ? '14px' : '20px',
+    height: isMobile ? '14px' : '20px',
     background: 'radial-gradient(circle, #00ddff 0%, transparent 70%)',
     borderRadius: '50%',
     transform: 'translate(-50%, -50%)',
@@ -164,9 +167,9 @@ export default function PageTransition({
   const statusStyle = {
     textAlign: 'center',
     color: '#00ddff',
-    fontSize: '16px',
+    fontSize: isMobile ? '13px' : '16px',
     fontWeight: 600,
-    marginBottom: '30px',
+    marginBottom: isMobile ? '20px' : '30px',
     textShadow: '0 0 10px rgba(0, 221, 255, 0.7), 0 0 20px rgba(0, 221, 255, 0.4)',
     minHeight: '24px',
     letterSpacing: '1px'
@@ -174,13 +177,13 @@ export default function PageTransition({
 
   const footerStyle = {
     position: 'absolute',
-    bottom: '40px',
+    bottom: isMobile ? '24px' : '40px',
     left: '50%',
     transform: 'translateX(-50%)',
     textAlign: 'center',
     color: 'rgba(0, 221, 255, 0.3)',
-    fontSize: '10px',
-    letterSpacing: '3px'
+    fontSize: isMobile ? '8px' : '10px',
+    letterSpacing: isMobile ? '2px' : '3px'
   };
 
   return (
