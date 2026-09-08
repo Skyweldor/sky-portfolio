@@ -2,20 +2,34 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GlobeMobileMenu from '../components/common/GlobeMobileMenu';
 import { useTransition } from '../context/TransitionContext';
+import { SUBSITE_NAV } from '../data/subsiteNavConfig';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import { ROUTES } from '../config/routes';
 import './GlobeLanding.css';
 
 /**
  * Globe Landing Page - Using dynamic imports for Three.js modules
  */
 
+// How far the label columns sit toward the viewport edge, as a fraction of the
+// half-frustum width. 0.72 keeps the widest label ("Make-Up/Skincare E-Commerce")
+// clear of the edge while staying outside the globe silhouette.
+const LABEL_ANCHOR_FRACTION = 0.72;
+
+// Below this width the floating labels give way to the hamburger menu.
+const COMPACT_BREAKPOINT = 1024;
+
 // Updated configuration for our routes
 const GLOBE_CONFIG = {
+  // `status: 'active'` is the only state that navigates. Everything else renders
+  // desaturated and inert — the route stays registered so direct URLs still work
+  // for QA, we're only gating the globe's discovery path.
   serviceLinks: {
-    'Game Development': '/portfolio',
-    'Quantitative Finance': '#',
-    'Tutoring': '#',
-    'Make-Up/Skincare E-Commerce': '/makeup',
-    'Stickers E-Commerce': '/stickers'
+    'Game Development':            { href: ROUTES.interactive, status: 'active' },
+    'Quantitative Finance':        { href: '#',          status: 'coming-soon' },
+    'Tutoring':                    { href: '#',          status: 'coming-soon' },
+    'Make-Up/Skincare E-Commerce': { href: ROUTES.makeup,      status: 'coming-soon' },
+    'Stickers E-Commerce':         { href: ROUTES.stickers,    status: 'coming-soon' }
   },
   debug: false,
   rotation: {
@@ -42,12 +56,16 @@ const globeStyles = `
 export default function GlobeLanding() {
   const containerRef = useRef(null);
   const navigate = useNavigate();
-  const initialized = useRef(false);
+  const navigateRef = useRef(navigate);
 
-  // Detect mobile/tablet for conditional menu rendering
-  const [isMobileDevice] = useState(() => {
+  // Touch devices always get the menu. Desktop gets it too once the window is
+  // narrow enough that the floating labels are hidden (see GlobeLanding.css) —
+  // otherwise a narrowed desktop browser has no navigation at all.
+  const [isTouchDevice] = useState(() => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   });
+  const isNarrowViewport = useMediaQuery(`(max-width: ${COMPACT_BREAKPOINT}px)`);
+  const showMobileMenu = isTouchDevice || isNarrowViewport;
 
   // Loading state for phased progress
   const [loadingState, setLoadingState] = useState({
@@ -63,7 +81,7 @@ export default function GlobeLanding() {
   const startTransitionRef = useRef(startTransition);
 
   // Handle navigation with transition overlay
-  const handleNavigate = useCallback((url) => {
+  const handleNavigate = useCallback((url, navState) => {
     if (!url || url === '#') return;
 
     // Show global transition overlay
@@ -71,45 +89,56 @@ export default function GlobeLanding() {
 
     // Navigate after brief delay for transition to appear
     setTimeout(() => {
-      navigate(url);
+      navigate(url, navState ? { state: navState } : undefined);
     }, 600);
   }, [navigate]);
 
-  // Keep ref updated for useEffect to access
+  // Keep refs updated so the effect can reach the latest values without
+  // listing them as dependencies and tearing the globe down on every change.
   startTransitionRef.current = startTransition;
+  navigateRef.current = navigate;
 
   useEffect(() => {
     // Loading phases defined inside useEffect to avoid dependency warning
     const LOADING_PHASES = {
-      init: { progress: 0, text: 'Initializing Systems...' },
-      modules: { progress: 15, text: 'Loading Modules...' },
-      scene: { progress: 30, text: 'Constructing Environment...' },
-      globe: { progress: 45, text: 'Generating Globe Mesh...' },
-      labels: { progress: 60, text: 'Loading Interface...' },
-      font: { progress: 75, text: 'Downloading Typography...' },
-      particles: { progress: 85, text: 'Spawning Particles...' },
-      bloom: { progress: 95, text: 'Applying Effects...' },
-      ready: { progress: 100, text: 'System Online' }
+      init: { progress: 0, text: 'Connecting...' },
+      modules: { progress: 15, text: 'Connecting...' },
+      scene: { progress: 30, text: 'Connecting...' },
+      globe: { progress: 45, text: 'Connecting...' },
+      labels: { progress: 60, text: 'Connecting...' },
+      font: { progress: 75, text: 'Connecting...' },
+      particles: { progress: 85, text: 'Connecting...' },
+      bloom: { progress: 95, text: 'Connecting...' },
+      ready: { progress: 100, text: 'Ready' }
     };
 
     const updateLoadingPhase = (phase) => {
       const phaseData = LOADING_PHASES[phase];
-      if (phaseData) {
-        setLoadingState(prev => ({
-          ...prev,
-          phase,
-          progress: phaseData.progress,
-          text: phaseData.text
-        }));
-      }
-    };
-    if (initialized.current) return;
-    initialized.current = true;
+      if (!phaseData) return;
 
-    // Load IBM Plex Mono font via link element (more reliable than @import in dynamic styles)
+      // For the final phase, advance the bar first and delay the text swap
+      // until the stepped fill animation finishes (~0.55s), so "Ready" only
+      // appears once the bar actually reaches its apex.
+      if (phase === 'ready') {
+        setLoadingState(prev => ({ ...prev, phase, progress: phaseData.progress }));
+        setTimeout(() => {
+          setLoadingState(prev => ({ ...prev, text: phaseData.text }));
+        }, 600);
+        return;
+      }
+
+      setLoadingState(prev => ({
+        ...prev,
+        phase,
+        progress: phaseData.progress,
+        text: phaseData.text
+      }));
+    };
+
+    // Load IBM Plex Mono + VT323 (retro terminal font for loader status)
     const fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=VT323&display=swap';
     document.head.appendChild(fontLink);
 
     // Inject styles
@@ -118,7 +147,7 @@ export default function GlobeLanding() {
     document.head.appendChild(styleEl);
 
     // Custom navigation handler that uses React Router with transition overlay
-    const handleNavigation = (url) => {
+    const handleNavigation = (url, navState) => {
       if (!url || url === '#') return;
 
       // Use the global transition context
@@ -128,12 +157,108 @@ export default function GlobeLanding() {
 
       // Navigate after transition appears
       setTimeout(() => {
-        navigate(url);
+        navigateRef.current(url, navState ? { state: navState } : undefined);
       }, 600);
     };
 
+    // Three.js resources are built asynchronously inside loadGlobe, so the
+    // cleanup below can't close over them directly — it reads them from here
+    // once they exist. `cancelled` aborts init that is still in flight.
+    let cancelled = false;
+    const resources = {
+      frameId: null,
+      renderer: null,
+      labelRenderer: null,
+      scene: null,
+      darkMaterial: null,
+      composers: [],
+      onResize: null,
+      onOrientationChange: null
+    };
+
+    // Idempotent — unmount can land either side of init finishing, so this
+    // runs from both the effect cleanup and the tail of loadGlobe.
+    const teardown = () => {
+      // Drag handlers were assigned as document properties, so they outlive
+      // this component unless explicitly cleared.
+      document.onmousemove = null;
+      document.onmouseup = null;
+
+      if (resources.frameId !== null) {
+        cancelAnimationFrame(resources.frameId);
+        resources.frameId = null;
+      }
+      if (resources.onResize) {
+        window.removeEventListener('resize', resources.onResize);
+        resources.onResize = null;
+      }
+      if (resources.onOrientationChange) {
+        window.removeEventListener('orientationchange', resources.onOrientationChange);
+        resources.onOrientationChange = null;
+      }
+
+      // composer.dispose() only drops its own render targets, so dispose each
+      // pass too — UnrealBloomPass allocates several of its own.
+      resources.composers.forEach((composer) => {
+        composer.passes.forEach((pass) => pass.dispose?.());
+        composer.dispose();
+      });
+      resources.composers = [];
+
+      // Release every GPU buffer the scene graph owns.
+      resources.scene?.traverse((obj) => {
+        obj.geometry?.dispose();
+        const mats = Array.isArray(obj.material) ? obj.material : [obj.material];
+        mats.forEach((m) => m?.dispose());
+      });
+      resources.scene = null;
+
+      // Swapped in during selective bloom, so it never appears in the graph.
+      resources.darkMaterial?.dispose();
+      resources.darkMaterial = null;
+
+      resources.labelRenderer?.domElement.remove();
+      resources.labelRenderer = null;
+
+      // Browsers cap simultaneous WebGL contexts (~8-16). dispose() alone
+      // leaves the context alive until GC decides to collect it, so force the
+      // loss to hand it back immediately.
+      if (resources.renderer) {
+        resources.renderer.dispose();
+        resources.renderer.forceContextLoss();
+        resources.renderer.domElement.remove();
+        resources.renderer = null;
+      }
+    };
+
+    // Tracks the currently-open dropdown so opening another or clicking
+    // outside closes the previous one.
+    let openLabelEl = null;
+    const closeOpenDropdown = () => {
+      if (openLabelEl) {
+        openLabelEl.classList.remove('open');
+        openLabelEl = null;
+      }
+    };
+    const onDocClickCloseDropdown = (e) => {
+      if (!openLabelEl) return;
+      if (!openLabelEl.contains(e.target)) closeOpenDropdown();
+    };
+    document.addEventListener('mousedown', onDocClickCloseDropdown);
+
     const loadGlobe = async () => {
       try {
+        // Returning from a subsite hits a warm module cache, so every phase
+        // below would resolve before the browser ever paints. The progress
+        // fill would then get its first computed style at the final scaleX,
+        // and a CSS transition with no prior value simply doesn't run — the
+        // bar appears already full. Yield two frames so a 0% frame is painted
+        // first and the fill has something to animate from.
+        await new Promise(resolve => {
+          requestAnimationFrame(() => requestAnimationFrame(resolve));
+        });
+        if (cancelled) return;
+
         // Dynamic imports for Three.js and its modules
         updateLoadingPhase('modules');
         const THREE = await import('three');
@@ -144,6 +269,8 @@ export default function GlobeLanding() {
         const { RenderPass } = await import('three/examples/jsm/postprocessing/RenderPass');
         const { UnrealBloomPass } = await import('three/examples/jsm/postprocessing/UnrealBloomPass');
         const { ShaderPass } = await import('three/examples/jsm/postprocessing/ShaderPass');
+
+        if (cancelled) return;
 
         updateLoadingPhase('scene');
         const container = containerRef.current;
@@ -237,6 +364,7 @@ export default function GlobeLanding() {
         // Scene
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x020924);
+        resources.scene = scene;
 
         // Bloom layer for selective bloom
         const BLOOM_LAYER = 1;
@@ -245,6 +373,7 @@ export default function GlobeLanding() {
 
         // Materials cache for selective bloom
         const darkMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        resources.darkMaterial = darkMaterial;
         const materials = {};
 
         // Enable bloom on object
@@ -292,6 +421,7 @@ export default function GlobeLanding() {
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(quality.pixelRatio);
         container.appendChild(renderer.domElement);
+        resources.renderer = renderer;
 
         // CSS2D Renderer
         const labelRenderer = new CSS2DRenderer();
@@ -301,6 +431,7 @@ export default function GlobeLanding() {
         labelRenderer.domElement.style.left = '0';
         labelRenderer.domElement.style.pointerEvents = 'none';
         container.appendChild(labelRenderer.domElement);
+        resources.labelRenderer = labelRenderer;
 
         // Lights - darker aesthetic
         scene.add(new THREE.AmbientLight(0xffffff, 0.25));
@@ -389,15 +520,33 @@ export default function GlobeLanding() {
         updateLoadingPhase('labels');
         const showFloatingLabels = !isMobile && !isTablet;
 
+        // Hoisted so onResize can re-pin them. The label columns used to sit at a
+        // fixed world x = +/-5.5, which meant their on-screen offset worked out to
+        // 0.794 * viewport HEIGHT while the room they had was viewport WIDTH — so
+        // a tall or narrow window pushed them off-canvas. syncLabelAnchors derives
+        // the world x from the live frustum instead, pinning them to a constant
+        // fraction of the viewport width at any aspect.
+        let leftContainer = null;
+        let rightContainer = null;
+
+        const syncLabelAnchors = () => {
+          if (!leftContainer || !rightContainer) return;
+          const halfFrustumW = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
+            * Math.abs(camera.position.z) * camera.aspect;
+          const anchorX = halfFrustumW * LABEL_ANCHOR_FRACTION;
+          leftContainer.position.x = -anchorX;
+          rightContainer.position.x = anchorX;
+        };
+
         if (showFloatingLabels) {
           // Service label containers
-          const leftContainer = new THREE.Object3D();
-          leftContainer.position.set(-5.5, 0, 0);
+          leftContainer = new THREE.Object3D();
           scene.add(leftContainer);
 
-          const rightContainer = new THREE.Object3D();
-          rightContainer.position.set(5.5, 0, 0);
+          rightContainer = new THREE.Object3D();
           scene.add(rightContainer);
+
+          syncLabelAnchors();
 
           // Service labels
           const services = [
@@ -416,22 +565,94 @@ export default function GlobeLanding() {
             anchor.position.y = 1.2 * (1 - idx);
             parent.add(anchor);
 
-            const url = config.serviceLinks[item.text] || '#';
-            const disabled = !url || url === '#';
+            const { href: url = '#', status = 'coming-soon' } = config.serviceLinks[item.text] || {};
+            const disabled = status !== 'active';
+            const subLinks = SUBSITE_NAV[item.text]?.links ?? [];
+            const hasDropdown = !disabled && subLinks.length > 0;
 
-            const div = document.createElement('div');
-            div.className = 'css2d-label';
-            div.textContent = item.text;
-            div.style.cssText = `font-family:"IBM Plex Mono","Courier New",monospace;color:${disabled ? '#446688' : '#00ddff'};font-size:16px;padding:4px 12px;background:rgba(0,10,30,0.7);border-radius:4px;border:1px solid ${disabled ? 'rgba(68,102,136,0.3)' : 'rgba(0,221,255,0.3)'};pointer-events:auto;cursor:${disabled ? 'default' : 'pointer'};text-shadow:0 0 8px ${disabled ? 'rgba(68,102,136,0.5)' : 'rgba(0,221,255,0.7)'};transition:all 0.2s ease;`;
-            div.style.setProperty('font-weight', '700', 'important');
+            // Wrapper holds the row (label pill + chevron pill) + dropdown panel.
+            const wrapper = document.createElement('div');
+            // side-right flips the dropdown's anchor so it opens inward instead of
+            // running off the right edge of the viewport.
+            wrapper.className = `css2d-label-wrapper${item.side === 'right' ? ' side-right' : ''}`;
+
+            const row = document.createElement('div');
+            row.className = 'css2d-label-row';
+
+            // Primary label pill — clicking navigates to the subsite root.
+            const pill = document.createElement('div');
+            pill.className = `css2d-label-pill${disabled ? ' disabled' : ''}`;
+
+            const textEl = document.createElement('span');
+            textEl.className = 'css2d-label-text';
+            textEl.textContent = item.text;
+            pill.appendChild(textEl);
 
             if (!disabled) {
-              div.onmouseenter = () => { div.style.background = 'rgba(0,30,60,0.85)'; div.style.transform = 'scale(1.1)'; };
-              div.onmouseleave = () => { div.style.background = 'rgba(0,10,30,0.7)'; div.style.transform = 'scale(1)'; };
-              div.onclick = () => handleNavigation(url);
+              pill.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeOpenDropdown();
+                handleNavigation(url);
+              });
+            }
+            row.appendChild(pill);
+
+            if (hasDropdown) {
+              // Separate chevron button — its own pill so the click target is
+              // unambiguous and visually distinct from the label.
+              const chevronBtn = document.createElement('button');
+              chevronBtn.type = 'button';
+              chevronBtn.className = 'css2d-chevron-btn';
+              chevronBtn.setAttribute('aria-label', 'Open sub-menu');
+
+              const glyph = document.createElement('span');
+              glyph.className = 'css2d-chevron-glyph';
+              glyph.textContent = '\u25BE';
+              chevronBtn.appendChild(glyph);
+
+              chevronBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = wrapper.classList.contains('open');
+                closeOpenDropdown();
+                if (!isOpen) {
+                  wrapper.classList.add('open');
+                  openLabelEl = wrapper;
+                }
+              });
+              row.appendChild(chevronBtn);
+
+              const dropdown = document.createElement('div');
+              dropdown.className = 'css2d-dropdown';
+
+              const visit = document.createElement('span');
+              visit.className = 'css2d-dropdown-link primary';
+              visit.textContent = `Visit ${item.text} \u2192`;
+              visit.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeOpenDropdown();
+                handleNavigation(url);
+              });
+              dropdown.appendChild(visit);
+
+              subLinks.forEach((link) => {
+                const a = document.createElement('span');
+                a.className = 'css2d-dropdown-link';
+                a.textContent = link.label;
+                a.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  closeOpenDropdown();
+                  handleNavigation(link.url, link.scrollTo ? { scrollTo: link.scrollTo } : undefined);
+                });
+                dropdown.appendChild(a);
+              });
+
+              wrapper.appendChild(row);
+              wrapper.appendChild(dropdown);
+            } else {
+              wrapper.appendChild(row);
             }
 
-            anchor.add(new CSS2DObject(div));
+            anchor.add(new CSS2DObject(wrapper));
           };
 
           leftItems.forEach((item, i) => createLabel(item, i, leftContainer));
@@ -588,13 +809,20 @@ export default function GlobeLanding() {
 
         // Set bloom texture AFTER creating ShaderPass (avoids clone error)
         blendPass.uniforms.bloomTexture.value = bloomComposer.renderTarget2.texture;
+        resources.composers = [bloomComposer, finalComposer];
 
         // Interaction - only enable drag-to-rotate on desktop
         let isDragging = false, prevX = 0, prevY = 0, rotX = 0, rotY = 0, autoRotate = true;
         const enableDragRotation = !isMobile && !isTablet;
 
         if (enableDragRotation) {
-          container.onmousedown = (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; autoRotate = false; };
+          // The CSS2D labels live inside the container, so their mousedown
+          // bubbles up here. Ignore it — pressing a label or its chevron must
+          // not start a drag, which would halt auto-rotation.
+          container.onmousedown = (e) => {
+            if (e.target.closest?.('.css2d-label-wrapper')) return;
+            isDragging = true; prevX = e.clientX; prevY = e.clientY; autoRotate = false;
+          };
           document.onmousemove = (e) => { if (isDragging) { rotX = (e.clientY - prevY) * 0.0005; rotY = (e.clientX - prevX) * 0.0005; prevX = e.clientX; prevY = e.clientY; }};
           document.onmouseup = () => { if (isDragging) { isDragging = false; setTimeout(() => autoRotate = true, 3000); }};
         } else {
@@ -706,6 +934,17 @@ export default function GlobeLanding() {
           bloomComposer.setSize(width, height);
           finalComposer.setSize(width, height);
 
+          // Narrow desktop windows get the pulled-back tablet framing so the globe
+          // doesn't overflow once the floating labels hand off to the hamburger.
+          if (!isMobile && !isTablet) {
+            camera.position.z = width <= COMPACT_BREAKPOINT ? 12 : 6;
+            camera.position.y = width <= COMPACT_BREAKPOINT ? 1.0 : 0.5;
+            camera.lookAt(0, 0, 0);
+          }
+
+          // Re-pin the label columns to the new frustum before anything reads them.
+          syncLabelAnchors();
+
           // Tablet landscape: shift globe slightly and adjust camera
           if (isTabletLandscape) {
             globeGroup.position.x = -1;
@@ -727,13 +966,17 @@ export default function GlobeLanding() {
           lastWidth = width;
         };
 
+        const onOrientationChange = () => setTimeout(onResize, 100);
         window.addEventListener('resize', onResize);
-        window.addEventListener('orientationchange', () => setTimeout(onResize, 100));
+        window.addEventListener('orientationchange', onOrientationChange);
+        resources.onResize = onResize;
+        resources.onOrientationChange = onOrientationChange;
 
         // Animation
         let time = 0;
         const animate = () => {
-          requestAnimationFrame(animate);
+          if (cancelled) return;
+          resources.frameId = requestAnimationFrame(animate);
           time += 0.01;
 
           // Particle twinkle
@@ -749,12 +992,15 @@ export default function GlobeLanding() {
             equatorTextGroup.rotation.y -= rotationConfig.textSpeed;
             particles.rotation.y += rotationConfig.particleSpeed;
           } else {
+            // Apply the drag delta to each group rather than snapping them to
+            // the globe's absolute rotation — the text ring and particles spin
+            // at their own speeds, so assigning would jump them back into sync.
             globeGroup.rotation.x += rotX;
             globeGroup.rotation.y += rotY;
-            equatorTextGroup.rotation.x = globeGroup.rotation.x;
-            equatorTextGroup.rotation.y = globeGroup.rotation.y;
-            particles.rotation.x = globeGroup.rotation.x;
-            particles.rotation.y = globeGroup.rotation.y;
+            equatorTextGroup.rotation.x += rotX;
+            equatorTextGroup.rotation.y += rotY;
+            particles.rotation.x += rotX;
+            particles.rotation.y += rotY;
             if (!isDragging) { rotX *= 0.95; rotY *= 0.95; }
           }
 
@@ -773,15 +1019,24 @@ export default function GlobeLanding() {
 
         animate();
 
-        // Show "ready" briefly then fade out loading overlay
+        // Everything from the 'scene' checkpoint down is synchronous, so an
+        // unmount during that stretch runs the cleanup before these resources
+        // exist. Dispose them here rather than leaking them.
+        if (cancelled) {
+          teardown();
+          return;
+        }
+
+        // Show "ready" briefly then fade out loading overlay.
+        // Timing: bar fills ~550ms -> text swaps to "Ready" at 600ms ->
+        // hold "Ready" for ~700ms -> start fade at 1300ms.
         updateLoadingPhase('ready');
         setTimeout(() => {
           setLoadingState(prev => ({ ...prev, isLoading: false }));
-          // After fade animation completes (500ms), hide from DOM entirely
           setTimeout(() => {
             setLoadingState(prev => ({ ...prev, hidden: true }));
-          }, 600);
-        }, 500);
+          }, 800);
+        }, 800);
 
       } catch (err) {
         console.error('Globe init error:', err);
@@ -796,10 +1051,13 @@ export default function GlobeLanding() {
     loadGlobe();
 
     return () => {
+      cancelled = true;
       styleEl.remove();
       fontLink.remove();
+      document.removeEventListener('mousedown', onDocClickCloseDropdown);
+      teardown();
     };
-  }, [navigate]);
+  }, []);
 
 
   return (
@@ -813,31 +1071,22 @@ export default function GlobeLanding() {
           <div className="loading-grid" />
 
           <div className="pda-loading">
-            <div className="header">[ SYNTHCITY DIGILABS ]</div>
-
-            {/* Multi-ring spinner with glowing core */}
-            <div className="spinner-container">
-              <div className="spinner-outer" />
-              <div className="spinner" />
-              <div className="spinner-core" />
-            </div>
-
             <div className="status">{loadingState.text}</div>
 
-            <div className="progress-wrapper">
-              <div className="progress-container">
-                <div className="progress-bar" style={{ width: `${loadingState.progress}%` }} />
+            <div className="progress-frame" role="progressbar" aria-valuenow={loadingState.progress} aria-valuemin={0} aria-valuemax={100}>
+              <div className="progress-frame-inner">
+                <div className="progress-fill" style={{ transform: `scaleX(${loadingState.progress / 100})` }} />
+                <div className="progress-dividers" />
               </div>
-              <div className="progress-text">{loadingState.progress}%</div>
             </div>
-
-            <div className="footer">{'// INITIALIZING //'}</div>
           </div>
+
+          <div className="loading-corner-logo">[ SYNTHCITY DIGILABS ]</div>
         </div>
       )}
 
       <div ref={containerRef} id="globe-container" />
-      {isMobileDevice && <GlobeMobileMenu onNavigate={handleNavigate} />}
+      {showMobileMenu && <GlobeMobileMenu onNavigate={handleNavigate} />}
     </div>
   );
 }

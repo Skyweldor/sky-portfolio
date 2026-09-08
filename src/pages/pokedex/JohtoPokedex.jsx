@@ -7,6 +7,7 @@ import RegionNav from '../../components/blog/RegionNav';
 import { JOHTO_DEX, JOHTO_TYPES } from '../../data/johtoDexData';
 import { JOHTO_NATURES } from '../../data/johtoNatureData';
 import styles from './JohtoPokedex.module.css';
+import { ROUTES } from '../../config/routes';
 
 const JohtoPokedex = () => {
   return (
@@ -15,7 +16,7 @@ const JohtoPokedex = () => {
       <Container>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>

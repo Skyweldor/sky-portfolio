@@ -7,6 +7,7 @@ import RegionNav from '../../components/blog/RegionNav';
 import { UNOVA_DEX, UNOVA_TYPES } from '../../data/unovaDexData';
 import { UNOVA_NATURES } from '../../data/unovaNatureData';
 import styles from './UnovaPokedex.module.css';
+import { ROUTES } from '../../config/routes';
 
 const UnovaPokedex = () => {
   return (
@@ -15,7 +16,7 @@ const UnovaPokedex = () => {
       <Container>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>

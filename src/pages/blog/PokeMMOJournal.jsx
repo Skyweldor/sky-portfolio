@@ -4,6 +4,7 @@ import { NavBar } from '../../components/common/NavBar';
 import parseInlineMarkup from '../../utils/parseInlineMarkup';
 import journal from '../../data/blog/pokemmo-journal-1';
 import styles from './PokeMMOJournal.module.css';
+import { ROUTES } from '../../config/routes';
 
 const BATTLE_LOG_STYLES = {
   normal: 'logLine',
@@ -81,7 +82,7 @@ const PokeMMOJournal = () => {
       <div className={styles.wrapper}>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>

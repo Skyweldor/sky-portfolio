@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Controller, Archive, Tools, FileEarmarkPdf } from 'react-bootstrap-icons';
 import styles from './DownloadCard.module.css';
+import { ROUTES } from '../../config/routes';
 
 const ICON_MAP = {
   demo: Controller,
@@ -31,7 +32,7 @@ const DownloadCard = ({ id, title, description, tags, fileSize, type }) => {
 
       <div className={styles.actionArea}>
         <span className={styles.fileSize}>{fileSize}</span>
-        <Link to={`/downloads/${id}`} className={styles.downloadBtn}>
+        <Link to={ROUTES.download(id)} className={styles.downloadBtn}>
           View Details
         </Link>
       </div>

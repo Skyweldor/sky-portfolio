@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 import styles from "./Banner.module.css";
+import { ROUTES } from '../../config/routes';
 
 export const Banner = () => {
     /* ————————————————————————————————————————
@@ -40,7 +41,7 @@ export const Banner = () => {
     /* ————————————————————————————————————————
        HANDLERS
     —————————————————————————————————————————— */
-    const goToCatalog = () => navigate("/downloads");
+    const goToCatalog = () => navigate(ROUTES.downloads);
 
     return (
         <section className={styles.banner} id="home">

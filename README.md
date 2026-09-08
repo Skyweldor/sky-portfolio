@@ -136,7 +136,7 @@ object.
 
 ## 🌐 Deployment
 
-The application is configured for deployment to [jairdreams.com](http://jairdreams.com).
+The application is configured for deployment to [synthcitydigilabs.com](https://synthcitydigilabs.com).
 
 To build for production:
 ```bash

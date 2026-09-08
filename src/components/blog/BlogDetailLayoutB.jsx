@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ImageGallery from './ImageGallery';
 import RelatedItems from './RelatedItems';
 import styles from './BlogDetailLayoutB.module.css';
+import { ROUTES } from '../../config/routes';
 
 const BlogDetailLayoutB = ({ item }) => {
   if (!item) return null;
@@ -45,7 +46,7 @@ const BlogDetailLayoutB = ({ item }) => {
     <div className={styles.page}>
       {/* ---- 1. Full-width Hero ---- */}
       <div className={styles.heroWrap}>
-        <Link to="/downloads" className={styles.backLink}>
+        <Link to={ROUTES.downloads} className={styles.backLink}>
           &larr; Back to Downloads
         </Link>
         {heroImage && (

@@ -10,9 +10,16 @@ const categoryBadgeClass = (cat) => {
   switch (cat) {
     case 'Journal': return styles.badgeJournal;
     case 'Guide':   return styles.badgeGuide;
+    case 'Utility': return styles.badgeUtility;
     default:        return styles.badgeJournal;
   }
 };
+
+const sortedPosts = [...blogPosts].sort((a, b) => {
+  if (a.pinned && !b.pinned) return -1;
+  if (!a.pinned && b.pinned) return 1;
+  return 0;
+});
 
 const statusBadgeClass = (status) => {
   switch (status) {
@@ -61,10 +68,10 @@ const Blog = () => {
             </div>
 
             {/* Rows */}
-            {blogPosts.length === 0 ? (
+            {sortedPosts.length === 0 ? (
               <div className={styles.emptyState}>&gt; no entries found.</div>
             ) : (
-              blogPosts.map((post) => (
+              sortedPosts.map((post) => (
                 <React.Fragment key={post.id}>
                   <Link
                     to={post.route}
@@ -75,7 +82,10 @@ const Blog = () => {
                         {post.category}
                       </span>
                     </div>
-                    <div className={styles.cellTitle}>{post.title}</div>
+                    <div className={styles.cellTitle}>
+                      {post.pinned && <span className={styles.pinMarker}>◆</span>}
+                      {post.title}
+                    </div>
                     <div className={styles.cellDate}>{post.date}</div>
                   </Link>
                   <div className={styles.excerptRow}>{post.excerpt}</div>

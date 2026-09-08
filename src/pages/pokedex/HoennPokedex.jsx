@@ -7,6 +7,7 @@ import RegionNav from '../../components/blog/RegionNav';
 import { HOENN_DEX, HOENN_TYPES } from '../../data/hoennDexData';
 import { HOENN_NATURES } from '../../data/hoennNatureData';
 import styles from './HoennPokedex.module.css';
+import { ROUTES } from '../../config/routes';
 
 const HoennPokedex = () => {
   return (
@@ -15,7 +16,7 @@ const HoennPokedex = () => {
       <Container>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>

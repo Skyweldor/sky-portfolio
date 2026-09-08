@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CATALOG_DETAIL_ITEMS } from '../../data/catalogDetailData';
 import styles from './RelatedItems.module.css';
+import { ROUTES } from '../../config/routes';
 
 const RelatedItems = ({ relatedIds = [] }) => {
   const related = relatedIds
@@ -17,7 +18,7 @@ const RelatedItems = ({ relatedIds = [] }) => {
         {related.map((item) => (
           <Link
             key={item.id}
-            to={`/downloads/${item.id}`}
+            to={ROUTES.download(item.id)}
             className={styles.miniCard}
           >
             <span className={`${styles.typeBadge} ${styles[item.type] || ''}`}>

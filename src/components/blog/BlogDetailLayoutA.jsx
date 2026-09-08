@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import RelatedItems from './RelatedItems';
 import ImageGallery from './ImageGallery';
 import styles from './BlogDetailLayoutA.module.css';
+import { ROUTES } from '../../config/routes';
 
 /**
  * Iteration A: "Neon Longform"
@@ -49,7 +50,7 @@ const BlogDetailLayoutA = ({ item }) => {
       <Container>
         {/* --- Back link --- */}
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <Link to="/downloads" className={styles.backLink}>
+          <Link to={ROUTES.downloads} className={styles.backLink}>
             &larr; Back to Downloads
           </Link>
         </div>

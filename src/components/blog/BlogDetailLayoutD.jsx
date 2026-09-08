@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import RelatedItems from './RelatedItems';
 import HeroPlaceholder from '../common/HeroPlaceholder';
 import styles from './BlogDetailLayoutD.module.css';
+import { ROUTES } from '../../config/routes';
 
 const TYPE_LABELS = {
   demo: 'Demo',
@@ -23,7 +24,7 @@ const BlogDetailLayoutD = ({ item }) => {
       <div className={styles.wrapper}>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/downloads" className={styles.backLink}>
+          <Link to={ROUTES.downloads} className={styles.backLink}>
             &larr; Back to Downloads
           </Link>
         </div>

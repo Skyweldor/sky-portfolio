@@ -7,6 +7,7 @@ import RegionNav from '../../components/blog/RegionNav';
 import { SINNOH_DEX, SINNOH_TYPES } from '../../data/sinnohDexData';
 import { SINNOH_NATURES } from '../../data/sinnohNatureData';
 import styles from './SinnohPokedex.module.css';
+import { ROUTES } from '../../config/routes';
 
 const SinnohPokedex = () => {
   return (
@@ -15,7 +16,7 @@ const SinnohPokedex = () => {
       <Container>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>

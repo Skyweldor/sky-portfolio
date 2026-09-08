@@ -7,6 +7,7 @@ import { ModelDebugProvider, useModelDebug } from '../../components/blog/ModelDe
 import { TEAM_ROSTER } from '../../data/teamRosterData';
 import journal from '../../data/blog/pokemmo-journal-2';
 import styles from './PokeMMOJournal2.module.css';
+import { ROUTES } from '../../config/routes';
 
 /* ── Roster grid — consumes debug context for layout settings ── */
 const RosterGrid = () => {
@@ -42,7 +43,7 @@ const PokeMMOJournal2 = () => {
         <Container>
           {/* Back link */}
           <div className={styles.backLinkRow}>
-            <Link to="/blog" className={styles.backLink}>
+            <Link to={ROUTES.blog} className={styles.backLink}>
               &larr; Back to Blog
             </Link>
           </div>

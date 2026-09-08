@@ -5,6 +5,7 @@ import { NavBar } from '../../components/common/NavBar';
 import { getDetailById } from '../../data/catalogDetailData';
 import BlogDetailLayoutC from '../../components/blog/BlogDetailLayoutC';
 import BlogDetailLayoutD from '../../components/blog/BlogDetailLayoutD';
+import { ROUTES } from '../../config/routes';
 
 const LAYOUTS = {
   c: { component: BlogDetailLayoutC, label: 'Terminal' },
@@ -46,7 +47,7 @@ const BlogDetail = () => {
               The item you're looking for doesn't exist or has been removed.
             </p>
             <Link
-              to="/downloads"
+              to={ROUTES.downloads}
               style={{
                 color: 'var(--color-highlight)',
                 textDecoration: 'none',

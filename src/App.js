@@ -8,6 +8,7 @@ import './styles/modules/aetherbound.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { ROUTES } from './config/routes';
 import Footer from './components/common/Footer';
 import PageTransition from './components/common/PageTransition';
 import { TransitionProvider, useTransition } from './context/TransitionContext';
@@ -24,6 +25,7 @@ const BeautyCare = lazy(() => import('./pages/BeautyCare'));
 const MiniGames = lazy(() => import('./pages/MiniGames'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const BlogDetail = lazy(() => import('./pages/blog/BlogDetail'));
+const AllPokedex = lazy(() => import('./pages/pokedex/AllPokedex'));
 const KantoPokedex = lazy(() => import('./pages/pokedex/KantoPokedex'));
 const JohtoPokedex = lazy(() => import('./pages/pokedex/JohtoPokedex'));
 const HoennPokedex = lazy(() => import('./pages/pokedex/HoennPokedex'));
@@ -62,23 +64,28 @@ function App() {
         <Layout>
           <Suspense fallback={null}>
             <Routes>
-              <Route path="/" element={<GlobeLanding />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/stickers" element={<StickerShop />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/prototype" element={<Prototype />} />
-              <Route path="/aetherbound" element={<Aetherbound />} />
-              <Route path="/makeup" element={<BeautyCare />} />
-              <Route path="/minigames" element={<MiniGames />} />
-              <Route path="/downloads" element={<Catalog />} />
-              <Route path="/downloads/:id" element={<BlogDetail />} />
-              <Route path="/blog/kanto-pokedex" element={<KantoPokedex />} />
-              <Route path="/blog/johto-pokedex" element={<JohtoPokedex />} />
-              <Route path="/blog/hoenn-pokedex" element={<HoennPokedex />} />
-              <Route path="/blog/sinnoh-pokedex" element={<SinnohPokedex />} />
-              <Route path="/blog/unova-pokedex" element={<UnovaPokedex />} />
-              <Route path="/blog/pokemmo-journal-1" element={<PokeMMOJournal />} />
-              <Route path="/blog/pokemmo-journal-2" element={<PokeMMOJournal2 />} />
+              <Route path={ROUTES.home} element={<GlobeLanding />} />
+
+              {/* SynthCity DigiLabs Interactive */}
+              <Route path={ROUTES.interactive} element={<Portfolio />} />
+              <Route path={ROUTES.blog} element={<Blog />} />
+              <Route path={ROUTES.pokedex} element={<AllPokedex />} />
+              <Route path={ROUTES.regionPokedex('kanto')} element={<KantoPokedex />} />
+              <Route path={ROUTES.regionPokedex('johto')} element={<JohtoPokedex />} />
+              <Route path={ROUTES.regionPokedex('hoenn')} element={<HoennPokedex />} />
+              <Route path={ROUTES.regionPokedex('sinnoh')} element={<SinnohPokedex />} />
+              <Route path={ROUTES.regionPokedex('unova')} element={<UnovaPokedex />} />
+              <Route path={ROUTES.pokemmoJournal(1)} element={<PokeMMOJournal />} />
+              <Route path={ROUTES.pokemmoJournal(2)} element={<PokeMMOJournal2 />} />
+              <Route path={ROUTES.downloads} element={<Catalog />} />
+              <Route path={ROUTES.download(':id')} element={<BlogDetail />} />
+              <Route path={ROUTES.aetherbound} element={<Aetherbound />} />
+              <Route path={ROUTES.minigames} element={<MiniGames />} />
+              <Route path={ROUTES.prototype} element={<Prototype />} />
+
+              {/* Gated from the globe at launch; direct URLs still resolve */}
+              <Route path={ROUTES.makeup} element={<BeautyCare />} />
+              <Route path={ROUTES.stickers} element={<StickerShop />} />
             </Routes>
           </Suspense>
         </Layout>

@@ -4,7 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { NavLogo } from './NavLogo';
 import { NavGlobe } from './NavGlobe';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
+import { ROUTES, isInteractiveRoute } from '../../config/routes';
 import styles from './NavBar.module.css';
+
 
 export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTraining, globalXP }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -17,7 +19,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
     const navigate = useNavigate();
 
     // Show logo immediately on pages without a hero section (catalog, blog, etc.)
-    const isHeroPage = location.pathname === '/' || location.pathname === '/portfolio';
+    const isHeroPage = location.pathname === ROUTES.home || location.pathname === ROUTES.interactive;
     const isHeroPageRef = useRef(isHeroPage);
     isHeroPageRef.current = isHeroPage;
 
@@ -31,10 +33,10 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
     }, [isHeroPage]);
 
     const handleLogoClick = () => {
-        if (location.pathname === '/portfolio') {
+        if (location.pathname === ROUTES.interactive) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            navigate('/portfolio');
+            navigate(ROUTES.interactive);
         }
     };
 
@@ -152,13 +154,13 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                             onClick={handleLogoClick}
                             style={{ cursor: 'pointer' }}
                         >
-                            <NavLogo isGameMode={isGameMode} visible={showLogo} />
+                            <NavLogo isGameMode={isGameMode} showSubsidiary={isInteractiveRoute(location.pathname)} visible={showLogo} />
                         </Navbar.Brand>
                         {!isGameMode && (
                           <div className={styles.desktopOnlyLinks}>
                             <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
                             <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
-                            <Link to="/blog" className={styles.glowLink}>Blog</Link>
+                            <Link to={ROUTES.blog} className={styles.glowLink}>Blog</Link>
                           </div>
                         )}
                     </div>
@@ -180,7 +182,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                             <div className={styles.mobileOnlyLinks}>
                               <button className={styles.glowLink} onClick={() => scrollToSection('skills')}>Skills</button>
                               <button className={styles.glowLink} onClick={() => scrollToSection('projects')}>Projects</button>
-                              <Link to="/blog" className={styles.glowLink}>Blog</Link>
+                              <Link to={ROUTES.blog} className={styles.glowLink}>Blog</Link>
                             </div>
                           )}
                         </Nav>
@@ -192,7 +194,7 @@ export const NavBar = ({ isGameMode, onToggleInventory, onToggleTown, onToggleTr
                               XP: {globalXP}
                             </span>
                           ) : (
-                            <Link to="/downloads" className={styles.ctaButton}>
+                            <Link to={ROUTES.downloads} className={styles.ctaButton}>
                               Downloads
                             </Link>
                           )}

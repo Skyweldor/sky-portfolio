@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import RelatedItems from './RelatedItems';
 import HeroPlaceholder from '../common/HeroPlaceholder';
 import styles from './BlogDetailLayoutC.module.css';
+import { ROUTES } from '../../config/routes';
 
 const TYPE_COLORS = {
   demo: '#00eaff',
@@ -32,7 +33,7 @@ const BlogDetailLayoutC = ({ item }) => {
       <Container>
         {/* Back link */}
         <div className={styles.backLinkRow}>
-          <Link to="/downloads" className={styles.backLink}>
+          <Link to={ROUTES.downloads} className={styles.backLink}>
             &larr; Back to Downloads
           </Link>
         </div>

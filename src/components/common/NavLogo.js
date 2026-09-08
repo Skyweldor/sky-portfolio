@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./NavLogo.module.css";
 
-export const NavLogo = ({ isGameMode, visible = true }) => {
+/**
+ * Brand wordmark for the navbar.
+ *
+ * `showSubsidiary` scopes the "Interactive" sub-line to SynthCity DigiLabs
+ * Interactive routes only. Every other route shows the parent wordmark alone.
+ * `isGameMode` is unrelated — it only boosts the glow inside the Aetherbound HUD.
+ */
+export const NavLogo = ({ isGameMode, showSubsidiary = false, visible = true }) => {
     const containerClasses = [
         styles.logoContainer,
         isGameMode ? styles.gameMode : '',
@@ -11,8 +18,12 @@ export const NavLogo = ({ isGameMode, visible = true }) => {
     return (
         <div className={containerClasses}>
             <span className={styles.title}>SynthCity DigiLabs</span>
-            <span className={styles.underline}></span>
-            <span className={styles.interactive}>Interactive</span>
+            {showSubsidiary && (
+                <>
+                    <span className={styles.underline}></span>
+                    <span className={styles.interactive}>Interactive</span>
+                </>
+            )}
         </div>
     );
 };

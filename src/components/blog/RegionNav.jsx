@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './RegionNav.module.css';
+import { ROUTES } from '../../config/routes';
 
 const REGIONS = [
-  { name: 'Kanto', path: '/blog/kanto-pokedex', gen: 'I', count: 151 },
-  { name: 'Johto', path: '/blog/johto-pokedex', gen: 'II', count: 100 },
-  { name: 'Hoenn', path: '/blog/hoenn-pokedex', gen: 'III', count: 135 },
-  { name: 'Sinnoh', path: '/blog/sinnoh-pokedex', gen: 'IV', count: 107 },
-  { name: 'Unova', path: '/blog/unova-pokedex', gen: 'V', count: 156 },
+  { name: 'Kanto', path: ROUTES.regionPokedex('kanto'), gen: 'I', count: 151 },
+  { name: 'Johto', path: ROUTES.regionPokedex('johto'), gen: 'II', count: 100 },
+  { name: 'Hoenn', path: ROUTES.regionPokedex('hoenn'), gen: 'III', count: 135 },
+  { name: 'Sinnoh', path: ROUTES.regionPokedex('sinnoh'), gen: 'IV', count: 107 },
+  { name: 'Unova', path: ROUTES.regionPokedex('unova'), gen: 'V', count: 156 },
 ];
 
 const RegionNav = ({ currentRegion }) => {

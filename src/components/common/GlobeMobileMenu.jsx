@@ -1,23 +1,34 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SUBSITE_NAV } from '../../data/subsiteNavConfig';
+import { ROUTES } from '../../config/routes';
 import styles from './GlobeMobileMenu.module.css';
 
 const MENU_CONFIG = {
   services: [
-    { text: 'Game Development', url: '/portfolio' },
+    { text: 'Game Development', url: ROUTES.interactive },
     { text: 'Quantitative Finance', url: '#', disabled: true },
     { text: 'Tutoring', url: '#', disabled: true }
   ],
   ecommerce: [
-    { text: 'Make-Up/Skincare', url: '/makeup' },
-    { text: 'Stickers', url: '/stickers' }
+    { text: 'Make-Up/Skincare', url: ROUTES.makeup, disabled: true },
+    { text: 'Stickers', url: ROUTES.stickers, disabled: true }
   ]
+};
+
+// Match a menu item to a SUBSITE_NAV entry by URL so we don't depend on the
+// item's display text matching the desktop label verbatim.
+const getSubLinks = (url) => {
+  if (!url || url === '#') return [];
+  const entry = Object.values(SUBSITE_NAV).find((e) => e.url === url);
+  return entry?.links ?? [];
 };
 
 export default function GlobeMobileMenu({ onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(true);
   const [activeItem, setActiveItem] = useState(null);
+  const [expandedKey, setExpandedKey] = useState(null);
   const navigate = useNavigate();
 
   // Store long-press timers in a ref to avoid mutating config objects
@@ -49,27 +60,33 @@ export default function GlobeMobileMenu({ onNavigate }) {
     }
   }, []);
 
-  const handleNavigation = (url, disabled) => {
+  const handleNavigation = (url, disabled, navState) => {
     if (disabled || !url || url === '#') return;
 
     setIsOpen(false);
+    setExpandedKey(null);
 
     // Use the provided navigation handler if available (for transition overlay)
     if (onNavigate) {
-      onNavigate(url);
+      onNavigate(url, navState);
     } else {
       // Fallback to direct navigation
       document.body.classList.add('page-exit');
       setTimeout(() => {
         document.body.classList.remove('page-exit');
-        navigate(url);
+        navigate(url, navState ? { state: navState } : undefined);
       }, 500);
     }
+  };
+
+  const toggleExpand = (key) => {
+    setExpandedKey((prev) => (prev === key ? null : key));
   };
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
     setShowHint(false);
+    if (isOpen) setExpandedKey(null);
     // Haptic feedback
     if (navigator.vibrate) {
       navigator.vibrate(30);
@@ -79,7 +96,62 @@ export default function GlobeMobileMenu({ onNavigate }) {
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setIsOpen(false);
+      setExpandedKey(null);
     }
+  };
+
+  const renderItem = (item, idx, prefix) => {
+    const itemId = `${prefix}-${idx}`;
+    const subLinks = item.disabled ? [] : getSubLinks(item.url);
+    const hasDropdown = subLinks.length > 0;
+    const isExpanded = expandedKey === itemId;
+
+    return (
+      <div key={idx} className={styles.menuItemGroup}>
+        <div className={styles.menuItemRow}>
+          <button
+            className={`${styles.menuItem} ${item.disabled ? styles.disabled : ''} ${activeItem === itemId ? styles.longPressActive : ''}`}
+            onClick={() => handleNavigation(item.url, item.disabled)}
+            disabled={item.disabled}
+            onTouchStart={() => !item.disabled && startLongPress(itemId)}
+            onTouchEnd={() => cancelLongPress(itemId)}
+            onTouchCancel={() => cancelLongPress(itemId)}
+          >
+            <span className={styles.itemPrefix}>&gt;</span>
+            <span className={styles.itemText}>{item.text}</span>
+            {item.disabled && <span className={styles.statusTag}>OFFLINE</span>}
+          </button>
+          {hasDropdown && (
+            <button
+              className={`${styles.expandToggle} ${isExpanded ? styles.expanded : ''}`}
+              onClick={(e) => { e.stopPropagation(); toggleExpand(itemId); }}
+              aria-label={isExpanded ? 'Collapse sub-menu' : 'Expand sub-menu'}
+              aria-expanded={isExpanded}
+            >
+              {isExpanded ? '\u2212' : '+'}
+            </button>
+          )}
+        </div>
+        {hasDropdown && isExpanded && (
+          <div className={styles.subLinks}>
+            {subLinks.map((link, sidx) => (
+              <button
+                key={sidx}
+                className={styles.subLink}
+                onClick={() => handleNavigation(
+                  link.url,
+                  false,
+                  link.scrollTo ? { scrollTo: link.scrollTo } : undefined
+                )}
+              >
+                <span className={styles.subLinkPrefix}>&rsaquo;</span>
+                <span className={styles.subLinkText}>{link.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -110,24 +182,7 @@ export default function GlobeMobileMenu({ onNavigate }) {
               <span className={styles.bracket}>]</span>
             </div>
             <div className={styles.section}>
-              {MENU_CONFIG.services.map((item, idx) => {
-                const itemId = `svc-${idx}`;
-                return (
-                  <button
-                    key={idx}
-                    className={`${styles.menuItem} ${item.disabled ? styles.disabled : ''} ${activeItem === itemId ? styles.longPressActive : ''}`}
-                    onClick={() => handleNavigation(item.url, item.disabled)}
-                    disabled={item.disabled}
-                    onTouchStart={() => !item.disabled && startLongPress(itemId)}
-                    onTouchEnd={() => cancelLongPress(itemId)}
-                    onTouchCancel={() => cancelLongPress(itemId)}
-                  >
-                    <span className={styles.itemPrefix}>&gt;</span>
-                    <span className={styles.itemText}>{item.text}</span>
-                    {item.disabled && <span className={styles.statusTag}>OFFLINE</span>}
-                  </button>
-                );
-              })}
+              {MENU_CONFIG.services.map((item, idx) => renderItem(item, idx, 'svc'))}
             </div>
 
             {/* E-Commerce Section */}
@@ -137,22 +192,7 @@ export default function GlobeMobileMenu({ onNavigate }) {
               <span className={styles.bracket}>]</span>
             </div>
             <div className={styles.section}>
-              {MENU_CONFIG.ecommerce.map((item, idx) => {
-                const itemId = `eco-${idx}`;
-                return (
-                  <button
-                    key={idx}
-                    className={`${styles.menuItem} ${activeItem === itemId ? styles.longPressActive : ''}`}
-                    onClick={() => handleNavigation(item.url, false)}
-                    onTouchStart={() => startLongPress(itemId)}
-                    onTouchEnd={() => cancelLongPress(itemId)}
-                    onTouchCancel={() => cancelLongPress(itemId)}
-                  >
-                    <span className={styles.itemPrefix}>&gt;</span>
-                    <span className={styles.itemText}>{item.text}</span>
-                  </button>
-                );
-              })}
+              {MENU_CONFIG.ecommerce.map((item, idx) => renderItem(item, idx, 'eco'))}
             </div>
 
             {/* Footer */}

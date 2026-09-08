@@ -2,7 +2,7 @@
    Globe Landing Page - SynthCity Digilabs
    ========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=VT323&display=swap');
 
 /* --------------------------------------------------
    MAIN CONTAINER
@@ -80,7 +80,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(ellipse at center, #020924 0%, #010612 100%);
+  background: radial-gradient(ellipse at center, #01030a 0%, #000104 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,14 +103,14 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 221, 255, 0.015) 2px,
-    rgba(0, 221, 255, 0.015) 4px
+    rgba(0, 221, 255, 0.02) 2px,
+    rgba(0, 221, 255, 0.02) 4px
   );
   pointer-events: none;
   z-index: 1;
 }
 
-/* Neon glow vignette */
+/* Subtle cyan bloom vignette */
 .loading-overlay::after {
   content: '';
   position: absolute;
@@ -119,8 +119,8 @@
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(ellipse at center, transparent 30%, rgba(0, 221, 255, 0.03) 70%, rgba(0, 221, 255, 0.08) 100%),
-    radial-gradient(ellipse at 50% 100%, rgba(0, 221, 255, 0.15) 0%, transparent 50%);
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 221, 255, 0.015) 80%, rgba(0, 221, 255, 0.04) 100%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 221, 255, 0.06) 0%, transparent 60%);
   pointer-events: none;
   z-index: 2;
 }
@@ -144,13 +144,13 @@
   background-size: 80px 100%, 100% 100%;
   transform: perspective(500px) rotateX(60deg);
   transform-origin: center bottom;
-  opacity: 0.6;
+  opacity: 0.35;
   animation: gridPulse 4s ease-in-out infinite;
 }
 
 @keyframes gridPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.45; }
 }
 
 /* Main loading content container */
@@ -165,190 +165,132 @@
   font-family: "IBM Plex Mono", "Courier New", monospace;
 }
 
-/* Header text with glow */
-.pda-loading .header {
-  text-align: center;
-  color: #00ddff;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 60px;
-  text-shadow:
-    0 0 10px rgba(0, 221, 255, 0.8),
-    0 0 20px rgba(0, 221, 255, 0.5),
-    0 0 40px rgba(0, 221, 255, 0.3);
-  animation: headerGlow 2s ease-in-out infinite;
-}
-
-@keyframes headerGlow {
-  0%, 100% {
-    text-shadow:
-      0 0 10px rgba(0, 221, 255, 0.8),
-      0 0 20px rgba(0, 221, 255, 0.5),
-      0 0 40px rgba(0, 221, 255, 0.3);
-  }
-  50% {
-    text-shadow:
-      0 0 15px rgba(0, 221, 255, 1),
-      0 0 30px rgba(0, 221, 255, 0.7),
-      0 0 60px rgba(0, 221, 255, 0.4);
-  }
-}
-
-/* Multi-ring spinner container */
-.pda-loading .spinner-container {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 50px;
-}
-
-/* Main spinner ring */
-.pda-loading .spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  height: 80px;
-  margin: 0;
-  border: 2px solid rgba(0, 221, 255, 0.15);
-  border-top: 2px solid #00ddff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  transform: translate(-50%, -50%);
-  box-shadow:
-    0 0 20px rgba(0, 221, 255, 0.5),
-    0 0 40px rgba(0, 221, 255, 0.3),
-    inset 0 0 20px rgba(0, 221, 255, 0.1);
-}
-
-/* Outer spinner ring (slower, reverse) */
-.pda-loading .spinner-outer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgba(0, 221, 255, 0.1);
-  border-top: 1px solid rgba(0, 221, 255, 0.4);
-  border-radius: 50%;
-  animation: spinReverse 2s linear infinite;
-  transform: translate(-50%, -50%);
-}
-
-/* Glowing core */
-.pda-loading .spinner-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, #00ddff 0%, transparent 70%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: corePulse 1.5s ease-in-out infinite;
-}
-
-@keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes spinReverse {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(-360deg); }
-}
-
-@keyframes corePulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.3);
-    opacity: 1;
-  }
-}
-
-/* Status text */
+/* Status text ("Connecting...", "Ready.") — site font for consistency */
 .pda-loading .status {
   text-align: center;
-  color: #00ddff;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  text-shadow:
-    0 0 10px rgba(0, 221, 255, 0.7),
-    0 0 20px rgba(0, 221, 255, 0.4);
-  min-height: 24px;
-  letter-spacing: 1px;
-}
-
-/* Progress bar wrapper */
-.pda-loading .progress-wrapper {
-  width: 300px;
-  max-width: 80vw;
-}
-
-/* Progress bar container */
-.pda-loading .progress-container {
-  background: rgba(0, 221, 255, 0.05);
-  border: 1px solid rgba(0, 221, 255, 0.2);
-  border-radius: 2px;
-  height: 6px;
-  overflow: hidden;
-  margin-bottom: 12px;
-  box-shadow:
-    inset 0 0 10px rgba(0, 221, 255, 0.1),
-    0 0 10px rgba(0, 221, 255, 0.1);
-}
-
-/* Progress bar fill */
-.pda-loading .progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #00ddff, #00eaff, #00ddff);
-  background-size: 200% 100%;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-  box-shadow:
-    0 0 15px rgba(0, 221, 255, 0.8),
-    0 0 30px rgba(0, 221, 255, 0.4);
-  animation: progressShine 2s linear infinite;
-}
-
-@keyframes progressShine {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Progress percentage text */
-.pda-loading .progress-text {
-  text-align: center;
-  color: rgba(0, 221, 255, 0.7);
-  font-size: 24px;
-  font-weight: 700;
+  color: rgba(0, 221, 255, 0.9);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 14px;
+  min-height: 15px;
   letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(0, 221, 255, 0.5);
+  text-shadow:
+    0 0 6px rgba(0, 221, 255, 0.5),
+    0 0 14px rgba(0, 221, 255, 0.25);
+  animation: statusFlicker 3.2s ease-in-out infinite;
 }
 
-/* Footer text */
-.pda-loading .footer {
+@keyframes statusFlicker {
+  0%, 100% { opacity: 1; }
+  47% { opacity: 1; }
+  48% { opacity: 0.82; }
+  49% { opacity: 1; }
+  70% { opacity: 0.94; }
+  71% { opacity: 1; }
+}
+
+/* Progress frame: pixel-chamfered corners, filter-based glow so it survives clip-path */
+.pda-loading .progress-frame {
+  width: 320px;
+  max-width: 80vw;
+  filter:
+    drop-shadow(0 0 6px rgba(0, 221, 255, 0.45))
+    drop-shadow(0 0 14px rgba(0, 221, 255, 0.25));
+}
+
+/* Chamfered frame border — clip-path gives stepped/pixelated corners (no curves, no 90°) */
+.pda-loading .progress-frame-inner {
+  position: relative;
+  height: 22px;
+  padding: 3px;
+  background: rgba(0, 221, 255, 0.75);
+  clip-path: polygon(
+    4px 0, calc(100% - 4px) 0,
+    calc(100% - 4px) 2px, calc(100% - 2px) 2px,
+    calc(100% - 2px) 4px, 100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 2px) calc(100% - 4px), calc(100% - 2px) calc(100% - 2px),
+    calc(100% - 4px) calc(100% - 2px), calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 2px), 2px calc(100% - 2px),
+    2px calc(100% - 4px), 0 calc(100% - 4px),
+    0 4px,
+    2px 4px, 2px 2px,
+    4px 2px
+  );
+}
+
+/* Inner well — dark interior with same chamfer shape, inset 2px */
+.pda-loading .progress-frame-inner::before {
+  content: '';
   position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: rgba(0, 221, 255, 0.3);
-  font-size: 10px;
-  letter-spacing: 3px;
-  animation: footerFlicker 4s ease-in-out infinite;
+  inset: 3px;
+  background: rgba(0, 10, 20, 0.85);
+  clip-path: polygon(
+    3px 0, calc(100% - 3px) 0,
+    calc(100% - 3px) 1px, calc(100% - 1px) 1px,
+    calc(100% - 1px) 3px, 100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 1px) calc(100% - 3px), calc(100% - 1px) calc(100% - 1px),
+    calc(100% - 3px) calc(100% - 1px), calc(100% - 3px) 100%,
+    3px 100%,
+    3px calc(100% - 1px), 1px calc(100% - 1px),
+    1px calc(100% - 3px), 0 calc(100% - 3px),
+    0 3px,
+    1px 3px, 1px 1px,
+    3px 1px
+  );
 }
 
-@keyframes footerFlicker {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
-  52% { opacity: 0.2; }
-  54% { opacity: 0.5; }
+/* Chunky stepped fill — scaleX avoids width/padding conflicts, stays inside the well */
+.pda-loading .progress-fill {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background: linear-gradient(180deg, #7af4ff 0%, #00ddff 50%, #00b8d4 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s steps(10, end);
+  z-index: 1;
+}
+
+/* Segment dividers overlay — narrow gaps show the dark well through the fill */
+.pda-loading .progress-dividers {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent calc((100% - 19 * 2px) / 20),
+    rgba(0, 10, 20, 0.85) calc((100% - 19 * 2px) / 20),
+    rgba(0, 10, 20, 0.85) calc((100% - 19 * 2px) / 20 + 2px)
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Corner logo — moved SYNTHCITY DIGILABS header to bottom-right */
+.loading-corner-logo {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  z-index: 10;
+  color: rgba(0, 221, 255, 0.55);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 8px rgba(0, 221, 255, 0.5),
+    0 0 16px rgba(0, 221, 255, 0.25);
+  pointer-events: none;
 }
 
 /* --------------------------------------------------
@@ -369,49 +311,31 @@
   100% { opacity: 0; }
 }
 
-/* Small phone: scale down loading spinner */
+/* Small phone: scale down loader */
 @media (max-width: 480px) {
   .pda-loading {
     padding: 24px;
   }
 
-  .pda-loading .spinner-container {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 30px;
-  }
-
-  .pda-loading .spinner {
-    width: 54px;
-    height: 54px;
-  }
-
-  .pda-loading .spinner-outer {
-    width: 68px;
-    height: 68px;
-  }
-
-  .pda-loading .spinner-core {
-    width: 14px;
-    height: 14px;
-  }
-
-  .pda-loading .header {
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 36px;
-  }
-
   .pda-loading .status {
     font-size: 13px;
+    min-height: 13px;
+    letter-spacing: 1.5px;
   }
 
-  .pda-loading .progress-text {
-    font-size: 18px;
+  .pda-loading .progress-frame {
+    width: 260px;
   }
 
-  .pda-loading .footer {
-    bottom: 24px;
+  .pda-loading .progress-frame-inner {
+    height: 18px;
+  }
+
+  .loading-corner-logo {
+    right: 14px;
+    bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 }
 
@@ -421,4 +345,176 @@
 .globe-page ~ footer,
 .globe-page + footer {
   display: none !important;
+}
+
+/* --------------------------------------------------
+   DIRECTORY MINI-DROPDOWN (desktop CSS2D labels)
+   See GlobeLanding.jsx createLabel — these classes
+   are applied to imperatively-built label elements.
+-------------------------------------------------- */
+.css2d-label-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  pointer-events: auto;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+.css2d-label-row {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.css2d-label-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: clamp(2px, 0.3vw, 4px) clamp(7px, 0.85vw, 12px);
+  background: rgba(0, 10, 30, 0.7);
+  border: 1px solid rgba(0, 221, 255, 0.3);
+  border-radius: 4px;
+  color: #00ddff;
+  font-size: clamp(11px, 1.05vw, 16px);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
+  transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  cursor: pointer;
+}
+
+.css2d-label-pill.disabled {
+  color: #446688;
+  border-color: rgba(68, 102, 136, 0.3);
+  text-shadow: 0 0 8px rgba(68, 102, 136, 0.5);
+  cursor: default;
+}
+
+.css2d-label-pill:not(.disabled):hover {
+  background: rgba(0, 30, 60, 0.85);
+  transform: scale(1.06);
+}
+
+.css2d-label-text {
+  cursor: inherit;
+  max-width: min(30vw, 285px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Standalone dropdown trigger — its own pill, visually separate from the
+   label so click intent is unambiguous (label = navigate, chevron = expand). */
+.css2d-chevron-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(20px, 1.85vw, 28px);
+  flex-shrink: 0;
+  background: rgba(0, 10, 30, 0.7);
+  border: 1px solid rgba(0, 221, 255, 0.3);
+  border-radius: 4px;
+  color: rgba(0, 221, 255, 0.75);
+  font-size: clamp(9px, 0.8vw, 12px);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.2s ease;
+  text-shadow: 0 0 6px rgba(0, 221, 255, 0.4);
+}
+
+.css2d-chevron-btn:hover {
+  background: rgba(0, 30, 60, 0.85);
+  border-color: rgba(0, 221, 255, 0.6);
+  color: #00ddff;
+}
+
+.css2d-label-wrapper.open .css2d-chevron-btn {
+  background: rgba(0, 30, 60, 0.85);
+  border-color: rgba(0, 221, 255, 0.6);
+  color: #00ddff;
+}
+
+.css2d-label-wrapper.open .css2d-chevron-btn .css2d-chevron-glyph {
+  transform: rotate(180deg);
+}
+
+.css2d-chevron-glyph {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* Absolutely positioned so opening it does not change the wrapper's height.
+   CSS2DRenderer centres each label with translate(-50%,-50%), so an in-flow
+   panel used to shove the trigger ~90px upward, away from the cursor. */
+.css2d-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 2;
+  padding: 6px;
+  background: rgba(0, 10, 30, 0.92);
+  border: 1px solid rgba(0, 221, 255, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 4px 18px rgba(0, 221, 255, 0.12);
+  flex-direction: column;
+  min-width: 100%;
+  max-width: min(40vw, 260px);
+}
+
+/* Right-hand column opens inward so the panel never runs off the viewport. */
+.css2d-label-wrapper.side-right .css2d-dropdown {
+  left: auto;
+  right: 0;
+}
+
+.css2d-label-wrapper.open .css2d-dropdown {
+  display: flex;
+}
+
+/* Each label is a separate absolutely-positioned sibling inside the CSS2D layer,
+   and CSS2DRenderer rewrites an inline depth-sorted z-index on every frame — so an
+   open dropdown renders behind the label below it. !important is what it takes to
+   outrank that inline value; the renderer restores its own ordering on close. */
+.css2d-label-wrapper.open {
+  z-index: 10 !important;
+}
+
+.css2d-dropdown-link {
+  display: block;
+  padding: clamp(4px, 0.5vw, 6px) clamp(7px, 0.8vw, 10px);
+  font-size: clamp(10px, 0.9vw, 13px);
+  font-weight: 500;
+  color: rgba(0, 221, 255, 0.85);
+  text-shadow: 0 0 6px rgba(0, 221, 255, 0.35);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.css2d-dropdown-link:hover {
+  background: rgba(0, 221, 255, 0.1);
+  color: #00ddff;
+}
+
+.css2d-dropdown-link.primary {
+  border-bottom: 1px dashed rgba(0, 221, 255, 0.18);
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  font-size: clamp(9px, 0.8vw, 12px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 221, 255, 0.6);
+}
+
+/* Below the compact breakpoint the floating labels give way to GlobeMobileMenu.
+   Hidden rather than torn down, so widening the window brings them straight back
+   without rebuilding the three.js scene. */
+@media (max-width: 1024px) {
+  .css2d-label-wrapper {
+    display: none;
+  }
 }

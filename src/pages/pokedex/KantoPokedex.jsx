@@ -7,6 +7,7 @@ import RegionNav from '../../components/blog/RegionNav';
 import { KANTO_DEX, KANTO_TYPES } from '../../data/kantoDexData';
 import { KANTO_NATURES } from '../../data/kantoNatureData';
 import styles from './KantoPokedex.module.css';
+import { ROUTES } from '../../config/routes';
 
 const KantoPokedex = () => {
   return (
@@ -15,7 +16,7 @@ const KantoPokedex = () => {
       <Container>
         {/* Back link + Region nav */}
         <div className={styles.backLinkRow}>
-          <Link to="/blog" className={styles.backLink}>
+          <Link to={ROUTES.blog} className={styles.backLink}>
             &larr; Back to Blog
           </Link>
         </div>
