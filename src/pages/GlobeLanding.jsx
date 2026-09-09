@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import GlobeMobileMenu from '../components/common/GlobeMobileMenu';
 import { useTransition } from '../context/TransitionContext';
 import { SUBSITE_NAV } from '../data/subsiteNavConfig';
-import { useMediaQuery } from '../hooks/useMediaQuery';
 import { ROUTES } from '../config/routes';
 import './GlobeLanding.css';
 
@@ -11,13 +10,29 @@ import './GlobeLanding.css';
  * Globe Landing Page - Using dynamic imports for Three.js modules
  */
 
-// How far the label columns sit toward the viewport edge, as a fraction of the
-// half-frustum width. 0.72 keeps the widest label ("Make-Up/Skincare E-Commerce")
-// clear of the edge while staying outside the globe silhouette.
-const LABEL_ANCHOR_FRACTION = 0.72;
+// Outer radius of the composition in world units: the globe (2.0), the text ring
+// riding at 2.80, and the glyph depth on top of it. Everything that has to stay
+// on-screen lives inside this sphere, so it is what the camera framing solves for.
+const CONTENT_RADIUS = 3.1;
 
-// Below this width the floating labels give way to the hamburger menu.
-const COMPACT_BREAKPOINT = 1024;
+// The desktop framing. The responsive solve only ever pulls FURTHER back than this,
+// so any window wide enough looks exactly as designed.
+const BASE_CAMERA_Z = 6;
+
+// Inset from the viewport edge to a label column's outer edge. Proportional to the
+// width so the breathing room reads the same at any size, clamped so it neither
+// collapses on a narrow window nor drifts absurdly wide on an ultrawide one.
+const labelEdgePad = (viewportWidth) => Math.min(112, Math.max(28, viewportWidth * 0.062));
+
+// CSS px between a label column's inner edge and the globe silhouette.
+const LABEL_GLOBE_CLEARANCE = 16;
+
+// Narrowest column we will still render labels into. Checked against the room the
+// column actually gets, not against a viewport width -- so browser zoom, which
+// shrinks the viewport in CSS px without changing the composition at all, cannot
+// trip it.
+const MIN_LABEL_GUTTER = 150;
+
 
 // Updated configuration for our routes
 const GLOBE_CONFIG = {
@@ -58,14 +73,15 @@ export default function GlobeLanding() {
   const navigate = useNavigate();
   const navigateRef = useRef(navigate);
 
-  // Touch devices always get the menu. Desktop gets it too once the window is
-  // narrow enough that the floating labels are hidden (see GlobeLanding.css) —
-  // otherwise a narrowed desktop browser has no navigation at all.
+  // Touch devices always get the menu. Desktop gets it too once the label columns
+  // run out of room — otherwise a narrowed desktop browser has no navigation at all.
+  // `labelsFit` is reported by the scene's layout solve (applyResponsiveLayout),
+  // which measures the gutter instead of guessing from a width breakpoint.
   const [isTouchDevice] = useState(() => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   });
-  const isNarrowViewport = useMediaQuery(`(max-width: ${COMPACT_BREAKPOINT}px)`);
-  const showMobileMenu = isTouchDevice || isNarrowViewport;
+  const [labelsFit, setLabelsFit] = useState(true);
+  const showMobileMenu = isTouchDevice || !labelsFit;
 
   // Loading state for phased progress
   const [loadingState, setLoadingState] = useState({
@@ -254,8 +270,21 @@ export default function GlobeLanding() {
         // and a CSS transition with no prior value simply doesn't run — the
         // bar appears already full. Yield two frames so a 0% frame is painted
         // first and the fill has something to animate from.
+        //
+        // Raced against a timer because a background tab never fires rAF at all:
+        // middle-clicking a link here used to park init on this line forever, and
+        // since 'Initializing Systems...' is the only text updateLoadingPhase never
+        // sets, the tab sat on it until it was focused. In a visible tab rAF still
+        // wins (~32ms), so the paint-a-0%-frame behaviour above is unchanged.
         await new Promise(resolve => {
-          requestAnimationFrame(() => requestAnimationFrame(resolve));
+          let settled = false;
+          const finish = () => {
+            if (settled) return;
+            settled = true;
+            resolve();
+          };
+          requestAnimationFrame(() => requestAnimationFrame(finish));
+          setTimeout(finish, 100);
         });
         if (cancelled) return;
 
@@ -520,22 +549,74 @@ export default function GlobeLanding() {
         updateLoadingPhase('labels');
         const showFloatingLabels = !isMobile && !isTablet;
 
-        // Hoisted so onResize can re-pin them. The label columns used to sit at a
-        // fixed world x = +/-5.5, which meant their on-screen offset worked out to
-        // 0.794 * viewport HEIGHT while the room they had was viewport WIDTH — so
-        // a tall or narrow window pushed them off-canvas. syncLabelAnchors derives
-        // the world x from the live frustum instead, pinning them to a constant
-        // fraction of the viewport width at any aspect.
+        // Camera framing, label anchors and label width are one solve: all three fall
+        // out of how many pixels a world unit is worth at the current camera distance.
+        //
+        // Two things this deliberately does not do. It never dollies on a width
+        // breakpoint — `z = width <= 1024 ? 12 : 6` doubled the camera distance across
+        // a single pixel of width, which is what made browser zoom feel like it snapped
+        // (aspect ratio is invariant under zoom, so nothing else moved until that line
+        // fired). And it never decides label visibility from a viewport width — it
+        // measures the gutter the labels actually get.
         let leftContainer = null;
         let rightContainer = null;
+        // { node, worldY, side } per label row, so the layout solve can place each
+        // one against its own depth (see xForRow).
+        const labelAnchors = [];
 
-        const syncLabelAnchors = () => {
-          if (!leftContainer || !rightContainer) return;
-          const halfFrustumW = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
-            * Math.abs(camera.position.z) * camera.aspect;
-          const anchorX = halfFrustumW * LABEL_ANCHOR_FRACTION;
-          leftContainer.position.x = -anchorX;
-          rightContainer.position.x = anchorX;
+        const applyResponsiveLayout = () => {
+          const halfFovTan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+
+          // A perspective FOV is vertical, so vertical framing is aspect-independent
+          // and only a narrow window can ever clip the composition. Solve for the
+          // distance that fits CONTENT_RADIUS across the half-frustum WIDTH, and take
+          // whichever of that and the design distance is further back. Continuous in
+          // aspect: no step anywhere, and at desktop aspects the max() resolves to
+          // BASE_CAMERA_Z, so the framing you tuned is untouched.
+          if (!isMobile && !isTablet) {
+            const fitZ = CONTENT_RADIUS / (halfFovTan * camera.aspect);
+            camera.position.z = Math.max(BASE_CAMERA_Z, fitZ);
+            camera.position.y = 0.5;
+            camera.lookAt(0, 0, 0);
+          }
+
+          const halfFrustumH = halfFovTan * Math.abs(camera.position.z);
+          const pxPerWorldUnit = window.innerHeight / (halfFrustumH * 2);
+          const halfViewportPx = window.innerWidth / 2;
+
+          // The band a column lives in: from the ring's silhouette out to the viewport
+          // edge, less the padding at both ends.
+          const globeEdgePx = CONTENT_RADIUS * pxPerWorldUnit;
+          const edgePad = labelEdgePad(window.innerWidth);
+          const gutterPx = halfViewportPx - globeEdgePx - edgePad - LABEL_GLOBE_CLEARANCE;
+          const fits = gutterPx >= MIN_LABEL_GUTTER;
+
+          // Published to the CSS so labels cap themselves at the room they have —
+          // clipping becomes impossible by construction, not by a tuned constant.
+          container.style.setProperty('--globe-label-gutter', `${Math.max(0, Math.round(gutterPx))}px`);
+          container.classList.toggle('globe-labels-hidden', !fits);
+          setLabelsFit(fits);
+
+          // Put each column's OUTER edge `edgePad` px in from the viewport edge. The
+          // labels are edge-aligned against their anchor (see .css2d-label-inner), so
+          // this pins the column rather than its centre and nothing can overhang.
+          //
+          // Solved per row, not once per column: the camera sits above the origin and
+          // looks down at it, so rows at different world y are at different depths —
+          // a ~3% spread, which splays a column by ~25px at desktop width. x must be
+          // proportional to depth to project to a constant ndc.x.
+          if (labelAnchors.length) {
+            const targetNdcX = (halfViewportPx - edgePad) / halfViewportPx;
+            const camY = camera.position.y;
+            const camZ = camera.position.z;
+            const viewLen = Math.hypot(camY, camZ) || 1;
+
+            labelAnchors.forEach(({ node, worldY, side }) => {
+              const depth = (camZ * camZ - camY * (worldY - camY)) / viewLen;
+              const x = targetNdcX * halfFovTan * camera.aspect * depth;
+              node.position.x = side === 'right' ? x : -x;
+            });
+          }
         };
 
         if (showFloatingLabels) {
@@ -545,8 +626,6 @@ export default function GlobeLanding() {
 
           rightContainer = new THREE.Object3D();
           scene.add(rightContainer);
-
-          syncLabelAnchors();
 
           // Service labels
           const services = [
@@ -564,17 +643,24 @@ export default function GlobeLanding() {
             const anchor = new THREE.Object3D();
             anchor.position.y = 1.2 * (1 - idx);
             parent.add(anchor);
+            labelAnchors.push({ node: anchor, worldY: anchor.position.y, side: item.side });
 
             const { href: url = '#', status = 'coming-soon' } = config.serviceLinks[item.text] || {};
             const disabled = status !== 'active';
             const subLinks = SUBSITE_NAV[item.text]?.links ?? [];
             const hasDropdown = !disabled && subLinks.length > 0;
 
-            // Wrapper holds the row (label pill + chevron pill) + dropdown panel.
+            // CSS2DRenderer rewrites this element's `transform` every frame, so the
+            // wrapper can only ever be a zero-size anchor point. All the layout — and
+            // the transform we want to own and animate — lives on `inner`.
+            // side-right flips both the column's edge alignment and the dropdown's
+            // anchor, so the right-hand labels grow and open inward.
             const wrapper = document.createElement('div');
-            // side-right flips the dropdown's anchor so it opens inward instead of
-            // running off the right edge of the viewport.
             wrapper.className = `css2d-label-wrapper${item.side === 'right' ? ' side-right' : ''}`;
+
+            const inner = document.createElement('div');
+            inner.className = 'css2d-label-inner';
+            wrapper.appendChild(inner);
 
             const row = document.createElement('div');
             row.className = 'css2d-label-row';
@@ -646,10 +732,10 @@ export default function GlobeLanding() {
                 dropdown.appendChild(a);
               });
 
-              wrapper.appendChild(row);
-              wrapper.appendChild(dropdown);
+              inner.appendChild(row);
+              inner.appendChild(dropdown);
             } else {
-              wrapper.appendChild(row);
+              inner.appendChild(row);
             }
 
             anchor.add(new CSS2DObject(wrapper));
@@ -659,10 +745,20 @@ export default function GlobeLanding() {
           rightItems.forEach((item, i) => createLabel(item, i, rightContainer));
         }
 
-        // Load font and create 3D text
+        // Frame the camera and pin the columns before the first render, so the
+        // opening shot is already correct rather than snapping on the first resize.
+        applyResponsiveLayout();
+
+        // Load font and create 3D text.
+        //
+        // Served from our own origin, not hotlinked off threejs.org. The wordmark ring
+        // is the brand element, and it failed SOFT — a fetch failure left a bare globe
+        // with the loader still completing, so an outage would have shipped unnoticed.
+        // Vendored copy + its license live in public/fonts/.
         updateLoadingPhase('font');
         const fontLoader = new FontLoader();
-        fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+        const fontUrl = `${process.env.PUBLIC_URL || ''}/fonts/helvetiker_regular.typeface.json`;
+        fontLoader.load(fontUrl, (font) => {
           const text = "[ SYNTHCITY DIGILABS[]SYNTHCITY DIGILABS ]";
           const radius = 2.80;
 
@@ -709,6 +805,11 @@ export default function GlobeLanding() {
 
           equatorTextGroup.rotation.copy(globeGroup.rotation);
           equatorTextGroup.rotation.y += Math.PI * -0.1;
+        }, undefined, (err) => {
+          // Deliberately non-fatal — a missing wordmark should not cost the visitor
+          // the whole landing page. But it is loud now, so a broken deploy shows up
+          // in the console instead of silently serving a globe with no branding.
+          console.error('Globe wordmark font failed to load:', fontUrl, err);
         });
 
         // Particles
@@ -934,16 +1035,9 @@ export default function GlobeLanding() {
           bloomComposer.setSize(width, height);
           finalComposer.setSize(width, height);
 
-          // Narrow desktop windows get the pulled-back tablet framing so the globe
-          // doesn't overflow once the floating labels hand off to the hamburger.
-          if (!isMobile && !isTablet) {
-            camera.position.z = width <= COMPACT_BREAKPOINT ? 12 : 6;
-            camera.position.y = width <= COMPACT_BREAKPOINT ? 1.0 : 0.5;
-            camera.lookAt(0, 0, 0);
-          }
-
-          // Re-pin the label columns to the new frustum before anything reads them.
-          syncLabelAnchors();
+          // Camera distance, label anchors and the label width budget, all solved
+          // continuously from the live frustum. No breakpoint, so no snap.
+          applyResponsiveLayout();
 
           // Tablet landscape: shift globe slightly and adjust camera
           if (isTabletLandscape) {

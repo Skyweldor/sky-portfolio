@@ -148,7 +148,9 @@ const GoldTitle = ({ text = 'ELEVATE' }) => {
 
       const loader = new FontLoader();
       loader.load(
-        'https://threejs.org/examples/fonts/optimer_bold.typeface.json',
+        // Vendored rather than hotlinked off threejs.org — same reasoning as the
+        // globe wordmark. Copy and license live in public/fonts/.
+        `${process.env.PUBLIC_URL || ''}/fonts/optimer_bold.typeface.json`,
         (font) => {
           if (disposed) return;
           if (stateRef.current) stateRef.current._font = font;

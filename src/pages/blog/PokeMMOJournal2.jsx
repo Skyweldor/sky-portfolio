@@ -96,10 +96,6 @@ const PokeMMOJournal2 = () => {
                 <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
                 <span className={styles.kvValue}>{header.status}</span>
               </div>
-
-              <div className={styles.cursorLine}>
-                <span className={styles.blinkingCursor}>█</span>
-              </div>
             </div>
           </div>
 
@@ -128,10 +124,6 @@ const PokeMMOJournal2 = () => {
                   }
                 </p>
               ))}
-
-              <div className={styles.cursorLine}>
-                <span className={styles.blinkingCursor}>█</span>
-              </div>
             </div>
           </div>
 
@@ -171,10 +163,6 @@ const PokeMMOJournal2 = () => {
                   <span>{footer.region}</span>
                 </div>
               </footer>
-
-              <div className={styles.cursorLine}>
-                <span className={styles.blinkingCursor}>█</span>
-              </div>
             </div>
           </div>
         </Container>

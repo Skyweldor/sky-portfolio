@@ -352,30 +352,64 @@
    See GlobeLanding.jsx createLabel — these classes
    are applied to imperatively-built label elements.
 -------------------------------------------------- */
+/* CSS2DRenderer writes `transform: translate(-50%,-50%) translate(x,y)` onto this
+   element on every frame, so the wrapper can only be a zero-size anchor point —
+   any transform of ours would be overwritten. Everything real lives on .inner. */
 .css2d-label-wrapper {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: stretch;
-  pointer-events: auto;
+  width: 0;
+  height: 0;
+  pointer-events: none;
   font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* Edge-aligned against the anchor instead of centred on it. The anchor sits an
+   inset in from the viewport edge (labelEdgePad) and the column grows inward from
+   there, so both columns stay flush and a label physically cannot overhang.
+   Sized in em off a single fluid font-size, and capped at the gutter the layout
+   solve measured — the cap is the room available, so clipping is impossible. */
+.css2d-label-inner {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  max-width: var(--globe-label-gutter, 300px);
+  pointer-events: auto;
+  /* Fluid on the room the column has, NOT on vw. A vw-based size is invariant under
+     browser zoom — the viewport shrinks in CSS px by exactly the zoom factor — which
+     is why zooming in used to change nothing at all until it hit a breakpoint. rem
+     bounds do scale with zoom, so Ctrl+= now actually enlarges the labels. */
+  font-size: clamp(0.6875rem, calc(var(--globe-label-gutter, 300px) * 0.05), 1rem);
+}
+
+.css2d-label-wrapper:not(.side-right) .css2d-label-inner {
+  left: 0;
+  align-items: flex-start;
+}
+
+.css2d-label-wrapper.side-right .css2d-label-inner {
+  right: 0;
+  align-items: flex-end;
 }
 
 .css2d-label-row {
   display: inline-flex;
   align-items: stretch;
   gap: 6px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .css2d-label-pill {
   display: inline-flex;
   align-items: center;
-  padding: clamp(2px, 0.3vw, 4px) clamp(7px, 0.85vw, 12px);
+  padding: 0.25em 0.75em;
+  min-width: 0;
   background: rgba(0, 10, 30, 0.7);
   border: 1px solid rgba(0, 221, 255, 0.3);
   border-radius: 4px;
   color: #00ddff;
-  font-size: clamp(11px, 1.05vw, 16px);
+  font-size: 1em;
   font-weight: 700;
   text-shadow: 0 0 8px rgba(0, 221, 255, 0.7);
   transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
@@ -394,9 +428,11 @@
   transform: scale(1.06);
 }
 
+/* The width cap lives on .css2d-label-inner; the text just consumes what's left of
+   the row after the chevron, and ellipsises rather than pushing the row wider. */
 .css2d-label-text {
   cursor: inherit;
-  max-width: min(30vw, 285px);
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -408,13 +444,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(20px, 1.85vw, 28px);
+  width: 2.2em;
   flex-shrink: 0;
   background: rgba(0, 10, 30, 0.7);
   border: 1px solid rgba(0, 221, 255, 0.3);
   border-radius: 4px;
   color: rgba(0, 221, 255, 0.75);
-  font-size: clamp(9px, 0.8vw, 12px);
+  font-family: inherit;
+  font-size: 0.8em;
   line-height: 1;
   cursor: pointer;
   user-select: none;
@@ -459,7 +496,7 @@
   box-shadow: 0 4px 18px rgba(0, 221, 255, 0.12);
   flex-direction: column;
   min-width: 100%;
-  max-width: min(40vw, 260px);
+  max-width: var(--globe-label-gutter, 260px);
 }
 
 /* Right-hand column opens inward so the panel never runs off the viewport. */
@@ -482,8 +519,8 @@
 
 .css2d-dropdown-link {
   display: block;
-  padding: clamp(4px, 0.5vw, 6px) clamp(7px, 0.8vw, 10px);
-  font-size: clamp(10px, 0.9vw, 13px);
+  padding: 0.35em 0.6em;
+  font-size: 0.85em;
   font-weight: 500;
   color: rgba(0, 221, 255, 0.85);
   text-shadow: 0 0 6px rgba(0, 221, 255, 0.35);
@@ -504,17 +541,18 @@
   border-bottom: 1px dashed rgba(0, 221, 255, 0.18);
   margin-bottom: 4px;
   padding-bottom: 8px;
-  font-size: clamp(9px, 0.8vw, 12px);
+  font-size: 0.75em;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: rgba(0, 221, 255, 0.6);
 }
 
-/* Below the compact breakpoint the floating labels give way to GlobeMobileMenu.
-   Hidden rather than torn down, so widening the window brings them straight back
-   without rebuilding the three.js scene. */
-@media (max-width: 1024px) {
-  .css2d-label-wrapper {
-    display: none;
-  }
+/* The handoff to GlobeMobileMenu. Driven by the gutter the layout solve actually
+   measured (MIN_LABEL_GUTTER), not by a viewport-width media query: browser zoom
+   shrinks the viewport in CSS px without changing the composition, so a width query
+   fired at 150% zoom and took the whole nav away exactly when the user asked to see
+   it better. Hidden rather than torn down, so widening brings the labels straight
+   back without rebuilding the three.js scene. */
+.globe-labels-hidden .css2d-label-wrapper {
+  display: none;
 }

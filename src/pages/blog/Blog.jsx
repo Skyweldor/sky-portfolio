@@ -92,10 +92,6 @@ const Blog = () => {
                 </React.Fragment>
               ))
             )}
-
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
-            </div>
           </div>
         </div>
 
@@ -144,10 +140,6 @@ const Blog = () => {
                 </div>
               </Link>
             ))}
-
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
-            </div>
           </div>
         </div>
 

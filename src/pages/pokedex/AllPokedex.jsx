@@ -206,10 +206,6 @@ const AllPokedex = () => {
                 &nbsp;{isLoading ? 'LOADING...' : 'COMPLETE'}
               </span>
             </div>
-
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
-            </div>
           </div>
         </div>
 
@@ -227,7 +223,7 @@ const AllPokedex = () => {
           </div>
 
           <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>// DEX_ENTRIES</h2>
+            <h2 className={styles.sectionHeader}>{'// DEX_ENTRIES'}</h2>
             {isLoading && totalCount === 0 ? (
               <div style={{ padding: '24px 0', color: '#7a8aa8', fontFamily: 'monospace' }}>
                 &gt; FETCHING_REGION_DATA...
@@ -259,9 +255,6 @@ const AllPokedex = () => {
             <div className={styles.footerText}>
               <span className={styles.footerHighlight}>&gt;</span> Sprite data sourced from <span className={styles.footerHighlight}>msikma/pokesprite</span><br />
               <span className={styles.footerHighlight}>&gt;</span> Region data lazy-loaded on selection
-            </div>
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
             </div>
           </div>
         </div>

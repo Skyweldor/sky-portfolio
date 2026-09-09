@@ -69,11 +69,6 @@ const JohtoPokedex = () => {
               <span className={styles.progressFill}>{'████████████████████████'}</span>
               <span className={styles.progressStatus}>&nbsp;COMPLETE</span>
             </div>
-
-            {/* Blinking cursor */}
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
-            </div>
           </div>
         </div>
 
@@ -91,7 +86,7 @@ const JohtoPokedex = () => {
           </div>
 
           <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>// DEX_ENTRIES</h2>
+            <h2 className={styles.sectionHeader}>{'// DEX_ENTRIES'}</h2>
             <PokedexGrid pokemon={JOHTO_DEX} types={JOHTO_TYPES} natureData={JOHTO_NATURES} />
           </div>
         </div>
@@ -114,9 +109,6 @@ const JohtoPokedex = () => {
               <span className={styles.footerHighlight}>&gt;</span> Next region: <span className={styles.footerHighlight}>Hoenn</span> — 135 entries queued<br />
               <span className={styles.footerHighlight}>&gt;</span> Sprite data sourced from <span className={styles.footerHighlight}>msikma/pokesprite</span><br />
               <span className={styles.footerHighlight}>&gt;</span> Gen VIII rendering format — base forms only
-            </div>
-            <div className={styles.cursorLine}>
-              <span className={styles.blinkingCursor}>█</span>
             </div>
           </div>
         </div>

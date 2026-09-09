@@ -245,25 +245,6 @@
   color: var(--color-text-dark);
 }
 
-/* ==================== BLINKING CURSOR ==================== */
-
-.cursorLine {
-  margin-top: 12px;
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1;
-}
-
-.blinkingCursor {
-  color: var(--color-highlight);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0; }
-}
-
 /* =================== CONTENT SECTIONS =================== */
 
 .contentSection {
@@ -592,11 +573,6 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .blinkingCursor {
-    animation: none;
-    opacity: 1;
-  }
-
   .downloadBar:hover {
     animation: none;
   }
