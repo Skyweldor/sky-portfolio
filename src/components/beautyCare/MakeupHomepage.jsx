@@ -1,6 +1,5 @@
 // src/components/makeup/MakeupHomePage.jsx
 import React from 'react';
-import HeroBanner from './HeroBanner';
 import DividingBar from './DividingBar';
 import KitsCarousel from './KitsCarousel';
 import FeaturedSplit from './FeaturedSplit';

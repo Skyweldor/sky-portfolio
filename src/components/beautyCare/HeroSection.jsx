@@ -3,7 +3,6 @@ import React from 'react';
 import Particles from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import './css/HeroSection.css';
-import lipstick from './images/lipstick_example_00.png';
 import lipstick_processed from './images/lipstick_example_00_processed.png';
 import { Link } from 'react-router-dom';
 import { NavGlobe } from '../common/NavGlobe';

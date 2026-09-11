@@ -155,7 +155,7 @@ export const ModelDebugProvider = ({ children }) => {
 function Section({ title, children }) {
   return (
     <div className={styles.section}>
-      <div className={styles.sectionTitle}>// {title}</div>
+      <div className={styles.sectionTitle}>{'// '}{title}</div>
       {children}
     </div>
   );

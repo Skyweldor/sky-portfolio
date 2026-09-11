@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import computerIcon from "../../assets/img/computer_icon_00.png";
 import synthCityIcon from "../../assets/img/stickers/synthcity-icon-00.png"
 import { useNavigate } from 'react-router-dom';
 

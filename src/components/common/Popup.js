@@ -20,6 +20,8 @@ const Popup = props => {
             document.body.style.overflow = 'auto';
             document.removeEventListener('keydown', handleEscKey);
         };
+        // Mount-only: the popup unmounts on close, so the initial handleClose is sufficient.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     const stopPropagation = (event) => {

@@ -54,7 +54,7 @@ const Blog = () => {
           </div>
 
           <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>// journal_entries</h2>
+            <h2 className={styles.sectionHeader}>{'// journal_entries'}</h2>
 
             <div className={styles.commandPrompt}>
               &gt; ls -la<span> ./posts</span>
@@ -109,7 +109,7 @@ const Blog = () => {
           </div>
 
           <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>// pokedex_companion</h2>
+            <h2 className={styles.sectionHeader}>{'// pokedex_companion'}</h2>
 
             <div className={styles.commandPrompt}>
               &gt; ls<span> pokedex/</span>

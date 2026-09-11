@@ -1,7 +1,4 @@
-import { useState, useContext } from "react";
-import { Container, Row, Col, Tab, Nav, TabContainer, TabContent } from "react-bootstrap";
-import Popup from "../common/Popup";
-import { CartContext } from "../features/cart/CartContext"; // Context for cart state
+import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { StickerCard } from "./StickerCard";
 
 // Importing 'pets' stickers

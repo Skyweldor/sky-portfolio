@@ -3,7 +3,7 @@ import { NavBar } from '../common/NavBar';
 import { creatures } from './creatures';
 import { parts as allParts } from './parts';
 import styles from './AetherboundGame.module.css';
-import { baseItems, advancedItems, recipes, questData, specData } from './data';
+import { baseItems, questData, specData } from './data';
 import { InventoryPanel } from './InventoryPanel';
 import { TownPanel } from './TownPanel';
 import { TrainingOverlay } from './TrainingOverlay';
@@ -31,7 +31,6 @@ function AetherboundGame() {
   const [log, setLog] = useState([]);
   const combatLogRef = useRef(null);
 
-  const [attachedParts, setAttachedParts] = useState([]); // Not used directly now
   const [playerParts, setPlayerParts] = useState({
     head: null,
     torso: null,
@@ -53,7 +52,7 @@ function AetherboundGame() {
 
   // After defining inventory, run a useEffect or a function to merge slot info:
   useEffect(() => {
-    const updatedInv = inventory.map(item => {
+    setInventory(prev => prev.map(item => {
       if (item.type === 'part') {
         // find corresponding part in allParts
         const partEntry = Object.values(allParts).find(p => p.name === item.name);
@@ -62,8 +61,7 @@ function AetherboundGame() {
         }
       }
       return item;
-    });
-    setInventory(updatedInv);
+    }));
   }, []);
 
   const [chosenSpec, setChosenSpec] = useState(null);

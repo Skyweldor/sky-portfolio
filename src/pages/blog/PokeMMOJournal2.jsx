@@ -19,7 +19,7 @@ const RosterGrid = () => {
 
   return (
     <div className={styles.rosterSection} style={{ maxWidth: `${maxW}px`, margin: '0 auto 32px' }}>
-      <h2 className={styles.sectionHeader}>// TEAM_ROSTER</h2>
+      <h2 className={styles.sectionHeader}>{'// TEAM_ROSTER'}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: `${gap}px` }}>
         {TEAM_ROSTER.map((pokemon) => (
           <TeamRosterCard key={pokemon.id} pokemon={pokemon} />
@@ -113,7 +113,7 @@ const PokeMMOJournal2 = () => {
             </div>
 
             <div className={styles.terminalBody}>
-              <h2 className={styles.sectionHeader}>// TRANSMISSION</h2>
+              <h2 className={styles.sectionHeader}>{'// TRANSMISSION'}</h2>
 
               {intro.map((text, i) => (
                 <p key={i} className={i === 0 ? styles.introTextFirst : styles.introText}>
@@ -144,7 +144,7 @@ const PokeMMOJournal2 = () => {
             </div>
 
             <div className={styles.terminalBody}>
-              <h2 className={styles.sectionHeader}>// TRANSMISSION_END</h2>
+              <h2 className={styles.sectionHeader}>{'// TRANSMISSION_END'}</h2>
 
               {closing.map((text, i) => (
                 <p key={i} className={styles.closingText}>

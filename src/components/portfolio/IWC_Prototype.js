@@ -1,7 +1,4 @@
 import React from 'react';
-import { Banner } from '../common/Banner';
-import { Skills } from './Skills';
-import { Projects } from './Projects';
 import { StickerBanner } from '../stickerShop/StickerBanner';
 import { StickerCollections } from '../stickerShop/StickerCollections'
 import { StickerStore } from '../stickerShop/StickerStore';

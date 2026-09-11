@@ -5,14 +5,15 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Banner.module.css";
 import { ROUTES } from '../../config/routes';
 
+const toRotate = ["SynthCity DigiLabs"];
+const subRotate = ["Interactive"];
+
 export const Banner = () => {
     /* ————————————————————————————————————————
        typing-animation logic for both texts
     —————————————————————————————————————————— */
     const [text, setText] = useState("");
     const [subText, setSubText] = useState("");
-    const toRotate = ["SynthCity DigiLabs"];
-    const subRotate = ["Interactive"];
     const navigate = useNavigate();
 
     useEffect(() => {

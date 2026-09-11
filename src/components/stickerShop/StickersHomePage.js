@@ -1,7 +1,4 @@
 import React from 'react';
-import { Banner } from '../common/Banner';
-import { Skills } from '../portfolio/Skills';
-import { Projects } from '../portfolio/Projects';
 import { StickerBanner } from './StickerBanner';
 import { StickerCollections } from './StickerCollections'
 import { StickerStore } from './StickerStore';
@@ -26,12 +23,3 @@ function StickersHomePage() {
 }
 
 export default StickersHomePage;
-
-const BannerStickers = () => {
-  return (
-    <div className="banner-stickers">
-      <Banner />
-      {/* ... any other modifications or additions for the stickers banner ... */}
-    </div>
-  );
-}

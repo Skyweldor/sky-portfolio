@@ -1,7 +1,6 @@
 // src/components/makeup/HeroBanner.jsx
 import React from 'react';
 import './css/HeroBanner.css';
-import { Link } from 'react-router-dom';
 
 const HeroBanner = () => {
     return (

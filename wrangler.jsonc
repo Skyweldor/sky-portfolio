@@ -1,0 +1,11 @@
+{
+  // Must match the Worker name in the Cloudflare dashboard (Workers Builds).
+  "name": "sky-portfolio-00",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    // create-react-app output
+    "directory": "./build",
+    // Serve index.html for unknown paths so react-router deep links work
+    "not_found_handling": "single-page-application"
+  }
+}

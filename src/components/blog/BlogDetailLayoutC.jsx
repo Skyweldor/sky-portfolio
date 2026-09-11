@@ -13,20 +13,12 @@ const TYPE_COLORS = {
   docs: '#00b3ff',
 };
 
-const TYPE_LABELS = {
-  demo: 'Demo',
-  asset: 'Asset Pack',
-  tool: 'Toolkit',
-  docs: 'Documentation',
-};
-
 const BlogDetailLayoutC = ({ item }) => {
   if (!item) return null;
 
   const accentColor = TYPE_COLORS[item.type] || '#00eaff';
   const paragraphs = (item.longDescription || '').split('\n\n').filter(Boolean);
   const showPlaceholderHero = !item.heroImage || item.heroImage.startsWith('/assets/blog/');
-  const isDownloadDisabled = item.downloadAvailable === false;
 
   return (
     <div className={styles.pageWrapper}>
@@ -79,7 +71,7 @@ const BlogDetailLayoutC = ({ item }) => {
           <div className={styles.terminalBody}>
             {/* // PREVIEW */}
             <div className={styles.contentSection}>
-              <h2 className={styles.sectionHeader}>// PREVIEW</h2>
+              <h2 className={styles.sectionHeader}>{'// PREVIEW'}</h2>
               {showPlaceholderHero ? (
                 <div className={styles.heroWrapper}>
                   <HeroPlaceholder type={item.type} title={item.title} />
@@ -100,7 +92,7 @@ const BlogDetailLayoutC = ({ item }) => {
             {/* // DESCRIPTION */}
             {paragraphs.length > 0 && (
               <div className={styles.contentSection}>
-                <h2 className={styles.sectionHeader}>// DESCRIPTION</h2>
+                <h2 className={styles.sectionHeader}>{'// DESCRIPTION'}</h2>
                 {paragraphs.map((para, idx) => (
                   <p key={idx} className={idx === 0 ? styles.descParagraphFirst : styles.descParagraph}>
                     <span className={idx === 0 ? styles.descTextFirst : undefined}>{para}</span>
@@ -126,7 +118,7 @@ const BlogDetailLayoutC = ({ item }) => {
             {/* // FEATURES */}
             {item.features && item.features.length > 0 && (
               <div className={styles.contentSection}>
-                <h2 className={styles.sectionHeader}>// FEATURES</h2>
+                <h2 className={styles.sectionHeader}>{'// FEATURES'}</h2>
                 <ul className={styles.featureList}>
                   {item.features.map((feat, idx) => (
                     <li key={idx} className={styles.featureItem}>
@@ -143,7 +135,7 @@ const BlogDetailLayoutC = ({ item }) => {
             {/* // CHANGELOG */}
             {item.changelog && item.changelog.length > 0 && (
               <div className={styles.contentSection}>
-                <h2 className={styles.sectionHeader}>// CHANGELOG</h2>
+                <h2 className={styles.sectionHeader}>{'// CHANGELOG'}</h2>
                 <div className={styles.changelogStack}>
                   {item.changelog.map((entry, idx) => (
                     <div key={idx} className={styles.changelogEntry}>
@@ -168,7 +160,7 @@ const BlogDetailLayoutC = ({ item }) => {
             {item.systemRequirements && (
               <div className={styles.contentSection}>
                 <h2 className={styles.sectionHeader}>
-                  // SYSTEM_REQUIREMENTS
+                  {'// SYSTEM_REQUIREMENTS'}
                 </h2>
                 <p className={styles.sysReqText}>
                   {item.systemRequirements}
@@ -181,7 +173,7 @@ const BlogDetailLayoutC = ({ item }) => {
         {/* ========== RELATED ITEMS ========== */}
         {item.relatedItems && item.relatedItems.length > 0 && (
           <div className={styles.relatedSection}>
-            <h2 className={styles.sectionHeader}>// RELATED_ITEMS</h2>
+            <h2 className={styles.sectionHeader}>{'// RELATED_ITEMS'}</h2>
             <RelatedItems relatedIds={item.relatedItems} />
           </div>
         )}
