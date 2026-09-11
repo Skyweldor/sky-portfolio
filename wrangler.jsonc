@@ -1,6 +1,6 @@
 {
   // Must match the Worker name in the Cloudflare dashboard (Workers Builds).
-  "name": "sky-portfolio-00",
+  "name": "sky-portfolio-01",
   "compatibility_date": "2026-09-01",
   "assets": {
     // create-react-app output
