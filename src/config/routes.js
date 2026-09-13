@@ -6,8 +6,8 @@
 // StickerLabs, Elevate, and Cirrus Learning get their own roots as they ship,
 // which is why the paths are built from a root constant rather than written out.
 //
-// NOTE: `/blog-posts/...` under public/ is an ASSET directory, not a route. Do not
-// let a find-and-replace conflate the two.
+// NOTE: `/blog-posts/...` and `/harness/...` under public/ are ASSET directories, not
+// routes. Do not let a find-and-replace conflate the two.
 // ---------------------------------------------------------------------------
 
 export const INTERACTIVE_ROOT = '/interactive';
@@ -21,6 +21,12 @@ export const ROUTES = {
   pokedex: `${INTERACTIVE_ROOT}/blog/pokedex`,
   regionPokedex: (region) => `${INTERACTIVE_ROOT}/blog/${region}-pokedex`,
   pokemmoJournal: (n) => `${INTERACTIVE_ROOT}/blog/pokemmo-journal-${n}`,
+
+  // --- Build-harness write-ups. The live harnesses they embed are NOT routes: they
+  // are static sub-apps under public/harness/, served straight from the assets dir.
+  animationHarness: `${INTERACTIVE_ROOT}/blog/animation-harness`,
+  materialsHarness: `${INTERACTIVE_ROOT}/blog/materials-harness`,
+  isoSpriteHarness: `${INTERACTIVE_ROOT}/blog/iso-sprite-harness`,
   downloads: `${INTERACTIVE_ROOT}/downloads`,
   download: (id) => `${INTERACTIVE_ROOT}/downloads/${id}`,
   aetherbound: `${INTERACTIVE_ROOT}/aetherbound`,
