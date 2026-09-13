@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated GLB test harness</title>
+    <style>
+      body { margin: 0; background: #10121a; color: #dfe4f2; font: 13px/1.5 ui-monospace, Menlo, Consolas, monospace; }
+      #ui { position: fixed; top: 0; left: 0; padding: 10px 12px; z-index: 2; }
+      button { background: #232a3d; color: #dfe4f2; border: 1px solid #3a445e; border-radius: 5px;
+               padding: 4px 9px; margin: 0 4px 4px 0; cursor: pointer; font: inherit; }
+      button:hover { background: #303a54; }
+      button.on { background: #4d6bff; border-color: #4d6bff; color: #fff; }
+      #readout { position: fixed; bottom: 0; left: 0; padding: 10px 12px; white-space: pre; z-index: 2;
+                 background: rgba(16,18,26,.85); border-top-right-radius: 6px; }
+      h1 { font-size: 13px; margin: 0 0 6px; font-weight: 600; }
+    </style>
+    <script type="module" crossorigin src="/harness/animation/assets/anim-test-B5ANmVPX.js"></script>
+  </head>
+  <body>
+    <div id="ui">
+      <h1>animated GLB (left, green grid) vs shipped static GLB (right) &mdash; 1 m reference cube</h1>
+      <div id="mons"></div>
+      <div id="clips"></div>
+    </div>
+    <div id="readout"></div>
+  </body>
+</html>
