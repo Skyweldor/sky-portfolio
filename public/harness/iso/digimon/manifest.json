@@ -1,0 +1,6440 @@
+{
+ "projection": {
+  "type": "true isometric",
+  "elevationDeg": 35.264,
+  "portraitElevationDeg": 35.264,
+  "resolution": 512,
+  "unitM": 1.0,
+  "groundLineFromBottomPx": 30.7,
+  "sets": {
+   "body": {
+    "fill": 0.86,
+    "fillW": 0.86,
+    "anchor": "ground",
+    "bottom": 0.06,
+    "trim": 0.0
+   },
+   "portrait": {
+    "fill": 0.62,
+    "fillW": 0.92,
+    "anchor": "head",
+    "top": 0.87,
+    "trim": 0.03
+   }
+  },
+  "views": {
+   "bottom_right": {
+    "yawDeg": 315.0,
+    "lightMirrorX": false,
+    "faces": "bottom-right corner"
+   },
+   "bottom_left": {
+    "yawDeg": 45.0,
+    "lightMirrorX": true,
+    "faces": "bottom-left corner"
+   }
+  }
+ },
+ "sprites": {
+  "bottom_right/body/Agumon": {
+   "id": "Agumon",
+   "key": "agumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Agumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3070,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.37814,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "bodySizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.37814,
+   "pxPerMeter": 371.52,
+   "projectedSizePx": [
+    373.5,
+    440.3
+   ],
+   "coverage": 0.3371,
+   "lumLeftRight": [
+    0.6203,
+    0.7
+   ],
+   "kb": 235.8
+  },
+  "bottom_right/portrait/Agumon": {
+   "id": "Agumon",
+   "key": "agumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Agumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1107,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.37814,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.48,
+    0.725,
+    0.547
+   ],
+   "bodySizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.9525,
+   "pxPerMeter": 537.53,
+   "projectedSizePx": [
+    297.2,
+    317.4
+   ],
+   "coverage": 0.5315,
+   "lumLeftRight": [
+    0.5788,
+    0.7084
+   ],
+   "kb": 270.1
+  },
+  "bottom_right/body/Angemon": {
+   "id": "Angemon",
+   "key": "angemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Angemon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 6018,
+   "bodyVerts": 6018,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.34962,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "bodySizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.34962,
+   "pxPerMeter": 152.85,
+   "projectedSizePx": [
+    338.6,
+    440.3
+   ],
+   "coverage": 0.1934,
+   "lumLeftRight": [
+    0.706,
+    0.6851
+   ],
+   "kb": 228.3
+  },
+  "bottom_right/portrait/Angemon": {
+   "id": "Angemon",
+   "key": "angemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Angemon.png",
+   "meshes": 3,
+   "anchor": "J_neck",
+   "anchorVerts": 968,
+   "bodyVerts": 6018,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.34962,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.633,
+    0.714,
+    1.12
+   ],
+   "bodySizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.8398,
+   "pxPerMeter": 609.67,
+   "projectedSizePx": [
+    210.0,
+    317.4
+   ],
+   "coverage": 0.8444,
+   "lumLeftRight": [
+    0.6794,
+    0.6873
+   ],
+   "kb": 355.8
+  },
+  "bottom_right/body/Betamon": {
+   "id": "Betamon",
+   "key": "betamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Betamon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 1505,
+   "bodyVerts": 1505,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.39001,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "bodySizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.39001,
+   "pxPerMeter": 368.34,
+   "projectedSizePx": [
+    440.3,
+    414.0
+   ],
+   "coverage": 0.2934,
+   "lumLeftRight": [
+    0.4682,
+    0.5325
+   ],
+   "kb": 206.3
+  },
+  "bottom_right/portrait/Betamon": {
+   "id": "Betamon",
+   "key": "betamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Betamon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 507,
+   "bodyVerts": 1505,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.39001,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.528,
+    0.294,
+    0.388
+   ],
+   "bodySizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.51475,
+   "pxPerMeter": 994.66,
+   "projectedSizePx": [
+    332.6,
+    317.4
+   ],
+   "coverage": 0.6809,
+   "lumLeftRight": [
+    0.4233,
+    0.4959
+   ],
+   "kb": 288.4
+  },
+  "bottom_right/body/Birdramon": {
+   "id": "Birdramon",
+   "key": "birdramon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Birdramon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3936,
+   "bodyVerts": 3936,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.58201,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "bodySizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "unitM": 1.0,
+   "orthoScale": 4.58201,
+   "pxPerMeter": 111.74,
+   "projectedSizePx": [
+    300.9,
+    440.3
+   ],
+   "coverage": 0.1432,
+   "lumLeftRight": [
+    0.3826,
+    0.4791
+   ],
+   "kb": 187.8
+  },
+  "bottom_right/portrait/Birdramon": {
+   "id": "Birdramon",
+   "key": "birdramon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Birdramon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1244,
+   "bodyVerts": 3936,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.58201,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.633,
+    0.821,
+    1.152
+   ],
+   "bodySizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.83277,
+   "pxPerMeter": 279.36,
+   "projectedSizePx": [
+    176.9,
+    317.4
+   ],
+   "coverage": 0.3976,
+   "lumLeftRight": [
+    0.4502,
+    0.5144
+   ],
+   "kb": 271.7
+  },
+  "bottom_right/body/Biyomon": {
+   "id": "Biyomon",
+   "key": "biyomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Biyomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2837,
+   "bodyVerts": 2837,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54825,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "bodySizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.54825,
+   "pxPerMeter": 330.7,
+   "projectedSizePx": [
+    316.5,
+    440.3
+   ],
+   "coverage": 0.2211,
+   "lumLeftRight": [
+    0.4163,
+    0.6346
+   ],
+   "kb": 196.2
+  },
+  "bottom_right/portrait/Biyomon": {
+   "id": "Biyomon",
+   "key": "biyomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Biyomon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 1015,
+   "bodyVerts": 2837,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54825,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.597,
+    0.613,
+    0.522
+   ],
+   "bodySizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.86432,
+   "pxPerMeter": 592.37,
+   "projectedSizePx": [
+    299.5,
+    317.4
+   ],
+   "coverage": 0.5468,
+   "lumLeftRight": [
+    0.4371,
+    0.6322
+   ],
+   "kb": 278.0
+  },
+  "bottom_right/body/BlackAgumon": {
+   "id": "BlackAgumon",
+   "key": "blackagumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/BlackAgumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3070,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.34397,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "bodySizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.34397,
+   "pxPerMeter": 380.96,
+   "projectedSizePx": [
+    373.5,
+    440.3
+   ],
+   "coverage": 0.3371,
+   "lumLeftRight": [
+    0.3752,
+    0.436
+   ],
+   "kb": 217.2
+  },
+  "bottom_right/portrait/BlackAgumon": {
+   "id": "BlackAgumon",
+   "key": "blackagumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/BlackAgumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1107,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.34397,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.468,
+    0.707,
+    0.534
+   ],
+   "bodySizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.92888,
+   "pxPerMeter": 551.2,
+   "projectedSizePx": [
+    297.2,
+    317.4
+   ],
+   "coverage": 0.5315,
+   "lumLeftRight": [
+    0.3205,
+    0.4169
+   ],
+   "kb": 249.9
+  },
+  "bottom_right/body/BlackGabumon": {
+   "id": "BlackGabumon",
+   "key": "blackgabumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/BlackGabumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4253,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.90025,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "bodySizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.90025,
+   "pxPerMeter": 269.44,
+   "projectedSizePx": [
+    371.5,
+    440.3
+   ],
+   "coverage": 0.2497,
+   "lumLeftRight": [
+    0.5493,
+    0.4067
+   ],
+   "kb": 206.3
+  },
+  "bottom_right/portrait/BlackGabumon": {
+   "id": "BlackGabumon",
+   "key": "blackgabumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/BlackGabumon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1665,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.90025,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.787,
+    0.909,
+    0.69
+   ],
+   "bodySizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.1037,
+   "pxPerMeter": 463.89,
+   "projectedSizePx": [
+    285.0,
+    317.4
+   ],
+   "coverage": 0.5615,
+   "lumLeftRight": [
+    0.381,
+    0.3817
+   ],
+   "kb": 294.0
+  },
+  "bottom_right/body/BlackGarurumon": {
+   "id": "BlackGarurumon",
+   "key": "blackgarurumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/BlackGarurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3800,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04675,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.04675,
+   "pxPerMeter": 101.45,
+   "projectedSizePx": [
+    440.3,
+    400.6
+   ],
+   "coverage": 0.1612,
+   "lumLeftRight": [
+    0.3193,
+    0.3519
+   ],
+   "kb": 194.4
+  },
+  "bottom_right/portrait/BlackGarurumon": {
+   "id": "BlackGarurumon",
+   "key": "blackgarurumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/BlackGarurumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1208,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04675,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.279,
+    1.566,
+    1.55
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.16057,
+   "pxPerMeter": 236.97,
+   "projectedSizePx": [
+    306.2,
+    317.4
+   ],
+   "coverage": 0.4569,
+   "lumLeftRight": [
+    0.3355,
+    0.305
+   ],
+   "kb": 269.5
+  },
+  "bottom_right/body/BlackGatomon": {
+   "id": "BlackGatomon",
+   "key": "blackgatomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/BlackGatomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3490,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.12414,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.12414,
+   "pxPerMeter": 241.04,
+   "projectedSizePx": [
+    339.6,
+    440.3
+   ],
+   "coverage": 0.2057,
+   "lumLeftRight": [
+    0.347,
+    0.3574
+   ],
+   "kb": 195.1
+  },
+  "bottom_right/portrait/BlackGatomon": {
+   "id": "BlackGatomon",
+   "key": "blackgatomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/BlackGatomon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1544,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.12414,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.614,
+    0.732,
+    0.94
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.52938,
+   "pxPerMeter": 334.78,
+   "projectedSizePx": [
+    311.5,
+    339.0
+   ],
+   "coverage": 0.3204,
+   "lumLeftRight": [
+    0.3568,
+    0.3461
+   ],
+   "kb": 232.2
+  },
+  "bottom_right/body/BlackGreymon": {
+   "id": "BlackGreymon",
+   "key": "blackgreymon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/BlackGreymon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3172,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.77626,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.77626,
+   "pxPerMeter": 135.58,
+   "projectedSizePx": [
+    425.2,
+    440.3
+   ],
+   "coverage": 0.233,
+   "lumLeftRight": [
+    0.4398,
+    0.3647
+   ],
+   "kb": 206.2
+  },
+  "bottom_right/portrait/BlackGreymon": {
+   "id": "BlackGreymon",
+   "key": "blackgreymon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/BlackGreymon.png",
+   "meshes": 3,
+   "anchor": "J_haed",
+   "anchorVerts": 1275,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.77626,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.846,
+    1.566,
+    1.317
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.09245,
+   "pxPerMeter": 244.69,
+   "projectedSizePx": [
+    308.8,
+    317.4
+   ],
+   "coverage": 0.4899,
+   "lumLeftRight": [
+    0.3363,
+    0.3719
+   ],
+   "kb": 271.2
+  },
+  "bottom_right/body/DemiDevimon": {
+   "id": "DemiDevimon",
+   "key": "demidevimon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/DemiDevimon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3682,
+   "bodyVerts": 3682,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49184,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "bodySizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.49184,
+   "pxPerMeter": 343.2,
+   "projectedSizePx": [
+    440.3,
+    386.5
+   ],
+   "coverage": 0.2069,
+   "lumLeftRight": [
+    0.4279,
+    0.4797
+   ],
+   "kb": 195.1
+  },
+  "bottom_right/portrait/DemiDevimon": {
+   "id": "DemiDevimon",
+   "key": "demidevimon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/DemiDevimon.png",
+   "meshes": 2,
+   "anchor": "not(wing|feet|leg|lap)",
+   "anchorVerts": 1827,
+   "bodyVerts": 3682,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49184,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.467,
+    0.477,
+    0.674
+   ],
+   "bodySizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.03271,
+   "pxPerMeter": 495.78,
+   "projectedSizePx": [
+    239.1,
+    317.4
+   ],
+   "coverage": 0.3921,
+   "lumLeftRight": [
+    0.4508,
+    0.5153
+   ],
+   "kb": 255.6
+  },
+  "bottom_right/body/Devimon": {
+   "id": "Devimon",
+   "key": "devimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Devimon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 7163,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79836,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.79836,
+   "pxPerMeter": 134.8,
+   "projectedSizePx": [
+    306.5,
+    440.3
+   ],
+   "coverage": 0.2228,
+   "lumLeftRight": [
+    0.2161,
+    0.2635
+   ],
+   "kb": 211.3
+  },
+  "bottom_right/portrait/Devimon": {
+   "id": "Devimon",
+   "key": "devimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Devimon.png",
+   "meshes": 5,
+   "anchor": "J_head",
+   "anchorVerts": 991,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79836,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.87,
+    0.381,
+    0.461
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.6398,
+   "pxPerMeter": 800.25,
+   "projectedSizePx": [
+    416.0,
+    317.4
+   ],
+   "coverage": 0.7688,
+   "lumLeftRight": [
+    0.2795,
+    0.3093
+   ],
+   "kb": 282.1
+  },
+  "bottom_right/body/Gabumon": {
+   "id": "Gabumon",
+   "key": "gabumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Gabumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4253,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86079,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "bodySizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.86079,
+   "pxPerMeter": 275.15,
+   "projectedSizePx": [
+    371.5,
+    440.3
+   ],
+   "coverage": 0.2497,
+   "lumLeftRight": [
+    0.6078,
+    0.5894
+   ],
+   "kb": 230.9
+  },
+  "bottom_right/portrait/Gabumon": {
+   "id": "Gabumon",
+   "key": "gabumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Gabumon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1665,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86079,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.771,
+    0.89,
+    0.676
+   ],
+   "bodySizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.08078,
+   "pxPerMeter": 473.73,
+   "projectedSizePx": [
+    285.0,
+    317.4
+   ],
+   "coverage": 0.5615,
+   "lumLeftRight": [
+    0.5896,
+    0.6063
+   ],
+   "kb": 328.5
+  },
+  "bottom_right/body/Gargomon": {
+   "id": "Gargomon",
+   "key": "gargomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Gargomon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 6942,
+   "bodyVerts": 6942,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.69919,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "bodySizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.69919,
+   "pxPerMeter": 138.41,
+   "projectedSizePx": [
+    440.3,
+    353.7
+   ],
+   "coverage": 0.3459,
+   "lumLeftRight": [
+    0.517,
+    0.4397
+   ],
+   "kb": 238.3
+  },
+  "bottom_right/portrait/Gargomon": {
+   "id": "Gargomon",
+   "key": "gargomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Gargomon.png",
+   "meshes": 5,
+   "anchor": "J_neck",
+   "anchorVerts": 2050,
+   "bodyVerts": 6942,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.69919,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.315,
+    1.739,
+    1.738
+   ],
+   "bodySizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.95737,
+   "pxPerMeter": 261.58,
+   "projectedSizePx": [
+    457.9,
+    317.4
+   ],
+   "coverage": 0.695,
+   "lumLeftRight": [
+    0.5688,
+    0.6003
+   ],
+   "kb": 309.0
+  },
+  "bottom_right/body/Garurumon": {
+   "id": "Garurumon",
+   "key": "garurumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Garurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3800,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04675,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.04675,
+   "pxPerMeter": 101.45,
+   "projectedSizePx": [
+    440.3,
+    400.6
+   ],
+   "coverage": 0.1612,
+   "lumLeftRight": [
+    0.588,
+    0.5428
+   ],
+   "kb": 211.1
+  },
+  "bottom_right/portrait/Garurumon": {
+   "id": "Garurumon",
+   "key": "garurumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Garurumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1208,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04675,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.279,
+    1.566,
+    1.55
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.16057,
+   "pxPerMeter": 236.97,
+   "projectedSizePx": [
+    306.2,
+    317.4
+   ],
+   "coverage": 0.4569,
+   "lumLeftRight": [
+    0.5278,
+    0.6418
+   ],
+   "kb": 301.1
+  },
+  "bottom_right/body/Gatomon": {
+   "id": "Gatomon",
+   "key": "gatomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Gatomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3490,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.12414,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.12414,
+   "pxPerMeter": 241.04,
+   "projectedSizePx": [
+    339.6,
+    440.3
+   ],
+   "coverage": 0.2057,
+   "lumLeftRight": [
+    0.4122,
+    0.6894
+   ],
+   "kb": 203.9
+  },
+  "bottom_right/portrait/Gatomon": {
+   "id": "Gatomon",
+   "key": "gatomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Gatomon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1544,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.12414,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.614,
+    0.732,
+    0.94
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.52938,
+   "pxPerMeter": 334.78,
+   "projectedSizePx": [
+    311.5,
+    339.0
+   ],
+   "coverage": 0.3204,
+   "lumLeftRight": [
+    0.5212,
+    0.778
+   ],
+   "kb": 242.0
+  },
+  "bottom_right/body/Goblimon": {
+   "id": "Goblimon",
+   "key": "goblimon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Goblimon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4304,
+   "bodyVerts": 4304,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54122,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "bodySizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.54122,
+   "pxPerMeter": 332.2,
+   "projectedSizePx": [
+    364.0,
+    440.3
+   ],
+   "coverage": 0.2773,
+   "lumLeftRight": [
+    0.4595,
+    0.5052
+   ],
+   "kb": 243.0
+  },
+  "bottom_right/portrait/Goblimon": {
+   "id": "Goblimon",
+   "key": "goblimon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Goblimon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1650,
+   "bodyVerts": 4304,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54122,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.399,
+    0.488,
+    0.647
+   ],
+   "bodySizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.7925,
+   "pxPerMeter": 646.05,
+   "projectedSizePx": [
+    187.7,
+    317.4
+   ],
+   "coverage": 0.5368,
+   "lumLeftRight": [
+    0.3447,
+    0.5063
+   ],
+   "kb": 308.3
+  },
+  "bottom_right/body/Gomamon": {
+   "id": "Gomamon",
+   "key": "gomamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Gomamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2015,
+   "bodyVerts": 2015,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.85224,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "bodySizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.85224,
+   "pxPerMeter": 276.42,
+   "projectedSizePx": [
+    356.7,
+    440.3
+   ],
+   "coverage": 0.2299,
+   "lumLeftRight": [
+    0.6611,
+    0.5713
+   ],
+   "kb": 206.9
+  },
+  "bottom_right/portrait/Gomamon": {
+   "id": "Gomamon",
+   "key": "gomamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Gomamon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 987,
+   "bodyVerts": 2015,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.85224,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.605,
+    0.791,
+    0.775
+   ],
+   "bodySizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.09064,
+   "pxPerMeter": 469.45,
+   "projectedSizePx": [
+    283.4,
+    317.4
+   ],
+   "coverage": 0.5568,
+   "lumLeftRight": [
+    0.6605,
+    0.7207
+   ],
+   "kb": 300.6
+  },
+  "bottom_right/body/Greymon": {
+   "id": "Greymon",
+   "key": "greymon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Greymon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3172,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.77626,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.77626,
+   "pxPerMeter": 135.58,
+   "projectedSizePx": [
+    425.2,
+    440.3
+   ],
+   "coverage": 0.233,
+   "lumLeftRight": [
+    0.5712,
+    0.4063
+   ],
+   "kb": 216.7
+  },
+  "bottom_right/portrait/Greymon": {
+   "id": "Greymon",
+   "key": "greymon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Greymon.png",
+   "meshes": 3,
+   "anchor": "J_haed",
+   "anchorVerts": 1275,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.77626,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.846,
+    1.566,
+    1.317
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.09245,
+   "pxPerMeter": 244.69,
+   "projectedSizePx": [
+    308.8,
+    317.4
+   ],
+   "coverage": 0.4899,
+   "lumLeftRight": [
+    0.4211,
+    0.3618
+   ],
+   "kb": 282.5
+  },
+  "bottom_right/body/Guardromon": {
+   "id": "Guardromon",
+   "key": "guardromon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Guardromon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3704,
+   "bodyVerts": 3704,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.96964,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.96964,
+   "pxPerMeter": 172.41,
+   "projectedSizePx": [
+    391.3,
+    440.3
+   ],
+   "coverage": 0.3501,
+   "lumLeftRight": [
+    0.4575,
+    0.4587
+   ],
+   "kb": 256.5
+  },
+  "bottom_right/portrait/Guardromon": {
+   "id": "Guardromon",
+   "key": "guardromon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Guardromon.png",
+   "meshes": 2,
+   "anchor": "top 0.45 of ^J_mune$",
+   "anchorVerts": 176,
+   "bodyVerts": 3704,
+   "zoom": 0.62,
+   "bodyOrthoScale": 2.96964,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.127,
+    1.346,
+    0.376
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.84415,
+   "pxPerMeter": 277.63,
+   "projectedSizePx": [
+    292.0,
+    167.9
+   ],
+   "coverage": 0.6467,
+   "lumLeftRight": [
+    0.4751,
+    0.5052
+   ],
+   "kb": 336.0
+  },
+  "bottom_right/body/GuardromonGold": {
+   "id": "GuardromonGold",
+   "key": "guardromongold",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/GuardromonGold.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3704,
+   "bodyVerts": 3704,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.96964,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.96964,
+   "pxPerMeter": 172.41,
+   "projectedSizePx": [
+    391.3,
+    440.3
+   ],
+   "coverage": 0.3501,
+   "lumLeftRight": [
+    0.5854,
+    0.5272
+   ],
+   "kb": 259.0
+  },
+  "bottom_right/portrait/GuardromonGold": {
+   "id": "GuardromonGold",
+   "key": "guardromongold",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/GuardromonGold.png",
+   "meshes": 2,
+   "anchor": "top 0.45 of ^J_mune$",
+   "anchorVerts": 176,
+   "bodyVerts": 3704,
+   "zoom": 0.62,
+   "bodyOrthoScale": 2.96964,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.127,
+    1.346,
+    0.376
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.84415,
+   "pxPerMeter": 277.63,
+   "projectedSizePx": [
+    292.0,
+    167.9
+   ],
+   "coverage": 0.6467,
+   "lumLeftRight": [
+    0.6223,
+    0.6165
+   ],
+   "kb": 336.3
+  },
+  "bottom_right/body/Hagurumon": {
+   "id": "Hagurumon",
+   "key": "hagurumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Hagurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2459,
+   "bodyVerts": 2459,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.96346,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "bodySizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.96346,
+   "pxPerMeter": 260.76,
+   "projectedSizePx": [
+    440.3,
+    372.5
+   ],
+   "coverage": 0.2679,
+   "lumLeftRight": [
+    0.5932,
+    0.5535
+   ],
+   "kb": 230.5
+  },
+  "bottom_right/portrait/Hagurumon": {
+   "id": "Hagurumon",
+   "key": "hagurumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Hagurumon.png",
+   "meshes": 2,
+   "anchor": "^J_center$",
+   "anchorVerts": 1006,
+   "bodyVerts": 2459,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.96346,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.889,
+    0.691,
+    0.889
+   ],
+   "bodySizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.11723,
+   "pxPerMeter": 458.28,
+   "projectedSizePx": [
+    317.4,
+    317.4
+   ],
+   "coverage": 0.6486,
+   "lumLeftRight": [
+    0.5105,
+    0.5203
+   ],
+   "kb": 349.2
+  },
+  "bottom_right/body/IceDevimon": {
+   "id": "IceDevimon",
+   "key": "icedevimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/IceDevimon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 7163,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79836,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.79836,
+   "pxPerMeter": 134.8,
+   "projectedSizePx": [
+    306.5,
+    440.3
+   ],
+   "coverage": 0.2228,
+   "lumLeftRight": [
+    0.5484,
+    0.574
+   ],
+   "kb": 231.4
+  },
+  "bottom_right/portrait/IceDevimon": {
+   "id": "IceDevimon",
+   "key": "icedevimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/IceDevimon.png",
+   "meshes": 5,
+   "anchor": "J_head",
+   "anchorVerts": 991,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79836,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.87,
+    0.381,
+    0.461
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.6398,
+   "pxPerMeter": 800.25,
+   "projectedSizePx": [
+    416.0,
+    317.4
+   ],
+   "coverage": 0.7688,
+   "lumLeftRight": [
+    0.7149,
+    0.689
+   ],
+   "kb": 302.2
+  },
+  "bottom_right/body/Ikkakumon": {
+   "id": "Ikkakumon",
+   "key": "ikkakumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Ikkakumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3403,
+   "bodyVerts": 3403,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.86505,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "bodySizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.86505,
+   "pxPerMeter": 132.47,
+   "projectedSizePx": [
+    427.3,
+    440.3
+   ],
+   "coverage": 0.3191,
+   "lumLeftRight": [
+    0.6418,
+    0.5716
+   ],
+   "kb": 233.8
+  },
+  "bottom_right/portrait/Ikkakumon": {
+   "id": "Ikkakumon",
+   "key": "ikkakumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Ikkakumon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 1610,
+   "bodyVerts": 3403,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.86505,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.575,
+    1.878,
+    2.359
+   ],
+   "bodySizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.02325,
+   "pxPerMeter": 253.06,
+   "projectedSizePx": [
+    298.1,
+    317.4
+   ],
+   "coverage": 0.6535,
+   "lumLeftRight": [
+    0.7354,
+    0.8062
+   ],
+   "kb": 309.7
+  },
+  "bottom_right/body/Kabuterimon": {
+   "id": "Kabuterimon",
+   "key": "kabuterimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Kabuterimon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4539,
+   "bodyVerts": 4539,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.93072,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "bodySizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.93072,
+   "pxPerMeter": 130.26,
+   "projectedSizePx": [
+    419.3,
+    440.3
+   ],
+   "coverage": 0.158,
+   "lumLeftRight": [
+    0.6173,
+    0.3549
+   ],
+   "kb": 205.4
+  },
+  "bottom_right/portrait/Kabuterimon": {
+   "id": "Kabuterimon",
+   "key": "kabuterimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Kabuterimon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 725,
+   "bodyVerts": 4539,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.93072,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.674,
+    1.182,
+    0.949
+   ],
+   "bodySizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.07816,
+   "pxPerMeter": 474.88,
+   "projectedSizePx": [
+    325.0,
+    317.4
+   ],
+   "coverage": 0.6489,
+   "lumLeftRight": [
+    0.3195,
+    0.346
+   ],
+   "kb": 346.9
+  },
+  "bottom_right/body/Lopmon": {
+   "id": "Lopmon",
+   "key": "lopmon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Lopmon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 4287,
+   "bodyVerts": 4287,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.78353,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "bodySizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.78353,
+   "pxPerMeter": 287.07,
+   "projectedSizePx": [
+    440.3,
+    340.0
+   ],
+   "coverage": 0.2625,
+   "lumLeftRight": [
+    0.721,
+    0.5945
+   ],
+   "kb": 182.7
+  },
+  "bottom_right/portrait/Lopmon": {
+   "id": "Lopmon",
+   "key": "lopmon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Lopmon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 2512,
+   "bodyVerts": 4287,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.78353,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.955,
+    1.07,
+    1.093
+   ],
+   "bodySizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.28414,
+   "pxPerMeter": 398.71,
+   "projectedSizePx": [
+    492.3,
+    372.5
+   ],
+   "coverage": 0.4753,
+   "lumLeftRight": [
+    0.7178,
+    0.559
+   ],
+   "kb": 245.6
+  },
+  "bottom_right/body/Mushroomon": {
+   "id": "Mushroomon",
+   "key": "mushroomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Mushroomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 1853,
+   "bodyVerts": 1853,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.63019,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "bodySizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.63019,
+   "pxPerMeter": 314.07,
+   "projectedSizePx": [
+    329.8,
+    440.3
+   ],
+   "coverage": 0.3508,
+   "lumLeftRight": [
+    0.4476,
+    0.5193
+   ],
+   "kb": 238.2
+  },
+  "bottom_right/portrait/Mushroomon": {
+   "id": "Mushroomon",
+   "key": "mushroomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Mushroomon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 152,
+   "bodyVerts": 1853,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.63019,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.006,
+    0.948,
+    0.561
+   ],
+   "bodySizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.01939,
+   "pxPerMeter": 502.26,
+   "projectedSizePx": [
+    452.0,
+    317.4
+   ],
+   "coverage": 0.651,
+   "lumLeftRight": [
+    0.4629,
+    0.586
+   ],
+   "kb": 288.0
+  },
+  "bottom_right/body/Ogremon": {
+   "id": "Ogremon",
+   "key": "ogremon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Ogremon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 3385,
+   "bodyVerts": 3385,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.90867,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "bodySizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.90867,
+   "pxPerMeter": 176.03,
+   "projectedSizePx": [
+    440.3,
+    431.8
+   ],
+   "coverage": 0.3279,
+   "lumLeftRight": [
+    0.3798,
+    0.4505
+   ],
+   "kb": 261.2
+  },
+  "bottom_right/portrait/Ogremon": {
+   "id": "Ogremon",
+   "key": "ogremon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Ogremon.png",
+   "meshes": 4,
+   "anchor": "J_atama",
+   "anchorVerts": 566,
+   "bodyVerts": 3385,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.90867,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.978,
+    0.476,
+    1.066
+   ],
+   "bodySizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.24386,
+   "pxPerMeter": 411.62,
+   "projectedSizePx": [
+    231.1,
+    317.4
+   ],
+   "coverage": 0.7378,
+   "lumLeftRight": [
+    0.3975,
+    0.3831
+   ],
+   "kb": 341.1
+  },
+  "bottom_right/body/Otamamon": {
+   "id": "Otamamon",
+   "key": "otamamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Otamamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 1693,
+   "bodyVerts": 1693,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.97808,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "bodySizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.97808,
+   "pxPerMeter": 258.84,
+   "projectedSizePx": [
+    440.3,
+    274.1
+   ],
+   "coverage": 0.1976,
+   "lumLeftRight": [
+    0.4519,
+    0.4952
+   ],
+   "kb": 163.6
+  },
+  "bottom_right/portrait/Otamamon": {
+   "id": "Otamamon",
+   "key": "otamamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Otamamon.png",
+   "meshes": 2,
+   "anchor": "^J_mune$|^J_ago$",
+   "anchorVerts": 492,
+   "bodyVerts": 1693,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.97808,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.771,
+    0.776,
+    0.725
+   ],
+   "bodySizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.02226,
+   "pxPerMeter": 500.85,
+   "projectedSizePx": [
+    358.5,
+    317.4
+   ],
+   "coverage": 0.5505,
+   "lumLeftRight": [
+    0.4017,
+    0.4709
+   ],
+   "kb": 259.4
+  },
+  "bottom_right/body/Palmon": {
+   "id": "Palmon",
+   "key": "palmon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Palmon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3538,
+   "bodyVerts": 3538,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.43064,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "bodySizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.43064,
+   "pxPerMeter": 357.88,
+   "projectedSizePx": [
+    390.1,
+    440.3
+   ],
+   "coverage": 0.2553,
+   "lumLeftRight": [
+    0.5344,
+    0.5855
+   ],
+   "kb": 229.6
+  },
+  "bottom_right/portrait/Palmon": {
+   "id": "Palmon",
+   "key": "palmon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Palmon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 1715,
+   "bodyVerts": 3538,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.43064,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.645,
+    0.668,
+    0.793
+   ],
+   "bodySizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.94955,
+   "pxPerMeter": 539.2,
+   "projectedSizePx": [
+    289.0,
+    317.4
+   ],
+   "coverage": 0.4599,
+   "lumLeftRight": [
+    0.5619,
+    0.5991
+   ],
+   "kb": 290.6
+  },
+  "bottom_right/body/Patamon": {
+   "id": "Patamon",
+   "key": "patamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Patamon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 3627,
+   "bodyVerts": 3627,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.92805,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "bodySizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.92805,
+   "pxPerMeter": 265.55,
+   "projectedSizePx": [
+    307.3,
+    440.3
+   ],
+   "coverage": 0.135,
+   "lumLeftRight": [
+    0.5097,
+    0.6562
+   ],
+   "kb": 162.9
+  },
+  "bottom_right/portrait/Patamon": {
+   "id": "Patamon",
+   "key": "patamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Patamon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 1463,
+   "bodyVerts": 3627,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.92805,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.375,
+    0.891,
+    1.143
+   ],
+   "bodySizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.38819,
+   "pxPerMeter": 368.82,
+   "projectedSizePx": [
+    343.0,
+    480.9
+   ],
+   "coverage": 0.228,
+   "lumLeftRight": [
+    0.5097,
+    0.6673
+   ],
+   "kb": 194.6
+  },
+  "bottom_right/body/Raremon": {
+   "id": "Raremon",
+   "key": "raremon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Raremon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 2922,
+   "bodyVerts": 2922,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.97435,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "bodySizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.97435,
+   "pxPerMeter": 85.7,
+   "projectedSizePx": [
+    440.3,
+    283.0
+   ],
+   "coverage": 0.2183,
+   "lumLeftRight": [
+    0.4439,
+    0.4459
+   ],
+   "kb": 185.1
+  },
+  "bottom_right/portrait/Raremon": {
+   "id": "Raremon",
+   "key": "raremon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Raremon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 1558,
+   "bodyVerts": 2922,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.97435,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.197,
+    1.389,
+    1.623
+   ],
+   "bodySizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.74515,
+   "pxPerMeter": 293.38,
+   "projectedSizePx": [
+    271.4,
+    317.4
+   ],
+   "coverage": 0.8109,
+   "lumLeftRight": [
+    0.389,
+    0.4876
+   ],
+   "kb": 326.3
+  },
+  "bottom_right/body/Salamon": {
+   "id": "Salamon",
+   "key": "salamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Salamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2051,
+   "bodyVerts": 2051,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.11794,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "bodySizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.11794,
+   "pxPerMeter": 457.98,
+   "projectedSizePx": [
+    346.6,
+    440.3
+   ],
+   "coverage": 0.3753,
+   "lumLeftRight": [
+    0.6335,
+    0.8543
+   ],
+   "kb": 210.9
+  },
+  "bottom_right/portrait/Salamon": {
+   "id": "Salamon",
+   "key": "salamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Salamon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 958,
+   "bodyVerts": 2051,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.11794,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    0.681,
+    0.602,
+    0.641
+   ],
+   "bodySizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.80492,
+   "pxPerMeter": 636.09,
+   "projectedSizePx": [
+    345.1,
+    366.2
+   ],
+   "coverage": 0.5904,
+   "lumLeftRight": [
+    0.6909,
+    0.8403
+   ],
+   "kb": 250.7
+  },
+  "bottom_right/body/Tentomon": {
+   "id": "Tentomon",
+   "key": "tentomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Tentomon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 2924,
+   "bodyVerts": 2924,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.67721,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "bodySizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.67721,
+   "pxPerMeter": 305.27,
+   "projectedSizePx": [
+    310.9,
+    440.3
+   ],
+   "coverage": 0.2244,
+   "lumLeftRight": [
+    0.4854,
+    0.487
+   ],
+   "kb": 213.9
+  },
+  "bottom_right/portrait/Tentomon": {
+   "id": "Tentomon",
+   "key": "tentomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Tentomon.png",
+   "meshes": 4,
+   "anchor": "J_atama",
+   "anchorVerts": 585,
+   "bodyVerts": 2924,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.67721,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.604,
+    0.199,
+    0.744
+   ],
+   "bodySizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.9865,
+   "pxPerMeter": 519.01,
+   "projectedSizePx": [
+    182.8,
+    317.4
+   ],
+   "coverage": 0.5345,
+   "lumLeftRight": [
+    0.4924,
+    0.5006
+   ],
+   "kb": 315.9
+  },
+  "bottom_right/body/Terriermon": {
+   "id": "Terriermon",
+   "key": "terriermon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Terriermon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 3887,
+   "bodyVerts": 3887,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.1448,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "bodySizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.1448,
+   "pxPerMeter": 238.72,
+   "projectedSizePx": [
+    440.3,
+    322.7
+   ],
+   "coverage": 0.2615,
+   "lumLeftRight": [
+    0.7333,
+    0.7744
+   ],
+   "kb": 183.5
+  },
+  "bottom_right/portrait/Terriermon": {
+   "id": "Terriermon",
+   "key": "terriermon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Terriermon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 2172,
+   "bodyVerts": 3887,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.1448,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    2.351,
+    1.286,
+    1.25
+   ],
+   "bodySizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.54425,
+   "pxPerMeter": 331.55,
+   "projectedSizePx": [
+    502.9,
+    369.0
+   ],
+   "coverage": 0.4733,
+   "lumLeftRight": [
+    0.7544,
+    0.7533
+   ],
+   "kb": 249.0
+  },
+  "bottom_right/body/Togemon": {
+   "id": "Togemon",
+   "key": "togemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Togemon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2717,
+   "bodyVerts": 2717,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.87019,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "bodySizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.87019,
+   "pxPerMeter": 178.39,
+   "projectedSizePx": [
+    365.9,
+    440.3
+   ],
+   "coverage": 0.3648,
+   "lumLeftRight": [
+    0.3648,
+    0.4395
+   ],
+   "kb": 245.1
+  },
+  "bottom_right/portrait/Togemon": {
+   "id": "Togemon",
+   "key": "togemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Togemon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 850,
+   "bodyVerts": 2717,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.87019,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.321,
+    1.216,
+    1.172
+   ],
+   "bodySizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.72856,
+   "pxPerMeter": 296.2,
+   "projectedSizePx": [
+    324.6,
+    317.4
+   ],
+   "coverage": 0.6421,
+   "lumLeftRight": [
+    0.438,
+    0.4203
+   ],
+   "kb": 318.1
+  },
+  "bottom_right/body/ToyAgumon": {
+   "id": "ToyAgumon",
+   "key": "toyagumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/ToyAgumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3587,
+   "bodyVerts": 3587,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "bodySizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.54,
+   "pxPerMeter": 332.47,
+   "projectedSizePx": [
+    306.4,
+    440.3
+   ],
+   "coverage": 0.3525,
+   "lumLeftRight": [
+    0.4048,
+    0.5095
+   ],
+   "kb": 227.5
+  },
+  "bottom_right/portrait/ToyAgumon": {
+   "id": "ToyAgumon",
+   "key": "toyagumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/ToyAgumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 828,
+   "bodyVerts": 3587,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.54,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.472,
+    0.602,
+    0.385
+   ],
+   "bodySizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.81916,
+   "pxPerMeter": 625.03,
+   "projectedSizePx": [
+    442.4,
+    317.4
+   ],
+   "coverage": 0.6416,
+   "lumLeftRight": [
+    0.3463,
+    0.5522
+   ],
+   "kb": 278.1
+  },
+  "bottom_right/body/Turuiemon": {
+   "id": "Turuiemon",
+   "key": "turuiemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Turuiemon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 5986,
+   "bodyVerts": 5986,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.10099,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "bodySizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.10099,
+   "pxPerMeter": 165.11,
+   "projectedSizePx": [
+    440.3,
+    402.2
+   ],
+   "coverage": 0.247,
+   "lumLeftRight": [
+    0.4737,
+    0.4296
+   ],
+   "kb": 225.6
+  },
+  "bottom_right/portrait/Turuiemon": {
+   "id": "Turuiemon",
+   "key": "turuiemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Turuiemon.png",
+   "meshes": 4,
+   "anchor": "J_head",
+   "anchorVerts": 1568,
+   "bodyVerts": 5986,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.10099,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.178,
+    1.667,
+    1.456
+   ],
+   "bodySizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.78056,
+   "pxPerMeter": 287.55,
+   "projectedSizePx": [
+    471.0,
+    241.5
+   ],
+   "coverage": 0.4477,
+   "lumLeftRight": [
+    0.5114,
+    0.5145
+   ],
+   "kb": 281.2
+  },
+  "bottom_right/body/Veedramon": {
+   "id": "Veedramon",
+   "key": "veedramon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Veedramon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2497,
+   "bodyVerts": 2497,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.19602,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "bodySizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.19602,
+   "pxPerMeter": 160.2,
+   "projectedSizePx": [
+    420.7,
+    440.3
+   ],
+   "coverage": 0.2462,
+   "lumLeftRight": [
+    0.3975,
+    0.4978
+   ],
+   "kb": 222.2
+  },
+  "bottom_right/portrait/Veedramon": {
+   "id": "Veedramon",
+   "key": "veedramon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Veedramon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 846,
+   "bodyVerts": 2497,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.19602,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.8,
+    1.554,
+    1.222
+   ],
+   "bodySizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.91766,
+   "pxPerMeter": 266.99,
+   "projectedSizePx": [
+    229.7,
+    317.4
+   ],
+   "coverage": 0.4889,
+   "lumLeftRight": [
+    0.5071,
+    0.609
+   ],
+   "kb": 297.6
+  },
+  "bottom_right/body/Veemon": {
+   "id": "Veemon",
+   "key": "veemon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/body/Veemon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3292,
+   "bodyVerts": 3292,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.6466,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "bodySizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.6466,
+   "pxPerMeter": 310.94,
+   "projectedSizePx": [
+    377.9,
+    440.3
+   ],
+   "coverage": 0.2474,
+   "lumLeftRight": [
+    0.4815,
+    0.5132
+   ],
+   "kb": 208.3
+  },
+  "bottom_right/portrait/Veemon": {
+   "id": "Veemon",
+   "key": "veemon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_right/portrait/Veemon.png",
+   "meshes": 2,
+   "anchor": "J_neck",
+   "anchorVerts": 1212,
+   "bodyVerts": 3292,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.6466,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.89,
+    0.86,
+    0.559
+   ],
+   "bodySizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.12335,
+   "pxPerMeter": 455.78,
+   "projectedSizePx": [
+    334.4,
+    317.4
+   ],
+   "coverage": 0.3883,
+   "lumLeftRight": [
+    0.451,
+    0.5248
+   ],
+   "kb": 235.5
+  },
+  "bottom_left/body/Agumon": {
+   "id": "Agumon",
+   "key": "agumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Agumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3070,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49134,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "bodySizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.49134,
+   "pxPerMeter": 343.32,
+   "projectedSizePx": [
+    315.6,
+    440.3
+   ],
+   "coverage": 0.2921,
+   "lumLeftRight": [
+    0.7167,
+    0.6193
+   ],
+   "kb": 219.1
+  },
+  "bottom_left/portrait/Agumon": {
+   "id": "Agumon",
+   "key": "agumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Agumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1107,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49134,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.48,
+    0.725,
+    0.547
+   ],
+   "bodySizeM": [
+    1.042,
+    0.994,
+    1.21
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.93846,
+   "pxPerMeter": 545.57,
+   "projectedSizePx": [
+    308.4,
+    317.4
+   ],
+   "coverage": 0.546,
+   "lumLeftRight": [
+    0.7333,
+    0.606
+   ],
+   "kb": 267.0
+  },
+  "bottom_left/body/Angemon": {
+   "id": "Angemon",
+   "key": "angemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Angemon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 6018,
+   "bodyVerts": 6018,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.6473,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "bodySizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.6473,
+   "pxPerMeter": 140.38,
+   "projectedSizePx": [
+    407.8,
+    440.3
+   ],
+   "coverage": 0.146,
+   "lumLeftRight": [
+    0.5325,
+    0.7138
+   ],
+   "kb": 205.0
+  },
+  "bottom_left/portrait/Angemon": {
+   "id": "Angemon",
+   "key": "angemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Angemon.png",
+   "meshes": 3,
+   "anchor": "J_neck",
+   "anchorVerts": 968,
+   "bodyVerts": 6018,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.6473,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.633,
+    0.714,
+    1.12
+   ],
+   "bodySizeM": [
+    2.874,
+    1.984,
+    2.75
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.2908,
+   "pxPerMeter": 396.65,
+   "projectedSizePx": [
+    279.6,
+    317.4
+   ],
+   "coverage": 0.6744,
+   "lumLeftRight": [
+    0.6271,
+    0.7472
+   ],
+   "kb": 352.7
+  },
+  "bottom_left/body/Betamon": {
+   "id": "Betamon",
+   "key": "betamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Betamon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 1505,
+   "bodyVerts": 1505,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.37263,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "bodySizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.37263,
+   "pxPerMeter": 373.01,
+   "projectedSizePx": [
+    440.3,
+    412.9
+   ],
+   "coverage": 0.3026,
+   "lumLeftRight": [
+    0.5203,
+    0.4324
+   ],
+   "kb": 209.0
+  },
+  "bottom_left/portrait/Betamon": {
+   "id": "Betamon",
+   "key": "betamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Betamon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 507,
+   "bodyVerts": 1505,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.37263,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.528,
+    0.294,
+    0.388
+   ],
+   "bodySizeM": [
+    1.102,
+    1.069,
+    1.056
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.51025,
+   "pxPerMeter": 1003.42,
+   "projectedSizePx": [
+    351.2,
+    317.4
+   ],
+   "coverage": 0.6909,
+   "lumLeftRight": [
+    0.4659,
+    0.423
+   ],
+   "kb": 288.7
+  },
+  "bottom_left/body/Birdramon": {
+   "id": "Birdramon",
+   "key": "birdramon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Birdramon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3936,
+   "bodyVerts": 3936,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.57606,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "bodySizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "unitM": 1.0,
+   "orthoScale": 4.57606,
+   "pxPerMeter": 111.89,
+   "projectedSizePx": [
+    301.3,
+    440.3
+   ],
+   "coverage": 0.1437,
+   "lumLeftRight": [
+    0.4801,
+    0.3902
+   ],
+   "kb": 191.2
+  },
+  "bottom_left/portrait/Birdramon": {
+   "id": "Birdramon",
+   "key": "birdramon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Birdramon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1244,
+   "bodyVerts": 3936,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.57606,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.633,
+    0.821,
+    1.152
+   ],
+   "bodySizeM": [
+    3.168,
+    2.063,
+    3.89
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.86627,
+   "pxPerMeter": 274.34,
+   "projectedSizePx": [
+    174.1,
+    317.4
+   ],
+   "coverage": 0.3964,
+   "lumLeftRight": [
+    0.5124,
+    0.4591
+   ],
+   "kb": 274.1
+  },
+  "bottom_left/body/Biyomon": {
+   "id": "Biyomon",
+   "key": "biyomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Biyomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2837,
+   "bodyVerts": 2837,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.53609,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "bodySizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.53609,
+   "pxPerMeter": 333.31,
+   "projectedSizePx": [
+    339.3,
+    440.3
+   ],
+   "coverage": 0.2274,
+   "lumLeftRight": [
+    0.6299,
+    0.4167
+   ],
+   "kb": 204.0
+  },
+  "bottom_left/portrait/Biyomon": {
+   "id": "Biyomon",
+   "key": "biyomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Biyomon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 1015,
+   "bodyVerts": 2837,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.53609,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.597,
+    0.613,
+    0.522
+   ],
+   "bodySizeM": [
+    0.858,
+    0.815,
+    1.253
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.85509,
+   "pxPerMeter": 598.77,
+   "projectedSizePx": [
+    305.5,
+    317.4
+   ],
+   "coverage": 0.5684,
+   "lumLeftRight": [
+    0.6237,
+    0.4351
+   ],
+   "kb": 287.8
+  },
+  "bottom_left/body/BlackAgumon": {
+   "id": "BlackAgumon",
+   "key": "blackagumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/BlackAgumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3070,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.45436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "bodySizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.45436,
+   "pxPerMeter": 352.04,
+   "projectedSizePx": [
+    315.6,
+    440.3
+   ],
+   "coverage": 0.2921,
+   "lumLeftRight": [
+    0.4402,
+    0.3598
+   ],
+   "kb": 203.7
+  },
+  "bottom_left/portrait/BlackAgumon": {
+   "id": "BlackAgumon",
+   "key": "blackagumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/BlackAgumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1107,
+   "bodyVerts": 3070,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.45436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.468,
+    0.707,
+    0.534
+   ],
+   "bodySizeM": [
+    1.016,
+    0.97,
+    1.18
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.91519,
+   "pxPerMeter": 559.45,
+   "projectedSizePx": [
+    308.4,
+    317.4
+   ],
+   "coverage": 0.546,
+   "lumLeftRight": [
+    0.4294,
+    0.3363
+   ],
+   "kb": 248.9
+  },
+  "bottom_left/body/BlackGabumon": {
+   "id": "BlackGabumon",
+   "key": "blackgabumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/BlackGabumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4253,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86255,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "bodySizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.86255,
+   "pxPerMeter": 274.89,
+   "projectedSizePx": [
+    333.0,
+    440.3
+   ],
+   "coverage": 0.2623,
+   "lumLeftRight": [
+    0.3823,
+    0.4634
+   ],
+   "kb": 216.4
+  },
+  "bottom_left/portrait/BlackGabumon": {
+   "id": "BlackGabumon",
+   "key": "blackgabumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/BlackGabumon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1665,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86255,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.787,
+    0.909,
+    0.69
+   ],
+   "bodySizeM": [
+    1.002,
+    1.58,
+    1.3
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.10414,
+   "pxPerMeter": 463.71,
+   "projectedSizePx": [
+    281.4,
+    317.4
+   ],
+   "coverage": 0.5758,
+   "lumLeftRight": [
+    0.3959,
+    0.3819
+   ],
+   "kb": 297.7
+  },
+  "bottom_left/body/BlackGarurumon": {
+   "id": "BlackGarurumon",
+   "key": "blackgarurumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/BlackGarurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3800,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04932,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.04932,
+   "pxPerMeter": 101.4,
+   "projectedSizePx": [
+    440.3,
+    393.1
+   ],
+   "coverage": 0.164,
+   "lumLeftRight": [
+    0.3537,
+    0.3446
+   ],
+   "kb": 200.2
+  },
+  "bottom_left/portrait/BlackGarurumon": {
+   "id": "BlackGarurumon",
+   "key": "blackgarurumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/BlackGarurumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1208,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04932,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.279,
+    1.566,
+    1.55
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.25877,
+   "pxPerMeter": 226.67,
+   "projectedSizePx": [
+    281.9,
+    317.4
+   ],
+   "coverage": 0.4357,
+   "lumLeftRight": [
+    0.3145,
+    0.3445
+   ],
+   "kb": 275.0
+  },
+  "bottom_left/body/BlackGatomon": {
+   "id": "BlackGatomon",
+   "key": "blackgatomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/BlackGatomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3490,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.31436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.31436,
+   "pxPerMeter": 221.23,
+   "projectedSizePx": [
+    269.6,
+    440.3
+   ],
+   "coverage": 0.1427,
+   "lumLeftRight": [
+    0.3392,
+    0.3717
+   ],
+   "kb": 174.7
+  },
+  "bottom_left/portrait/BlackGatomon": {
+   "id": "BlackGatomon",
+   "key": "blackgatomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/BlackGatomon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1544,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.31436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    0.732,
+    0.94
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.64545,
+   "pxPerMeter": 311.16,
+   "projectedSizePx": [
+    293.5,
+    317.4
+   ],
+   "coverage": 0.2508,
+   "lumLeftRight": [
+    0.3365,
+    0.3297
+   ],
+   "kb": 214.9
+  },
+  "bottom_left/body/BlackGreymon": {
+   "id": "BlackGreymon",
+   "key": "blackgreymon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/BlackGreymon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3172,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79883,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.79883,
+   "pxPerMeter": 134.78,
+   "projectedSizePx": [
+    267.2,
+    440.3
+   ],
+   "coverage": 0.2086,
+   "lumLeftRight": [
+    0.3342,
+    0.4114
+   ],
+   "kb": 198.0
+  },
+  "bottom_left/portrait/BlackGreymon": {
+   "id": "BlackGreymon",
+   "key": "blackgreymon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/BlackGreymon.png",
+   "meshes": 3,
+   "anchor": "J_haed",
+   "anchorVerts": 1275,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79883,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.846,
+    1.566,
+    1.317
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.09547,
+   "pxPerMeter": 244.34,
+   "projectedSizePx": [
+    310.1,
+    317.4
+   ],
+   "coverage": 0.4986,
+   "lumLeftRight": [
+    0.3565,
+    0.3504
+   ],
+   "kb": 270.2
+  },
+  "bottom_left/body/DemiDevimon": {
+   "id": "DemiDevimon",
+   "key": "demidevimon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/DemiDevimon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3682,
+   "bodyVerts": 3682,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.43619,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "bodySizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.43619,
+   "pxPerMeter": 356.5,
+   "projectedSizePx": [
+    440.3,
+    416.4
+   ],
+   "coverage": 0.2161,
+   "lumLeftRight": [
+    0.4835,
+    0.4219
+   ],
+   "kb": 202.3
+  },
+  "bottom_left/portrait/DemiDevimon": {
+   "id": "DemiDevimon",
+   "key": "demidevimon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/DemiDevimon.png",
+   "meshes": 2,
+   "anchor": "not(wing|feet|leg|lap)",
+   "anchorVerts": 1827,
+   "bodyVerts": 3682,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.43619,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    0.467,
+    0.477,
+    0.674
+   ],
+   "bodySizeM": [
+    1.683,
+    0.57,
+    1.0
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.03406,
+   "pxPerMeter": 495.14,
+   "projectedSizePx": [
+    237.7,
+    317.6
+   ],
+   "coverage": 0.3721,
+   "lumLeftRight": [
+    0.5168,
+    0.4454
+   ],
+   "kb": 251.7
+  },
+  "bottom_left/body/Devimon": {
+   "id": "Devimon",
+   "key": "devimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Devimon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 7163,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.89937,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.89937,
+   "pxPerMeter": 131.3,
+   "projectedSizePx": [
+    276.6,
+    440.3
+   ],
+   "coverage": 0.1974,
+   "lumLeftRight": [
+    0.2667,
+    0.2165
+   ],
+   "kb": 191.9
+  },
+  "bottom_left/portrait/Devimon": {
+   "id": "Devimon",
+   "key": "devimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Devimon.png",
+   "meshes": 5,
+   "anchor": "J_head",
+   "anchorVerts": 991,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.89937,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.87,
+    0.381,
+    0.461
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.64692,
+   "pxPerMeter": 791.44,
+   "projectedSizePx": [
+    366.2,
+    317.4
+   ],
+   "coverage": 0.726,
+   "lumLeftRight": [
+    0.2916,
+    0.2642
+   ],
+   "kb": 282.7
+  },
+  "bottom_left/body/Gabumon": {
+   "id": "Gabumon",
+   "key": "gabumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Gabumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4253,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.82387,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "bodySizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.82387,
+   "pxPerMeter": 280.72,
+   "projectedSizePx": [
+    333.0,
+    440.3
+   ],
+   "coverage": 0.2623,
+   "lumLeftRight": [
+    0.6115,
+    0.5538
+   ],
+   "kb": 240.3
+  },
+  "bottom_left/portrait/Gabumon": {
+   "id": "Gabumon",
+   "key": "gabumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Gabumon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1665,
+   "bodyVerts": 4253,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.82387,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.771,
+    0.89,
+    0.676
+   ],
+   "bodySizeM": [
+    0.982,
+    1.547,
+    1.273
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.08121,
+   "pxPerMeter": 473.54,
+   "projectedSizePx": [
+    281.4,
+    317.4
+   ],
+   "coverage": 0.5758,
+   "lumLeftRight": [
+    0.6177,
+    0.5916
+   ],
+   "kb": 331.2
+  },
+  "bottom_left/body/Gargomon": {
+   "id": "Gargomon",
+   "key": "gargomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Gargomon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 6942,
+   "bodyVerts": 6942,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.59237,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "bodySizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.59237,
+   "pxPerMeter": 142.52,
+   "projectedSizePx": [
+    440.3,
+    393.5
+   ],
+   "coverage": 0.3635,
+   "lumLeftRight": [
+    0.3829,
+    0.5111
+   ],
+   "kb": 243.0
+  },
+  "bottom_left/portrait/Gargomon": {
+   "id": "Gargomon",
+   "key": "gargomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Gargomon.png",
+   "meshes": 5,
+   "anchor": "J_neck",
+   "anchorVerts": 2050,
+   "bodyVerts": 6942,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.59237,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.315,
+    1.739,
+    1.738
+   ],
+   "bodySizeM": [
+    3.819,
+    2.095,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.02945,
+   "pxPerMeter": 252.29,
+   "projectedSizePx": [
+    443.1,
+    317.4
+   ],
+   "coverage": 0.6801,
+   "lumLeftRight": [
+    0.6212,
+    0.5762
+   ],
+   "kb": 307.2
+  },
+  "bottom_left/body/Garurumon": {
+   "id": "Garurumon",
+   "key": "garurumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Garurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3800,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04932,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.04932,
+   "pxPerMeter": 101.4,
+   "projectedSizePx": [
+    440.3,
+    393.1
+   ],
+   "coverage": 0.164,
+   "lumLeftRight": [
+    0.5532,
+    0.5827
+   ],
+   "kb": 215.4
+  },
+  "bottom_left/portrait/Garurumon": {
+   "id": "Garurumon",
+   "key": "garurumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Garurumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1208,
+   "bodyVerts": 3800,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.04932,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.279,
+    1.566,
+    1.55
+   ],
+   "bodySizeM": [
+    2.542,
+    5.962,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.25877,
+   "pxPerMeter": 226.67,
+   "projectedSizePx": [
+    281.9,
+    317.4
+   ],
+   "coverage": 0.4357,
+   "lumLeftRight": [
+    0.6489,
+    0.5025
+   ],
+   "kb": 302.2
+  },
+  "bottom_left/body/Gatomon": {
+   "id": "Gatomon",
+   "key": "gatomon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Gatomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3490,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.31436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.31436,
+   "pxPerMeter": 221.23,
+   "projectedSizePx": [
+    269.6,
+    440.3
+   ],
+   "coverage": 0.1427,
+   "lumLeftRight": [
+    0.7898,
+    0.4586
+   ],
+   "kb": 180.8
+  },
+  "bottom_left/portrait/Gatomon": {
+   "id": "Gatomon",
+   "key": "gatomon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Gatomon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 1544,
+   "bodyVerts": 3490,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.31436,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.614,
+    0.732,
+    0.94
+   ],
+   "bodySizeM": [
+    1.614,
+    1.217,
+    1.73
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.64545,
+   "pxPerMeter": 311.16,
+   "projectedSizePx": [
+    293.5,
+    317.4
+   ],
+   "coverage": 0.2508,
+   "lumLeftRight": [
+    0.7952,
+    0.4785
+   ],
+   "kb": 221.6
+  },
+  "bottom_left/body/Goblimon": {
+   "id": "Goblimon",
+   "key": "goblimon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Goblimon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4304,
+   "bodyVerts": 4304,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49252,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "bodySizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.49252,
+   "pxPerMeter": 343.05,
+   "projectedSizePx": [
+    378.9,
+    440.3
+   ],
+   "coverage": 0.2612,
+   "lumLeftRight": [
+    0.4329,
+    0.4154
+   ],
+   "kb": 237.3
+  },
+  "bottom_left/portrait/Goblimon": {
+   "id": "Goblimon",
+   "key": "goblimon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Goblimon.png",
+   "meshes": 3,
+   "anchor": "J_head",
+   "anchorVerts": 1650,
+   "bodyVerts": 4304,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.49252,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.399,
+    0.488,
+    0.647
+   ],
+   "bodySizeM": [
+    1.259,
+    0.974,
+    1.261
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.77309,
+   "pxPerMeter": 662.27,
+   "projectedSizePx": [
+    199.9,
+    317.4
+   ],
+   "coverage": 0.4566,
+   "lumLeftRight": [
+    0.4065,
+    0.4102
+   ],
+   "kb": 287.7
+  },
+  "bottom_left/body/Gomamon": {
+   "id": "Gomamon",
+   "key": "gomamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Gomamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2015,
+   "bodyVerts": 2015,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.81171,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "bodySizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.81171,
+   "pxPerMeter": 282.61,
+   "projectedSizePx": [
+    346.8,
+    440.3
+   ],
+   "coverage": 0.249,
+   "lumLeftRight": [
+    0.5449,
+    0.6817
+   ],
+   "kb": 214.0
+  },
+  "bottom_left/portrait/Gomamon": {
+   "id": "Gomamon",
+   "key": "gomamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Gomamon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 987,
+   "bodyVerts": 2015,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.81171,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.605,
+    0.791,
+    0.775
+   ],
+   "bodySizeM": [
+    1.141,
+    1.318,
+    1.176
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.10345,
+   "pxPerMeter": 464.0,
+   "projectedSizePx": [
+    269.6,
+    317.4
+   ],
+   "coverage": 0.5571,
+   "lumLeftRight": [
+    0.7668,
+    0.6844
+   ],
+   "kb": 293.8
+  },
+  "bottom_left/body/Greymon": {
+   "id": "Greymon",
+   "key": "greymon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Greymon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3172,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79883,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.79883,
+   "pxPerMeter": 134.78,
+   "projectedSizePx": [
+    267.2,
+    440.3
+   ],
+   "coverage": 0.2086,
+   "lumLeftRight": [
+    0.414,
+    0.5145
+   ],
+   "kb": 206.2
+  },
+  "bottom_left/portrait/Greymon": {
+   "id": "Greymon",
+   "key": "greymon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Greymon.png",
+   "meshes": 3,
+   "anchor": "J_haed",
+   "anchorVerts": 1275,
+   "bodyVerts": 3172,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.79883,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.846,
+    1.566,
+    1.317
+   ],
+   "bodySizeM": [
+    2.644,
+    3.094,
+    2.88
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.09547,
+   "pxPerMeter": 244.34,
+   "projectedSizePx": [
+    310.1,
+    317.4
+   ],
+   "coverage": 0.4986,
+   "lumLeftRight": [
+    0.3429,
+    0.4408
+   ],
+   "kb": 280.2
+  },
+  "bottom_left/body/Guardromon": {
+   "id": "Guardromon",
+   "key": "guardromon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Guardromon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3704,
+   "bodyVerts": 3704,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.93722,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.93722,
+   "pxPerMeter": 174.31,
+   "projectedSizePx": [
+    436.2,
+    440.3
+   ],
+   "coverage": 0.3694,
+   "lumLeftRight": [
+    0.4516,
+    0.4616
+   ],
+   "kb": 269.3
+  },
+  "bottom_left/portrait/Guardromon": {
+   "id": "Guardromon",
+   "key": "guardromon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Guardromon.png",
+   "meshes": 2,
+   "anchor": "top 0.45 of ^J_mune$",
+   "anchorVerts": 176,
+   "bodyVerts": 3704,
+   "zoom": 0.62,
+   "bodyOrthoScale": 2.93722,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.127,
+    1.346,
+    0.376
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.85195,
+   "pxPerMeter": 276.46,
+   "projectedSizePx": [
+    292.0,
+    166.7
+   ],
+   "coverage": 0.6482,
+   "lumLeftRight": [
+    0.4924,
+    0.4664
+   ],
+   "kb": 335.0
+  },
+  "bottom_left/body/GuardromonGold": {
+   "id": "GuardromonGold",
+   "key": "guardromongold",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/GuardromonGold.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3704,
+   "bodyVerts": 3704,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.93722,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.93722,
+   "pxPerMeter": 174.31,
+   "projectedSizePx": [
+    436.2,
+    440.3
+   ],
+   "coverage": 0.3694,
+   "lumLeftRight": [
+    0.4821,
+    0.5795
+   ],
+   "kb": 271.4
+  },
+  "bottom_left/portrait/GuardromonGold": {
+   "id": "GuardromonGold",
+   "key": "guardromongold",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/GuardromonGold.png",
+   "meshes": 2,
+   "anchor": "top 0.45 of ^J_mune$",
+   "anchorVerts": 176,
+   "bodyVerts": 3704,
+   "zoom": 0.62,
+   "bodyOrthoScale": 2.93722,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.127,
+    1.346,
+    0.376
+   ],
+   "bodySizeM": [
+    2.412,
+    2.075,
+    2.27
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.85195,
+   "pxPerMeter": 276.46,
+   "projectedSizePx": [
+    292.0,
+    166.7
+   ],
+   "coverage": 0.6482,
+   "lumLeftRight": [
+    0.5932,
+    0.6209
+   ],
+   "kb": 335.8
+  },
+  "bottom_left/body/Hagurumon": {
+   "id": "Hagurumon",
+   "key": "hagurumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Hagurumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2459,
+   "bodyVerts": 2459,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.96347,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "bodySizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.96347,
+   "pxPerMeter": 260.76,
+   "projectedSizePx": [
+    440.3,
+    372.5
+   ],
+   "coverage": 0.2678,
+   "lumLeftRight": [
+    0.5564,
+    0.5931
+   ],
+   "kb": 229.0
+  },
+  "bottom_left/portrait/Hagurumon": {
+   "id": "Hagurumon",
+   "key": "hagurumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Hagurumon.png",
+   "meshes": 2,
+   "anchor": "^J_center$",
+   "anchorVerts": 1006,
+   "bodyVerts": 2459,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.96347,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.889,
+    0.691,
+    0.889
+   ],
+   "bodySizeM": [
+    2.343,
+    0.691,
+    1.279
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.11723,
+   "pxPerMeter": 458.28,
+   "projectedSizePx": [
+    314.1,
+    317.4
+   ],
+   "coverage": 0.6487,
+   "lumLeftRight": [
+    0.5202,
+    0.5086
+   ],
+   "kb": 348.6
+  },
+  "bottom_left/body/IceDevimon": {
+   "id": "IceDevimon",
+   "key": "icedevimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/IceDevimon.png",
+   "meshes": 5,
+   "anchor": "body",
+   "anchorVerts": 7163,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.89937,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.89937,
+   "pxPerMeter": 131.3,
+   "projectedSizePx": [
+    276.6,
+    440.3
+   ],
+   "coverage": 0.1974,
+   "lumLeftRight": [
+    0.5902,
+    0.5533
+   ],
+   "kb": 212.0
+  },
+  "bottom_left/portrait/IceDevimon": {
+   "id": "IceDevimon",
+   "key": "icedevimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/IceDevimon.png",
+   "meshes": 5,
+   "anchor": "J_head",
+   "anchorVerts": 991,
+   "bodyVerts": 7163,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.89937,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.87,
+    0.381,
+    0.461
+   ],
+   "bodySizeM": [
+    2.857,
+    1.573,
+    3.54
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.64692,
+   "pxPerMeter": 791.44,
+   "projectedSizePx": [
+    366.2,
+    317.4
+   ],
+   "coverage": 0.726,
+   "lumLeftRight": [
+    0.67,
+    0.6518
+   ],
+   "kb": 305.8
+  },
+  "bottom_left/body/Ikkakumon": {
+   "id": "Ikkakumon",
+   "key": "ikkakumon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Ikkakumon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 3403,
+   "bodyVerts": 3403,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.87106,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "bodySizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.87106,
+   "pxPerMeter": 132.26,
+   "projectedSizePx": [
+    412.8,
+    440.3
+   ],
+   "coverage": 0.3131,
+   "lumLeftRight": [
+    0.5881,
+    0.634
+   ],
+   "kb": 231.4
+  },
+  "bottom_left/portrait/Ikkakumon": {
+   "id": "Ikkakumon",
+   "key": "ikkakumon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Ikkakumon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 1610,
+   "bodyVerts": 3403,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.87106,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.575,
+    1.878,
+    2.359
+   ],
+   "bodySizeM": [
+    2.669,
+    2.933,
+    3.33
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.00063,
+   "pxPerMeter": 255.92,
+   "projectedSizePx": [
+    304.8,
+    317.4
+   ],
+   "coverage": 0.6584,
+   "lumLeftRight": [
+    0.8064,
+    0.7343
+   ],
+   "kb": 315.5
+  },
+  "bottom_left/body/Kabuterimon": {
+   "id": "Kabuterimon",
+   "key": "kabuterimon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Kabuterimon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 4539,
+   "bodyVerts": 4539,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.32664,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "bodySizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "unitM": 1.0,
+   "orthoScale": 4.32664,
+   "pxPerMeter": 118.34,
+   "projectedSizePx": [
+    388.8,
+    440.3
+   ],
+   "coverage": 0.1256,
+   "lumLeftRight": [
+    0.3821,
+    0.589
+   ],
+   "kb": 184.8
+  },
+  "bottom_left/portrait/Kabuterimon": {
+   "id": "Kabuterimon",
+   "key": "kabuterimon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Kabuterimon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 725,
+   "bodyVerts": 4539,
+   "zoom": 1.0,
+   "bodyOrthoScale": 4.32664,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.674,
+    1.182,
+    0.949
+   ],
+   "bodySizeM": [
+    2.94,
+    2.731,
+    2.72
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.07812,
+   "pxPerMeter": 474.9,
+   "projectedSizePx": [
+    325.1,
+    317.4
+   ],
+   "coverage": 0.677,
+   "lumLeftRight": [
+    0.3711,
+    0.3348
+   ],
+   "kb": 349.7
+  },
+  "bottom_left/body/Lopmon": {
+   "id": "Lopmon",
+   "key": "lopmon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Lopmon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 4287,
+   "bodyVerts": 4287,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.78833,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "bodySizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.78833,
+   "pxPerMeter": 286.3,
+   "projectedSizePx": [
+    440.3,
+    333.5
+   ],
+   "coverage": 0.2612,
+   "lumLeftRight": [
+    0.6116,
+    0.7053
+   ],
+   "kb": 179.5
+  },
+  "bottom_left/portrait/Lopmon": {
+   "id": "Lopmon",
+   "key": "lopmon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Lopmon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 2512,
+   "bodyVerts": 4287,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.78833,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.955,
+    1.07,
+    1.093
+   ],
+   "bodySizeM": [
+    1.955,
+    1.07,
+    1.1
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.2876,
+   "pxPerMeter": 397.64,
+   "projectedSizePx": [
+    492.9,
+    358.4
+   ],
+   "coverage": 0.4683,
+   "lumLeftRight": [
+    0.5698,
+    0.7064
+   ],
+   "kb": 241.0
+  },
+  "bottom_left/body/Mushroomon": {
+   "id": "Mushroomon",
+   "key": "mushroomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Mushroomon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 1853,
+   "bodyVerts": 1853,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.5799,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "bodySizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.5799,
+   "pxPerMeter": 324.07,
+   "projectedSizePx": [
+    329.9,
+    440.3
+   ],
+   "coverage": 0.375,
+   "lumLeftRight": [
+    0.5173,
+    0.4524
+   ],
+   "kb": 249.6
+  },
+  "bottom_left/portrait/Mushroomon": {
+   "id": "Mushroomon",
+   "key": "mushroomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Mushroomon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 152,
+   "bodyVerts": 1853,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.5799,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.006,
+    0.948,
+    0.561
+   ],
+   "bodySizeM": [
+    1.282,
+    0.979,
+    1.238
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.04146,
+   "pxPerMeter": 491.62,
+   "projectedSizePx": [
+    432.9,
+    317.4
+   ],
+   "coverage": 0.6647,
+   "lumLeftRight": [
+    0.5796,
+    0.4644
+   ],
+   "kb": 303.5
+  },
+  "bottom_left/body/Ogremon": {
+   "id": "Ogremon",
+   "key": "ogremon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Ogremon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 3385,
+   "bodyVerts": 3385,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.85659,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "bodySizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.85659,
+   "pxPerMeter": 179.23,
+   "projectedSizePx": [
+    409.2,
+    440.3
+   ],
+   "coverage": 0.2928,
+   "lumLeftRight": [
+    0.5764,
+    0.4406
+   ],
+   "kb": 255.1
+  },
+  "bottom_left/portrait/Ogremon": {
+   "id": "Ogremon",
+   "key": "ogremon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Ogremon.png",
+   "meshes": 4,
+   "anchor": "J_atama",
+   "anchorVerts": 566,
+   "bodyVerts": 3385,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.85659,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.978,
+    0.476,
+    1.066
+   ],
+   "bodySizeM": [
+    2.573,
+    2.081,
+    2.35
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.24174,
+   "pxPerMeter": 412.33,
+   "projectedSizePx": [
+    248.4,
+    317.4
+   ],
+   "coverage": 0.6065,
+   "lumLeftRight": [
+    0.4968,
+    0.4277
+   ],
+   "kb": 322.5
+  },
+  "bottom_left/body/Otamamon": {
+   "id": "Otamamon",
+   "key": "otamamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Otamamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 1693,
+   "bodyVerts": 1693,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.53886,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "bodySizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.53886,
+   "pxPerMeter": 332.71,
+   "projectedSizePx": [
+    440.3,
+    407.3
+   ],
+   "coverage": 0.2906,
+   "lumLeftRight": [
+    0.4747,
+    0.436
+   ],
+   "kb": 207.4
+  },
+  "bottom_left/portrait/Otamamon": {
+   "id": "Otamamon",
+   "key": "otamamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Otamamon.png",
+   "meshes": 2,
+   "anchor": "^J_mune$|^J_ago$",
+   "anchorVerts": 492,
+   "bodyVerts": 1693,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.53886,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.771,
+    0.776,
+    0.725
+   ],
+   "bodySizeM": [
+    1.314,
+    1.643,
+    0.777
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.02519,
+   "pxPerMeter": 499.42,
+   "projectedSizePx": [
+    349.1,
+    317.4
+   ],
+   "coverage": 0.5582,
+   "lumLeftRight": [
+    0.4701,
+    0.4231
+   ],
+   "kb": 268.7
+  },
+  "bottom_left/body/Palmon": {
+   "id": "Palmon",
+   "key": "palmon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Palmon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3538,
+   "bodyVerts": 3538,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.4093,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "bodySizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.4093,
+   "pxPerMeter": 363.3,
+   "projectedSizePx": [
+    299.3,
+    440.3
+   ],
+   "coverage": 0.2464,
+   "lumLeftRight": [
+    0.6287,
+    0.5916
+   ],
+   "kb": 227.8
+  },
+  "bottom_left/portrait/Palmon": {
+   "id": "Palmon",
+   "key": "palmon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Palmon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 1715,
+   "bodyVerts": 3538,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.4093,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.645,
+    0.668,
+    0.793
+   ],
+   "bodySizeM": [
+    1.275,
+    0.692,
+    1.256
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.92497,
+   "pxPerMeter": 553.53,
+   "projectedSizePx": [
+    302.8,
+    317.4
+   ],
+   "coverage": 0.4618,
+   "lumLeftRight": [
+    0.6387,
+    0.5402
+   ],
+   "kb": 290.2
+  },
+  "bottom_left/body/Patamon": {
+   "id": "Patamon",
+   "key": "patamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Patamon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 3627,
+   "bodyVerts": 3627,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.95774,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "bodySizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.95774,
+   "pxPerMeter": 261.53,
+   "projectedSizePx": [
+    304.6,
+    440.3
+   ],
+   "coverage": 0.1379,
+   "lumLeftRight": [
+    0.6644,
+    0.5382
+   ],
+   "kb": 161.3
+  },
+  "bottom_left/portrait/Patamon": {
+   "id": "Patamon",
+   "key": "patamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Patamon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 1463,
+   "bodyVerts": 3627,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.95774,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    1.375,
+    0.891,
+    1.143
+   ],
+   "bodySizeM": [
+    1.375,
+    0.891,
+    1.32
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.40957,
+   "pxPerMeter": 363.23,
+   "projectedSizePx": [
+    339.3,
+    473.0
+   ],
+   "coverage": 0.2356,
+   "lumLeftRight": [
+    0.6709,
+    0.5414
+   ],
+   "kb": 192.0
+  },
+  "bottom_left/body/Raremon": {
+   "id": "Raremon",
+   "key": "raremon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Raremon.png",
+   "meshes": 3,
+   "anchor": "body",
+   "anchorVerts": 2922,
+   "bodyVerts": 2922,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.70406,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "bodySizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "unitM": 1.0,
+   "orthoScale": 5.70406,
+   "pxPerMeter": 89.76,
+   "projectedSizePx": [
+    440.3,
+    301.5
+   ],
+   "coverage": 0.2333,
+   "lumLeftRight": [
+    0.4435,
+    0.4378
+   ],
+   "kb": 194.8
+  },
+  "bottom_left/portrait/Raremon": {
+   "id": "Raremon",
+   "key": "raremon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Raremon.png",
+   "meshes": 3,
+   "anchor": "J_atama",
+   "anchorVerts": 1558,
+   "bodyVerts": 2922,
+   "zoom": 1.0,
+   "bodyOrthoScale": 5.70406,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.197,
+    1.389,
+    1.623
+   ],
+   "bodySizeM": [
+    4.416,
+    4.982,
+    2.4
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.74461,
+   "pxPerMeter": 293.48,
+   "projectedSizePx": [
+    318.5,
+    317.4
+   ],
+   "coverage": 0.8319,
+   "lumLeftRight": [
+    0.4615,
+    0.3991
+   ],
+   "kb": 334.7
+  },
+  "bottom_left/body/Salamon": {
+   "id": "Salamon",
+   "key": "salamon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Salamon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2051,
+   "bodyVerts": 2051,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.1256,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "bodySizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.1256,
+   "pxPerMeter": 454.87,
+   "projectedSizePx": [
+    341.4,
+    440.3
+   ],
+   "coverage": 0.3701,
+   "lumLeftRight": [
+    0.8534,
+    0.6343
+   ],
+   "kb": 210.0
+  },
+  "bottom_left/portrait/Salamon": {
+   "id": "Salamon",
+   "key": "salamon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Salamon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 958,
+   "bodyVerts": 2051,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.1256,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    0.681,
+    0.602,
+    0.641
+   ],
+   "bodySizeM": [
+    0.681,
+    0.815,
+    1.003
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.81043,
+   "pxPerMeter": 631.76,
+   "projectedSizePx": [
+    344.7,
+    367.3
+   ],
+   "coverage": 0.5852,
+   "lumLeftRight": [
+    0.84,
+    0.6908
+   ],
+   "kb": 250.6
+  },
+  "bottom_left/body/Tentomon": {
+   "id": "Tentomon",
+   "key": "tentomon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Tentomon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 2924,
+   "bodyVerts": 2924,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.69767,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "bodySizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.69767,
+   "pxPerMeter": 301.59,
+   "projectedSizePx": [
+    308.2,
+    440.3
+   ],
+   "coverage": 0.2139,
+   "lumLeftRight": [
+    0.4712,
+    0.5054
+   ],
+   "kb": 212.4
+  },
+  "bottom_left/portrait/Tentomon": {
+   "id": "Tentomon",
+   "key": "tentomon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Tentomon.png",
+   "meshes": 4,
+   "anchor": "J_atama",
+   "anchorVerts": 585,
+   "bodyVerts": 2924,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.69767,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.604,
+    0.199,
+    0.744
+   ],
+   "bodySizeM": [
+    1.012,
+    0.876,
+    1.271
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.9798,
+   "pxPerMeter": 522.56,
+   "projectedSizePx": [
+    170.2,
+    317.4
+   ],
+   "coverage": 0.5256,
+   "lumLeftRight": [
+    0.4995,
+    0.5034
+   ],
+   "kb": 313.6
+  },
+  "bottom_left/body/Terriermon": {
+   "id": "Terriermon",
+   "key": "terriermon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Terriermon.png",
+   "meshes": 1,
+   "anchor": "body",
+   "anchorVerts": 3887,
+   "bodyVerts": 3887,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.15056,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "bodySizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.15056,
+   "pxPerMeter": 238.08,
+   "projectedSizePx": [
+    440.3,
+    316.4
+   ],
+   "coverage": 0.2602,
+   "lumLeftRight": [
+    0.7758,
+    0.7306
+   ],
+   "kb": 182.3
+  },
+  "bottom_left/portrait/Terriermon": {
+   "id": "Terriermon",
+   "key": "terriermon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Terriermon.png",
+   "meshes": 1,
+   "anchor": "J_neck",
+   "anchorVerts": 2172,
+   "bodyVerts": 3887,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.15056,
+   "cappedToBodyRatio": true,
+   "worldSizeM": [
+    2.351,
+    1.286,
+    1.25
+   ],
+   "bodySizeM": [
+    2.351,
+    1.286,
+    1.258
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.54841,
+   "pxPerMeter": 330.66,
+   "projectedSizePx": [
+    502.9,
+    354.5
+   ],
+   "coverage": 0.4662,
+   "lumLeftRight": [
+    0.764,
+    0.7511
+   ],
+   "kb": 242.6
+  },
+  "bottom_left/body/Togemon": {
+   "id": "Togemon",
+   "key": "togemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Togemon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2717,
+   "bodyVerts": 2717,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.77957,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "bodySizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 2.77957,
+   "pxPerMeter": 184.2,
+   "projectedSizePx": [
+    440.3,
+    438.9
+   ],
+   "coverage": 0.4117,
+   "lumLeftRight": [
+    0.4226,
+    0.3501
+   ],
+   "kb": 263.6
+  },
+  "bottom_left/portrait/Togemon": {
+   "id": "Togemon",
+   "key": "togemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Togemon.png",
+   "meshes": 2,
+   "anchor": "J_atama",
+   "anchorVerts": 850,
+   "bodyVerts": 2717,
+   "zoom": 1.0,
+   "bodyOrthoScale": 2.77957,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.321,
+    1.216,
+    1.172
+   ],
+   "bodySizeM": [
+    2.864,
+    1.291,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.73122,
+   "pxPerMeter": 295.75,
+   "projectedSizePx": [
+    323.6,
+    317.4
+   ],
+   "coverage": 0.6623,
+   "lumLeftRight": [
+    0.4001,
+    0.4256
+   ],
+   "kb": 325.2
+  },
+  "bottom_left/body/ToyAgumon": {
+   "id": "ToyAgumon",
+   "key": "toyagumon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/ToyAgumon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3587,
+   "bodyVerts": 3587,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.58894,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "bodySizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.58894,
+   "pxPerMeter": 322.23,
+   "projectedSizePx": [
+    266.2,
+    440.3
+   ],
+   "coverage": 0.32,
+   "lumLeftRight": [
+    0.5391,
+    0.373
+   ],
+   "kb": 215.4
+  },
+  "bottom_left/portrait/ToyAgumon": {
+   "id": "ToyAgumon",
+   "key": "toyagumon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/ToyAgumon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 828,
+   "bodyVerts": 3587,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.58894,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.472,
+    0.602,
+    0.385
+   ],
+   "bodySizeM": [
+    1.06,
+    0.735,
+    1.262
+   ],
+   "unitM": 1.0,
+   "orthoScale": 0.81957,
+   "pxPerMeter": 624.72,
+   "projectedSizePx": [
+    442.3,
+    317.4
+   ],
+   "coverage": 0.6453,
+   "lumLeftRight": [
+    0.5612,
+    0.34
+   ],
+   "kb": 279.0
+  },
+  "bottom_left/body/Turuiemon": {
+   "id": "Turuiemon",
+   "key": "turuiemon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Turuiemon.png",
+   "meshes": 4,
+   "anchor": "body",
+   "anchorVerts": 5986,
+   "bodyVerts": 5986,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.38594,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "bodySizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.38594,
+   "pxPerMeter": 151.21,
+   "projectedSizePx": [
+    293.6,
+    440.3
+   ],
+   "coverage": 0.1547,
+   "lumLeftRight": [
+    0.3898,
+    0.6173
+   ],
+   "kb": 182.7
+  },
+  "bottom_left/portrait/Turuiemon": {
+   "id": "Turuiemon",
+   "key": "turuiemon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Turuiemon.png",
+   "meshes": 4,
+   "anchor": "J_head",
+   "anchorVerts": 1568,
+   "bodyVerts": 5986,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.38594,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    2.178,
+    1.667,
+    1.456
+   ],
+   "bodySizeM": [
+    2.178,
+    2.169,
+    2.48
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.59461,
+   "pxPerMeter": 321.08,
+   "projectedSizePx": [
+    423.9,
+    317.4
+   ],
+   "coverage": 0.3969,
+   "lumLeftRight": [
+    0.5121,
+    0.5326
+   ],
+   "kb": 255.7
+  },
+  "bottom_left/body/Veedramon": {
+   "id": "Veedramon",
+   "key": "veedramon",
+   "tier": "champion",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Veedramon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 2497,
+   "bodyVerts": 2497,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.45774,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "bodySizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "unitM": 1.0,
+   "orthoScale": 3.45774,
+   "pxPerMeter": 148.07,
+   "projectedSizePx": [
+    349.5,
+    440.3
+   ],
+   "coverage": 0.2078,
+   "lumLeftRight": [
+    0.5209,
+    0.4299
+   ],
+   "kb": 214.6
+  },
+  "bottom_left/portrait/Veedramon": {
+   "id": "Veedramon",
+   "key": "veedramon",
+   "tier": "champion",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Veedramon.png",
+   "meshes": 2,
+   "anchor": "J_head",
+   "anchorVerts": 846,
+   "bodyVerts": 2497,
+   "zoom": 1.0,
+   "bodyOrthoScale": 3.45774,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.8,
+    1.554,
+    1.222
+   ],
+   "bodySizeM": [
+    1.951,
+    3.086,
+    2.45
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.89862,
+   "pxPerMeter": 269.67,
+   "projectedSizePx": [
+    235.6,
+    317.4
+   ],
+   "coverage": 0.4664,
+   "lumLeftRight": [
+    0.5677,
+    0.4897
+   ],
+   "kb": 291.1
+  },
+  "bottom_left/body/Veemon": {
+   "id": "Veemon",
+   "key": "veemon",
+   "tier": "rookie",
+   "set": "body",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/body/Veemon.png",
+   "meshes": 2,
+   "anchor": "body",
+   "anchorVerts": 3292,
+   "bodyVerts": 3292,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86224,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "bodySizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.86224,
+   "pxPerMeter": 274.94,
+   "projectedSizePx": [
+    295.9,
+    440.3
+   ],
+   "coverage": 0.1794,
+   "lumLeftRight": [
+    0.5543,
+    0.4046
+   ],
+   "kb": 182.5
+  },
+  "bottom_left/portrait/Veemon": {
+   "id": "Veemon",
+   "key": "veemon",
+   "tier": "rookie",
+   "set": "portrait",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "elevationDeg": 35.264,
+   "file": "bottom_left/portrait/Veemon.png",
+   "meshes": 2,
+   "anchor": "J_neck",
+   "anchorVerts": 1212,
+   "bodyVerts": 3292,
+   "zoom": 1.0,
+   "bodyOrthoScale": 1.86224,
+   "cappedToBodyRatio": false,
+   "worldSizeM": [
+    0.89,
+    0.86,
+    0.559
+   ],
+   "bodySizeM": [
+    0.945,
+    1.064,
+    1.25
+   ],
+   "unitM": 1.0,
+   "orthoScale": 1.16028,
+   "pxPerMeter": 441.27,
+   "projectedSizePx": [
+    320.3,
+    317.4
+   ],
+   "coverage": 0.3619,
+   "lumLeftRight": [
+    0.5354,
+    0.4194
+   ],
+   "kb": 233.1
+  }
+ }
+}

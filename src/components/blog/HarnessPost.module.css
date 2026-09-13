@@ -1,0 +1,158 @@
+/* ============================================================
+   Build-harness post shell. Matches the blog hub's terminal treatment:
+   black ground, cyan/purple wash, CRT scanlines.
+   ============================================================ */
+
+.pageWrapper {
+  --color-primary: #00b3ff;
+  --color-accent: #9f00ff;
+  --color-highlight: #00eaff;
+  --color-bg-dark: #000000;
+  --color-bg-panel: #121212;
+  --color-text-light: #ffffff;
+  --color-text-dark: #b8b8b8;
+
+  background-color: var(--color-bg-dark);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(0, 179, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(159, 0, 255, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ==================== BACK LINK ==================== */
+
+.backLinkRow {
+  max-width: 1180px;
+  margin: 0 auto 18px;
+}
+
+.backLink {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.backLink:hover {
+  color: var(--color-highlight);
+}
+
+/* ==================== HEADER ==================== */
+
+.blogName {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.postTitle {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.9rem);
+  line-height: 1.35;
+  color: var(--color-text-light);
+  text-shadow: 0 0 12px rgba(0, 179, 255, 0.45);
+  margin: 0 0 22px;
+}
+
+.kvBlock {
+  border-top: 1px solid rgba(0, 234, 255, 0.15);
+  padding-top: 16px;
+}
+
+.kvLine {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 12.5px;
+  line-height: 2;
+}
+
+.kvKey {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.kvSep {
+  color: var(--color-text-dark);
+  flex-shrink: 0;
+}
+
+.kvValue {
+  color: var(--color-text-light);
+}
+
+.tagBadge {
+  display: inline-block;
+  padding: 1px 8px;
+  margin-right: 6px;
+  border: 1px solid rgba(255, 179, 71, 0.4);
+  background: rgba(255, 179, 71, 0.1);
+  border-radius: 3px;
+  font-size: 10.5px;
+  color: #ffb347;
+}
+
+/* ==================== FOOTER ==================== */
+
+.postFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+.nextLabel {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  margin-bottom: 6px;
+}
+
+.nextHint {
+  font-size: 14px;
+  color: var(--color-highlight);
+}
+
+.metaCount {
+  text-align: right;
+  font-size: 11px;
+  color: #ffb347;
+  flex-shrink: 0;
+}
+
+.metaCount span {
+  display: block;
+  font-size: 10px;
+  color: var(--color-text-dark);
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .pageWrapper { padding-top: 96px; }
+  .postFooter { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .metaCount { text-align: left; }
+}

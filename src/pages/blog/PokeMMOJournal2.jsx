@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavBar } from '../../components/common/NavBar';
 import TeamRosterCard from '../../components/blog/TeamRosterCard';
+import TerminalPanel from '../../components/blog/TerminalPanel';
 import { ModelDebugProvider, useModelDebug } from '../../components/blog/ModelDebugPanel';
 import { TEAM_ROSTER } from '../../data/teamRosterData';
 import journal from '../../data/blog/pokemmo-journal-2';
@@ -49,20 +50,8 @@ const PokeMMOJournal2 = () => {
           </div>
 
           {/* ========== HEADER TERMINAL PANEL ========== */}
-          <div className={styles.terminalPanel}>
-            <div className={styles.titleBar}>
-              <div className={styles.titleBarDots}>
-                <span className={styles.dotRed} />
-                <span className={styles.dotYellow} />
-                <span className={styles.dotGreen} />
-              </div>
-              <span className={styles.titleBarPath}>
-                SYNTHCITY://pokemmo/journal/002
-              </span>
-            </div>
-
-            <div className={styles.terminalBody}>
-              <div className={styles.kvLine}>
+          <TerminalPanel path="SYNTHCITY://pokemmo/journal/002">
+<div className={styles.kvLine}>
                 <span className={styles.kvKey}>&gt; ENTRY.title</span>
                 <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
                 <span className={styles.kvValue}>{header.title}</span>
@@ -96,26 +85,11 @@ const PokeMMOJournal2 = () => {
                 <span className={styles.kvSep}>&nbsp;::&nbsp;</span>
                 <span className={styles.kvValue}>{header.status}</span>
               </div>
-            </div>
-          </div>
+          </TerminalPanel>
 
           {/* ========== INTRO PROSE PANEL ========== */}
-          <div className={styles.terminalPanel}>
-            <div className={styles.titleBar}>
-              <div className={styles.titleBarDots}>
-                <span className={styles.dotRed} />
-                <span className={styles.dotYellow} />
-                <span className={styles.dotGreen} />
-              </div>
-              <span className={styles.titleBarPath}>
-                SYNTHCITY://pokemmo/journal/002/transmission
-              </span>
-            </div>
-
-            <div className={styles.terminalBody}>
-              <h2 className={styles.sectionHeader}>{'// TRANSMISSION'}</h2>
-
-              {intro.map((text, i) => (
+          <TerminalPanel path="SYNTHCITY://pokemmo/journal/002/transmission" label="// TRANSMISSION">
+            {intro.map((text, i) => (
                 <p key={i} className={i === 0 ? styles.introTextFirst : styles.introText}>
                   <span className={styles.descPrompt}>&gt;&nbsp;</span>
                   {i === 0
@@ -124,29 +98,14 @@ const PokeMMOJournal2 = () => {
                   }
                 </p>
               ))}
-            </div>
-          </div>
+          </TerminalPanel>
 
           {/* ========== TEAM ROSTER ========== */}
           <RosterGrid />
 
           {/* ========== CLOSING PANEL ========== */}
-          <div className={styles.terminalPanel}>
-            <div className={styles.titleBar}>
-              <div className={styles.titleBarDots}>
-                <span className={styles.dotRed} />
-                <span className={styles.dotYellow} />
-                <span className={styles.dotGreen} />
-              </div>
-              <span className={styles.titleBarPath}>
-                SYNTHCITY://pokemmo/journal/002/end
-              </span>
-            </div>
-
-            <div className={styles.terminalBody}>
-              <h2 className={styles.sectionHeader}>{'// TRANSMISSION_END'}</h2>
-
-              {closing.map((text, i) => (
+          <TerminalPanel path="SYNTHCITY://pokemmo/journal/002/end" label="// TRANSMISSION_END">
+            {closing.map((text, i) => (
                 <p key={i} className={styles.closingText}>
                   <span className={styles.descPrompt}>&gt;&nbsp;</span>
                   {text}
@@ -163,8 +122,7 @@ const PokeMMOJournal2 = () => {
                   <span>{footer.region}</span>
                 </div>
               </footer>
-            </div>
-          </div>
+          </TerminalPanel>
         </Container>
       </div>
     </ModelDebugProvider>

@@ -33,6 +33,9 @@ const SinnohPokedex = lazy(() => import('./pages/pokedex/SinnohPokedex'));
 const UnovaPokedex = lazy(() => import('./pages/pokedex/UnovaPokedex'));
 const PokeMMOJournal = lazy(() => import('./pages/blog/PokeMMOJournal'));
 const PokeMMOJournal2 = lazy(() => import('./pages/blog/PokeMMOJournal2'));
+const AnimationHarness = lazy(() => import('./pages/blog/AnimationHarness'));
+const MaterialsHarness = lazy(() => import('./pages/blog/MaterialsHarness'));
+const IsoSpriteHarness = lazy(() => import('./pages/blog/IsoSpriteHarness'));
 
 // Global transition overlay that responds to context
 // Only renders when transition is active to avoid any blocking
@@ -77,6 +80,9 @@ function App() {
               <Route path={ROUTES.regionPokedex('unova')} element={<UnovaPokedex />} />
               <Route path={ROUTES.pokemmoJournal(1)} element={<PokeMMOJournal />} />
               <Route path={ROUTES.pokemmoJournal(2)} element={<PokeMMOJournal2 />} />
+              <Route path={ROUTES.animationHarness} element={<AnimationHarness />} />
+              <Route path={ROUTES.materialsHarness} element={<MaterialsHarness />} />
+              <Route path={ROUTES.isoSpriteHarness} element={<IsoSpriteHarness />} />
               <Route path={ROUTES.downloads} element={<Catalog />} />
               <Route path={ROUTES.download(':id')} element={<BlogDetail />} />
               <Route path={ROUTES.aetherbound} element={<Aetherbound />} />

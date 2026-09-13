@@ -1,0 +1,8441 @@
+{
+ "projection": {
+  "type": "true isometric",
+  "elevationDeg": 35.264,
+  "resolution": 512,
+  "fill": 0.86,
+  "groundLineFromBottomPx": 30.7,
+  "views": {
+   "bottom_right": {
+    "yawDeg": 315.0,
+    "lightMirrorX": false,
+    "faces": "bottom-right corner"
+   },
+   "bottom_left": {
+    "yawDeg": 45.0,
+    "lightMirrorX": true,
+    "faces": "bottom-left corner"
+   }
+  }
+ },
+ "sprites": {
+  "bottom_right/buildings/archeryrange": {
+   "id": "archeryrange",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/archeryrange.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.847,
+    5.428,
+    6.271
+   ],
+   "orthoScale": 3.23034,
+   "unitM": 3.5,
+   "pxPerMeter": 45.28,
+   "projectedSizePx": [
+    361.0,
+    440.3
+   ],
+   "coverage": 0.2253,
+   "kb": 184.7
+  },
+  "bottom_right/buildings/barracks": {
+   "id": "barracks",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/barracks.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.04,
+    5.481,
+    5.74
+   ],
+   "orthoScale": 2.98409,
+   "unitM": 3.5,
+   "pxPerMeter": 49.02,
+   "projectedSizePx": [
+    364.7,
+    440.3
+   ],
+   "coverage": 0.3696,
+   "kb": 221.8
+  },
+  "bottom_right/buildings/blacksmith": {
+   "id": "blacksmith",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/blacksmith.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.507,
+    4.358,
+    3.448
+   ],
+   "orthoScale": 2.13758,
+   "unitM": 3.5,
+   "pxPerMeter": 68.44,
+   "projectedSizePx": [
+    429.0,
+    440.3
+   ],
+   "coverage": 0.2206,
+   "kb": 171.4
+  },
+  "bottom_right/buildings/castle": {
+   "id": "castle",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/castle.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.914,
+    7.897,
+    13.927
+   ],
+   "orthoScale": 5.78672,
+   "unitM": 3.5,
+   "pxPerMeter": 25.28,
+   "projectedSizePx": [
+    264.7,
+    440.3
+   ],
+   "coverage": 0.1659,
+   "kb": 154.3
+  },
+  "bottom_right/buildings/church": {
+   "id": "church",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/church.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.601,
+    4.043,
+    5.758
+   ],
+   "orthoScale": 2.59858,
+   "unitM": 3.5,
+   "pxPerMeter": 56.29,
+   "projectedSizePx": [
+    304.3,
+    440.3
+   ],
+   "coverage": 0.188,
+   "kb": 160.2
+  },
+  "bottom_right/buildings/docks": {
+   "id": "docks",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/docks.png",
+   "meshes": 1,
+   "worldSizeM": [
+    7.0,
+    1.75,
+    5.056
+   ],
+   "orthoScale": 2.55817,
+   "unitM": 3.5,
+   "pxPerMeter": 57.18,
+   "projectedSizePx": [
+    353.8,
+    440.3
+   ],
+   "coverage": 0.1399,
+   "kb": 149.6
+  },
+  "bottom_right/buildings/home_A": {
+   "id": "home_A",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/home_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.772,
+    2.988,
+    3.255
+   ],
+   "orthoScale": 1.66414,
+   "unitM": 3.5,
+   "pxPerMeter": 87.9,
+   "projectedSizePx": [
+    358.0,
+    440.3
+   ],
+   "coverage": 0.2423,
+   "kb": 167.5
+  },
+  "bottom_right/buildings/home_B": {
+   "id": "home_B",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/home_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.062,
+    3.845,
+    4.48
+   ],
+   "orthoScale": 2.15212,
+   "unitM": 3.5,
+   "pxPerMeter": 67.97,
+   "projectedSizePx": [
+    332.0,
+    440.3
+   ],
+   "coverage": 0.2673,
+   "kb": 185.9
+  },
+  "bottom_right/buildings/lumbermill": {
+   "id": "lumbermill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/lumbermill.png",
+   "meshes": 3,
+   "worldSizeM": [
+    4.784,
+    4.162,
+    5.977
+   ],
+   "orthoScale": 2.55395,
+   "unitM": 3.5,
+   "pxPerMeter": 57.28,
+   "projectedSizePx": [
+    339.4,
+    440.3
+   ],
+   "coverage": 0.2357,
+   "kb": 184.6
+  },
+  "bottom_right/buildings/market": {
+   "id": "market",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/market.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.298,
+    4.605,
+    3.436
+   ],
+   "orthoScale": 2.56119,
+   "unitM": 3.5,
+   "pxPerMeter": 57.12,
+   "projectedSizePx": [
+    440.3,
+    414.4
+   ],
+   "coverage": 0.2537,
+   "kb": 191.4
+  },
+  "bottom_right/buildings/mine": {
+   "id": "mine",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/mine.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.619,
+    6.72,
+    3.978
+   ],
+   "orthoScale": 2.89874,
+   "unitM": 3.5,
+   "pxPerMeter": 50.47,
+   "projectedSizePx": [
+    440.3,
+    418.1
+   ],
+   "coverage": 0.2592,
+   "kb": 164.8
+  },
+  "bottom_right/buildings/shipyard": {
+   "id": "shipyard",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/shipyard.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.718,
+    6.593,
+    4.336
+   ],
+   "orthoScale": 3.12707,
+   "unitM": 3.5,
+   "pxPerMeter": 46.78,
+   "projectedSizePx": [
+    440.3,
+    419.8
+   ],
+   "coverage": 0.1676,
+   "kb": 166.1
+  },
+  "bottom_right/buildings/shrine": {
+   "id": "shrine",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/shrine.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.04,
+    4.54,
+    2.987
+   ],
+   "orthoScale": 2.01578,
+   "unitM": 3.5,
+   "pxPerMeter": 72.57,
+   "projectedSizePx": [
+    440.3,
+    431.2
+   ],
+   "coverage": 0.1906,
+   "kb": 157.3
+  },
+  "bottom_right/buildings/stables": {
+   "id": "stables",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/stables.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.505,
+    7.461,
+    2.14
+   ],
+   "orthoScale": 3.28081,
+   "unitM": 3.5,
+   "pxPerMeter": 44.59,
+   "projectedSizePx": [
+    440.3,
+    332.1
+   ],
+   "coverage": 0.1228,
+   "kb": 144.1
+  },
+  "bottom_right/buildings/tavern": {
+   "id": "tavern",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tavern.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.101,
+    4.663,
+    4.888
+   ],
+   "orthoScale": 2.51468,
+   "unitM": 3.5,
+   "pxPerMeter": 58.17,
+   "projectedSizePx": [
+    360.5,
+    440.3
+   ],
+   "coverage": 0.2589,
+   "kb": 177.1
+  },
+  "bottom_right/buildings/tent": {
+   "id": "tent",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tent.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.308,
+    4.707,
+    2.974
+   ],
+   "orthoScale": 2.35265,
+   "unitM": 3.5,
+   "pxPerMeter": 62.18,
+   "projectedSizePx": [
+    440.3,
+    405.2
+   ],
+   "coverage": 0.1929,
+   "kb": 156.5
+  },
+  "bottom_right/buildings/tower_A": {
+   "id": "tower_A",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tower_A.png",
+   "meshes": 2,
+   "worldSizeM": [
+    3.476,
+    4.037,
+    7.671
+   ],
+   "orthoScale": 3.08487,
+   "unitM": 3.5,
+   "pxPerMeter": 47.42,
+   "projectedSizePx": [
+    251.2,
+    440.3
+   ],
+   "coverage": 0.1972,
+   "kb": 154.6
+  },
+  "bottom_right/buildings/tower_B": {
+   "id": "tower_B",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tower_B.png",
+   "meshes": 2,
+   "worldSizeM": [
+    4.191,
+    4.839,
+    8.699
+   ],
+   "orthoScale": 3.46804,
+   "unitM": 3.5,
+   "pxPerMeter": 42.18,
+   "projectedSizePx": [
+    269.3,
+    440.3
+   ],
+   "coverage": 0.1799,
+   "kb": 155.2
+  },
+  "bottom_right/buildings/tower_base": {
+   "id": "tower_base",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tower_base.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.254,
+    3.889,
+    5.25
+   ],
+   "orthoScale": 2.39296,
+   "unitM": 3.5,
+   "pxPerMeter": 61.13,
+   "projectedSizePx": [
+    308.8,
+    440.3
+   ],
+   "coverage": 0.2716,
+   "kb": 166.0
+  },
+  "bottom_right/buildings/tower_cannon": {
+   "id": "tower_cannon",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tower_cannon.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.254,
+    3.889,
+    7.139
+   ],
+   "orthoScale": 2.71333,
+   "unitM": 3.5,
+   "pxPerMeter": 53.91,
+   "projectedSizePx": [
+    272.3,
+    440.3
+   ],
+   "coverage": 0.232,
+   "kb": 165.5
+  },
+  "bottom_right/buildings/tower_catapult": {
+   "id": "tower_catapult",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/tower_catapult.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.254,
+    4.562,
+    6.874
+   ],
+   "orthoScale": 2.69833,
+   "unitM": 3.5,
+   "pxPerMeter": 54.21,
+   "projectedSizePx": [
+    273.8,
+    440.3
+   ],
+   "coverage": 0.2324,
+   "kb": 171.8
+  },
+  "bottom_right/buildings/townhall": {
+   "id": "townhall",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/townhall.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.022,
+    5.473,
+    6.601
+   ],
+   "orthoScale": 3.21414,
+   "unitM": 3.5,
+   "pxPerMeter": 45.51,
+   "projectedSizePx": [
+    337.8,
+    440.3
+   ],
+   "coverage": 0.2269,
+   "kb": 181.2
+  },
+  "bottom_right/buildings/watchtower": {
+   "id": "watchtower",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/watchtower.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.657,
+    3.657,
+    3.895
+   ],
+   "orthoScale": 2.04875,
+   "unitM": 3.5,
+   "pxPerMeter": 71.4,
+   "projectedSizePx": [
+    369.3,
+    440.3
+   ],
+   "coverage": 0.2111,
+   "kb": 179.6
+  },
+  "bottom_right/buildings/watermill": {
+   "id": "watermill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/watermill.png",
+   "meshes": 2,
+   "worldSizeM": [
+    3.675,
+    4.326,
+    5.488
+   ],
+   "orthoScale": 2.54474,
+   "unitM": 3.5,
+   "pxPerMeter": 57.49,
+   "projectedSizePx": [
+    316.5,
+    440.3
+   ],
+   "coverage": 0.2741,
+   "kb": 180.4
+  },
+  "bottom_right/buildings/well": {
+   "id": "well",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/well.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.281,
+    2.628,
+    2.891
+   ],
+   "orthoScale": 1.45001,
+   "unitM": 3.5,
+   "pxPerMeter": 100.89,
+   "projectedSizePx": [
+    350.2,
+    440.3
+   ],
+   "coverage": 0.2065,
+   "kb": 148.8
+  },
+  "bottom_right/buildings/windmill": {
+   "id": "windmill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/windmill.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.94,
+    2.858,
+    5.103
+   ],
+   "orthoScale": 2.08646,
+   "unitM": 3.5,
+   "pxPerMeter": 70.11,
+   "projectedSizePx": [
+    333.1,
+    440.3
+   ],
+   "coverage": 0.2201,
+   "kb": 179.7
+  },
+  "bottom_right/buildings/workshop": {
+   "id": "workshop",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/buildings/workshop.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.829,
+    5.835,
+    4.037
+   ],
+   "orthoScale": 2.74008,
+   "unitM": 3.5,
+   "pxPerMeter": 53.39,
+   "projectedSizePx": [
+    440.3,
+    430.2
+   ],
+   "coverage": 0.2604,
+   "kb": 202.0
+  },
+  "bottom_right/structures/bridge_A": {
+   "id": "bridge_A",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/bridge_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.667,
+    6.736,
+    4.375
+   ],
+   "orthoScale": 2.73328,
+   "unitM": 3.5,
+   "pxPerMeter": 53.52,
+   "projectedSizePx": [
+    431.5,
+    440.3
+   ],
+   "coverage": 0.3034,
+   "kb": 135.5
+  },
+  "bottom_right/structures/bridge_B": {
+   "id": "bridge_B",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/bridge_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.667,
+    6.736,
+    4.375
+   ],
+   "orthoScale": 2.73327,
+   "unitM": 3.5,
+   "pxPerMeter": 53.52,
+   "projectedSizePx": [
+    431.5,
+    440.3
+   ],
+   "coverage": 0.1602,
+   "kb": 128.6
+  },
+  "bottom_right/structures/destroyed": {
+   "id": "destroyed",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/destroyed.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.387,
+    4.571,
+    3.479
+   ],
+   "orthoScale": 2.33937,
+   "unitM": 3.5,
+   "pxPerMeter": 62.53,
+   "projectedSizePx": [
+    440.3,
+    431.8
+   ],
+   "coverage": 0.2173,
+   "kb": 158.7
+  },
+  "bottom_right/structures/dirt": {
+   "id": "dirt",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/dirt.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.282,
+    7.024,
+    0.303
+   ],
+   "orthoScale": 3.12576,
+   "unitM": 3.5,
+   "pxPerMeter": 46.8,
+   "projectedSizePx": [
+    440.3,
+    265.8
+   ],
+   "coverage": 0.1625,
+   "kb": 107.4
+  },
+  "bottom_right/structures/grain": {
+   "id": "grain",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/grain.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.558,
+    7.328,
+    1.378
+   ],
+   "orthoScale": 3.26197,
+   "unitM": 3.5,
+   "pxPerMeter": 44.85,
+   "projectedSizePx": [
+    440.3,
+    304.7
+   ],
+   "coverage": 0.1713,
+   "kb": 115.5
+  },
+  "bottom_right/structures/scaffolding": {
+   "id": "scaffolding",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/scaffolding.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.652,
+    7.383,
+    4.545
+   ],
+   "orthoScale": 3.29691,
+   "unitM": 3.5,
+   "pxPerMeter": 44.37,
+   "projectedSizePx": [
+    440.3,
+    418.9
+   ],
+   "coverage": 0.2179,
+   "kb": 188.1
+  },
+  "bottom_right/structures/stage_A": {
+   "id": "stage_A",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/stage_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.663,
+    3.063,
+    1.001
+   ],
+   "orthoScale": 1.58006,
+   "unitM": 3.5,
+   "pxPerMeter": 92.58,
+   "projectedSizePx": [
+    440.3,
+    329.9
+   ],
+   "coverage": 0.1699,
+   "kb": 136.9
+  },
+  "bottom_right/structures/stage_B": {
+   "id": "stage_B",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/stage_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.572,
+    3.957,
+    2.226
+   ],
+   "orthoScale": 1.76866,
+   "unitM": 3.5,
+   "pxPerMeter": 82.71,
+   "projectedSizePx": [
+    440.3,
+    404.5
+   ],
+   "coverage": 0.256,
+   "kb": 162.1
+  },
+  "bottom_right/structures/stage_C": {
+   "id": "stage_C",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/stage_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.06,
+    3.945,
+    3.451
+   ],
+   "orthoScale": 2.02172,
+   "unitM": 3.5,
+   "pxPerMeter": 72.36,
+   "projectedSizePx": [
+    409.6,
+    440.3
+   ],
+   "coverage": 0.2372,
+   "kb": 163.7
+  },
+  "bottom_right/structures/fence_stone_straight": {
+   "id": "fence_stone_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/fence_stone_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    4.041,
+    0.941
+   ],
+   "orthoScale": 1.11386,
+   "unitM": 3.5,
+   "pxPerMeter": 131.33,
+   "projectedSizePx": [
+    440.3,
+    355.2
+   ],
+   "coverage": 0.1961,
+   "kb": 129.6
+  },
+  "bottom_right/structures/fence_stone_straight_gate": {
+   "id": "fence_stone_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/fence_stone_straight_gate.png",
+   "meshes": 2,
+   "worldSizeM": [
+    0.7,
+    4.041,
+    1.037
+   ],
+   "orthoScale": 1.11386,
+   "unitM": 3.5,
+   "pxPerMeter": 131.33,
+   "projectedSizePx": [
+    440.3,
+    355.2
+   ],
+   "coverage": 0.198,
+   "kb": 135.3
+  },
+  "bottom_right/structures/fence_wood_straight": {
+   "id": "fence_wood_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/fence_wood_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.35,
+    4.041,
+    1.925
+   ],
+   "orthoScale": 1.1178,
+   "unitM": 3.5,
+   "pxPerMeter": 130.87,
+   "projectedSizePx": [
+    406.4,
+    440.3
+   ],
+   "coverage": 0.3077,
+   "kb": 168.1
+  },
+  "bottom_right/structures/fence_wood_straight_gate": {
+   "id": "fence_wood_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/fence_wood_straight_gate.png",
+   "meshes": 2,
+   "worldSizeM": [
+    0.49,
+    4.041,
+    2.275
+   ],
+   "orthoScale": 1.23172,
+   "unitM": 3.5,
+   "pxPerMeter": 118.77,
+   "projectedSizePx": [
+    380.6,
+    440.3
+   ],
+   "coverage": 0.2729,
+   "kb": 163.7
+  },
+  "bottom_right/structures/wall_corner_A_gate": {
+   "id": "wall_corner_A_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_corner_A_gate.png",
+   "meshes": 3,
+   "worldSizeM": [
+    6.159,
+    5.364,
+    4.953
+   ],
+   "orthoScale": 2.9064,
+   "unitM": 3.5,
+   "pxPerMeter": 50.33,
+   "projectedSizePx": [
+    410.1,
+    440.3
+   ],
+   "coverage": 0.2106,
+   "kb": 142.7
+  },
+  "bottom_right/structures/wall_corner_A_inside": {
+   "id": "wall_corner_A_inside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_corner_A_inside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.462,
+    4.956,
+    3.85
+   ],
+   "orthoScale": 2.68244,
+   "unitM": 3.5,
+   "pxPerMeter": 54.53,
+   "projectedSizePx": [
+    440.3,
+    425.6
+   ],
+   "coverage": 0.2121,
+   "kb": 138.6
+  },
+  "bottom_right/structures/wall_corner_A_outside": {
+   "id": "wall_corner_A_outside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_corner_A_outside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.159,
+    5.011,
+    3.85
+   ],
+   "orthoScale": 2.62415,
+   "unitM": 3.5,
+   "pxPerMeter": 55.75,
+   "projectedSizePx": [
+    440.3,
+    429.5
+   ],
+   "coverage": 0.2315,
+   "kb": 148.1
+  },
+  "bottom_right/structures/wall_corner_B_inside": {
+   "id": "wall_corner_B_inside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_corner_B_inside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.369,
+    5.131,
+    3.85
+   ],
+   "orthoScale": 2.19719,
+   "unitM": 3.5,
+   "pxPerMeter": 66.58,
+   "projectedSizePx": [
+    400.2,
+    440.3
+   ],
+   "coverage": 0.2301,
+   "kb": 139.8
+  },
+  "bottom_right/structures/wall_corner_B_outside": {
+   "id": "wall_corner_B_outside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_corner_B_outside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.374,
+    4.724,
+    3.85
+   ],
+   "orthoScale": 2.1427,
+   "unitM": 3.5,
+   "pxPerMeter": 68.27,
+   "projectedSizePx": [
+    390.9,
+    440.3
+   ],
+   "coverage": 0.254,
+   "kb": 153.7
+  },
+  "bottom_right/structures/wall_straight": {
+   "id": "wall_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    7.0,
+    2.8,
+    3.85
+   ],
+   "orthoScale": 2.37353,
+   "unitM": 3.5,
+   "pxPerMeter": 61.63,
+   "projectedSizePx": [
+    427.1,
+    440.3
+   ],
+   "coverage": 0.3918,
+   "kb": 187.0
+  },
+  "bottom_right/structures/wall_straight_gate": {
+   "id": "wall_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/structures/wall_straight_gate.png",
+   "meshes": 3,
+   "worldSizeM": [
+    7.0,
+    3.135,
+    4.949
+   ],
+   "orthoScale": 2.71707,
+   "unitM": 3.5,
+   "pxPerMeter": 53.84,
+   "projectedSizePx": [
+    385.8,
+    440.3
+   ],
+   "coverage": 0.321,
+   "kb": 172.2
+  },
+  "bottom_right/decorations/anchor": {
+   "id": "anchor",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/anchor.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.762,
+    0.169,
+    1.02
+   ],
+   "orthoScale": 0.40307,
+   "unitM": 3.5,
+   "pxPerMeter": 362.93,
+   "projectedSizePx": [
+    239.1,
+    440.3
+   ],
+   "coverage": 0.1202,
+   "kb": 125.8
+  },
+  "bottom_right/decorations/barrel": {
+   "id": "barrel",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.705,
+    0.705,
+    0.741
+   ],
+   "orthoScale": 0.39229,
+   "unitM": 3.5,
+   "pxPerMeter": 372.91,
+   "projectedSizePx": [
+    371.9,
+    440.3
+   ],
+   "coverage": 0.2625,
+   "kb": 151.7
+  },
+  "bottom_right/decorations/boat": {
+   "id": "boat",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/boat.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.05,
+    2.1,
+    0.42
+   ],
+   "orthoScale": 0.74,
+   "unitM": 3.5,
+   "pxPerMeter": 197.68,
+   "projectedSizePx": [
+    440.3,
+    322.0
+   ],
+   "coverage": 0.183,
+   "kb": 112.4
+  },
+  "bottom_right/decorations/boatrack": {
+   "id": "boatrack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/boatrack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.382,
+    1.373,
+    0.508
+   ],
+   "orthoScale": 0.64706,
+   "unitM": 3.5,
+   "pxPerMeter": 226.08,
+   "projectedSizePx": [
+    440.3,
+    348.0
+   ],
+   "coverage": 0.266,
+   "kb": 153.7
+  },
+  "bottom_right/decorations/bucket_arrows": {
+   "id": "bucket_arrows",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/bucket_arrows.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.498,
+    0.81
+   ],
+   "orthoScale": 0.35362,
+   "unitM": 3.5,
+   "pxPerMeter": 413.68,
+   "projectedSizePx": [
+    289.1,
+    440.3
+   ],
+   "coverage": 0.1972,
+   "kb": 150.1
+  },
+  "bottom_right/decorations/bucket_empty": {
+   "id": "bucket_empty",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/bucket_empty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.438
+   ],
+   "orthoScale": 0.25159,
+   "unitM": 3.5,
+   "pxPerMeter": 581.43,
+   "projectedSizePx": [
+    402.9,
+    440.3
+   ],
+   "coverage": 0.3208,
+   "kb": 153.2
+  },
+  "bottom_right/decorations/bucket_water": {
+   "id": "bucket_water",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/bucket_water.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.368
+   ],
+   "orthoScale": 0.23261,
+   "unitM": 3.5,
+   "pxPerMeter": 628.9,
+   "projectedSizePx": [
+    435.8,
+    440.3
+   ],
+   "coverage": 0.3421,
+   "kb": 159.5
+  },
+  "bottom_right/decorations/cannonball_pallet": {
+   "id": "cannonball_pallet",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/cannonball_pallet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.201,
+    1.173,
+    1.15
+   ],
+   "orthoScale": 0.63407,
+   "unitM": 3.5,
+   "pxPerMeter": 230.71,
+   "projectedSizePx": [
+    387.3,
+    440.3
+   ],
+   "coverage": 0.2744,
+   "kb": 150.5
+  },
+  "bottom_right/decorations/crate_A_big": {
+   "id": "crate_A_big",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_A_big.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.735,
+    0.735,
+    0.735
+   ],
+   "orthoScale": 0.39875,
+   "unitM": 3.5,
+   "pxPerMeter": 366.86,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 184.7
+  },
+  "bottom_right/decorations/crate_A_small": {
+   "id": "crate_A_small",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_A_small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.49
+   ],
+   "orthoScale": 0.26584,
+   "unitM": 3.5,
+   "pxPerMeter": 550.29,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 184.2
+  },
+  "bottom_right/decorations/crate_B_big": {
+   "id": "crate_B_big",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_B_big.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.735,
+    0.735,
+    0.735
+   ],
+   "orthoScale": 0.39875,
+   "unitM": 3.5,
+   "pxPerMeter": 366.86,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 185.4
+  },
+  "bottom_right/decorations/crate_B_small": {
+   "id": "crate_B_small",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_B_small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.49
+   ],
+   "orthoScale": 0.26584,
+   "unitM": 3.5,
+   "pxPerMeter": 550.29,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 188.7
+  },
+  "bottom_right/decorations/crate_long_A": {
+   "id": "crate_long_A",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_long_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 180.0
+  },
+  "bottom_right/decorations/crate_long_B": {
+   "id": "crate_long_B",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_long_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 179.5
+  },
+  "bottom_right/decorations/crate_long_C": {
+   "id": "crate_long_C",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_long_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.695
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    422.5
+   ],
+   "coverage": 0.3916,
+   "kb": 177.7
+  },
+  "bottom_right/decorations/crate_long_empty": {
+   "id": "crate_long_empty",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_long_empty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 170.5
+  },
+  "bottom_right/decorations/crate_open": {
+   "id": "crate_open",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/crate_open.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.16,
+    0.7,
+    0.72
+   ],
+   "orthoScale": 0.44757,
+   "unitM": 3.5,
+   "pxPerMeter": 326.84,
+   "projectedSizePx": [
+    430.0,
+    440.3
+   ],
+   "coverage": 0.3888,
+   "kb": 169.4
+  },
+  "bottom_right/decorations/flag_blue": {
+   "id": "flag_blue",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/flag_blue.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1352,
+   "kb": 117.9
+  },
+  "bottom_right/decorations/flag_green": {
+   "id": "flag_green",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/flag_green.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1351,
+   "kb": 116.9
+  },
+  "bottom_right/decorations/flag_red": {
+   "id": "flag_red",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/flag_red.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1352,
+   "kb": 116.5
+  },
+  "bottom_right/decorations/flag_yellow": {
+   "id": "flag_yellow",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/flag_yellow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1352,
+   "kb": 117.5
+  },
+  "bottom_right/decorations/haybale": {
+   "id": "haybale",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/haybale.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.755,
+    0.631
+   ],
+   "orthoScale": 0.50634,
+   "unitM": 3.5,
+   "pxPerMeter": 288.91,
+   "projectedSizePx": [
+    440.3,
+    403.0
+   ],
+   "coverage": 0.3192,
+   "kb": 165.4
+  },
+  "bottom_right/decorations/icon_combat": {
+   "id": "icon_combat",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/icon_combat.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.247,
+    0.301,
+    1.089
+   ],
+   "orthoScale": 0.50525,
+   "unitM": 3.5,
+   "pxPerMeter": 289.53,
+   "projectedSizePx": [
+    316.9,
+    440.3
+   ],
+   "coverage": 0.1408,
+   "kb": 136.0
+  },
+  "bottom_right/decorations/icon_range": {
+   "id": "icon_range",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/icon_range.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.58,
+    0.158,
+    0.963
+   ],
+   "orthoScale": 0.49679,
+   "unitM": 3.5,
+   "pxPerMeter": 294.46,
+   "projectedSizePx": [
+    361.8,
+    440.3
+   ],
+   "coverage": 0.1762,
+   "kb": 149.7
+  },
+  "bottom_right/decorations/ladder": {
+   "id": "ladder",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/ladder.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.886,
+    0.178,
+    2.695
+   ],
+   "orthoScale": 0.87535,
+   "unitM": 3.5,
+   "pxPerMeter": 167.12,
+   "projectedSizePx": [
+    125.7,
+    440.3
+   ],
+   "coverage": 0.1146,
+   "kb": 130.3
+  },
+  "bottom_right/decorations/pallet": {
+   "id": "pallet",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/pallet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.05,
+    1.05,
+    0.28
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    322.0
+   ],
+   "coverage": 0.2916,
+   "kb": 141.2
+  },
+  "bottom_right/decorations/resource_lumber": {
+   "id": "resource_lumber",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/resource_lumber.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.401,
+    1.157,
+    0.735
+   ],
+   "orthoScale": 0.83573,
+   "unitM": 3.5,
+   "pxPerMeter": 175.04,
+   "projectedSizePx": [
+    440.3,
+    359.3
+   ],
+   "coverage": 0.2857,
+   "kb": 159.1
+  },
+  "bottom_right/decorations/resource_stone": {
+   "id": "resource_stone",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/resource_stone.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.474,
+    1.252,
+    0.98
+   ],
+   "orthoScale": 0.64046,
+   "unitM": 3.5,
+   "pxPerMeter": 228.41,
+   "projectedSizePx": [
+    440.3,
+    437.0
+   ],
+   "coverage": 0.4233,
+   "kb": 190.3
+  },
+  "bottom_right/decorations/sack": {
+   "id": "sack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/sack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.373,
+    0.558,
+    0.226
+   ],
+   "orthoScale": 0.21877,
+   "unitM": 3.5,
+   "pxPerMeter": 668.67,
+   "projectedSizePx": [
+    440.3,
+    377.8
+   ],
+   "coverage": 0.3044,
+   "kb": 148.5
+  },
+  "bottom_right/decorations/target": {
+   "id": "target",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/target.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.838,
+    0.497,
+    1.056
+   ],
+   "orthoScale": 0.46759,
+   "unitM": 3.5,
+   "pxPerMeter": 312.85,
+   "projectedSizePx": [
+    295.3,
+    440.3
+   ],
+   "coverage": 0.1971,
+   "kb": 140.4
+  },
+  "bottom_right/decorations/tent": {
+   "id": "tent",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/tent.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.806,
+    1.806,
+    1.806
+   ],
+   "orthoScale": 0.97979,
+   "unitM": 3.5,
+   "pxPerMeter": 149.3,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.2503,
+   "kb": 144.3
+  },
+  "bottom_right/decorations/trough": {
+   "id": "trough",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/trough.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.7,
+    0.368
+   ],
+   "orthoScale": 0.32889,
+   "unitM": 3.5,
+   "pxPerMeter": 444.79,
+   "projectedSizePx": [
+    440.3,
+    387.7
+   ],
+   "coverage": 0.3163,
+   "kb": 155.1
+  },
+  "bottom_right/decorations/trough_long": {
+   "id": "trough_long",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/trough_long.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.33,
+    0.63,
+    0.368
+   ],
+   "orthoScale": 0.46044,
+   "unitM": 3.5,
+   "pxPerMeter": 317.71,
+   "projectedSizePx": [
+    440.3,
+    349.5
+   ],
+   "coverage": 0.2851,
+   "kb": 155.6
+  },
+  "bottom_right/decorations/weaponrack": {
+   "id": "weaponrack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/weaponrack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.455,
+    0.84
+   ],
+   "orthoScale": 0.38451,
+   "unitM": 3.5,
+   "pxPerMeter": 380.44,
+   "projectedSizePx": [
+    310.7,
+    440.3
+   ],
+   "coverage": 0.2987,
+   "kb": 164.3
+  },
+  "bottom_right/decorations/wheelbarrow": {
+   "id": "wheelbarrow",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/decorations/wheelbarrow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.833,
+    1.77,
+    0.659
+   ],
+   "orthoScale": 0.61146,
+   "unitM": 3.5,
+   "pxPerMeter": 239.24,
+   "projectedSizePx": [
+    440.3,
+    383.0
+   ],
+   "coverage": 0.2196,
+   "kb": 142.1
+  },
+  "bottom_right/units/banner": {
+   "id": "banner",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/banner.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.585,
+    0.203,
+    1.75
+   ],
+   "orthoScale": 0.5815,
+   "unitM": 3.5,
+   "pxPerMeter": 251.56,
+   "projectedSizePx": [
+    140.1,
+    440.3
+   ],
+   "coverage": 0.1215,
+   "kb": 116.8
+  },
+  "bottom_right/units/bow": {
+   "id": "bow",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/bow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.122,
+    0.314,
+    1.201
+   ],
+   "orthoScale": 0.38486,
+   "unitM": 3.5,
+   "pxPerMeter": 380.1,
+   "projectedSizePx": [
+    117.1,
+    440.3
+   ],
+   "coverage": 0.0475,
+   "kb": 110.1
+  },
+  "bottom_right/units/cannon": {
+   "id": "cannon",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/cannon.png",
+   "meshes": 2,
+   "worldSizeM": [
+    2.345,
+    3.826,
+    1.768
+   ],
+   "orthoScale": 1.2149,
+   "unitM": 3.5,
+   "pxPerMeter": 120.41,
+   "projectedSizePx": [
+    440.3,
+    426.2
+   ],
+   "coverage": 0.2316,
+   "kb": 148.7
+  },
+  "bottom_right/units/cart": {
+   "id": "cart",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/cart.png",
+   "meshes": 3,
+   "worldSizeM": [
+    2.477,
+    4.578,
+    2.696
+   ],
+   "orthoScale": 1.54241,
+   "unitM": 3.5,
+   "pxPerMeter": 94.84,
+   "projectedSizePx": [
+    440.3,
+    419.6
+   ],
+   "coverage": 0.2883,
+   "kb": 176.4
+  },
+  "bottom_right/units/cart_merchant": {
+   "id": "cart_merchant",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/cart_merchant.png",
+   "meshes": 3,
+   "worldSizeM": [
+    2.477,
+    4.888,
+    3.72
+   ],
+   "orthoScale": 1.78941,
+   "unitM": 3.5,
+   "pxPerMeter": 81.75,
+   "projectedSizePx": [
+    397.5,
+    440.3
+   ],
+   "coverage": 0.2533,
+   "kb": 180.4
+  },
+  "bottom_right/units/catapult": {
+   "id": "catapult",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/catapult.png",
+   "meshes": 4,
+   "worldSizeM": [
+    2.477,
+    3.656,
+    1.995
+   ],
+   "orthoScale": 1.27156,
+   "unitM": 3.5,
+   "pxPerMeter": 115.04,
+   "projectedSizePx": [
+    440.3,
+    406.9
+   ],
+   "coverage": 0.2456,
+   "kb": 178.9
+  },
+  "bottom_right/units/hammer": {
+   "id": "hammer",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/hammer.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.491,
+    0.246,
+    0.754
+   ],
+   "orthoScale": 0.30435,
+   "unitM": 3.5,
+   "pxPerMeter": 480.66,
+   "projectedSizePx": [
+    250.4,
+    440.3
+   ],
+   "coverage": 0.1406,
+   "kb": 121.2
+  },
+  "bottom_right/units/helmet": {
+   "id": "helmet",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/helmet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.772,
+    0.72,
+    0.688
+   ],
+   "orthoScale": 0.38891,
+   "unitM": 3.5,
+   "pxPerMeter": 376.14,
+   "projectedSizePx": [
+    396.9,
+    440.3
+   ],
+   "coverage": 0.1942,
+   "kb": 136.0
+  },
+  "bottom_right/units/horse_A": {
+   "id": "horse_A",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 133.2
+  },
+  "bottom_right/units/horse_B": {
+   "id": "horse_B",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 131.4
+  },
+  "bottom_right/units/horse_C": {
+   "id": "horse_C",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 129.0
+  },
+  "bottom_right/units/horse_D": {
+   "id": "horse_D",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_D.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 131.2
+  },
+  "bottom_right/units/horse_E": {
+   "id": "horse_E",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_E.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 125.9
+  },
+  "bottom_right/units/horse_F": {
+   "id": "horse_F",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_F.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 128.0
+  },
+  "bottom_right/units/horse_G": {
+   "id": "horse_G",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_G.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1781,
+   "kb": 120.4
+  },
+  "bottom_right/units/horse_saddle": {
+   "id": "horse_saddle",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/horse_saddle.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.038,
+    0.757,
+    0.77
+   ],
+   "orthoScale": 0.45237,
+   "unitM": 3.5,
+   "pxPerMeter": 323.37,
+   "projectedSizePx": [
+    410.4,
+    440.3
+   ],
+   "coverage": 0.3535,
+   "kb": 164.5
+  },
+  "bottom_right/units/projectile_arrow": {
+   "id": "projectile_arrow",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/projectile_arrow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.047,
+    0.743,
+    0.138
+   ],
+   "orthoScale": 0.18573,
+   "unitM": 3.5,
+   "pxPerMeter": 787.63,
+   "projectedSizePx": [
+    440.3,
+    343.1
+   ],
+   "coverage": 0.0663,
+   "kb": 98.1
+  },
+  "bottom_right/units/projectile_cannonball": {
+   "id": "projectile_cannonball",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/projectile_cannonball.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.571,
+    0.543,
+    0.543
+   ],
+   "orthoScale": 0.29841,
+   "unitM": 3.5,
+   "pxPerMeter": 490.22,
+   "projectedSizePx": [
+    386.2,
+    440.3
+   ],
+   "coverage": 0.2252,
+   "kb": 123.3
+  },
+  "bottom_right/units/projectile_catapult": {
+   "id": "projectile_catapult",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/projectile_catapult.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    0.885,
+    0.989
+   ],
+   "orthoScale": 0.50253,
+   "unitM": 3.5,
+   "pxPerMeter": 291.1,
+   "projectedSizePx": [
+    355.4,
+    440.3
+   ],
+   "coverage": 0.1522,
+   "kb": 115.8
+  },
+  "bottom_right/units/shield": {
+   "id": "shield",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/shield.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.6,
+    0.189,
+    0.759
+   ],
+   "orthoScale": 0.31291,
+   "unitM": 3.5,
+   "pxPerMeter": 467.49,
+   "projectedSizePx": [
+    260.8,
+    440.3
+   ],
+   "coverage": 0.2214,
+   "kb": 132.6
+  },
+  "bottom_right/units/ship": {
+   "id": "ship",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/ship.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.513,
+    7.906,
+    7.829
+   ],
+   "orthoScale": 3.67247,
+   "unitM": 3.5,
+   "pxPerMeter": 39.83,
+   "projectedSizePx": [
+    321.6,
+    440.3
+   ],
+   "coverage": 0.177,
+   "kb": 156.5
+  },
+  "bottom_right/units/shovel": {
+   "id": "shovel",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/shovel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.444,
+    0.136,
+    1.41
+   ],
+   "orthoScale": 0.4612,
+   "unitM": 3.5,
+   "pxPerMeter": 317.19,
+   "projectedSizePx": [
+    130.0,
+    440.3
+   ],
+   "coverage": 0.0647,
+   "kb": 103.9
+  },
+  "bottom_right/units/spear": {
+   "id": "spear",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/spear.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.283,
+    0.179,
+    2.074
+   ],
+   "orthoScale": 0.62523,
+   "unitM": 3.5,
+   "pxPerMeter": 233.97,
+   "projectedSizePx": [
+    76.5,
+    440.3
+   ],
+   "coverage": 0.0353,
+   "kb": 103.3
+  },
+  "bottom_right/units/sword": {
+   "id": "sword",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/sword.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.294,
+    0.124,
+    1.088
+   ],
+   "orthoScale": 0.35196,
+   "unitM": 3.5,
+   "pxPerMeter": 415.63,
+   "projectedSizePx": [
+    122.8,
+    440.3
+   ],
+   "coverage": 0.0805,
+   "kb": 108.5
+  },
+  "bottom_right/units/unit": {
+   "id": "unit",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/medieval/units/unit.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.7,
+    1.193
+   ],
+   "orthoScale": 0.51338,
+   "unitM": 3.5,
+   "pxPerMeter": 284.95,
+   "projectedSizePx": [
+    282.1,
+    440.3
+   ],
+   "coverage": 0.1889,
+   "kb": 129.0
+  },
+  "bottom_left/buildings/archeryrange": {
+   "id": "archeryrange",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/archeryrange.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.847,
+    5.428,
+    6.271
+   ],
+   "orthoScale": 3.23034,
+   "unitM": 3.5,
+   "pxPerMeter": 45.28,
+   "projectedSizePx": [
+    361.0,
+    440.3
+   ],
+   "coverage": 0.2236,
+   "kb": 177.1
+  },
+  "bottom_left/buildings/barracks": {
+   "id": "barracks",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/barracks.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.04,
+    5.481,
+    5.74
+   ],
+   "orthoScale": 2.98409,
+   "unitM": 3.5,
+   "pxPerMeter": 49.02,
+   "projectedSizePx": [
+    364.7,
+    440.3
+   ],
+   "coverage": 0.3699,
+   "kb": 221.4
+  },
+  "bottom_left/buildings/blacksmith": {
+   "id": "blacksmith",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/blacksmith.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.507,
+    4.358,
+    3.448
+   ],
+   "orthoScale": 2.13758,
+   "unitM": 3.5,
+   "pxPerMeter": 68.44,
+   "projectedSizePx": [
+    429.0,
+    440.3
+   ],
+   "coverage": 0.2364,
+   "kb": 170.8
+  },
+  "bottom_left/buildings/castle": {
+   "id": "castle",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/castle.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.914,
+    7.897,
+    13.927
+   ],
+   "orthoScale": 5.78672,
+   "unitM": 3.5,
+   "pxPerMeter": 25.28,
+   "projectedSizePx": [
+    264.7,
+    440.3
+   ],
+   "coverage": 0.1702,
+   "kb": 157.5
+  },
+  "bottom_left/buildings/church": {
+   "id": "church",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/church.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.601,
+    4.043,
+    5.758
+   ],
+   "orthoScale": 2.59858,
+   "unitM": 3.5,
+   "pxPerMeter": 56.29,
+   "projectedSizePx": [
+    304.3,
+    440.3
+   ],
+   "coverage": 0.1878,
+   "kb": 159.3
+  },
+  "bottom_left/buildings/docks": {
+   "id": "docks",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/docks.png",
+   "meshes": 1,
+   "worldSizeM": [
+    7.0,
+    1.75,
+    5.056
+   ],
+   "orthoScale": 2.55817,
+   "unitM": 3.5,
+   "pxPerMeter": 57.18,
+   "projectedSizePx": [
+    353.8,
+    440.3
+   ],
+   "coverage": 0.1448,
+   "kb": 156.6
+  },
+  "bottom_left/buildings/home_A": {
+   "id": "home_A",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/home_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.772,
+    2.988,
+    3.255
+   ],
+   "orthoScale": 1.66414,
+   "unitM": 3.5,
+   "pxPerMeter": 87.9,
+   "projectedSizePx": [
+    358.0,
+    440.3
+   ],
+   "coverage": 0.2416,
+   "kb": 166.5
+  },
+  "bottom_left/buildings/home_B": {
+   "id": "home_B",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/home_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.062,
+    3.845,
+    4.48
+   ],
+   "orthoScale": 2.15212,
+   "unitM": 3.5,
+   "pxPerMeter": 67.97,
+   "projectedSizePx": [
+    332.0,
+    440.3
+   ],
+   "coverage": 0.2702,
+   "kb": 186.0
+  },
+  "bottom_left/buildings/lumbermill": {
+   "id": "lumbermill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/lumbermill.png",
+   "meshes": 3,
+   "worldSizeM": [
+    4.784,
+    4.162,
+    5.977
+   ],
+   "orthoScale": 2.64614,
+   "unitM": 3.5,
+   "pxPerMeter": 55.28,
+   "projectedSizePx": [
+    327.5,
+    440.3
+   ],
+   "coverage": 0.2378,
+   "kb": 188.5
+  },
+  "bottom_left/buildings/market": {
+   "id": "market",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/market.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.298,
+    4.605,
+    3.436
+   ],
+   "orthoScale": 2.56119,
+   "unitM": 3.5,
+   "pxPerMeter": 57.12,
+   "projectedSizePx": [
+    440.3,
+    414.4
+   ],
+   "coverage": 0.2592,
+   "kb": 191.6
+  },
+  "bottom_left/buildings/mine": {
+   "id": "mine",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/mine.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.619,
+    6.72,
+    3.978
+   ],
+   "orthoScale": 2.89874,
+   "unitM": 3.5,
+   "pxPerMeter": 50.47,
+   "projectedSizePx": [
+    440.3,
+    418.1
+   ],
+   "coverage": 0.2631,
+   "kb": 167.0
+  },
+  "bottom_left/buildings/shipyard": {
+   "id": "shipyard",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/shipyard.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.718,
+    6.593,
+    4.336
+   ],
+   "orthoScale": 3.12707,
+   "unitM": 3.5,
+   "pxPerMeter": 46.78,
+   "projectedSizePx": [
+    440.3,
+    419.8
+   ],
+   "coverage": 0.1568,
+   "kb": 157.1
+  },
+  "bottom_left/buildings/shrine": {
+   "id": "shrine",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/shrine.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.04,
+    4.54,
+    2.987
+   ],
+   "orthoScale": 2.01578,
+   "unitM": 3.5,
+   "pxPerMeter": 72.57,
+   "projectedSizePx": [
+    440.3,
+    431.2
+   ],
+   "coverage": 0.1864,
+   "kb": 154.1
+  },
+  "bottom_left/buildings/stables": {
+   "id": "stables",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/stables.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.505,
+    7.461,
+    2.14
+   ],
+   "orthoScale": 3.28081,
+   "unitM": 3.5,
+   "pxPerMeter": 44.59,
+   "projectedSizePx": [
+    440.3,
+    332.1
+   ],
+   "coverage": 0.1204,
+   "kb": 138.0
+  },
+  "bottom_left/buildings/tavern": {
+   "id": "tavern",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tavern.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.101,
+    4.663,
+    4.888
+   ],
+   "orthoScale": 2.51468,
+   "unitM": 3.5,
+   "pxPerMeter": 58.17,
+   "projectedSizePx": [
+    360.5,
+    440.3
+   ],
+   "coverage": 0.2798,
+   "kb": 186.9
+  },
+  "bottom_left/buildings/tent": {
+   "id": "tent",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tent.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.308,
+    4.707,
+    2.974
+   ],
+   "orthoScale": 2.35265,
+   "unitM": 3.5,
+   "pxPerMeter": 62.18,
+   "projectedSizePx": [
+    440.3,
+    405.2
+   ],
+   "coverage": 0.2016,
+   "kb": 159.5
+  },
+  "bottom_left/buildings/tower_A": {
+   "id": "tower_A",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tower_A.png",
+   "meshes": 2,
+   "worldSizeM": [
+    3.476,
+    4.037,
+    7.671
+   ],
+   "orthoScale": 3.08487,
+   "unitM": 3.5,
+   "pxPerMeter": 47.42,
+   "projectedSizePx": [
+    251.2,
+    440.3
+   ],
+   "coverage": 0.1972,
+   "kb": 155.7
+  },
+  "bottom_left/buildings/tower_B": {
+   "id": "tower_B",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tower_B.png",
+   "meshes": 2,
+   "worldSizeM": [
+    4.191,
+    4.839,
+    8.699
+   ],
+   "orthoScale": 3.46804,
+   "unitM": 3.5,
+   "pxPerMeter": 42.18,
+   "projectedSizePx": [
+    269.3,
+    440.3
+   ],
+   "coverage": 0.1802,
+   "kb": 155.9
+  },
+  "bottom_left/buildings/tower_base": {
+   "id": "tower_base",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tower_base.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.254,
+    3.889,
+    5.25
+   ],
+   "orthoScale": 2.39296,
+   "unitM": 3.5,
+   "pxPerMeter": 61.13,
+   "projectedSizePx": [
+    308.8,
+    440.3
+   ],
+   "coverage": 0.2716,
+   "kb": 166.8
+  },
+  "bottom_left/buildings/tower_cannon": {
+   "id": "tower_cannon",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tower_cannon.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.254,
+    3.889,
+    7.139
+   ],
+   "orthoScale": 2.71333,
+   "unitM": 3.5,
+   "pxPerMeter": 53.91,
+   "projectedSizePx": [
+    272.3,
+    440.3
+   ],
+   "coverage": 0.232,
+   "kb": 165.8
+  },
+  "bottom_left/buildings/tower_catapult": {
+   "id": "tower_catapult",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/tower_catapult.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.254,
+    4.562,
+    6.874
+   ],
+   "orthoScale": 2.66066,
+   "unitM": 3.5,
+   "pxPerMeter": 54.98,
+   "projectedSizePx": [
+    277.7,
+    440.3
+   ],
+   "coverage": 0.238,
+   "kb": 174.8
+  },
+  "bottom_left/buildings/townhall": {
+   "id": "townhall",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/townhall.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.022,
+    5.473,
+    6.601
+   ],
+   "orthoScale": 3.21414,
+   "unitM": 3.5,
+   "pxPerMeter": 45.51,
+   "projectedSizePx": [
+    337.8,
+    440.3
+   ],
+   "coverage": 0.1936,
+   "kb": 163.7
+  },
+  "bottom_left/buildings/watchtower": {
+   "id": "watchtower",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/watchtower.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.657,
+    3.657,
+    3.895
+   ],
+   "orthoScale": 2.04875,
+   "unitM": 3.5,
+   "pxPerMeter": 71.4,
+   "projectedSizePx": [
+    369.3,
+    440.3
+   ],
+   "coverage": 0.2121,
+   "kb": 181.9
+  },
+  "bottom_left/buildings/watermill": {
+   "id": "watermill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/watermill.png",
+   "meshes": 2,
+   "worldSizeM": [
+    3.675,
+    4.326,
+    5.488
+   ],
+   "orthoScale": 2.54474,
+   "unitM": 3.5,
+   "pxPerMeter": 57.49,
+   "projectedSizePx": [
+    316.5,
+    440.3
+   ],
+   "coverage": 0.2758,
+   "kb": 181.9
+  },
+  "bottom_left/buildings/well": {
+   "id": "well",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/well.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.281,
+    2.628,
+    2.891
+   ],
+   "orthoScale": 1.45001,
+   "unitM": 3.5,
+   "pxPerMeter": 100.89,
+   "projectedSizePx": [
+    350.2,
+    440.3
+   ],
+   "coverage": 0.2049,
+   "kb": 150.8
+  },
+  "bottom_left/buildings/windmill": {
+   "id": "windmill",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/windmill.png",
+   "meshes": 3,
+   "worldSizeM": [
+    3.94,
+    2.858,
+    5.103
+   ],
+   "orthoScale": 2.0912,
+   "unitM": 3.5,
+   "pxPerMeter": 69.95,
+   "projectedSizePx": [
+    332.4,
+    440.3
+   ],
+   "coverage": 0.2276,
+   "kb": 181.2
+  },
+  "bottom_left/buildings/workshop": {
+   "id": "workshop",
+   "set": "medieval",
+   "category": "buildings",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/buildings/workshop.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.829,
+    5.835,
+    4.037
+   ],
+   "orthoScale": 2.74008,
+   "unitM": 3.5,
+   "pxPerMeter": 53.39,
+   "projectedSizePx": [
+    440.3,
+    430.2
+   ],
+   "coverage": 0.2625,
+   "kb": 198.5
+  },
+  "bottom_left/structures/bridge_A": {
+   "id": "bridge_A",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/bridge_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.667,
+    6.736,
+    4.375
+   ],
+   "orthoScale": 2.73328,
+   "unitM": 3.5,
+   "pxPerMeter": 53.52,
+   "projectedSizePx": [
+    431.5,
+    440.3
+   ],
+   "coverage": 0.1602,
+   "kb": 128.5
+  },
+  "bottom_left/structures/bridge_B": {
+   "id": "bridge_B",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/bridge_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.667,
+    6.736,
+    4.375
+   ],
+   "orthoScale": 2.73328,
+   "unitM": 3.5,
+   "pxPerMeter": 53.52,
+   "projectedSizePx": [
+    431.5,
+    440.3
+   ],
+   "coverage": 0.3034,
+   "kb": 137.0
+  },
+  "bottom_left/structures/destroyed": {
+   "id": "destroyed",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/destroyed.png",
+   "meshes": 1,
+   "worldSizeM": [
+    5.387,
+    4.571,
+    3.479
+   ],
+   "orthoScale": 2.33937,
+   "unitM": 3.5,
+   "pxPerMeter": 62.53,
+   "projectedSizePx": [
+    440.3,
+    431.8
+   ],
+   "coverage": 0.1902,
+   "kb": 146.7
+  },
+  "bottom_left/structures/dirt": {
+   "id": "dirt",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/dirt.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.282,
+    7.024,
+    0.303
+   ],
+   "orthoScale": 3.12576,
+   "unitM": 3.5,
+   "pxPerMeter": 46.8,
+   "projectedSizePx": [
+    440.3,
+    265.8
+   ],
+   "coverage": 0.1625,
+   "kb": 109.1
+  },
+  "bottom_left/structures/grain": {
+   "id": "grain",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/grain.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.558,
+    7.328,
+    1.378
+   ],
+   "orthoScale": 3.26197,
+   "unitM": 3.5,
+   "pxPerMeter": 44.85,
+   "projectedSizePx": [
+    440.3,
+    304.7
+   ],
+   "coverage": 0.1714,
+   "kb": 117.8
+  },
+  "bottom_left/structures/scaffolding": {
+   "id": "scaffolding",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/scaffolding.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.652,
+    7.383,
+    4.545
+   ],
+   "orthoScale": 3.29691,
+   "unitM": 3.5,
+   "pxPerMeter": 44.37,
+   "projectedSizePx": [
+    440.3,
+    418.9
+   ],
+   "coverage": 0.1987,
+   "kb": 172.1
+  },
+  "bottom_left/structures/stage_A": {
+   "id": "stage_A",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/stage_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.663,
+    3.063,
+    1.001
+   ],
+   "orthoScale": 1.58006,
+   "unitM": 3.5,
+   "pxPerMeter": 92.58,
+   "projectedSizePx": [
+    440.3,
+    329.9
+   ],
+   "coverage": 0.1733,
+   "kb": 136.2
+  },
+  "bottom_left/structures/stage_B": {
+   "id": "stage_B",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/stage_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.572,
+    3.957,
+    2.226
+   ],
+   "orthoScale": 1.76866,
+   "unitM": 3.5,
+   "pxPerMeter": 82.71,
+   "projectedSizePx": [
+    440.3,
+    404.5
+   ],
+   "coverage": 0.2726,
+   "kb": 182.6
+  },
+  "bottom_left/structures/stage_C": {
+   "id": "stage_C",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/stage_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    4.06,
+    3.945,
+    3.451
+   ],
+   "orthoScale": 2.02172,
+   "unitM": 3.5,
+   "pxPerMeter": 72.36,
+   "projectedSizePx": [
+    409.6,
+    440.3
+   ],
+   "coverage": 0.2628,
+   "kb": 179.4
+  },
+  "bottom_left/structures/fence_stone_straight": {
+   "id": "fence_stone_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/fence_stone_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    4.041,
+    0.941
+   ],
+   "orthoScale": 1.11386,
+   "unitM": 3.5,
+   "pxPerMeter": 131.33,
+   "projectedSizePx": [
+    440.3,
+    355.2
+   ],
+   "coverage": 0.1961,
+   "kb": 135.5
+  },
+  "bottom_left/structures/fence_stone_straight_gate": {
+   "id": "fence_stone_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/fence_stone_straight_gate.png",
+   "meshes": 2,
+   "worldSizeM": [
+    0.7,
+    4.041,
+    1.037
+   ],
+   "orthoScale": 1.11386,
+   "unitM": 3.5,
+   "pxPerMeter": 131.33,
+   "projectedSizePx": [
+    440.3,
+    355.2
+   ],
+   "coverage": 0.198,
+   "kb": 138.8
+  },
+  "bottom_left/structures/fence_wood_straight": {
+   "id": "fence_wood_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/fence_wood_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.35,
+    4.041,
+    1.925
+   ],
+   "orthoScale": 1.1178,
+   "unitM": 3.5,
+   "pxPerMeter": 130.87,
+   "projectedSizePx": [
+    406.4,
+    440.3
+   ],
+   "coverage": 0.3076,
+   "kb": 167.8
+  },
+  "bottom_left/structures/fence_wood_straight_gate": {
+   "id": "fence_wood_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/fence_wood_straight_gate.png",
+   "meshes": 2,
+   "worldSizeM": [
+    0.49,
+    4.041,
+    2.275
+   ],
+   "orthoScale": 1.23172,
+   "unitM": 3.5,
+   "pxPerMeter": 118.77,
+   "projectedSizePx": [
+    380.6,
+    440.3
+   ],
+   "coverage": 0.2729,
+   "kb": 162.6
+  },
+  "bottom_left/structures/wall_corner_A_gate": {
+   "id": "wall_corner_A_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_corner_A_gate.png",
+   "meshes": 3,
+   "worldSizeM": [
+    6.159,
+    5.364,
+    4.953
+   ],
+   "orthoScale": 2.9064,
+   "unitM": 3.5,
+   "pxPerMeter": 50.33,
+   "projectedSizePx": [
+    410.1,
+    440.3
+   ],
+   "coverage": 0.2823,
+   "kb": 154.6
+  },
+  "bottom_left/structures/wall_corner_A_inside": {
+   "id": "wall_corner_A_inside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_corner_A_inside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.462,
+    4.956,
+    3.85
+   ],
+   "orthoScale": 2.68244,
+   "unitM": 3.5,
+   "pxPerMeter": 54.53,
+   "projectedSizePx": [
+    440.3,
+    425.6
+   ],
+   "coverage": 0.3117,
+   "kb": 147.4
+  },
+  "bottom_left/structures/wall_corner_A_outside": {
+   "id": "wall_corner_A_outside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_corner_A_outside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    6.159,
+    5.011,
+    3.85
+   ],
+   "orthoScale": 2.62415,
+   "unitM": 3.5,
+   "pxPerMeter": 55.75,
+   "projectedSizePx": [
+    440.3,
+    429.5
+   ],
+   "coverage": 0.3178,
+   "kb": 156.5
+  },
+  "bottom_left/structures/wall_corner_B_inside": {
+   "id": "wall_corner_B_inside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_corner_B_inside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.369,
+    5.131,
+    3.85
+   ],
+   "orthoScale": 2.19718,
+   "unitM": 3.5,
+   "pxPerMeter": 66.58,
+   "projectedSizePx": [
+    400.2,
+    440.3
+   ],
+   "coverage": 0.3307,
+   "kb": 156.6
+  },
+  "bottom_left/structures/wall_corner_B_outside": {
+   "id": "wall_corner_B_outside",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_corner_B_outside.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.374,
+    4.724,
+    3.85
+   ],
+   "orthoScale": 2.1427,
+   "unitM": 3.5,
+   "pxPerMeter": 68.27,
+   "projectedSizePx": [
+    390.9,
+    440.3
+   ],
+   "coverage": 0.3381,
+   "kb": 165.1
+  },
+  "bottom_left/structures/wall_straight": {
+   "id": "wall_straight",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_straight.png",
+   "meshes": 1,
+   "worldSizeM": [
+    7.0,
+    2.8,
+    3.85
+   ],
+   "orthoScale": 2.37353,
+   "unitM": 3.5,
+   "pxPerMeter": 61.63,
+   "projectedSizePx": [
+    427.1,
+    440.3
+   ],
+   "coverage": 0.3918,
+   "kb": 180.7
+  },
+  "bottom_left/structures/wall_straight_gate": {
+   "id": "wall_straight_gate",
+   "set": "medieval",
+   "category": "structures",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/structures/wall_straight_gate.png",
+   "meshes": 3,
+   "worldSizeM": [
+    7.0,
+    3.135,
+    4.949
+   ],
+   "orthoScale": 2.71707,
+   "unitM": 3.5,
+   "pxPerMeter": 53.84,
+   "projectedSizePx": [
+    385.8,
+    440.3
+   ],
+   "coverage": 0.321,
+   "kb": 168.9
+  },
+  "bottom_left/decorations/anchor": {
+   "id": "anchor",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/anchor.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.762,
+    0.169,
+    1.02
+   ],
+   "orthoScale": 0.40307,
+   "unitM": 3.5,
+   "pxPerMeter": 362.93,
+   "projectedSizePx": [
+    239.1,
+    440.3
+   ],
+   "coverage": 0.1202,
+   "kb": 123.6
+  },
+  "bottom_left/decorations/barrel": {
+   "id": "barrel",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.705,
+    0.705,
+    0.741
+   ],
+   "orthoScale": 0.39229,
+   "unitM": 3.5,
+   "pxPerMeter": 372.91,
+   "projectedSizePx": [
+    371.9,
+    440.3
+   ],
+   "coverage": 0.2625,
+   "kb": 151.6
+  },
+  "bottom_left/decorations/boat": {
+   "id": "boat",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/boat.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.05,
+    2.1,
+    0.42
+   ],
+   "orthoScale": 0.73999,
+   "unitM": 3.5,
+   "pxPerMeter": 197.69,
+   "projectedSizePx": [
+    440.3,
+    322.0
+   ],
+   "coverage": 0.1831,
+   "kb": 118.1
+  },
+  "bottom_left/decorations/boatrack": {
+   "id": "boatrack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/boatrack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.382,
+    1.373,
+    0.508
+   ],
+   "orthoScale": 0.64706,
+   "unitM": 3.5,
+   "pxPerMeter": 226.08,
+   "projectedSizePx": [
+    440.3,
+    348.0
+   ],
+   "coverage": 0.2661,
+   "kb": 152.9
+  },
+  "bottom_left/decorations/bucket_arrows": {
+   "id": "bucket_arrows",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/bucket_arrows.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.498,
+    0.81
+   ],
+   "orthoScale": 0.35362,
+   "unitM": 3.5,
+   "pxPerMeter": 413.68,
+   "projectedSizePx": [
+    289.1,
+    440.3
+   ],
+   "coverage": 0.1892,
+   "kb": 148.3
+  },
+  "bottom_left/decorations/bucket_empty": {
+   "id": "bucket_empty",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/bucket_empty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.438
+   ],
+   "orthoScale": 0.25159,
+   "unitM": 3.5,
+   "pxPerMeter": 581.43,
+   "projectedSizePx": [
+    402.9,
+    440.3
+   ],
+   "coverage": 0.3208,
+   "kb": 152.9
+  },
+  "bottom_left/decorations/bucket_water": {
+   "id": "bucket_water",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/bucket_water.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.368
+   ],
+   "orthoScale": 0.23261,
+   "unitM": 3.5,
+   "pxPerMeter": 628.9,
+   "projectedSizePx": [
+    435.8,
+    440.3
+   ],
+   "coverage": 0.3421,
+   "kb": 159.1
+  },
+  "bottom_left/decorations/cannonball_pallet": {
+   "id": "cannonball_pallet",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/cannonball_pallet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.201,
+    1.173,
+    1.15
+   ],
+   "orthoScale": 0.63406,
+   "unitM": 3.5,
+   "pxPerMeter": 230.71,
+   "projectedSizePx": [
+    387.3,
+    440.3
+   ],
+   "coverage": 0.2745,
+   "kb": 152.3
+  },
+  "bottom_left/decorations/crate_A_big": {
+   "id": "crate_A_big",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_A_big.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.735,
+    0.735,
+    0.735
+   ],
+   "orthoScale": 0.39875,
+   "unitM": 3.5,
+   "pxPerMeter": 366.86,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 184.8
+  },
+  "bottom_left/decorations/crate_A_small": {
+   "id": "crate_A_small",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_A_small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.49
+   ],
+   "orthoScale": 0.26584,
+   "unitM": 3.5,
+   "pxPerMeter": 550.29,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 184.6
+  },
+  "bottom_left/decorations/crate_B_big": {
+   "id": "crate_B_big",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_B_big.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.735,
+    0.735,
+    0.735
+   ],
+   "orthoScale": 0.39875,
+   "unitM": 3.5,
+   "pxPerMeter": 366.86,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 186.3
+  },
+  "bottom_left/decorations/crate_B_small": {
+   "id": "crate_B_small",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_B_small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.49,
+    0.49,
+    0.49
+   ],
+   "orthoScale": 0.26584,
+   "unitM": 3.5,
+   "pxPerMeter": 550.29,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 188.8
+  },
+  "bottom_left/decorations/crate_long_A": {
+   "id": "crate_long_A",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_long_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 176.5
+  },
+  "bottom_left/decorations/crate_long_B": {
+   "id": "crate_long_B",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_long_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 175.9
+  },
+  "bottom_left/decorations/crate_long_C": {
+   "id": "crate_long_C",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_long_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.695
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    422.5
+   ],
+   "coverage": 0.3928,
+   "kb": 177.1
+  },
+  "bottom_left/decorations/crate_long_empty": {
+   "id": "crate_long_empty",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_long_empty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.7,
+    0.525
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.53,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.3913,
+   "kb": 166.2
+  },
+  "bottom_left/decorations/crate_open": {
+   "id": "crate_open",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/crate_open.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.16,
+    0.7,
+    0.72
+   ],
+   "orthoScale": 0.44757,
+   "unitM": 3.5,
+   "pxPerMeter": 326.84,
+   "projectedSizePx": [
+    430.0,
+    440.3
+   ],
+   "coverage": 0.4503,
+   "kb": 193.2
+  },
+  "bottom_left/decorations/flag_blue": {
+   "id": "flag_blue",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/flag_blue.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1323,
+   "kb": 119.0
+  },
+  "bottom_left/decorations/flag_green": {
+   "id": "flag_green",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/flag_green.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1323,
+   "kb": 117.9
+  },
+  "bottom_left/decorations/flag_red": {
+   "id": "flag_red",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/flag_red.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1323,
+   "kb": 118.0
+  },
+  "bottom_left/decorations/flag_yellow": {
+   "id": "flag_yellow",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/flag_yellow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.193,
+    0.924,
+    0.971
+   ],
+   "orthoScale": 0.41486,
+   "unitM": 3.5,
+   "pxPerMeter": 352.61,
+   "projectedSizePx": [
+    278.4,
+    440.3
+   ],
+   "coverage": 0.1323,
+   "kb": 118.1
+  },
+  "bottom_left/decorations/haybale": {
+   "id": "haybale",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/haybale.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.4,
+    0.755,
+    0.631
+   ],
+   "orthoScale": 0.50635,
+   "unitM": 3.5,
+   "pxPerMeter": 288.9,
+   "projectedSizePx": [
+    440.3,
+    403.0
+   ],
+   "coverage": 0.3192,
+   "kb": 164.0
+  },
+  "bottom_left/decorations/icon_combat": {
+   "id": "icon_combat",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/icon_combat.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.247,
+    0.301,
+    1.089
+   ],
+   "orthoScale": 0.50525,
+   "unitM": 3.5,
+   "pxPerMeter": 289.53,
+   "projectedSizePx": [
+    316.9,
+    440.3
+   ],
+   "coverage": 0.1394,
+   "kb": 135.9
+  },
+  "bottom_left/decorations/icon_range": {
+   "id": "icon_range",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/icon_range.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.58,
+    0.158,
+    0.963
+   ],
+   "orthoScale": 0.49679,
+   "unitM": 3.5,
+   "pxPerMeter": 294.46,
+   "projectedSizePx": [
+    361.8,
+    440.3
+   ],
+   "coverage": 0.177,
+   "kb": 147.7
+  },
+  "bottom_left/decorations/ladder": {
+   "id": "ladder",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/ladder.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.886,
+    0.178,
+    2.695
+   ],
+   "orthoScale": 0.87535,
+   "unitM": 3.5,
+   "pxPerMeter": 167.12,
+   "projectedSizePx": [
+    125.7,
+    440.3
+   ],
+   "coverage": 0.1149,
+   "kb": 132.2
+  },
+  "bottom_left/decorations/pallet": {
+   "id": "pallet",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/pallet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.05,
+    1.05,
+    0.28
+   ],
+   "orthoScale": 0.49333,
+   "unitM": 3.5,
+   "pxPerMeter": 296.52,
+   "projectedSizePx": [
+    440.3,
+    322.0
+   ],
+   "coverage": 0.2916,
+   "kb": 142.5
+  },
+  "bottom_left/decorations/resource_lumber": {
+   "id": "resource_lumber",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/resource_lumber.png",
+   "meshes": 1,
+   "worldSizeM": [
+    2.401,
+    1.157,
+    0.735
+   ],
+   "orthoScale": 0.83573,
+   "unitM": 3.5,
+   "pxPerMeter": 175.04,
+   "projectedSizePx": [
+    440.3,
+    359.3
+   ],
+   "coverage": 0.2893,
+   "kb": 153.6
+  },
+  "bottom_left/decorations/resource_stone": {
+   "id": "resource_stone",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/resource_stone.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.474,
+    1.252,
+    0.98
+   ],
+   "orthoScale": 0.64046,
+   "unitM": 3.5,
+   "pxPerMeter": 228.41,
+   "projectedSizePx": [
+    440.3,
+    437.0
+   ],
+   "coverage": 0.4234,
+   "kb": 187.9
+  },
+  "bottom_left/decorations/sack": {
+   "id": "sack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/sack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.373,
+    0.558,
+    0.226
+   ],
+   "orthoScale": 0.21877,
+   "unitM": 3.5,
+   "pxPerMeter": 668.68,
+   "projectedSizePx": [
+    440.3,
+    377.8
+   ],
+   "coverage": 0.3046,
+   "kb": 149.7
+  },
+  "bottom_left/decorations/target": {
+   "id": "target",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/target.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.838,
+    0.497,
+    1.056
+   ],
+   "orthoScale": 0.46759,
+   "unitM": 3.5,
+   "pxPerMeter": 312.85,
+   "projectedSizePx": [
+    295.3,
+    440.3
+   ],
+   "coverage": 0.1971,
+   "kb": 140.8
+  },
+  "bottom_left/decorations/tent": {
+   "id": "tent",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/tent.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.806,
+    1.806,
+    1.806
+   ],
+   "orthoScale": 0.97979,
+   "unitM": 3.5,
+   "pxPerMeter": 149.3,
+   "projectedSizePx": [
+    381.3,
+    440.3
+   ],
+   "coverage": 0.2503,
+   "kb": 144.9
+  },
+  "bottom_left/decorations/trough": {
+   "id": "trough",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/trough.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.7,
+    0.368
+   ],
+   "orthoScale": 0.32888,
+   "unitM": 3.5,
+   "pxPerMeter": 444.79,
+   "projectedSizePx": [
+    440.3,
+    387.7
+   ],
+   "coverage": 0.3163,
+   "kb": 154.8
+  },
+  "bottom_left/decorations/trough_long": {
+   "id": "trough_long",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/trough_long.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.33,
+    0.63,
+    0.368
+   ],
+   "orthoScale": 0.46044,
+   "unitM": 3.5,
+   "pxPerMeter": 317.71,
+   "projectedSizePx": [
+    440.3,
+    349.5
+   ],
+   "coverage": 0.2851,
+   "kb": 149.8
+  },
+  "bottom_left/decorations/weaponrack": {
+   "id": "weaponrack",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/weaponrack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.455,
+    0.84
+   ],
+   "orthoScale": 0.38451,
+   "unitM": 3.5,
+   "pxPerMeter": 380.44,
+   "projectedSizePx": [
+    310.7,
+    440.3
+   ],
+   "coverage": 0.2987,
+   "kb": 161.8
+  },
+  "bottom_left/decorations/wheelbarrow": {
+   "id": "wheelbarrow",
+   "set": "medieval",
+   "category": "decorations",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/decorations/wheelbarrow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.833,
+    1.77,
+    0.659
+   ],
+   "orthoScale": 0.61146,
+   "unitM": 3.5,
+   "pxPerMeter": 239.24,
+   "projectedSizePx": [
+    440.3,
+    383.0
+   ],
+   "coverage": 0.2196,
+   "kb": 147.7
+  },
+  "bottom_left/units/banner": {
+   "id": "banner",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/banner.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.585,
+    0.203,
+    1.75
+   ],
+   "orthoScale": 0.5815,
+   "unitM": 3.5,
+   "pxPerMeter": 251.56,
+   "projectedSizePx": [
+    140.1,
+    440.3
+   ],
+   "coverage": 0.1214,
+   "kb": 117.1
+  },
+  "bottom_left/units/bow": {
+   "id": "bow",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/bow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.122,
+    0.314,
+    1.201
+   ],
+   "orthoScale": 0.38486,
+   "unitM": 3.5,
+   "pxPerMeter": 380.1,
+   "projectedSizePx": [
+    117.1,
+    440.3
+   ],
+   "coverage": 0.0474,
+   "kb": 109.2
+  },
+  "bottom_left/units/cannon": {
+   "id": "cannon",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/cannon.png",
+   "meshes": 2,
+   "worldSizeM": [
+    2.345,
+    3.826,
+    1.768
+   ],
+   "orthoScale": 1.2149,
+   "unitM": 3.5,
+   "pxPerMeter": 120.41,
+   "projectedSizePx": [
+    440.3,
+    426.2
+   ],
+   "coverage": 0.2316,
+   "kb": 152.5
+  },
+  "bottom_left/units/cart": {
+   "id": "cart",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/cart.png",
+   "meshes": 3,
+   "worldSizeM": [
+    2.477,
+    4.578,
+    2.696
+   ],
+   "orthoScale": 1.54241,
+   "unitM": 3.5,
+   "pxPerMeter": 94.84,
+   "projectedSizePx": [
+    440.3,
+    419.6
+   ],
+   "coverage": 0.2884,
+   "kb": 180.1
+  },
+  "bottom_left/units/cart_merchant": {
+   "id": "cart_merchant",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/cart_merchant.png",
+   "meshes": 3,
+   "worldSizeM": [
+    2.477,
+    4.888,
+    3.72
+   ],
+   "orthoScale": 1.78941,
+   "unitM": 3.5,
+   "pxPerMeter": 81.75,
+   "projectedSizePx": [
+    397.5,
+    440.3
+   ],
+   "coverage": 0.2491,
+   "kb": 182.5
+  },
+  "bottom_left/units/catapult": {
+   "id": "catapult",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/catapult.png",
+   "meshes": 4,
+   "worldSizeM": [
+    2.477,
+    3.656,
+    1.995
+   ],
+   "orthoScale": 1.27156,
+   "unitM": 3.5,
+   "pxPerMeter": 115.04,
+   "projectedSizePx": [
+    440.3,
+    406.9
+   ],
+   "coverage": 0.2456,
+   "kb": 180.7
+  },
+  "bottom_left/units/hammer": {
+   "id": "hammer",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/hammer.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.491,
+    0.246,
+    0.754
+   ],
+   "orthoScale": 0.30434,
+   "unitM": 3.5,
+   "pxPerMeter": 480.66,
+   "projectedSizePx": [
+    250.4,
+    440.3
+   ],
+   "coverage": 0.1408,
+   "kb": 119.5
+  },
+  "bottom_left/units/helmet": {
+   "id": "helmet",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/helmet.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.772,
+    0.72,
+    0.688
+   ],
+   "orthoScale": 0.38891,
+   "unitM": 3.5,
+   "pxPerMeter": 376.15,
+   "projectedSizePx": [
+    396.9,
+    440.3
+   ],
+   "coverage": 0.1942,
+   "kb": 137.2
+  },
+  "bottom_left/units/horse_A": {
+   "id": "horse_A",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 134.4
+  },
+  "bottom_left/units/horse_B": {
+   "id": "horse_B",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 132.2
+  },
+  "bottom_left/units/horse_C": {
+   "id": "horse_C",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 130.3
+  },
+  "bottom_left/units/horse_D": {
+   "id": "horse_D",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_D.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 132.7
+  },
+  "bottom_left/units/horse_E": {
+   "id": "horse_E",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_E.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 127.7
+  },
+  "bottom_left/units/horse_F": {
+   "id": "horse_F",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_F.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 129.4
+  },
+  "bottom_left/units/horse_G": {
+   "id": "horse_G",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_G.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    2.706,
+    2.118
+   ],
+   "orthoScale": 1.05571,
+   "unitM": 3.5,
+   "pxPerMeter": 138.57,
+   "projectedSizePx": [
+    347.6,
+    440.3
+   ],
+   "coverage": 0.1785,
+   "kb": 121.6
+  },
+  "bottom_left/units/horse_saddle": {
+   "id": "horse_saddle",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/horse_saddle.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.038,
+    0.757,
+    0.77
+   ],
+   "orthoScale": 0.45237,
+   "unitM": 3.5,
+   "pxPerMeter": 323.37,
+   "projectedSizePx": [
+    410.4,
+    440.3
+   ],
+   "coverage": 0.3534,
+   "kb": 166.0
+  },
+  "bottom_left/units/projectile_arrow": {
+   "id": "projectile_arrow",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/projectile_arrow.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.047,
+    0.743,
+    0.138
+   ],
+   "orthoScale": 0.18573,
+   "unitM": 3.5,
+   "pxPerMeter": 787.64,
+   "projectedSizePx": [
+    440.3,
+    343.1
+   ],
+   "coverage": 0.0663,
+   "kb": 103.0
+  },
+  "bottom_left/units/projectile_cannonball": {
+   "id": "projectile_cannonball",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/projectile_cannonball.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.571,
+    0.543,
+    0.543
+   ],
+   "orthoScale": 0.29841,
+   "unitM": 3.5,
+   "pxPerMeter": 490.22,
+   "projectedSizePx": [
+    386.2,
+    440.3
+   ],
+   "coverage": 0.2255,
+   "kb": 123.6
+  },
+  "bottom_left/units/projectile_catapult": {
+   "id": "projectile_catapult",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/projectile_catapult.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.842,
+    0.885,
+    0.989
+   ],
+   "orthoScale": 0.50253,
+   "unitM": 3.5,
+   "pxPerMeter": 291.1,
+   "projectedSizePx": [
+    355.4,
+    440.3
+   ],
+   "coverage": 0.1522,
+   "kb": 114.4
+  },
+  "bottom_left/units/shield": {
+   "id": "shield",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/shield.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.6,
+    0.189,
+    0.759
+   ],
+   "orthoScale": 0.31291,
+   "unitM": 3.5,
+   "pxPerMeter": 467.49,
+   "projectedSizePx": [
+    260.8,
+    440.3
+   ],
+   "coverage": 0.2213,
+   "kb": 133.3
+  },
+  "bottom_left/units/ship": {
+   "id": "ship",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/ship.png",
+   "meshes": 1,
+   "worldSizeM": [
+    3.513,
+    7.906,
+    7.829
+   ],
+   "orthoScale": 3.67247,
+   "unitM": 3.5,
+   "pxPerMeter": 39.83,
+   "projectedSizePx": [
+    321.6,
+    440.3
+   ],
+   "coverage": 0.1769,
+   "kb": 156.1
+  },
+  "bottom_left/units/shovel": {
+   "id": "shovel",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/shovel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.444,
+    0.136,
+    1.41
+   ],
+   "orthoScale": 0.4612,
+   "unitM": 3.5,
+   "pxPerMeter": 317.19,
+   "projectedSizePx": [
+    130.0,
+    440.3
+   ],
+   "coverage": 0.0646,
+   "kb": 104.5
+  },
+  "bottom_left/units/spear": {
+   "id": "spear",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/spear.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.283,
+    0.179,
+    2.074
+   ],
+   "orthoScale": 0.62523,
+   "unitM": 3.5,
+   "pxPerMeter": 233.97,
+   "projectedSizePx": [
+    76.5,
+    440.3
+   ],
+   "coverage": 0.0353,
+   "kb": 103.4
+  },
+  "bottom_left/units/sword": {
+   "id": "sword",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/sword.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.294,
+    0.124,
+    1.088
+   ],
+   "orthoScale": 0.35196,
+   "unitM": 3.5,
+   "pxPerMeter": 415.63,
+   "projectedSizePx": [
+    122.8,
+    440.3
+   ],
+   "coverage": 0.0804,
+   "kb": 108.6
+  },
+  "bottom_left/units/unit": {
+   "id": "unit",
+   "set": "medieval",
+   "category": "units",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/medieval/units/unit.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.7,
+    0.7,
+    1.193
+   ],
+   "orthoScale": 0.51338,
+   "unitM": 3.5,
+   "pxPerMeter": 284.95,
+   "projectedSizePx": [
+    282.1,
+    440.3
+   ],
+   "coverage": 0.1889,
+   "kb": 128.1
+  },
+  "bottom_right/resourcebits/Copper_Bar": {
+   "id": "Copper_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 148.2
+  },
+  "bottom_right/resourcebits/Copper_Bars": {
+   "id": "Copper_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3077,
+   "kb": 185.3
+  },
+  "bottom_right/resourcebits/Copper_Bars_Stack_Large": {
+   "id": "Copper_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4373,
+   "kb": 232.8
+  },
+  "bottom_right/resourcebits/Copper_Bars_Stack_Medium": {
+   "id": "Copper_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 194.5
+  },
+  "bottom_right/resourcebits/Copper_Bars_Stack_Small": {
+   "id": "Copper_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 203.2
+  },
+  "bottom_right/resourcebits/Copper_Nugget_Large": {
+   "id": "Copper_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.2087,
+   "kb": 131.7
+  },
+  "bottom_right/resourcebits/Copper_Nugget_Medium": {
+   "id": "Copper_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.2083,
+   "kb": 128.7
+  },
+  "bottom_right/resourcebits/Copper_Nugget_Small": {
+   "id": "Copper_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2142,
+   "kb": 130.5
+  },
+  "bottom_right/resourcebits/Copper_Nuggets": {
+   "id": "Copper_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Copper_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1725,
+   "kb": 146.1
+  },
+  "bottom_right/resourcebits/Fuel_A_Barrel": {
+   "id": "Fuel_A_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_A_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 170.6
+  },
+  "bottom_right/resourcebits/Fuel_A_Barrel_Dirty": {
+   "id": "Fuel_A_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_A_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 173.0
+  },
+  "bottom_right/resourcebits/Fuel_A_Barrels": {
+   "id": "Fuel_A_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_A_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.412,
+   "kb": 232.7
+  },
+  "bottom_right/resourcebits/Fuel_A_Jerrycan": {
+   "id": "Fuel_A_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_A_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2679,
+   "kb": 169.4
+  },
+  "bottom_right/resourcebits/Fuel_B_Barrel": {
+   "id": "Fuel_B_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_B_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 169.5
+  },
+  "bottom_right/resourcebits/Fuel_B_Barrel_Dirty": {
+   "id": "Fuel_B_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_B_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 172.5
+  },
+  "bottom_right/resourcebits/Fuel_B_Barrels": {
+   "id": "Fuel_B_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_B_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.412,
+   "kb": 231.9
+  },
+  "bottom_right/resourcebits/Fuel_B_Jerrycan": {
+   "id": "Fuel_B_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_B_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2679,
+   "kb": 169.5
+  },
+  "bottom_right/resourcebits/Fuel_C_Barrel": {
+   "id": "Fuel_C_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_C_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 170.2
+  },
+  "bottom_right/resourcebits/Fuel_C_Barrel_Dirty": {
+   "id": "Fuel_C_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_C_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 175.2
+  },
+  "bottom_right/resourcebits/Fuel_C_Barrels": {
+   "id": "Fuel_C_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_C_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.412,
+   "kb": 233.8
+  },
+  "bottom_right/resourcebits/Fuel_C_Jerrycan": {
+   "id": "Fuel_C_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Fuel_C_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2679,
+   "kb": 169.6
+  },
+  "bottom_right/resourcebits/Gold_Bar": {
+   "id": "Gold_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 148.0
+  },
+  "bottom_right/resourcebits/Gold_Bars": {
+   "id": "Gold_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3077,
+   "kb": 183.4
+  },
+  "bottom_right/resourcebits/Gold_Bars_Stack_Large": {
+   "id": "Gold_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4373,
+   "kb": 231.9
+  },
+  "bottom_right/resourcebits/Gold_Bars_Stack_Medium": {
+   "id": "Gold_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 193.5
+  },
+  "bottom_right/resourcebits/Gold_Bars_Stack_Small": {
+   "id": "Gold_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 202.2
+  },
+  "bottom_right/resourcebits/Gold_Nugget_Large": {
+   "id": "Gold_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.2087,
+   "kb": 131.7
+  },
+  "bottom_right/resourcebits/Gold_Nugget_Medium": {
+   "id": "Gold_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.2083,
+   "kb": 129.0
+  },
+  "bottom_right/resourcebits/Gold_Nugget_Small": {
+   "id": "Gold_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2142,
+   "kb": 130.8
+  },
+  "bottom_right/resourcebits/Gold_Nuggets": {
+   "id": "Gold_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Gold_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1725,
+   "kb": 146.3
+  },
+  "bottom_right/resourcebits/Iron_Bar": {
+   "id": "Iron_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 146.4
+  },
+  "bottom_right/resourcebits/Iron_Bars": {
+   "id": "Iron_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3077,
+   "kb": 179.9
+  },
+  "bottom_right/resourcebits/Iron_Bars_Stack_Large": {
+   "id": "Iron_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4373,
+   "kb": 225.6
+  },
+  "bottom_right/resourcebits/Iron_Bars_Stack_Medium": {
+   "id": "Iron_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 190.4
+  },
+  "bottom_right/resourcebits/Iron_Bars_Stack_Small": {
+   "id": "Iron_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 199.3
+  },
+  "bottom_right/resourcebits/Iron_Nugget_Large": {
+   "id": "Iron_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.2087,
+   "kb": 128.8
+  },
+  "bottom_right/resourcebits/Iron_Nugget_Medium": {
+   "id": "Iron_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.2083,
+   "kb": 127.1
+  },
+  "bottom_right/resourcebits/Iron_Nugget_Small": {
+   "id": "Iron_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2142,
+   "kb": 129.2
+  },
+  "bottom_right/resourcebits/Iron_Nuggets": {
+   "id": "Iron_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Iron_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1725,
+   "kb": 140.6
+  },
+  "bottom_right/resourcebits/Pallet_Wood": {
+   "id": "Pallet_Wood",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Pallet_Wood.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.552,
+    1.501,
+    0.3
+   ],
+   "orthoScale": 2.51038,
+   "unitM": 1.0,
+   "pxPerMeter": 203.95,
+   "projectedSizePx": [
+    440.3,
+    304.2
+   ],
+   "coverage": 0.2565,
+   "kb": 140.6
+  },
+  "bottom_right/resourcebits/Pallet_Wood_Covered_A": {
+   "id": "Pallet_Wood_Covered_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Pallet_Wood_Covered_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.724,
+    1.724,
+    0.3
+   ],
+   "orthoScale": 2.83539,
+   "unitM": 1.0,
+   "pxPerMeter": 180.58,
+   "projectedSizePx": [
+    440.3,
+    298.4
+   ],
+   "coverage": 0.2135,
+   "kb": 126.2
+  },
+  "bottom_right/resourcebits/Pallet_Wood_Covered_B": {
+   "id": "Pallet_Wood_Covered_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Pallet_Wood_Covered_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.724,
+    1.724,
+    0.3
+   ],
+   "orthoScale": 2.83539,
+   "unitM": 1.0,
+   "pxPerMeter": 180.58,
+   "projectedSizePx": [
+    440.3,
+    298.4
+   ],
+   "coverage": 0.2135,
+   "kb": 124.8
+  },
+  "bottom_right/resourcebits/Parts_Cog": {
+   "id": "Parts_Cog",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Parts_Cog.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.373,
+    0.15,
+    0.4
+   ],
+   "orthoScale": 0.62807,
+   "unitM": 1.0,
+   "pxPerMeter": 815.2,
+   "projectedSizePx": [
+    301.5,
+    440.3
+   ],
+   "coverage": 0.2482,
+   "kb": 140.4
+  },
+  "bottom_right/resourcebits/Parts_Pile_Large": {
+   "id": "Parts_Pile_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Parts_Pile_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.741,
+    1.565,
+    0.725
+   ],
+   "orthoScale": 2.71864,
+   "unitM": 1.0,
+   "pxPerMeter": 188.33,
+   "projectedSizePx": [
+    440.3,
+    365.7
+   ],
+   "coverage": 0.2245,
+   "kb": 160.5
+  },
+  "bottom_right/resourcebits/Parts_Pile_Medium": {
+   "id": "Parts_Pile_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Parts_Pile_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.015,
+    0.873,
+    1.472
+   ],
+   "orthoScale": 2.29401,
+   "unitM": 1.0,
+   "pxPerMeter": 223.19,
+   "projectedSizePx": [
+    297.9,
+    440.3
+   ],
+   "coverage": 0.2019,
+   "kb": 157.4
+  },
+  "bottom_right/resourcebits/Parts_Pile_Small": {
+   "id": "Parts_Pile_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Parts_Pile_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.155,
+    0.991,
+    0.334
+   ],
+   "orthoScale": 1.76456,
+   "unitM": 1.0,
+   "pxPerMeter": 290.16,
+   "projectedSizePx": [
+    440.3,
+    333.4
+   ],
+   "coverage": 0.1692,
+   "kb": 133.2
+  },
+  "bottom_right/resourcebits/Silver_Bar": {
+   "id": "Silver_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 150.7
+  },
+  "bottom_right/resourcebits/Silver_Bars": {
+   "id": "Silver_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3077,
+   "kb": 186.5
+  },
+  "bottom_right/resourcebits/Silver_Bars_Stack_Large": {
+   "id": "Silver_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4373,
+   "kb": 236.4
+  },
+  "bottom_right/resourcebits/Silver_Bars_Stack_Medium": {
+   "id": "Silver_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 198.1
+  },
+  "bottom_right/resourcebits/Silver_Bars_Stack_Small": {
+   "id": "Silver_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 207.1
+  },
+  "bottom_right/resourcebits/Silver_Nugget_Large": {
+   "id": "Silver_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.2087,
+   "kb": 132.5
+  },
+  "bottom_right/resourcebits/Silver_Nugget_Medium": {
+   "id": "Silver_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.2083,
+   "kb": 128.4
+  },
+  "bottom_right/resourcebits/Silver_Nugget_Small": {
+   "id": "Silver_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2142,
+   "kb": 130.4
+  },
+  "bottom_right/resourcebits/Silver_Nuggets": {
+   "id": "Silver_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Silver_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1725,
+   "kb": 145.6
+  },
+  "bottom_right/resourcebits/Stone_Brick": {
+   "id": "Stone_Brick",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Brick.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.45,
+    0.75,
+    0.3
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.4091,
+   "kb": 157.5
+  },
+  "bottom_right/resourcebits/Stone_Bricks_Stack_Large": {
+   "id": "Stone_Bricks_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Bricks_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.506,
+    1.625,
+    1.233
+   ],
+   "orthoScale": 2.65726,
+   "unitM": 1.0,
+   "pxPerMeter": 192.68,
+   "projectedSizePx": [
+    426.6,
+    440.3
+   ],
+   "coverage": 0.4733,
+   "kb": 211.4
+  },
+  "bottom_right/resourcebits/Stone_Bricks_Stack_Medium": {
+   "id": "Stone_Bricks_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Bricks_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.506,
+    1.588,
+    0.633
+   ],
+   "orthoScale": 2.544,
+   "unitM": 1.0,
+   "pxPerMeter": 201.26,
+   "projectedSizePx": [
+    440.3,
+    358.3
+   ],
+   "coverage": 0.3609,
+   "kb": 178.5
+  },
+  "bottom_right/resourcebits/Stone_Bricks_Stack_Small": {
+   "id": "Stone_Bricks_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Bricks_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.036,
+    0.822,
+    0.633
+   ],
+   "orthoScale": 1.52795,
+   "unitM": 1.0,
+   "pxPerMeter": 335.09,
+   "projectedSizePx": [
+    440.3,
+    427.5
+   ],
+   "coverage": 0.4272,
+   "kb": 183.5
+  },
+  "bottom_right/resourcebits/Stone_Chunks_Large": {
+   "id": "Stone_Chunks_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Chunks_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.501,
+    1.346,
+    1.077
+   ],
+   "orthoScale": 2.37425,
+   "unitM": 1.0,
+   "pxPerMeter": 215.65,
+   "projectedSizePx": [
+    434.1,
+    440.3
+   ],
+   "coverage": 0.232,
+   "kb": 164.1
+  },
+  "bottom_right/resourcebits/Stone_Chunks_Small": {
+   "id": "Stone_Chunks_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Stone_Chunks_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.122,
+    0.786,
+    0.579
+   ],
+   "orthoScale": 1.56874,
+   "unitM": 1.0,
+   "pxPerMeter": 326.38,
+   "projectedSizePx": [
+    440.3,
+    408.6
+   ],
+   "coverage": 0.1976,
+   "kb": 142.0
+  },
+  "bottom_right/resourcebits/Textiles_A": {
+   "id": "Textiles_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.95,
+    0.441
+   ],
+   "orthoScale": 1.39777,
+   "unitM": 1.0,
+   "pxPerMeter": 366.3,
+   "projectedSizePx": [
+    440.3,
+    386.2
+   ],
+   "coverage": 0.3642,
+   "kb": 176.9
+  },
+  "bottom_right/resourcebits/Textiles_B": {
+   "id": "Textiles_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.82,
+    0.8,
+    0.932
+   ],
+   "orthoScale": 1.65345,
+   "unitM": 1.0,
+   "pxPerMeter": 309.66,
+   "projectedSizePx": [
+    354.6,
+    440.3
+   ],
+   "coverage": 0.3505,
+   "kb": 194.9
+  },
+  "bottom_right/resourcebits/Textiles_C": {
+   "id": "Textiles_C",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.614,
+    1.55,
+    0.523
+   ],
+   "orthoScale": 1.77945,
+   "unitM": 1.0,
+   "pxPerMeter": 287.73,
+   "projectedSizePx": [
+    440.3,
+    377.0
+   ],
+   "coverage": 0.2743,
+   "kb": 166.5
+  },
+  "bottom_right/resourcebits/Textiles_Stack_Large": {
+   "id": "Textiles_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.639,
+    1.665,
+    0.956
+   ],
+   "orthoScale": 2.71645,
+   "unitM": 1.0,
+   "pxPerMeter": 188.48,
+   "projectedSizePx": [
+    440.3,
+    401.3
+   ],
+   "coverage": 0.3435,
+   "kb": 195.8
+  },
+  "bottom_right/resourcebits/Textiles_Stack_Large_Colored": {
+   "id": "Textiles_Stack_Large_Colored",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_Stack_Large_Colored.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.639,
+    1.665,
+    0.956
+   ],
+   "orthoScale": 2.71645,
+   "unitM": 1.0,
+   "pxPerMeter": 188.48,
+   "projectedSizePx": [
+    440.3,
+    401.3
+   ],
+   "coverage": 0.3435,
+   "kb": 206.0
+  },
+  "bottom_right/resourcebits/Textiles_Stack_Small": {
+   "id": "Textiles_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Textiles_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.657,
+    1.585,
+    0.932
+   ],
+   "orthoScale": 2.66606,
+   "unitM": 1.0,
+   "pxPerMeter": 192.04,
+   "projectedSizePx": [
+    440.3,
+    400.3
+   ],
+   "coverage": 0.2183,
+   "kb": 156.2
+  },
+  "bottom_right/resourcebits/Wood_Log_A": {
+   "id": "Wood_Log_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Log_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.721,
+    1.35,
+    0.733
+   ],
+   "orthoScale": 1.70312,
+   "unitM": 1.0,
+   "pxPerMeter": 300.63,
+   "projectedSizePx": [
+    440.3,
+    434.2
+   ],
+   "coverage": 0.2431,
+   "kb": 149.7
+  },
+  "bottom_right/resourcebits/Wood_Log_B": {
+   "id": "Wood_Log_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Log_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.549,
+    1.35,
+    0.551
+   ],
+   "orthoScale": 1.56143,
+   "unitM": 1.0,
+   "pxPerMeter": 327.91,
+   "projectedSizePx": [
+    440.3,
+    401.6
+   ],
+   "coverage": 0.278,
+   "kb": 151.8
+  },
+  "bottom_right/resourcebits/Wood_Log_Stack": {
+   "id": "Wood_Log_Stack",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Log_Stack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.677,
+    1.5,
+    1.498
+   ],
+   "orthoScale": 2.93092,
+   "unitM": 1.0,
+   "pxPerMeter": 174.69,
+   "projectedSizePx": [
+    392.5,
+    440.3
+   ],
+   "coverage": 0.3006,
+   "kb": 184.9
+  },
+  "bottom_right/resourcebits/Wood_Plank_A": {
+   "id": "Wood_Plank_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Plank_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.2003,
+   "kb": 117.1
+  },
+  "bottom_right/resourcebits/Wood_Plank_B": {
+   "id": "Wood_Plank_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Plank_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.1997,
+   "kb": 118.0
+  },
+  "bottom_right/resourcebits/Wood_Plank_C": {
+   "id": "Wood_Plank_C",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Plank_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.2005,
+   "kb": 123.9
+  },
+  "bottom_right/resourcebits/Wood_Planks_Stack_Large": {
+   "id": "Wood_Planks_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Planks_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.666,
+    1.615,
+    1.223
+   ],
+   "orthoScale": 2.719,
+   "unitM": 1.0,
+   "pxPerMeter": 188.3,
+   "projectedSizePx": [
+    436.9,
+    440.3
+   ],
+   "coverage": 0.481,
+   "kb": 227.4
+  },
+  "bottom_right/resourcebits/Wood_Planks_Stack_Medium": {
+   "id": "Wood_Planks_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Planks_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.666,
+    1.615,
+    0.623
+   ],
+   "orthoScale": 2.69801,
+   "unitM": 1.0,
+   "pxPerMeter": 189.77,
+   "projectedSizePx": [
+    440.3,
+    350.8
+   ],
+   "coverage": 0.3417,
+   "kb": 177.8
+  },
+  "bottom_right/resourcebits/Wood_Planks_Stack_Small": {
+   "id": "Wood_Planks_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_right",
+   "yawDeg": 315.0,
+   "file": "bottom_right/resourcebits/Wood_Planks_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.846,
+    1.6,
+    0.323
+   ],
+   "orthoScale": 2.01125,
+   "unitM": 1.0,
+   "pxPerMeter": 254.57,
+   "projectedSizePx": [
+    440.3,
+    321.4
+   ],
+   "coverage": 0.2692,
+   "kb": 149.3
+  },
+  "bottom_left/resourcebits/Copper_Bar": {
+   "id": "Copper_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 153.8
+  },
+  "bottom_left/resourcebits/Copper_Bars": {
+   "id": "Copper_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3039,
+   "kb": 179.3
+  },
+  "bottom_left/resourcebits/Copper_Bars_Stack_Large": {
+   "id": "Copper_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4376,
+   "kb": 231.6
+  },
+  "bottom_left/resourcebits/Copper_Bars_Stack_Medium": {
+   "id": "Copper_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 190.7
+  },
+  "bottom_left/resourcebits/Copper_Bars_Stack_Small": {
+   "id": "Copper_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 205.2
+  },
+  "bottom_left/resourcebits/Copper_Nugget_Large": {
+   "id": "Copper_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.22,
+   "kb": 133.7
+  },
+  "bottom_left/resourcebits/Copper_Nugget_Medium": {
+   "id": "Copper_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.1966,
+   "kb": 125.2
+  },
+  "bottom_left/resourcebits/Copper_Nugget_Small": {
+   "id": "Copper_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2073,
+   "kb": 126.8
+  },
+  "bottom_left/resourcebits/Copper_Nuggets": {
+   "id": "Copper_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Copper_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1663,
+   "kb": 138.7
+  },
+  "bottom_left/resourcebits/Fuel_A_Barrel": {
+   "id": "Fuel_A_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_A_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 170.3
+  },
+  "bottom_left/resourcebits/Fuel_A_Barrel_Dirty": {
+   "id": "Fuel_A_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_A_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 173.5
+  },
+  "bottom_left/resourcebits/Fuel_A_Barrels": {
+   "id": "Fuel_A_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_A_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.4123,
+   "kb": 233.0
+  },
+  "bottom_left/resourcebits/Fuel_A_Jerrycan": {
+   "id": "Fuel_A_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_A_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2707,
+   "kb": 171.9
+  },
+  "bottom_left/resourcebits/Fuel_B_Barrel": {
+   "id": "Fuel_B_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_B_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 168.8
+  },
+  "bottom_left/resourcebits/Fuel_B_Barrel_Dirty": {
+   "id": "Fuel_B_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_B_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 172.5
+  },
+  "bottom_left/resourcebits/Fuel_B_Barrels": {
+   "id": "Fuel_B_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_B_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.4123,
+   "kb": 232.1
+  },
+  "bottom_left/resourcebits/Fuel_B_Jerrycan": {
+   "id": "Fuel_B_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_B_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2707,
+   "kb": 170.6
+  },
+  "bottom_left/resourcebits/Fuel_C_Barrel": {
+   "id": "Fuel_C_Barrel",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_C_Barrel.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 169.6
+  },
+  "bottom_left/resourcebits/Fuel_C_Barrel_Dirty": {
+   "id": "Fuel_C_Barrel_Dirty",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_C_Barrel_Dirty.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.75,
+    1.008
+   ],
+   "orthoScale": 1.66859,
+   "unitM": 1.0,
+   "pxPerMeter": 306.85,
+   "projectedSizePx": [
+    325.5,
+    440.3
+   ],
+   "coverage": 0.3001,
+   "kb": 175.3
+  },
+  "bottom_left/resourcebits/Fuel_C_Barrels": {
+   "id": "Fuel_C_Barrels",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_C_Barrels.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.514,
+    1.514,
+    1.008
+   ],
+   "orthoScale": 2.49045,
+   "unitM": 1.0,
+   "pxPerMeter": 205.59,
+   "projectedSizePx": [
+    440.3,
+    423.3
+   ],
+   "coverage": 0.4123,
+   "kb": 233.7
+  },
+  "bottom_left/resourcebits/Fuel_C_Jerrycan": {
+   "id": "Fuel_C_Jerrycan",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Fuel_C_Jerrycan.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.717,
+    0.78
+   ],
+   "orthoScale": 1.27055,
+   "unitM": 1.0,
+   "pxPerMeter": 402.97,
+   "projectedSizePx": [
+    318.1,
+    440.3
+   ],
+   "coverage": 0.2707,
+   "kb": 171.5
+  },
+  "bottom_left/resourcebits/Gold_Bar": {
+   "id": "Gold_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 151.5
+  },
+  "bottom_left/resourcebits/Gold_Bars": {
+   "id": "Gold_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3039,
+   "kb": 179.7
+  },
+  "bottom_left/resourcebits/Gold_Bars_Stack_Large": {
+   "id": "Gold_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4376,
+   "kb": 231.6
+  },
+  "bottom_left/resourcebits/Gold_Bars_Stack_Medium": {
+   "id": "Gold_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 192.2
+  },
+  "bottom_left/resourcebits/Gold_Bars_Stack_Small": {
+   "id": "Gold_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 203.3
+  },
+  "bottom_left/resourcebits/Gold_Nugget_Large": {
+   "id": "Gold_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.22,
+   "kb": 134.5
+  },
+  "bottom_left/resourcebits/Gold_Nugget_Medium": {
+   "id": "Gold_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.1966,
+   "kb": 125.5
+  },
+  "bottom_left/resourcebits/Gold_Nugget_Small": {
+   "id": "Gold_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2073,
+   "kb": 126.5
+  },
+  "bottom_left/resourcebits/Gold_Nuggets": {
+   "id": "Gold_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Gold_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1663,
+   "kb": 138.8
+  },
+  "bottom_left/resourcebits/Iron_Bar": {
+   "id": "Iron_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 151.9
+  },
+  "bottom_left/resourcebits/Iron_Bars": {
+   "id": "Iron_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3039,
+   "kb": 177.0
+  },
+  "bottom_left/resourcebits/Iron_Bars_Stack_Large": {
+   "id": "Iron_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4376,
+   "kb": 224.7
+  },
+  "bottom_left/resourcebits/Iron_Bars_Stack_Medium": {
+   "id": "Iron_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 187.0
+  },
+  "bottom_left/resourcebits/Iron_Bars_Stack_Small": {
+   "id": "Iron_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 201.8
+  },
+  "bottom_left/resourcebits/Iron_Nugget_Large": {
+   "id": "Iron_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.22,
+   "kb": 131.5
+  },
+  "bottom_left/resourcebits/Iron_Nugget_Medium": {
+   "id": "Iron_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.1966,
+   "kb": 124.0
+  },
+  "bottom_left/resourcebits/Iron_Nugget_Small": {
+   "id": "Iron_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2073,
+   "kb": 124.3
+  },
+  "bottom_left/resourcebits/Iron_Nuggets": {
+   "id": "Iron_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Iron_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1663,
+   "kb": 134.7
+  },
+  "bottom_left/resourcebits/Pallet_Wood": {
+   "id": "Pallet_Wood",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Pallet_Wood.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.552,
+    1.501,
+    0.3
+   ],
+   "orthoScale": 2.51038,
+   "unitM": 1.0,
+   "pxPerMeter": 203.95,
+   "projectedSizePx": [
+    440.3,
+    304.2
+   ],
+   "coverage": 0.2554,
+   "kb": 139.4
+  },
+  "bottom_left/resourcebits/Pallet_Wood_Covered_A": {
+   "id": "Pallet_Wood_Covered_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Pallet_Wood_Covered_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.724,
+    1.724,
+    0.3
+   ],
+   "orthoScale": 2.83539,
+   "unitM": 1.0,
+   "pxPerMeter": 180.58,
+   "projectedSizePx": [
+    440.3,
+    298.4
+   ],
+   "coverage": 0.2135,
+   "kb": 125.9
+  },
+  "bottom_left/resourcebits/Pallet_Wood_Covered_B": {
+   "id": "Pallet_Wood_Covered_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Pallet_Wood_Covered_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.724,
+    1.724,
+    0.3
+   ],
+   "orthoScale": 2.83539,
+   "unitM": 1.0,
+   "pxPerMeter": 180.58,
+   "projectedSizePx": [
+    440.3,
+    298.4
+   ],
+   "coverage": 0.2135,
+   "kb": 124.7
+  },
+  "bottom_left/resourcebits/Parts_Cog": {
+   "id": "Parts_Cog",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Parts_Cog.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.373,
+    0.15,
+    0.4
+   ],
+   "orthoScale": 0.62807,
+   "unitM": 1.0,
+   "pxPerMeter": 815.2,
+   "projectedSizePx": [
+    301.5,
+    440.3
+   ],
+   "coverage": 0.2482,
+   "kb": 140.8
+  },
+  "bottom_left/resourcebits/Parts_Pile_Large": {
+   "id": "Parts_Pile_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Parts_Pile_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.741,
+    1.565,
+    0.725
+   ],
+   "orthoScale": 2.71864,
+   "unitM": 1.0,
+   "pxPerMeter": 188.33,
+   "projectedSizePx": [
+    440.3,
+    365.7
+   ],
+   "coverage": 0.2287,
+   "kb": 159.9
+  },
+  "bottom_left/resourcebits/Parts_Pile_Medium": {
+   "id": "Parts_Pile_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Parts_Pile_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.015,
+    0.873,
+    1.472
+   ],
+   "orthoScale": 2.29401,
+   "unitM": 1.0,
+   "pxPerMeter": 223.19,
+   "projectedSizePx": [
+    297.9,
+    440.3
+   ],
+   "coverage": 0.2125,
+   "kb": 154.8
+  },
+  "bottom_left/resourcebits/Parts_Pile_Small": {
+   "id": "Parts_Pile_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Parts_Pile_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.155,
+    0.991,
+    0.334
+   ],
+   "orthoScale": 1.76456,
+   "unitM": 1.0,
+   "pxPerMeter": 290.16,
+   "projectedSizePx": [
+    440.3,
+    333.4
+   ],
+   "coverage": 0.1767,
+   "kb": 130.8
+  },
+  "bottom_left/resourcebits/Silver_Bar": {
+   "id": "Silver_Bar",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Bar.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    0.8,
+    0.25
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    360.1
+   ],
+   "coverage": 0.2884,
+   "kb": 154.0
+  },
+  "bottom_left/resourcebits/Silver_Bars": {
+   "id": "Silver_Bars",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Bars.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.269,
+    0.911,
+    0.79
+   ],
+   "orthoScale": 1.7917,
+   "unitM": 1.0,
+   "pxPerMeter": 285.76,
+   "projectedSizePx": [
+    440.3,
+    438.5
+   ],
+   "coverage": 0.3039,
+   "kb": 184.1
+  },
+  "bottom_left/resourcebits/Silver_Bars_Stack_Large": {
+   "id": "Silver_Bars_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Bars_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.658,
+    1.68,
+    1.5
+   ],
+   "orthoScale": 3.00839,
+   "unitM": 1.0,
+   "pxPerMeter": 170.19,
+   "projectedSizePx": [
+    401.6,
+    440.3
+   ],
+   "coverage": 0.4376,
+   "kb": 238.2
+  },
+  "bottom_left/resourcebits/Silver_Bars_Stack_Medium": {
+   "id": "Silver_Bars_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Bars_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    1.5
+   ],
+   "orthoScale": 2.18365,
+   "unitM": 1.0,
+   "pxPerMeter": 234.47,
+   "projectedSizePx": [
+    265.3,
+    440.3
+   ],
+   "coverage": 0.3275,
+   "kb": 196.3
+  },
+  "bottom_left/resourcebits/Silver_Bars_Stack_Small": {
+   "id": "Silver_Bars_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Bars_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.8,
+    0.8,
+    0.75
+   ],
+   "orthoScale": 1.47159,
+   "unitM": 1.0,
+   "pxPerMeter": 347.92,
+   "projectedSizePx": [
+    393.6,
+    440.3
+   ],
+   "coverage": 0.4268,
+   "kb": 209.2
+  },
+  "bottom_left/resourcebits/Silver_Nugget_Large": {
+   "id": "Silver_Nugget_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Nugget_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.427,
+    0.395,
+    0.466
+   ],
+   "orthoScale": 0.83214,
+   "unitM": 1.0,
+   "pxPerMeter": 615.28,
+   "projectedSizePx": [
+    357.6,
+    440.3
+   ],
+   "coverage": 0.22,
+   "kb": 134.7
+  },
+  "bottom_left/resourcebits/Silver_Nugget_Medium": {
+   "id": "Silver_Nugget_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Nugget_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.259,
+    0.282,
+    0.278
+   ],
+   "orthoScale": 0.52076,
+   "unitM": 1.0,
+   "pxPerMeter": 983.18,
+   "projectedSizePx": [
+    376.0,
+    440.3
+   ],
+   "coverage": 0.1966,
+   "kb": 126.2
+  },
+  "bottom_left/resourcebits/Silver_Nugget_Small": {
+   "id": "Silver_Nugget_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Nugget_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.141,
+    0.146,
+    0.12
+   ],
+   "orthoScale": 0.25064,
+   "unitM": 1.0,
+   "pxPerMeter": 2042.8,
+   "projectedSizePx": [
+    414.9,
+    440.3
+   ],
+   "coverage": 0.2073,
+   "kb": 125.6
+  },
+  "bottom_left/resourcebits/Silver_Nuggets": {
+   "id": "Silver_Nuggets",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Silver_Nuggets.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.929,
+    0.85,
+    0.475
+   ],
+   "orthoScale": 1.46266,
+   "unitM": 1.0,
+   "pxPerMeter": 350.05,
+   "projectedSizePx": [
+    440.3,
+    390.0
+   ],
+   "coverage": 0.1663,
+   "kb": 138.7
+  },
+  "bottom_left/resourcebits/Stone_Brick": {
+   "id": "Stone_Brick",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Brick.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.45,
+    0.75,
+    0.3
+   ],
+   "orthoScale": 0.98666,
+   "unitM": 1.0,
+   "pxPerMeter": 518.92,
+   "projectedSizePx": [
+    440.3,
+    381.3
+   ],
+   "coverage": 0.4091,
+   "kb": 160.0
+  },
+  "bottom_left/resourcebits/Stone_Bricks_Stack_Large": {
+   "id": "Stone_Bricks_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Bricks_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.506,
+    1.625,
+    1.233
+   ],
+   "orthoScale": 2.65726,
+   "unitM": 1.0,
+   "pxPerMeter": 192.68,
+   "projectedSizePx": [
+    426.6,
+    440.3
+   ],
+   "coverage": 0.4711,
+   "kb": 211.5
+  },
+  "bottom_left/resourcebits/Stone_Bricks_Stack_Medium": {
+   "id": "Stone_Bricks_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Bricks_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.506,
+    1.588,
+    0.633
+   ],
+   "orthoScale": 2.544,
+   "unitM": 1.0,
+   "pxPerMeter": 201.26,
+   "projectedSizePx": [
+    440.3,
+    358.3
+   ],
+   "coverage": 0.3603,
+   "kb": 178.8
+  },
+  "bottom_left/resourcebits/Stone_Bricks_Stack_Small": {
+   "id": "Stone_Bricks_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Bricks_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.036,
+    0.822,
+    0.633
+   ],
+   "orthoScale": 1.52795,
+   "unitM": 1.0,
+   "pxPerMeter": 335.09,
+   "projectedSizePx": [
+    440.3,
+    427.5
+   ],
+   "coverage": 0.4245,
+   "kb": 185.1
+  },
+  "bottom_left/resourcebits/Stone_Chunks_Large": {
+   "id": "Stone_Chunks_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Chunks_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.501,
+    1.346,
+    1.077
+   ],
+   "orthoScale": 2.37425,
+   "unitM": 1.0,
+   "pxPerMeter": 215.65,
+   "projectedSizePx": [
+    434.1,
+    440.3
+   ],
+   "coverage": 0.2312,
+   "kb": 158.1
+  },
+  "bottom_left/resourcebits/Stone_Chunks_Small": {
+   "id": "Stone_Chunks_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Stone_Chunks_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.122,
+    0.786,
+    0.579
+   ],
+   "orthoScale": 1.56874,
+   "unitM": 1.0,
+   "pxPerMeter": 326.38,
+   "projectedSizePx": [
+    440.3,
+    408.6
+   ],
+   "coverage": 0.1824,
+   "kb": 135.3
+  },
+  "bottom_left/resourcebits/Textiles_A": {
+   "id": "Textiles_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.75,
+    0.95,
+    0.441
+   ],
+   "orthoScale": 1.39777,
+   "unitM": 1.0,
+   "pxPerMeter": 366.3,
+   "projectedSizePx": [
+    440.3,
+    386.2
+   ],
+   "coverage": 0.3642,
+   "kb": 180.5
+  },
+  "bottom_left/resourcebits/Textiles_B": {
+   "id": "Textiles_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.82,
+    0.8,
+    0.932
+   ],
+   "orthoScale": 1.65345,
+   "unitM": 1.0,
+   "pxPerMeter": 309.66,
+   "projectedSizePx": [
+    354.6,
+    440.3
+   ],
+   "coverage": 0.35,
+   "kb": 188.9
+  },
+  "bottom_left/resourcebits/Textiles_C": {
+   "id": "Textiles_C",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.614,
+    1.55,
+    0.523
+   ],
+   "orthoScale": 1.77945,
+   "unitM": 1.0,
+   "pxPerMeter": 287.73,
+   "projectedSizePx": [
+    440.3,
+    377.0
+   ],
+   "coverage": 0.2745,
+   "kb": 170.6
+  },
+  "bottom_left/resourcebits/Textiles_Stack_Large": {
+   "id": "Textiles_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.639,
+    1.665,
+    0.956
+   ],
+   "orthoScale": 2.71645,
+   "unitM": 1.0,
+   "pxPerMeter": 188.48,
+   "projectedSizePx": [
+    440.3,
+    401.3
+   ],
+   "coverage": 0.3689,
+   "kb": 204.8
+  },
+  "bottom_left/resourcebits/Textiles_Stack_Large_Colored": {
+   "id": "Textiles_Stack_Large_Colored",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_Stack_Large_Colored.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.639,
+    1.665,
+    0.956
+   ],
+   "orthoScale": 2.71645,
+   "unitM": 1.0,
+   "pxPerMeter": 188.48,
+   "projectedSizePx": [
+    440.3,
+    401.3
+   ],
+   "coverage": 0.3689,
+   "kb": 218.5
+  },
+  "bottom_left/resourcebits/Textiles_Stack_Small": {
+   "id": "Textiles_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Textiles_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.657,
+    1.585,
+    0.932
+   ],
+   "orthoScale": 2.66606,
+   "unitM": 1.0,
+   "pxPerMeter": 192.04,
+   "projectedSizePx": [
+    440.3,
+    400.3
+   ],
+   "coverage": 0.1864,
+   "kb": 144.1
+  },
+  "bottom_left/resourcebits/Wood_Log_A": {
+   "id": "Wood_Log_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Log_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.721,
+    1.35,
+    0.733
+   ],
+   "orthoScale": 1.70312,
+   "unitM": 1.0,
+   "pxPerMeter": 300.63,
+   "projectedSizePx": [
+    440.3,
+    434.2
+   ],
+   "coverage": 0.2421,
+   "kb": 153.7
+  },
+  "bottom_left/resourcebits/Wood_Log_B": {
+   "id": "Wood_Log_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Log_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.549,
+    1.35,
+    0.551
+   ],
+   "orthoScale": 1.56143,
+   "unitM": 1.0,
+   "pxPerMeter": 327.91,
+   "projectedSizePx": [
+    440.3,
+    401.6
+   ],
+   "coverage": 0.2802,
+   "kb": 158.9
+  },
+  "bottom_left/resourcebits/Wood_Log_Stack": {
+   "id": "Wood_Log_Stack",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Log_Stack.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.677,
+    1.5,
+    1.498
+   ],
+   "orthoScale": 2.93092,
+   "unitM": 1.0,
+   "pxPerMeter": 174.69,
+   "projectedSizePx": [
+    392.5,
+    440.3
+   ],
+   "coverage": 0.2953,
+   "kb": 187.3
+  },
+  "bottom_left/resourcebits/Wood_Plank_A": {
+   "id": "Wood_Plank_A",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Plank_A.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.2003,
+   "kb": 119.3
+  },
+  "bottom_left/resourcebits/Wood_Plank_B": {
+   "id": "Wood_Plank_B",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Plank_B.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.1998,
+   "kb": 120.9
+  },
+  "bottom_left/resourcebits/Wood_Plank_C": {
+   "id": "Wood_Plank_C",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Plank_C.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.4,
+    1.5,
+    0.15
+   ],
+   "orthoScale": 1.56221,
+   "unitM": 1.0,
+   "pxPerMeter": 327.74,
+   "projectedSizePx": [
+    440.3,
+    294.4
+   ],
+   "coverage": 0.2005,
+   "kb": 128.2
+  },
+  "bottom_left/resourcebits/Wood_Planks_Stack_Large": {
+   "id": "Wood_Planks_Stack_Large",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Planks_Stack_Large.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.666,
+    1.615,
+    1.223
+   ],
+   "orthoScale": 2.719,
+   "unitM": 1.0,
+   "pxPerMeter": 188.3,
+   "projectedSizePx": [
+    436.9,
+    440.3
+   ],
+   "coverage": 0.4784,
+   "kb": 230.3
+  },
+  "bottom_left/resourcebits/Wood_Planks_Stack_Medium": {
+   "id": "Wood_Planks_Stack_Medium",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Planks_Stack_Medium.png",
+   "meshes": 1,
+   "worldSizeM": [
+    1.666,
+    1.615,
+    0.623
+   ],
+   "orthoScale": 2.69801,
+   "unitM": 1.0,
+   "pxPerMeter": 189.77,
+   "projectedSizePx": [
+    440.3,
+    350.8
+   ],
+   "coverage": 0.3415,
+   "kb": 179.0
+  },
+  "bottom_left/resourcebits/Wood_Planks_Stack_Small": {
+   "id": "Wood_Planks_Stack_Small",
+   "set": "resource",
+   "category": "resourcebits",
+   "view": "bottom_left",
+   "yawDeg": 45.0,
+   "file": "bottom_left/resourcebits/Wood_Planks_Stack_Small.png",
+   "meshes": 1,
+   "worldSizeM": [
+    0.846,
+    1.6,
+    0.323
+   ],
+   "orthoScale": 2.01125,
+   "unitM": 1.0,
+   "pxPerMeter": 254.57,
+   "projectedSizePx": [
+    440.3,
+    321.4
+   ],
+   "coverage": 0.2666,
+   "kb": 150.7
+  }
+ }
+}

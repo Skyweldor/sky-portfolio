@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavBar } from '../../components/common/NavBar';
+import TerminalPanel from '../../components/blog/TerminalPanel';
 import { blogPosts, pokedexRegions } from '../../data/blogPostData';
 import styles from './Blog.module.css';
 
@@ -11,6 +12,7 @@ const categoryBadgeClass = (cat) => {
     case 'Journal': return styles.badgeJournal;
     case 'Guide':   return styles.badgeGuide;
     case 'Utility': return styles.badgeUtility;
+    case 'Harness': return styles.badgeHarness;
     default:        return styles.badgeJournal;
   }
 };
@@ -41,20 +43,7 @@ const Blog = () => {
       <Container>
 
         {/* ========== BLOG POSTS PANEL ========== */}
-        <div className={styles.terminalPanel}>
-          <div className={styles.titleBar}>
-            <div className={styles.titleBarDots}>
-              <span className={styles.dotRed} />
-              <span className={styles.dotYellow} />
-              <span className={styles.dotGreen} />
-            </div>
-            <span className={styles.titleBarPath}>
-              SYNTHCITY://blog
-            </span>
-          </div>
-
-          <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>{'// journal_entries'}</h2>
+        <TerminalPanel path="SYNTHCITY://blog" label="// journal_entries">
 
             <div className={styles.commandPrompt}>
               &gt; ls -la<span> ./posts</span>
@@ -92,24 +81,10 @@ const Blog = () => {
                 </React.Fragment>
               ))
             )}
-          </div>
-        </div>
+        </TerminalPanel>
 
         {/* ========== POKEDEX COMPANION PANEL ========== */}
-        <div className={styles.terminalPanel}>
-          <div className={styles.titleBar}>
-            <div className={styles.titleBarDots}>
-              <span className={styles.dotRed} />
-              <span className={styles.dotYellow} />
-              <span className={styles.dotGreen} />
-            </div>
-            <span className={styles.titleBarPath}>
-              SYNTHCITY://blog/pokedex
-            </span>
-          </div>
-
-          <div className={styles.terminalBody}>
-            <h2 className={styles.sectionHeader}>{'// pokedex_companion'}</h2>
+        <TerminalPanel path="SYNTHCITY://blog/pokedex" label="// pokedex_companion">
 
             <div className={styles.commandPrompt}>
               &gt; ls<span> pokedex/</span>
@@ -140,8 +115,7 @@ const Blog = () => {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
+        </TerminalPanel>
 
       </Container>
     </div>
