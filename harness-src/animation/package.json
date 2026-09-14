@@ -1,0 +1,9 @@
+{
+  "name": "anim-harness",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": { "build": "vite build" },
+  "dependencies": { "three": "^0.184.0" },
+  "devDependencies": { "vite": "^6.0.0" }
+}

@@ -30,6 +30,16 @@ const HarnessEmbed = ({ src, title, height = 620, note }) => {
       return undefined;
     }
 
+    // IntersectionObserver only fires once the page is actually painted. In a context that
+    // never paints — a hidden preview pane, a thumbnailer — it stays silent and the viewer
+    // is left on "loading harness…" with no way out but the full-screen link. A geometry
+    // check at mount covers that without eagerly loading embeds further down the page.
+    const rect = node.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 300 && rect.bottom > -300) {
+      setVisible(true);
+      return undefined;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {

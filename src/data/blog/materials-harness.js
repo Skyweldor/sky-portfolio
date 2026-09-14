@@ -174,7 +174,7 @@ if (hit) select(groupOf(hit.face.materialIndex));`,
       type: 'harnessEmbed',
       src: '/harness/materials/',
       title: 'Materials harness — Tiny Texture Pack 1 and 2 against the KayKit buildings',
-      height: 700,
+      height: 780,
       note: 'Mobile-first by design: it was built to be driven with a thumb on a phone over Wi-Fi.',
     },
 
