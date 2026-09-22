@@ -13,14 +13,17 @@ const categoryBadgeClass = (cat) => {
     case 'Guide':   return styles.badgeGuide;
     case 'Utility': return styles.badgeUtility;
     case 'Harness': return styles.badgeHarness;
+    case 'Notes':   return styles.badgeNotes;
     default:        return styles.badgeJournal;
   }
 };
 
+// Pinned first, then newest first. Posts sharing a date (a batch published in one
+// go) keep their order in blogPostData rather than shuffling.
 const sortedPosts = [...blogPosts].sort((a, b) => {
   if (a.pinned && !b.pinned) return -1;
   if (!a.pinned && b.pinned) return 1;
-  return 0;
+  return String(b.date).localeCompare(String(a.date));
 });
 
 const statusBadgeClass = (status) => {

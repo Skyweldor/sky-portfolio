@@ -31,7 +31,7 @@ const HarnessPost = ({ post }) => {
 
         {/* ========== HEADER ========== */}
         <TerminalPanel path={header.path}>
-          <div className={styles.blogName}>&#9670; Build Harness</div>
+          <div className={styles.blogName}>&#9670; {header.kicker || 'Build Harness'}</div>
           <h1 className={styles.postTitle}>
             {titleParts.map((part, i) => (
               <React.Fragment key={i}>

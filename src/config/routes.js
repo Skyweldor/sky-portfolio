@@ -27,6 +27,12 @@ export const ROUTES = {
   animationHarness: `${INTERACTIVE_ROOT}/blog/animation-harness`,
   materialsHarness: `${INTERACTIVE_ROOT}/blog/materials-harness`,
   isoSpriteHarness: `${INTERACTIVE_ROOT}/blog/iso-sprite-harness`,
+
+  // --- Fortnite/UEFN livestream synthesis notes. One parameterised route for the
+  // whole set: the posts are generated from markdown by scripts/import-synthesis.mjs,
+  // so adding one must not require touching the router.
+  fortniteNote: (slug) => `${INTERACTIVE_ROOT}/blog/fortnite/${slug}`,
+
   downloads: `${INTERACTIVE_ROOT}/downloads`,
   download: (id) => `${INTERACTIVE_ROOT}/downloads/${id}`,
   aetherbound: `${INTERACTIVE_ROOT}/aetherbound`,
