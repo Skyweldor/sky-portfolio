@@ -2,8 +2,10 @@
  * Blog post metadata — consumed by the Blog hub page.
  */
 import { ROUTES } from '../config/routes';
+import { fortnitePostEntries } from './blog/fortnite';
 
 export const blogPosts = [
+  ...fortnitePostEntries,
   {
     id: 'pokedex-companion',
     title: 'Pokédex Companion — All Regions',

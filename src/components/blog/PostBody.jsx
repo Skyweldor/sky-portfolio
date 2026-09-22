@@ -14,6 +14,9 @@ import styles from './PostBody.module.css';
  * Blocks:
  *   paragraph    { text, dropCap? }        **bold** / *italic* via parseInlineMarkup
  *   sectionLabel { text }
+ *   subLabel     { text }                  second-level heading under a sectionLabel
+ *   listLead     { text }                  bold lead-in that introduces the list below it
+ *   list         { ordered?, items[] }     items are strings, or { text, items, ordered }
  *   callout      { label, text }
  *   quote        { text, cite? }           pulled straight from a source doc
  *   codeBlock    { lang?, caption?, code }
@@ -22,6 +25,29 @@ import styles from './PostBody.module.css';
  *   gallery      { images[], alt, caption? }
  *   harnessEmbed { src, title, height?, note? }
  */
+/**
+ * List items are usually plain strings. The handful that carry a nested list
+ * arrive as { text, items, ordered } and recurse through here.
+ */
+const renderListItems = (items) =>
+  items.map((item, ii) =>
+    typeof item === 'string' ? (
+      <li key={ii}>{parseInlineMarkup(item)}</li>
+    ) : (
+      <li key={ii}>
+        {parseInlineMarkup(item.text)}
+        {item.items && renderList(item, `${ii}-sub`)}
+      </li>
+    )
+  );
+
+const renderList = (block, key) =>
+  block.ordered ? (
+    <ol key={key} className={styles.orderedList}>{renderListItems(block.items)}</ol>
+  ) : (
+    <ul key={key} className={styles.list}>{renderListItems(block.items)}</ul>
+  );
+
 const renderBlock = (block, i) => {
   switch (block.type) {
     case 'paragraph':
@@ -33,6 +59,15 @@ const renderBlock = (block, i) => {
 
     case 'sectionLabel':
       return <div key={i} className={styles.sectionLabel}>{block.text}</div>;
+
+    case 'subLabel':
+      return <h3 key={i} className={styles.subLabel}>{parseInlineMarkup(block.text)}</h3>;
+
+    case 'listLead':
+      return <p key={i} className={styles.listLead}>{parseInlineMarkup(block.text)}</p>;
+
+    case 'list':
+      return renderList(block, i);
 
     case 'callout':
       return (

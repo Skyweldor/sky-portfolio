@@ -201,3 +201,95 @@
   .dropCap::first-letter { font-size: 36px; }
   .code { font-size: 11.5px; }
 }
+
+/* ==================== SUB LABEL (H3) ==================== */
+
+.subLabel {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--color-highlight, #00eaff);
+  margin: 26px 0 12px;
+  font-weight: normal;
+}
+
+/* ==================== LISTS ==================== */
+
+.listLead {
+  margin: 20px 0 8px;
+  color: var(--color-text-light, #fff);
+}
+
+.list,
+.orderedList {
+  margin: 0 0 18px;
+  padding-left: 22px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li,
+.orderedList li {
+  margin-bottom: 7px;
+  padding-left: 4px;
+}
+
+/* Square bullet in the accent colour, drawn rather than inherited, so it keeps
+   the terminal look instead of the browser default disc. */
+.list li::before {
+  content: '\25AA';
+  color: var(--color-primary, #00b3ff);
+  margin-left: -18px;
+  margin-right: 10px;
+}
+
+.orderedList {
+  list-style: decimal;
+}
+
+.orderedList li::marker {
+  color: var(--color-primary, #00b3ff);
+}
+
+/* Nested lists tuck in and lose the outer margin. */
+.list .list,
+.list .orderedList,
+.orderedList .list,
+.orderedList .orderedList {
+  margin: 7px 0 0;
+}
+
+/* ==================== INLINE CODE + LINKS ==================== */
+
+.postBody code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.92em;
+  background: rgba(0, 179, 255, 0.1);
+  border: 1px solid rgba(0, 179, 255, 0.22);
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: var(--color-highlight, #00eaff);
+  white-space: nowrap;
+}
+
+/* The code block already has its own frame; don't double up inside it. */
+.code code {
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: pre;
+}
+
+.postBody a {
+  color: var(--color-highlight, #00eaff);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0, 234, 255, 0.5);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.postBody a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}

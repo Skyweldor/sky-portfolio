@@ -207,6 +207,13 @@
   background: rgba(159, 0, 255, 0.1);
 }
 
+/* Livestream synthesis notes — green, distinct from the amber harness write-ups. */
+.badgeNotes {
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  background: rgba(74, 222, 128, 0.09);
+}
+
 /* Build-harness write-ups — amber, so they read apart from the journals and guides. */
 .badgeHarness {
   color: #ffb347;
