@@ -1,0 +1,715 @@
+{
+  "BOYS": {
+    "label": "Player Character",
+    "npc": false
+  },
+  "BOTA": {
+    "label": "Botamon",
+    "npc": false
+  },
+  "KORO": {
+    "label": "Koromon",
+    "npc": false
+  },
+  "AGUM": {
+    "label": "Agumon",
+    "npc": false
+  },
+  "BETA": {
+    "label": "Betamon",
+    "npc": false
+  },
+  "GREY": {
+    "label": "Greymon",
+    "npc": false
+  },
+  "DEVI": {
+    "label": "Devimon",
+    "npc": false
+  },
+  "AIRD": {
+    "label": "Airdramon",
+    "npc": false
+  },
+  "TYRA": {
+    "label": "Tyrannomon",
+    "npc": false
+  },
+  "MERA": {
+    "label": "Meramon",
+    "npc": false
+  },
+  "SEAD": {
+    "label": "Seadramon",
+    "npc": false
+  },
+  "NUME": {
+    "label": "Numemon",
+    "npc": false
+  },
+  "MTGR": {
+    "label": "MetalGreymon",
+    "npc": false
+  },
+  "MAME": {
+    "label": "Mamemon",
+    "npc": false
+  },
+  "MONZ": {
+    "label": "Monzaemon",
+    "npc": false
+  },
+  "PUNI": {
+    "label": "Punimon",
+    "npc": false
+  },
+  "TUNO": {
+    "label": "Tsunomon",
+    "npc": false
+  },
+  "GABU": {
+    "label": "Gabumon",
+    "npc": false
+  },
+  "ELEC": {
+    "label": "Elecmon",
+    "npc": false
+  },
+  "KABU": {
+    "label": "Kabuterimon",
+    "npc": false
+  },
+  "ANGE": {
+    "label": "Angemon",
+    "npc": false
+  },
+  "BIRD": {
+    "label": "Bidramon",
+    "npc": false
+  },
+  "GARU": {
+    "label": "Garurumon",
+    "npc": false
+  },
+  "YUKI": {
+    "label": "Frigimon",
+    "npc": false
+  },
+  "HOEE": {
+    "label": "Whamon",
+    "npc": false
+  },
+  "VEGI": {
+    "label": "Vegiemon",
+    "npc": false
+  },
+  "SKUL": {
+    "label": "SkullGreymon",
+    "npc": false
+  },
+  "MTMA": {
+    "label": "MetalMamemon",
+    "npc": false
+  },
+  "VEDA": {
+    "label": "Vademon",
+    "npc": false
+  },
+  "POYO": {
+    "label": "Poyomon",
+    "npc": false
+  },
+  "TOKO": {
+    "label": "Tokomon",
+    "npc": false
+  },
+  "PATA": {
+    "label": "Patamon",
+    "npc": false
+  },
+  "KUNE": {
+    "label": "Kunemon",
+    "npc": false
+  },
+  "UNIM": {
+    "label": "Unimon",
+    "npc": false
+  },
+  "OGRE": {
+    "label": "Ogremon",
+    "npc": false
+  },
+  "SHEL": {
+    "label": "Shellmon",
+    "npc": false
+  },
+  "CENT": {
+    "label": "Centarumon",
+    "npc": false
+  },
+  "BAKE": {
+    "label": "Bakemon",
+    "npc": false
+  },
+  "DORI": {
+    "label": "Drimogemon",
+    "npc": false
+  },
+  "SCUM": {
+    "label": "Sukamon",
+    "npc": false
+  },
+  "ANDR": {
+    "label": "Andromon",
+    "npc": false
+  },
+  "GIRO": {
+    "label": "Giromon",
+    "npc": false
+  },
+  "ETEM": {
+    "label": "Etemon",
+    "npc": false
+  },
+  "YURA": {
+    "label": "Yuramon",
+    "npc": false
+  },
+  "TANE": {
+    "label": "Tanemon",
+    "npc": false
+  },
+  "PIYO": {
+    "label": "Biyomon",
+    "npc": false
+  },
+  "PALM": {
+    "label": "Palmon",
+    "npc": false
+  },
+  "MONO": {
+    "label": "Monochromon",
+    "npc": false
+  },
+  "LEOM": {
+    "label": "Leomon",
+    "npc": false
+  },
+  "SIRA": {
+    "label": "Coelamon",
+    "npc": false
+  },
+  "COCA": {
+    "label": "Kokatorimon",
+    "npc": false
+  },
+  "KUWA": {
+    "label": "Kuwagamon",
+    "npc": false
+  },
+  "MOJA": {
+    "label": "Mojyamon",
+    "npc": false
+  },
+  "NANI": {
+    "label": "Nanimon",
+    "npc": false
+  },
+  "MGDR": {
+    "label": "Megadramon",
+    "npc": false
+  },
+  "PICC": {
+    "label": "Piximon",
+    "npc": false
+  },
+  "DIGI": {
+    "label": "Digitamamon",
+    "npc": false
+  },
+  "PENM": {
+    "label": "Penguinmon",
+    "npc": false
+  },
+  "IGAM": {
+    "label": "Ninjamon",
+    "npc": false
+  },
+  "HOUO": {
+    "label": "Phoenixmon",
+    "npc": false
+  },
+  "HKAB": {
+    "label": "H-Kabuterimon",
+    "npc": false
+  },
+  "MGSD": {
+    "label": "MegaSeadramon",
+    "npc": false
+  },
+  "PANJ": {
+    "label": "Panjyamon",
+    "npc": false
+  },
+  "GGDR": {
+    "label": "Gigadramon",
+    "npc": false
+  },
+  "MTET": {
+    "label": "MetalEtemon",
+    "npc": false
+  },
+  "VAND": {
+    "label": "Myotismon",
+    "npc": false
+  },
+  "YANM": {
+    "label": "Yanmamon",
+    "npc": false
+  },
+  "GOTU": {
+    "label": "Gotsumon",
+    "npc": false
+  },
+  "FLAR": {
+    "label": "Flarizamon",
+    "npc": false
+  },
+  "WARU": {
+    "label": "WaruMonzaemon",
+    "npc": false
+  },
+  "YKAG": {
+    "label": "SnowAgumon",
+    "npc": false
+  },
+  "HYOG": {
+    "label": "Hyogamon",
+    "npc": false
+  },
+  "PCSC": {
+    "label": "PlatinumSukamon",
+    "npc": false
+  },
+  "DOKU": {
+    "label": "Dokunemon",
+    "npc": false
+  },
+  "SIMA": {
+    "label": "ShimaUnimon",
+    "npc": false
+  },
+  "TANK": {
+    "label": "Tankmon",
+    "npc": false
+  },
+  "REDV": {
+    "label": "RedVegiemon",
+    "npc": false
+  },
+  "JMOJ": {
+    "label": "J-Mojyamon",
+    "npc": false
+  },
+  "NISE": {
+    "label": "NiseDrimogemon",
+    "npc": false
+  },
+  "GOBR": {
+    "label": "Goburimon",
+    "npc": false
+  },
+  "TUTI": {
+    "label": "MudFrigimon",
+    "npc": false
+  },
+  "PSYC": {
+    "label": "Psychemon",
+    "npc": false
+  },
+  "MODO": {
+    "label": "ModokiBetamon",
+    "npc": false
+  },
+  "TOYA": {
+    "label": "ToyAgumon",
+    "npc": false
+  },
+  "PIDD": {
+    "label": "Piddomon",
+    "npc": false
+  },
+  "ARUR": {
+    "label": "Aruramon",
+    "npc": false
+  },
+  "GERE": {
+    "label": "Geremon",
+    "npc": false
+  },
+  "VARM": {
+    "label": "Vermillimon",
+    "npc": false
+  },
+  "FUGA": {
+    "label": "Fugamon",
+    "npc": false
+  },
+  "TKKA": {
+    "label": "Tekkamon",
+    "npc": false
+  },
+  "MRIS": {
+    "label": "MoriShellmon",
+    "npc": false
+  },
+  "GARD": {
+    "label": "Guardromon",
+    "npc": false
+  },
+  "MCHO": {
+    "label": "Muchomon",
+    "npc": false
+  },
+  "ICEM": {
+    "label": "Icemon",
+    "npc": false
+  },
+  "AKAT": {
+    "label": "Akatorimon",
+    "npc": false
+  },
+  "TUKA": {
+    "label": "Tsukaimon",
+    "npc": false
+  },
+  "SHAM": {
+    "label": "Sharmamon",
+    "npc": false
+  },
+  "CLEA": {
+    "label": "ClearAgumon",
+    "npc": false
+  },
+  "ZASS": {
+    "label": "Weedmon",
+    "npc": false
+  },
+  "ICDV": {
+    "label": "IceDevimon",
+    "npc": false
+  },
+  "DKRZ": {
+    "label": "Darkrizamon",
+    "npc": false
+  },
+  "SNDY": {
+    "label": "SandYanmamon",
+    "npc": false
+  },
+  "SNGB": {
+    "label": "SnowGoburimon",
+    "npc": false
+  },
+  "BLMR": {
+    "label": "BlueMeramon",
+    "npc": false
+  },
+  "GRUR": {
+    "label": "Gururumon",
+    "npc": false
+  },
+  "SABD": {
+    "label": "Saberdramon",
+    "npc": false
+  },
+  "SOUL": {
+    "label": "Souldmon",
+    "npc": false
+  },
+  "GOLE": {
+    "label": "Rockmon",
+    "npc": false
+  },
+  "OTAM": {
+    "label": "Otamamon",
+    "npc": false
+  },
+  "GECO": {
+    "label": "Gekomon",
+    "npc": false
+  },
+  "TENT": {
+    "label": "Tentomon",
+    "npc": false
+  },
+  "WRSE": {
+    "label": "WaruSeadramon",
+    "npc": false
+  },
+  "INSE": {
+    "label": "Meteormon",
+    "npc": false
+  },
+  "MUGE": {
+    "label": "Machinedramon",
+    "npc": false
+  },
+  "ANLG": {
+    "label": "Analogman",
+    "npc": false
+  },
+  "JIJI": {
+    "label": "Jijimon",
+    "npc": false
+  },
+  "TENS": {
+    "label": "Market Manager",
+    "npc": false
+  },
+  "TONO": {
+    "label": "ShogunGekomon",
+    "npc": false
+  },
+  "SCUD": {
+    "label": "King Sukamon",
+    "npc": false
+  },
+  "JURE": {
+    "label": "Cherrymon",
+    "npc": false
+  },
+  "HAGU": {
+    "label": "Hagurumon",
+    "npc": false
+  },
+  "BRIK": {
+    "label": "Tinmon",
+    "npc": false
+  },
+  "TIRS": {
+    "label": "Master Tyrannomon",
+    "npc": false
+  },
+  "EGOB": {
+    "label": "Goburimon",
+    "npc": true
+  },
+  "BRAK": {
+    "label": "Brachiomon",
+    "npc": false
+  },
+  "PUTI": {
+    "label": "DemoMeramon",
+    "npc": false
+  },
+  "EBET": {
+    "label": "Betamon",
+    "npc": true
+  },
+  "EGRE": {
+    "label": "Greymon",
+    "npc": true
+  },
+  "EDEV": {
+    "label": "Devimon",
+    "npc": true
+  },
+  "EAIR": {
+    "label": "Airdramon",
+    "npc": true
+  },
+  "ETYR": {
+    "label": "Tyrannomon",
+    "npc": true
+  },
+  "EMER": {
+    "label": "Meramon",
+    "npc": true
+  },
+  "ESEA": {
+    "label": "Seadramon",
+    "npc": true
+  },
+  "ENUM": {
+    "label": "Numemon",
+    "npc": true
+  },
+  "EMTG": {
+    "label": "MetalGreymon",
+    "npc": true
+  },
+  "EMAM": {
+    "label": "Mamemon",
+    "npc": true
+  },
+  "EMON": {
+    "label": "Monzaemon",
+    "npc": true
+  },
+  "EGAB": {
+    "label": "Gabumon",
+    "npc": true
+  },
+  "EELE": {
+    "label": "Elecmon",
+    "npc": true
+  },
+  "EKAB": {
+    "label": "Kabuterimon",
+    "npc": true
+  },
+  "EANG": {
+    "label": "Angemon",
+    "npc": true
+  },
+  "EBIR": {
+    "label": "Bidramon",
+    "npc": true
+  },
+  "EGAR": {
+    "label": "Garurumon",
+    "npc": true
+  },
+  "EYUK": {
+    "label": "Frigimon",
+    "npc": true
+  },
+  "EHOE": {
+    "label": "Whamon",
+    "npc": true
+  },
+  "EVEG": {
+    "label": "Vegiemon",
+    "npc": true
+  },
+  "ESKU": {
+    "label": "SkullGreymon",
+    "npc": true
+  },
+  "EMTM": {
+    "label": "MetalMamemon",
+    "npc": true,
+    "note": "MetalGreymon"
+  },
+  "EVED": {
+    "label": "Vademon",
+    "npc": true
+  },
+  "EPAT": {
+    "label": "Patamon",
+    "npc": true
+  },
+  "EKUN": {
+    "label": "Kunemon",
+    "npc": true
+  },
+  "EUNI": {
+    "label": "Unimon",
+    "npc": true
+  },
+  "EOGR": {
+    "label": "Ogremon",
+    "npc": true
+  },
+  "ESHE": {
+    "label": "Shellmon",
+    "npc": true
+  },
+  "ECEN": {
+    "label": "Centarumon",
+    "npc": true
+  },
+  "EBAK": {
+    "label": "Bakemon",
+    "npc": true
+  },
+  "EDOR": {
+    "label": "Drimogemon",
+    "npc": true
+  },
+  "ESCU": {
+    "label": "Sukamon",
+    "npc": true
+  },
+  "EAND": {
+    "label": "Andromon",
+    "npc": true
+  },
+  "EGIR": {
+    "label": "Giromon",
+    "npc": true
+  },
+  "EETE": {
+    "label": "Etemon",
+    "npc": true
+  },
+  "EPIY": {
+    "label": "Biyomon",
+    "npc": true
+  },
+  "EPAL": {
+    "label": "Palmon",
+    "npc": true
+  },
+  "EMNO": {
+    "label": "Monochromon",
+    "npc": true
+  },
+  "ELEO": {
+    "label": "Leomon",
+    "npc": true
+  },
+  "ESIR": {
+    "label": "Coelamon",
+    "npc": true
+  },
+  "ECOC": {
+    "label": "Kokatorimon",
+    "npc": true
+  },
+  "EKUW": {
+    "label": "Kuwagamon",
+    "npc": true
+  },
+  "EMOJ": {
+    "label": "Mojyamon",
+    "npc": true
+  },
+  "ENAN": {
+    "label": "Nanimon",
+    "npc": true
+  },
+  "EMGD": {
+    "label": "Megadramon",
+    "npc": true
+  },
+  "EPIC": {
+    "label": "Piximon",
+    "npc": true
+  },
+  "EDIG": {
+    "label": "Digitamamon",
+    "npc": true
+  },
+  "EIGA": {
+    "label": "Ninjamon",
+    "npc": true
+  },
+  "EPEN": {
+    "label": "Penguinmon",
+    "npc": true
+  },
+  "EVAN": {
+    "label": "Myotismon",
+    "npc": true
+  },
+  "CEGR": {
+    "label": "Greymon",
+    "npc": true
+  },
+  "CEMG": {
+    "label": "MetalGreymon",
+    "npc": true
+  }
+}

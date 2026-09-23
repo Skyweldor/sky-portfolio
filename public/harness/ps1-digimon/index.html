@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<meta name="theme-color" content="#10121a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>PS1 Digimon Harness</title>
+<style>
+  /* Tokens and chrome follow the sibling harnesses (materials, animation) so the three
+     read as one family when embedded side by side. */
+  :root { --bg:#10121a; --panel:#181b26; --line:#2a3145; --on:#4d6bff; --txt:#e6e9f2; --dim:#8d95ad;
+          --hot:#39ff88; --sheet:236px; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { margin:0; height:100%; overflow:hidden; background:var(--bg); color:var(--txt);
+               font:13px/1.4 ui-monospace, Menlo, Consolas, monospace; }
+  canvas { display:block; touch-action:none; }
+
+  #top { position:fixed; top:0; left:0; right:0; z-index:3;
+         padding:calc(env(safe-area-inset-top) + 6px) 8px 2px;
+         background:linear-gradient(#10121aee 62%, #10121a00); }
+  .row { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:5px;
+         scroll-behavior:smooth; }
+  .row::-webkit-scrollbar { display:none; }
+  .bar { display:flex; gap:6px; align-items:center; margin-bottom:5px; }
+  .bar .row { flex:1; min-width:0; padding-bottom:0; }
+
+  button { font:inherit; color:var(--txt); background:var(--panel); border:1px solid var(--line);
+           border-radius:8px; padding:6px 10px; min-height:34px; white-space:nowrap; cursor:pointer;
+           flex:none; }
+  button:hover { border-color:#3a445e; }
+  button.on { background:var(--on); border-color:var(--on); color:#fff; }
+  button.ghost { background:transparent; color:var(--dim); padding:5px 9px; min-height:30px; font-size:12px; }
+  button.ghost.on { background:var(--on); border-color:var(--on); color:#fff; }
+  button.step { padding:0 10px; min-width:34px; font-size:16px; line-height:1; }
+  button .sub { color:var(--dim); margin-left:5px; font-size:11px; }
+  button.on .sub { color:#dfe4ff; }
+
+  #filter { flex:1; min-width:0; font:inherit; color:var(--txt); background:var(--panel);
+            border:1px solid var(--line); border-radius:8px; padding:7px 10px; min-height:34px; }
+  #filter:focus { outline:none; border-color:var(--on); }
+  #count { color:var(--dim); font-size:11px; white-space:nowrap; }
+
+  /* Clips run in two rows, filled top-then-bottom, so numerically adjacent slots stay
+     side by side while the strip scrolls. A Digimon carries 20-60 clips; one row of them
+     was a long thumb-scroll. */
+  #clips { display:grid; grid-template-rows:repeat(2, auto); grid-auto-flow:column;
+           grid-auto-columns:max-content; gap:5px 6px; overflow-x:auto; scrollbar-width:none;
+           padding-bottom:5px; scroll-behavior:smooth; }
+  #clips::-webkit-scrollbar { display:none; }
+  /* Clip chips: slot number first because that is the only name a clip has. */
+  button.clip { padding:5px 9px; min-height:32px; font-size:12px; }
+  button.clip .mk { margin-left:4px; font-size:11px; color:var(--dim); }
+  button.clip.on .mk { color:#dfe4ff; }
+  /* Dashed: this clip plays on a different variant than the one on screen; tapping it
+     switches. */
+  button.clip.other { border-style:dashed; }
+  #variants { flex:none; padding:4px 0 2px; }
+  #variants:empty { display:none; }
+
+  #sheet { position:fixed; left:0; right:0; bottom:0; z-index:4; height:var(--sheet);
+           background:var(--panel); border-top:1px solid var(--line); border-radius:14px 14px 0 0;
+           display:flex; flex-direction:column; padding:0 10px env(safe-area-inset-bottom);
+           transition:height .18s ease; }
+  #sheet.collapsed { --sheet:118px; }
+  #grab { padding:7px 0 5px; cursor:pointer; flex:none; }
+  #grab .handle { width:36px; height:4px; border-radius:2px; background:var(--line); margin:0 auto; }
+  .line { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:none; }
+  .line b { font-weight:600; }
+  .line .dim, .dim { color:var(--dim); }
+  #scrub { display:flex; align-items:center; gap:8px; margin:6px 0 4px; flex:none; }
+  #scrub input { flex:1; min-width:0; height:28px; accent-color:var(--on); }
+  #time { min-width:92px; text-align:right; color:var(--dim); font-variant-numeric:tabular-nums; font-size:12px; }
+  #play { min-width:40px; }
+  #tools { flex:none; padding-bottom:6px; }
+  /* Events list: the readout that makes an unnamed slot identifiable. */
+  #events { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; border-top:1px solid var(--line);
+            padding:4px 0 8px; font-size:12px; }
+  #sheet.collapsed #events, #sheet.collapsed #tools { display:none; }
+  .ev { display:flex; gap:10px; padding:2px 4px; border-radius:4px; }
+  .ev .t { color:var(--dim); min-width:54px; font-variant-numeric:tabular-nums; }
+  .ev.fired { background:#1f3d2d; }
+  .ev.fired .t { color:var(--hot); }
+  .empty { color:var(--dim); padding:4px; }
+
+  #status { position:fixed; left:50%; transform:translateX(-50%); z-index:3;
+            bottom:calc(var(--sheet) + 10px); background:#181b26ee; border:1px solid var(--line);
+            border-radius:10px; padding:6px 12px; font-size:12px; color:var(--dim); pointer-events:none;
+            opacity:0; transition:opacity .15s; }
+  #status.show { opacity:1; }
+  #sheet.collapsed ~ #status { bottom:128px; }
+
+  @media (max-width: 480px) {
+    :root { --sheet:250px; }
+    button { padding:6px 9px; min-height:34px; font-size:12px; }
+    #top { padding-top:calc(env(safe-area-inset-top) + 4px); }
+    .row { gap:5px; }
+  }
+</style>
+  <script type="module" crossorigin src="/harness/ps1-digimon/assets/index-Dvd5M_Cn.js"></script>
+</head>
+<body>
+  <div id="top">
+    <div class="bar">
+      <input id="filter" type="search" placeholder="filter: name or code" autocomplete="off" spellcheck="false" />
+      <span id="count"></span>
+    </div>
+    <div class="bar">
+      <button id="prev" class="step" title="previous Digimon">&lsaquo;</button>
+      <div class="row" id="models"></div>
+      <button id="next" class="step" title="next Digimon">&rsaquo;</button>
+    </div>
+    <div id="clips"></div>
+  </div>
+
+  <div id="sheet">
+    <div id="grab" title="expand / collapse"><div class="handle"></div></div>
+    <div class="line" id="modelLine">loading manifest…</div>
+    <div class="row" id="variants"></div>
+    <div class="line" id="clipLine">&nbsp;</div>
+    <div id="scrub">
+      <button id="play" title="play / pause (space)">&#10074;&#10074;</button>
+      <input id="seek" type="range" min="0" max="1" step="0.001" value="0" />
+      <span id="time">0.00 / 0.00</span>
+    </div>
+    <div class="row" id="tools"></div>
+    <div id="events"></div>
+  </div>
+
+  <div id="status"></div>
+
+</body>
+</html>
