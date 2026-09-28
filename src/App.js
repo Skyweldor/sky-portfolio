@@ -36,6 +36,7 @@ const PokeMMOJournal2 = lazy(() => import('./pages/blog/PokeMMOJournal2'));
 const AnimationHarness = lazy(() => import('./pages/blog/AnimationHarness'));
 const MaterialsHarness = lazy(() => import('./pages/blog/MaterialsHarness'));
 const IsoSpriteHarness = lazy(() => import('./pages/blog/IsoSpriteHarness'));
+const Harness1 = lazy(() => import('./pages/blog/Harness1'));
 const FortniteNote = lazy(() => import('./pages/blog/FortniteNote'));
 
 // Global transition overlay that responds to context
@@ -84,6 +85,7 @@ function App() {
               <Route path={ROUTES.animationHarness} element={<AnimationHarness />} />
               <Route path={ROUTES.materialsHarness} element={<MaterialsHarness />} />
               <Route path={ROUTES.isoSpriteHarness} element={<IsoSpriteHarness />} />
+              <Route path={ROUTES.harnessPost(1)} element={<Harness1 />} />
               <Route path={ROUTES.fortniteNote(':slug')} element={<FortniteNote />} />
               <Route path={ROUTES.downloads} element={<Catalog />} />
               <Route path={ROUTES.download(':id')} element={<BlogDetail />} />

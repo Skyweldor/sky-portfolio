@@ -38,6 +38,16 @@ export const blogPosts = [
     status: 'PUBLISHED',
   },
   {
+    id: 'harness-1',
+    title: 'Harness #1: T-Poses -> Animated!',
+    date: '2026-09-28',
+    excerpt:
+      'Why we started building a TikTok Live game where viewers\' taps, gifts, and follows drive the gameplay, why it wears a Digimon theme, and the first harness: taking our Digimon from T-poses to animated.',
+    route: ROUTES.harnessPost(1),
+    category: 'Harness',
+    status: 'PUBLISHED',
+  },
+  {
     id: 'animation-harness',
     title: 'The Animated GLB Harness, and What Box3 Will Not Tell You',
     date: '2026-09-13',

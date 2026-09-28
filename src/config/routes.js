@@ -27,6 +27,9 @@ export const ROUTES = {
   animationHarness: `${INTERACTIVE_ROOT}/blog/animation-harness`,
   materialsHarness: `${INTERACTIVE_ROOT}/blog/materials-harness`,
   isoSpriteHarness: `${INTERACTIVE_ROOT}/blog/iso-sprite-harness`,
+  // Narrative cuts of the same harnesses, numbered. They sit beside the write-ups above
+  // rather than replacing them.
+  harnessPost: (n) => `${INTERACTIVE_ROOT}/blog/harness-${n}`,
 
   // --- Fortnite/UEFN livestream synthesis notes. One parameterised route for the
   // whole set: the posts are generated from markdown by scripts/import-synthesis.mjs,
