@@ -42,6 +42,13 @@
             border:1px solid var(--line); border-radius:8px; padding:7px 10px; min-height:34px; }
   #filter:focus { outline:none; border-color:var(--on); }
   #count { color:var(--dim); font-size:11px; white-space:nowrap; }
+  #stage { font:inherit; font-size:12px; color:var(--txt); background:var(--panel); border:1px solid var(--line);
+           border-radius:8px; padding:0 6px; min-height:34px; flex:none; max-width:44%; }
+  #stage:focus { outline:none; border-color:var(--on); }
+  /* Stage dividers in the Digimon strip, shown when every stage is listed. */
+  .stagediv { flex:none; align-self:center; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+              color:var(--hot); padding:0 2px 0 8px; border-left:2px solid var(--line); white-space:nowrap; }
+  .stagediv:first-child { border-left:0; padding-left:2px; }
 
   /* Clips run in two rows, filled top-then-bottom, so numerically adjacent slots stay
      side by side while the strip scrolls. A Digimon carries 20-60 clips; one row of them
@@ -104,6 +111,7 @@
   <div id="top">
     <div class="bar">
       <input id="filter" type="search" placeholder="filter: name or code" autocomplete="off" spellcheck="false" />
+      <select id="stage" title="show one stage"></select>
       <span id="count"></span>
     </div>
     <div class="bar">
