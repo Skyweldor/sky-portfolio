@@ -33,6 +33,7 @@ const DW1 = 'A:/Intentional_Sports/eSports_Academy/Roblox/SynthCity_Interactive/
 const args = parseArgs(process.argv.slice(2));
 const SRC = args.src ?? `${DW1}/converted/output/digimon`;
 const NAMES = args.names ?? `${DW1}/DW1ModelConverter-main/README.md`;
+const EXE = args.exe ?? `${DW1}/extracted/SLUS_010.32`;
 const OUT = path.resolve(args.out ?? path.join(HERE, '../../../public/harness/ps1-digimon'));
 const ONLY = args.only ? new Set(String(args.only).split(',').map((s) => s.trim().toUpperCase())) : null;
 const DRY = !!args['dry-run'];
@@ -88,6 +89,58 @@ function loadNames() {
   }
   if (fs.existsSync(cache)) return JSON.parse(fs.readFileSync(cache, 'utf8'));
   throw new Error(`name table unavailable: neither ${NAMES} nor ${cache} exists`);
+}
+
+// ---------------------------------------------------------------------------------
+// The game's own Digimon table: in-game name, stage, attribute
+// ---------------------------------------------------------------------------------
+
+// Read from the US executable, the same table DW1ModelConverter reads bone counts from.
+// File offset = RAM address - 0x90000 (the converter's PSEXE_OFFSET). 180 records each:
+// an 8-byte model code at 0xA3B44, and a 52-byte DigimonPara at 0x9CEB4 laid out as
+// name[20], boneCount, radius, height, type, level, ...
+//
+// DW1 has no Mega level: its levels stop at Ultimate, and franchise Megas such as
+// Machinedramon are stored as Ultimates. Level 0 marks story NPCs and humans.
+const STAGES = ['Fresh', 'In-Training', 'Rookie', 'Champion', 'Ultimate', 'No level'];
+const LEVEL = { 1: 'Fresh', 2: 'In-Training', 3: 'Rookie', 4: 'Champion', 5: 'Ultimate', 0: 'No level' };
+const ATTRIBUTE = { 1: 'Data', 2: 'Vaccine', 3: 'Virus' };
+
+function parseGameTable(exe) {
+  const CODES = 0xa3b44;
+  const PARA = 0x9ceb4;
+  const cstr = (buf) => { const z = buf.indexOf(0); return buf.subarray(0, z < 0 ? buf.length : z).toString('latin1'); };
+  const out = {};
+  for (let i = 0; i < 180; i++) {
+    const code = cstr(exe.subarray(CODES + i * 8, CODES + i * 8 + 8));
+    const rec = exe.subarray(PARA + i * 52, PARA + (i + 1) * 52);
+    out[code] = { name: cstr(rec.subarray(0, 20)), type: rec[28], level: rec[29] };
+  }
+  // Guard against a different release: every offset above is the US disc's.
+  if (out.BOYS?.level !== 0 || out.BOTA?.name !== 'Botamon' || out.AGUM?.level !== 3) {
+    throw new Error(`${EXE} does not look like the US executable (SLUS_010.32); the table offsets would be wrong`);
+  }
+  return out;
+}
+
+// Like the name table: read the executable when it is there, cache the result next to
+// this script, and fall back to the cache on a machine without the A: drive.
+function loadGameTable() {
+  const cache = path.join(HERE, 'game-data.json');
+  if (fs.existsSync(EXE)) {
+    const table = parseGameTable(fs.readFileSync(EXE));
+    if (!DRY) fs.writeFileSync(cache, JSON.stringify(table, null, 1) + '\n');
+    return table;
+  }
+  if (fs.existsSync(cache)) return JSON.parse(fs.readFileSync(cache, 'utf8'));
+  throw new Error(`game table unavailable: neither ${EXE} nor ${cache} exists`);
+}
+
+// The README table grouped models correctly but misspells seven names; the game's own name
+// is authoritative. "main character" is the one entry that is not a proper name.
+function displayName(code, readmeLabel, game) {
+  const n = game[code]?.name;
+  return n && /^[A-Z]/.test(n) ? n : readmeLabel;
 }
 
 // ---------------------------------------------------------------------------------
@@ -576,6 +629,7 @@ function compareVariant(v, main) {
 
 async function main() {
   const names = loadNames();
+  const game = loadGameTable();
   const codeOf = (f) => path.basename(f, '.gltf').toUpperCase();
   // --only expands to whole Digimon: a variant cannot be judged without its main model.
   const wantedLabels = ONLY ? new Set([...ONLY].map((k) => names[k]?.label).filter(Boolean)) : null;
@@ -641,9 +695,18 @@ async function main() {
         clips.push({ v: v.entry.key, ...c, on: { [v.entry.key]: s } });
       }
     }
-    digimon.push({ id: main.entry.key, label, variants, clips });
+    // Grouping stays on the README label (it keeps EMTM, which the game calls
+    // "MetalGreymon", with the MetalMamemon model it is); display uses the game's name.
+    const g = game[main.entry.key];
+    if (!g) throw new Error(`${main.entry.key}: not in the game table`);
+    const levels = new Set(group.map((r) => game[r.entry.key]?.level));
+    if (levels.size !== 1) stats.warnings.push(`${label}: files disagree on level (${[...levels].join(', ')})`);
+    digimon.push({ id: main.entry.key, label: displayName(main.entry.key, label, game),
+                   stage: LEVEL[g.level] ?? 'No level', attribute: ATTRIBUTE[g.type] ?? null,
+                   variants, clips });
   }
-  digimon.sort((a, b) => a.label.localeCompare(b.label));
+  // Stage order, then name: the picker reads as a progression rather than an alphabet.
+  digimon.sort((a, b) => STAGES.indexOf(a.stage) - STAGES.indexOf(b.stage) || a.label.localeCompare(b.label));
 
   if (!DRY) {
     fs.mkdirSync(path.join(OUT, 'models'), { recursive: true });
@@ -676,10 +739,13 @@ async function main() {
         srcX: "The converter spells the texture-event source X 'srxX'. Normalised to 'srcX' here. Do not 'fix' it in the source files.",
         slots: 'Clip names are anim-<slot>, the original game slot. Sparse and PER FILE: an NPC variant can hold the same animation under a different slot, so never carry a slot number across variants -- use clips[].on.',
         loop: 'l is [start, end] of the section the game loops after the intro, or null when the source gives no loop range.',
+        stages: "stage and attribute are the level and type bytes of each Digimon's record in the game's own table (SLUS_010.32, 52-byte records at file offset 0x9CEB4). DW1 has no Mega level: its highest is Ultimate, and franchise Megas such as Machinedramon are stored as Ultimates. 'No level' is level 0: story NPCs and humans. label is the game's own name for the main model, which corrects seven misspellings in the converter README.",
         variants: 'One entry per Digimon. variants[0] is the main model. An NPC copy is kept as a further variant only if it has a different mesh, real colour differences, or clips of its own (why says which); copies that add nothing are listed in dropped with their slot map. clips[] is the merged list: main clips first (s is the main slot), then variant-only clips (v names the variant). on maps variant key -> slot in that variant.',
       },
+      stages: STAGES,
       counts: {
         digimon: digimon.length,
+        byStage: Object.fromEntries(STAGES.map((s) => [s, digimon.filter((d) => d.stage === s).length])),
         variants: files,
         clips: digimon.reduce((n, d) => n + d.clips.length, 0),
         dropped: dropped.length,
@@ -698,6 +764,9 @@ async function main() {
     + `${digimon.reduce((n, d) => n + d.clips.length, 0)}   dropped ${dropped.length}`
     + `   (${dropped.filter((d) => d.soundCuesMissing).length} of them lacked sound cues the main keeps)`);
   console.log(`kept variants:\n  ${kept.join('\n  ') || '(none)'}`);
+  console.log(`by stage: ${STAGES.map((s) => `${s} ${digimon.filter((d) => d.stage === s).length}`).join(' · ')}`);
+  const renamed = digimon.filter((d) => d.label !== names[d.id].label).map((d) => `${names[d.id].label} -> ${d.label}`);
+  if (renamed.length) console.log(`names corrected from the game table: ${renamed.join(', ')}`);
   console.log(`dropped: ${dropped.map((d) => d.key).join(', ')}`);
 }
 

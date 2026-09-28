@@ -12,8 +12,10 @@ const fmt = (t) => t.toFixed(2);
 export class UI {
   constructor(manifest, on) {
     this.on = on;
-    this.all = manifest.digimon;                   // already sorted by label
+    this.all = manifest.digimon;                   // already sorted by stage, then name
     this.list = this.all;
+    this.stages = manifest.stages || [];
+    this.stage = '';                               // '' = every stage
     this.d = null;
     this.vkey = null;
     this.flashTimers = new Map();
@@ -24,6 +26,14 @@ export class UI {
       if (!this.merged.has(x.into)) this.merged.set(x.into, []);
       this.merged.get(x.into).push(x.key);
     }
+
+    // Stage picker. The stages and their order come from the manifest: the game's own
+    // levels, Fresh to Ultimate, then the story NPCs and humans that have none.
+    const sel = $('stage');
+    const count = (s) => this.all.filter((d) => d.stage === s).length;
+    sel.innerHTML = `<option value="">all stages</option>`
+      + this.stages.filter((s) => count(s)).map((s) => `<option value="${esc(s)}">${esc(s)} (${count(s)})</option>`).join('');
+    sel.addEventListener('change', () => { this.stage = sel.value; this.applyFilter(); });
 
     $('filter').addEventListener('input', () => this.applyFilter());
     $('prev').addEventListener('click', () => this.step(-1));
@@ -48,11 +58,21 @@ export class UI {
 
   applyFilter() {
     const q = $('filter').value.trim().toLowerCase();
-    this.list = this.all.filter((d) => !q || d.label.toLowerCase().includes(q)
-      || this.codesOf(d).some((k) => k.toLowerCase().includes(q)));
+    this.list = this.all.filter((d) => (!this.stage || d.stage === this.stage)
+      && (!q || d.label.toLowerCase().includes(q) || this.codesOf(d).some((k) => k.toLowerCase().includes(q))));
     const row = $('models');
     row.innerHTML = '';
+    let lastStage = null;
     for (const d of this.list) {
+      // With every stage listed, label where each one starts. The list arrives in stage
+      // order, so a change of stage is a group boundary.
+      if (!this.stage && d.stage !== lastStage) {
+        const div = document.createElement('span');
+        div.className = 'stagediv';
+        div.textContent = d.stage;
+        row.appendChild(div);
+        lastStage = d.stage;
+      }
       const b = document.createElement('button');
       const extra = d.variants.length - 1;
       b.innerHTML = esc(d.label) + (extra ? `<span class="sub">+${extra}</span>` : '');
@@ -134,7 +154,9 @@ export class UI {
     if (v.alphaModes.includes('BLEND')) tags.push(v.alphaModes.length > 1 ? 'part translucent' : 'translucent');
     const here = d.clips.filter((c) => c.on[v.key] != null).length;
     const clipText = here === d.clips.length ? `${d.clips.length} clips` : `${here} of ${d.clips.length} clips`;
+    const kind = [d.stage, d.attribute].filter(Boolean).join(' · ');
     $('modelLine').innerHTML = `<b>${esc(d.label)}</b> <span class="dim">${v.key}</span>`
+      + (kind ? ` · ${esc(kind)}` : '')
       + ` · ${v.heightM.toFixed(2)} m · ${clipText} · ${(v.bytes / 1e6).toFixed(2)} MB`
       + (tags.length ? ` <span class="dim">· ${tags.join(' · ')}</span>` : '')
       + (loaded ? '' : ' <span class="dim">· loading…</span>');

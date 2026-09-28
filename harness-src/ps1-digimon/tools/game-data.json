@@ -1,0 +1,902 @@
+{
+ "BOYS": {
+  "name": "main character",
+  "type": 0,
+  "level": 0
+ },
+ "BOTA": {
+  "name": "Botamon",
+  "type": 1,
+  "level": 1
+ },
+ "KORO": {
+  "name": "Koromon",
+  "type": 1,
+  "level": 2
+ },
+ "AGUM": {
+  "name": "Agumon",
+  "type": 2,
+  "level": 3
+ },
+ "BETA": {
+  "name": "Betamon",
+  "type": 3,
+  "level": 3
+ },
+ "GREY": {
+  "name": "Greymon",
+  "type": 2,
+  "level": 4
+ },
+ "DEVI": {
+  "name": "Devimon",
+  "type": 3,
+  "level": 4
+ },
+ "AIRD": {
+  "name": "Airdramon",
+  "type": 2,
+  "level": 4
+ },
+ "TYRA": {
+  "name": "Tyrannomon",
+  "type": 1,
+  "level": 4
+ },
+ "MERA": {
+  "name": "Meramon",
+  "type": 1,
+  "level": 4
+ },
+ "SEAD": {
+  "name": "Seadramon",
+  "type": 1,
+  "level": 4
+ },
+ "NUME": {
+  "name": "Numemon",
+  "type": 3,
+  "level": 4
+ },
+ "MTGR": {
+  "name": "MetalGreymon",
+  "type": 3,
+  "level": 5
+ },
+ "MAME": {
+  "name": "Mamemon",
+  "type": 1,
+  "level": 5
+ },
+ "MONZ": {
+  "name": "Monzaemon",
+  "type": 2,
+  "level": 5
+ },
+ "PUNI": {
+  "name": "Punimon",
+  "type": 1,
+  "level": 1
+ },
+ "TUNO": {
+  "name": "Tsunomon",
+  "type": 1,
+  "level": 2
+ },
+ "GABU": {
+  "name": "Gabumon",
+  "type": 1,
+  "level": 3
+ },
+ "ELEC": {
+  "name": "Elecmon",
+  "type": 1,
+  "level": 3
+ },
+ "KABU": {
+  "name": "Kabuterimon",
+  "type": 2,
+  "level": 4
+ },
+ "ANGE": {
+  "name": "Angemon",
+  "type": 2,
+  "level": 4
+ },
+ "BIRD": {
+  "name": "Birdramon",
+  "type": 2,
+  "level": 4
+ },
+ "GARU": {
+  "name": "Garurumon",
+  "type": 2,
+  "level": 4
+ },
+ "YUKI": {
+  "name": "Frigimon",
+  "type": 2,
+  "level": 4
+ },
+ "HOEE": {
+  "name": "Whamon",
+  "type": 2,
+  "level": 4
+ },
+ "VEGI": {
+  "name": "Vegiemon",
+  "type": 3,
+  "level": 4
+ },
+ "SKUL": {
+  "name": "SkullGreymon",
+  "type": 3,
+  "level": 5
+ },
+ "MTMA": {
+  "name": "MetalMamemon",
+  "type": 1,
+  "level": 5
+ },
+ "VEDA": {
+  "name": "Vademon",
+  "type": 3,
+  "level": 5
+ },
+ "POYO": {
+  "name": "Poyomon",
+  "type": 1,
+  "level": 1
+ },
+ "TOKO": {
+  "name": "Tokomon",
+  "type": 1,
+  "level": 2
+ },
+ "PATA": {
+  "name": "Patamon",
+  "type": 1,
+  "level": 3
+ },
+ "KUNE": {
+  "name": "Kunemon",
+  "type": 3,
+  "level": 3
+ },
+ "UNIM": {
+  "name": "Unimon",
+  "type": 2,
+  "level": 4
+ },
+ "OGRE": {
+  "name": "Ogremon",
+  "type": 3,
+  "level": 4
+ },
+ "SHEL": {
+  "name": "Shellmon",
+  "type": 1,
+  "level": 4
+ },
+ "CENT": {
+  "name": "Centarumon",
+  "type": 1,
+  "level": 4
+ },
+ "BAKE": {
+  "name": "Bakemon",
+  "type": 3,
+  "level": 4
+ },
+ "DORI": {
+  "name": "Drimogemon",
+  "type": 1,
+  "level": 4
+ },
+ "SCUM": {
+  "name": "Sukamon",
+  "type": 3,
+  "level": 4
+ },
+ "ANDR": {
+  "name": "Andromon",
+  "type": 2,
+  "level": 5
+ },
+ "GIRO": {
+  "name": "Giromon",
+  "type": 2,
+  "level": 5
+ },
+ "ETEM": {
+  "name": "Etemon",
+  "type": 3,
+  "level": 5
+ },
+ "YURA": {
+  "name": "Yuramon",
+  "type": 1,
+  "level": 1
+ },
+ "TANE": {
+  "name": "Tanemon",
+  "type": 1,
+  "level": 2
+ },
+ "PIYO": {
+  "name": "Biyomon",
+  "type": 2,
+  "level": 3
+ },
+ "PALM": {
+  "name": "Palmon",
+  "type": 2,
+  "level": 3
+ },
+ "MONO": {
+  "name": "Monochromon",
+  "type": 1,
+  "level": 4
+ },
+ "LEOM": {
+  "name": "Leomon",
+  "type": 2,
+  "level": 4
+ },
+ "SIRA": {
+  "name": "Coelamon",
+  "type": 1,
+  "level": 4
+ },
+ "COCA": {
+  "name": "Kokatorimon",
+  "type": 2,
+  "level": 4
+ },
+ "KUWA": {
+  "name": "Kuwagamon",
+  "type": 3,
+  "level": 4
+ },
+ "MOJA": {
+  "name": "Mojyamon",
+  "type": 2,
+  "level": 4
+ },
+ "NANI": {
+  "name": "Nanimon",
+  "type": 3,
+  "level": 4
+ },
+ "MGDR": {
+  "name": "Megadramon",
+  "type": 3,
+  "level": 5
+ },
+ "PICC": {
+  "name": "Piximon",
+  "type": 1,
+  "level": 5
+ },
+ "DIGI": {
+  "name": "Digitamamon",
+  "type": 1,
+  "level": 5
+ },
+ "PENM": {
+  "name": "Penguinmon",
+  "type": 1,
+  "level": 3
+ },
+ "IGAM": {
+  "name": "Ninjamon",
+  "type": 1,
+  "level": 4
+ },
+ "HOUO": {
+  "name": "Phoenixmon",
+  "type": 2,
+  "level": 5
+ },
+ "HKAB": {
+  "name": "H-Kabuterimon",
+  "type": 1,
+  "level": 5
+ },
+ "MGSD": {
+  "name": "MegaSeadramon",
+  "type": 1,
+  "level": 5
+ },
+ "wEAG": {
+  "name": "WereGarurumon",
+  "type": 2,
+  "level": 0
+ },
+ "PANJ": {
+  "name": "Panjyamon",
+  "type": 1,
+  "level": 4
+ },
+ "GGDR": {
+  "name": "Gigadramon",
+  "type": 1,
+  "level": 5
+ },
+ "MTET": {
+  "name": "MetalEtemon",
+  "type": 2,
+  "level": 5
+ },
+ "VAND": {
+  "name": "Myotismon",
+  "type": 3,
+  "level": 5
+ },
+ "YANM": {
+  "name": "Yanmamon",
+  "type": 3,
+  "level": 3
+ },
+ "GOTU": {
+  "name": "Gotsumon",
+  "type": 1,
+  "level": 3
+ },
+ "FLAR": {
+  "name": "Flarerizamon",
+  "type": 1,
+  "level": 3
+ },
+ "WARU": {
+  "name": "WaruMonzaemon",
+  "type": 3,
+  "level": 5
+ },
+ "YKAG": {
+  "name": "SnowAgumon",
+  "type": 2,
+  "level": 3
+ },
+ "HYOG": {
+  "name": "Hyogamon",
+  "type": 3,
+  "level": 4
+ },
+ "PCSC": {
+  "name": "PlatinumSukamon",
+  "type": 2,
+  "level": 4
+ },
+ "DOKU": {
+  "name": "Dokunemon",
+  "type": 3,
+  "level": 3
+ },
+ "SIMA": {
+  "name": "ShimaUnimon",
+  "type": 1,
+  "level": 4
+ },
+ "TANK": {
+  "name": "Tankmon",
+  "type": 1,
+  "level": 4
+ },
+ "REDV": {
+  "name": "RedVegiemon",
+  "type": 3,
+  "level": 4
+ },
+ "JMOJ": {
+  "name": "J-Mojyamon",
+  "type": 2,
+  "level": 4
+ },
+ "NISE": {
+  "name": "NiseDrimogemon",
+  "type": 2,
+  "level": 4
+ },
+ "GOBR": {
+  "name": "Goburimon",
+  "type": 3,
+  "level": 3
+ },
+ "TUTI": {
+  "name": "MudFrigimon",
+  "type": 2,
+  "level": 4
+ },
+ "PSYC": {
+  "name": "Psychemon",
+  "type": 2,
+  "level": 3
+ },
+ "MODO": {
+  "name": "ModokiBetamon",
+  "type": 2,
+  "level": 3
+ },
+ "TOYA": {
+  "name": "ToyAgumon",
+  "type": 1,
+  "level": 3
+ },
+ "PIDD": {
+  "name": "Piddomon",
+  "type": 2,
+  "level": 4
+ },
+ "ARUR": {
+  "name": "Aruraumon",
+  "type": 3,
+  "level": 3
+ },
+ "GERE": {
+  "name": "Geremon",
+  "type": 3,
+  "level": 4
+ },
+ "VARM": {
+  "name": "Vermilimon",
+  "type": 2,
+  "level": 4
+ },
+ "FUGA": {
+  "name": "Fugamon",
+  "type": 3,
+  "level": 4
+ },
+ "TKKA": {
+  "name": "Tekkamon",
+  "type": 3,
+  "level": 5
+ },
+ "MRIS": {
+  "name": "MoriShellmon",
+  "type": 1,
+  "level": 4
+ },
+ "GARD": {
+  "name": "Guardromon",
+  "type": 2,
+  "level": 4
+ },
+ "MCHO": {
+  "name": "Muchomon",
+  "type": 1,
+  "level": 3
+ },
+ "ICEM": {
+  "name": "Icemon",
+  "type": 2,
+  "level": 3
+ },
+ "AKAT": {
+  "name": "Akatorimon",
+  "type": 1,
+  "level": 4
+ },
+ "TUKA": {
+  "name": "Tsukaimon",
+  "type": 3,
+  "level": 3
+ },
+ "SHAM": {
+  "name": "Sharmamon",
+  "type": 3,
+  "level": 3
+ },
+ "CLEA": {
+  "name": "ClearAgumon",
+  "type": 1,
+  "level": 3
+ },
+ "ZASS": {
+  "name": "Weedmon",
+  "type": 3,
+  "level": 4
+ },
+ "ICDV": {
+  "name": "IceDevimon",
+  "type": 3,
+  "level": 4
+ },
+ "DKRZ": {
+  "name": "Darkrizamon",
+  "type": 3,
+  "level": 3
+ },
+ "SNDY": {
+  "name": "SandYanmamon",
+  "type": 3,
+  "level": 3
+ },
+ "SNGB": {
+  "name": "SnowGoburimon",
+  "type": 3,
+  "level": 3
+ },
+ "BLMR": {
+  "name": "BlueMeramon",
+  "type": 2,
+  "level": 4
+ },
+ "GRUR": {
+  "name": "Gururumon",
+  "type": 3,
+  "level": 4
+ },
+ "SABD": {
+  "name": "Saberdramon",
+  "type": 3,
+  "level": 4
+ },
+ "SOUL": {
+  "name": "Soulmon",
+  "type": 3,
+  "level": 4
+ },
+ "GOLE": {
+  "name": "Rockmon",
+  "type": 3,
+  "level": 4
+ },
+ "OTAM": {
+  "name": "Otamamon",
+  "type": 1,
+  "level": 3
+ },
+ "GECO": {
+  "name": "Gekomon",
+  "type": 1,
+  "level": 4
+ },
+ "TENT": {
+  "name": "Tentomon",
+  "type": 1,
+  "level": 3
+ },
+ "WRSE": {
+  "name": "WaruSeadramon",
+  "type": 3,
+  "level": 5
+ },
+ "INSE": {
+  "name": "Meteormon",
+  "type": 1,
+  "level": 3
+ },
+ "tAKA": {
+  "name": "",
+  "type": 3,
+  "level": 0
+ },
+ "MUGE": {
+  "name": "Machinedramon",
+  "type": 0,
+  "level": 5
+ },
+ "ANLG": {
+  "name": "Analogman",
+  "type": 0,
+  "level": 0
+ },
+ "JIJI": {
+  "name": "Jijimon",
+  "type": 2,
+  "level": 0
+ },
+ "TENS": {
+  "name": "Market Manager",
+  "type": 1,
+  "level": 0
+ },
+ "TONO": {
+  "name": "ShogunGekomon",
+  "type": 1,
+  "level": 0
+ },
+ "SCUD": {
+  "name": "King of Sukamon",
+  "type": 3,
+  "level": 4
+ },
+ "JURE": {
+  "name": "Cherrymon",
+  "type": 2,
+  "level": 0
+ },
+ "HAGU": {
+  "name": "Hagurumon",
+  "type": 2,
+  "level": 0
+ },
+ "BRIK": {
+  "name": "Tinmon",
+  "type": 2,
+  "level": 0
+ },
+ "TIRS": {
+  "name": "Master Tyrannomon",
+  "type": 1,
+  "level": 0
+ },
+ "EGOB": {
+  "name": "Goburimon",
+  "type": 3,
+  "level": 3
+ },
+ "BRAK": {
+  "name": "Brachiomon",
+  "type": 1,
+  "level": 0
+ },
+ "PUTI": {
+  "name": "DemiMeramon",
+  "type": 1,
+  "level": 1
+ },
+ "EBET": {
+  "name": "Betamon",
+  "type": 3,
+  "level": 3
+ },
+ "EGRE": {
+  "name": "Greymon",
+  "type": 2,
+  "level": 4
+ },
+ "EDEV": {
+  "name": "Devimon",
+  "type": 3,
+  "level": 4
+ },
+ "EAIR": {
+  "name": "Airdramon",
+  "type": 2,
+  "level": 4
+ },
+ "ETYR": {
+  "name": "Tyrannomon",
+  "type": 1,
+  "level": 4
+ },
+ "EMER": {
+  "name": "Meramon",
+  "type": 1,
+  "level": 4
+ },
+ "ESEA": {
+  "name": "Seadramon",
+  "type": 1,
+  "level": 4
+ },
+ "ENUM": {
+  "name": "Numemon",
+  "type": 3,
+  "level": 4
+ },
+ "EMTG": {
+  "name": "MetalGreymon",
+  "type": 3,
+  "level": 5
+ },
+ "EMAM": {
+  "name": "Mamemon",
+  "type": 1,
+  "level": 5
+ },
+ "EMON": {
+  "name": "Monzaemon",
+  "type": 2,
+  "level": 5
+ },
+ "EGAB": {
+  "name": "Gabumon",
+  "type": 1,
+  "level": 3
+ },
+ "EELE": {
+  "name": "Elecmon",
+  "type": 1,
+  "level": 3
+ },
+ "EKAB": {
+  "name": "Kabuterimon",
+  "type": 2,
+  "level": 4
+ },
+ "EANG": {
+  "name": "Angemon",
+  "type": 2,
+  "level": 4
+ },
+ "EBIR": {
+  "name": "Birdramon",
+  "type": 2,
+  "level": 4
+ },
+ "EGAR": {
+  "name": "Garurumon",
+  "type": 2,
+  "level": 4
+ },
+ "EYUK": {
+  "name": "Frigimon",
+  "type": 2,
+  "level": 4
+ },
+ "EHOE": {
+  "name": "Whamon",
+  "type": 2,
+  "level": 4
+ },
+ "EVEG": {
+  "name": "Vegiemon",
+  "type": 1,
+  "level": 4
+ },
+ "ESKU": {
+  "name": "SkullGreymon",
+  "type": 3,
+  "level": 5
+ },
+ "EMTM": {
+  "name": "MetalGreymon",
+  "type": 1,
+  "level": 5
+ },
+ "EVED": {
+  "name": "Vademon",
+  "type": 3,
+  "level": 5
+ },
+ "EPAT": {
+  "name": "Patamon",
+  "type": 1,
+  "level": 3
+ },
+ "EKUN": {
+  "name": "Kunemon",
+  "type": 3,
+  "level": 3
+ },
+ "EUNI": {
+  "name": "Unimon",
+  "type": 2,
+  "level": 4
+ },
+ "EOGR": {
+  "name": "Ogremon",
+  "type": 3,
+  "level": 4
+ },
+ "ESHE": {
+  "name": "Shellmon",
+  "type": 1,
+  "level": 4
+ },
+ "ECEN": {
+  "name": "Centarumon",
+  "type": 1,
+  "level": 4
+ },
+ "EBAK": {
+  "name": "Bakemon",
+  "type": 3,
+  "level": 4
+ },
+ "EDOR": {
+  "name": "Drimogemon",
+  "type": 1,
+  "level": 4
+ },
+ "ESCU": {
+  "name": "Sukamon",
+  "type": 3,
+  "level": 4
+ },
+ "EAND": {
+  "name": "Andromon",
+  "type": 2,
+  "level": 5
+ },
+ "EGIR": {
+  "name": "Giromon",
+  "type": 2,
+  "level": 5
+ },
+ "EETE": {
+  "name": "Etemon",
+  "type": 3,
+  "level": 5
+ },
+ "EPIY": {
+  "name": "Biyomon",
+  "type": 2,
+  "level": 3
+ },
+ "EPAL": {
+  "name": "Palmon",
+  "type": 1,
+  "level": 3
+ },
+ "EMNO": {
+  "name": "Monochromon",
+  "type": 1,
+  "level": 4
+ },
+ "ELEO": {
+  "name": "Leomon",
+  "type": 2,
+  "level": 4
+ },
+ "ESIR": {
+  "name": "Coelamon",
+  "type": 1,
+  "level": 4
+ },
+ "ECOC": {
+  "name": "Kokatorimon",
+  "type": 1,
+  "level": 4
+ },
+ "EKUW": {
+  "name": "Kuwagamon",
+  "type": 3,
+  "level": 4
+ },
+ "EMOJ": {
+  "name": "Mojyamon",
+  "type": 1,
+  "level": 4
+ },
+ "ENAN": {
+  "name": "Nanimon",
+  "type": 3,
+  "level": 4
+ },
+ "EMGD": {
+  "name": "Megadramon",
+  "type": 3,
+  "level": 5
+ },
+ "EPIC": {
+  "name": "Piximon",
+  "type": 2,
+  "level": 5
+ },
+ "EDIG": {
+  "name": "Digitamamon",
+  "type": 1,
+  "level": 5
+ },
+ "EIGA": {
+  "name": "Ninjamon",
+  "type": 1,
+  "level": 4
+ },
+ "EPEN": {
+  "name": "Penguinmon",
+  "type": 1,
+  "level": 3
+ },
+ "EVAN": {
+  "name": "Myotismon",
+  "type": 3,
+  "level": 5
+ },
+ "CEGR": {
+  "name": "Greymon",
+  "type": 3,
+  "level": 4
+ },
+ "CEMG": {
+  "name": "MetalGreymon",
+  "type": 3,
+  "level": 5
+ }
+}

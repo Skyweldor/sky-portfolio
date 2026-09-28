@@ -23,8 +23,16 @@ const referenced = new Set();
 const animsOf = new Map();       // variant key -> Set of anim names in its GLB
 const eventsOf = new Map();      // variant key -> sidecar clips
 
+const stages = manifest.stages || [];
+if (!stages.length) bad('manifest has no stages list');
+let lastStage = -1;
 for (const d of manifest.digimon) {
   if (!d.label) bad(`${d.id}: empty label`);
+  const si = stages.indexOf(d.stage);
+  if (si < 0) bad(`${d.id}: stage ${JSON.stringify(d.stage)} is not one of the manifest's stages`);
+  if (si < lastStage) bad(`${d.id}: digimon[] is not in stage order`);
+  lastStage = Math.max(lastStage, si);
+  if (d.attribute != null && !['Data', 'Vaccine', 'Virus'].includes(d.attribute)) bad(`${d.id}: attribute ${d.attribute}`);
   if (!d.variants.length || d.variants[0].key !== d.id) bad(`${d.id}: variants[0] is not the main model`);
 
   for (const v of d.variants) {
@@ -87,6 +95,11 @@ const bytes = manifest.digimon.reduce((n, d) => n + d.variants.reduce((m, v) => 
 console.log(`digimon ${manifest.digimon.length}  variants ${variants}  merged clips ${clips}  `
   + `dropped ${(manifest.dropped || []).length}  glb total ${(bytes / 1e6).toFixed(2)} MB`);
 if (manifest.digimon.length !== manifest.counts.digimon) bad('counts.digimon disagrees');
+for (const s of stages) {
+  const n = manifest.digimon.filter((d) => d.stage === s).length;
+  if ((manifest.counts.byStage || {})[s] !== n) bad(`counts.byStage.${s} disagrees (${n} listed)`);
+}
+console.log(`by stage: ${stages.map((s) => `${s} ${manifest.digimon.filter((d) => d.stage === s).length}`).join(' · ')}`);
 if (variants !== manifest.counts.variants) bad('counts.variants disagrees');
 if (clips !== manifest.counts.clips) bad('counts.clips disagrees');
 

@@ -34,6 +34,30 @@ slot -- its 46-49 are the main model's ~47-61 -- so the merged list keys each cl
 main-model slot and records every file's own slot in `clips[].on`. Never carry a slot
 number from one variant to another.
 
+## Stages
+
+Each Digimon's stage and attribute come from the game itself: the `level` and `type`
+bytes of its record in the executable's Digimon table (`SLUS_010.32`, 52-byte records at
+file offset `0x9CEB4`, the same table DW1ModelConverter reads bone counts from). The
+build caches the table in `tools/game-data.json`, so a re-run does not need the disc.
+
+| stage | Digimon |
+|---|---|
+| Fresh | 5 |
+| In-Training | 4 |
+| Rookie | 30 |
+| Champion | 54 |
+| Ultimate | 22 |
+| No level | 10 — story NPCs and humans (level 0) |
+
+**DW1 has no Mega level.** Its levels stop at Ultimate; Machinedramon and Phoenixmon, Megas
+in later franchise canon, are stored as Ultimates. The picker orders Digimon by stage and
+can show one stage at a time.
+
+Display names are the game's own. They correct seven misspellings in the converter
+README's table (Bidramon → Birdramon, Souldmon → Soulmon, ...), which is still what
+groups the model files: the game calls one MetalMamemon NPC model "MetalGreymon".
+
 ## Rebuilding
 
 Two independent steps. Assets rarely change; the page changes more often.
