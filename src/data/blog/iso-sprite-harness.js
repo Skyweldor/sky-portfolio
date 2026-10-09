@@ -20,11 +20,11 @@ const isoSpriteHarness = {
     {
       type: 'paragraph',
       dropCap: true,
-      text: "This one is not a browser tool. It is a method — ten stages for turning a 3D asset kit into labelled index sheets and individual isometric sprite PNGs, repeatably, in Blender. It was written after doing the job three times on prop kits, then run a fourth time on forty rigged animated characters and a fifth on twenty-two robots whose parts are meant to be mixed across assemblies. Each of those last two runs forced the method to grow a stage.",
+      text: "This one is not a browser tool. It is a method — ten stages for turning a 3D asset kit into labelled index sheets and individual isometric sprite PNGs, repeatably, in Blender. It was written after doing the job three times on prop kits, then run a fourth time on forty rigged animated characters and a fifth on forty-four robots, in two series, whose parts are meant to be mixed across assemblies. Each of those last two runs forced the method to grow a stage.",
     },
     {
       type: 'paragraph',
-      text: "Nine hundred and twenty-two sprites later, the parts worth keeping are mostly the mistakes.",
+      text: "One thousand three hundred and eighteen sprites later, the parts worth keeping are mostly the mistakes.",
     },
 
     { type: 'sectionLabel', text: 'Three Artifacts, and Which One You Want' },
@@ -205,11 +205,11 @@ cam.data.clip_end = dist + depth*2 + S*4`,
 
     {
       type: 'paragraph',
-      text: "Twenty-two bots, and a different problem entirely. These sprites are *parts* of an assembly — head, arms, legs — and people are meant to mix them: a head from one bot on the body of another. Per-asset framing, the thing stages 1–8 were built around, is exactly wrong for that.",
+      text: "Forty-four bots in two series, and a different problem entirely. These sprites are *parts* of an assembly — head, arms, legs — and people are meant to mix them: a head from one bot on the body of another. Per-asset framing, the thing stages 1–8 were built around, is exactly wrong for that.",
     },
     {
       type: 'paragraph',
-      text: "**One camera for every part of every asset**, computed per facing from the union of the whole kit rather than from whatever subset is being rendered — so a partial re-run stays registered with everything already done. A part then sits on the canvas exactly where it sits on its assembly, and a build is just PNGs drawn at 0,0. Both halves get verified: every body and part sprite in a facing shares one ortho scale, and stacking an asset's own layers reproduces its full render at **0.000% alpha error across all 28 restacks**.",
+      text: "**One camera for every part of every asset**, computed per facing from the union of the whole kit rather than from whatever subset is being rendered — so a partial re-run stays registered with everything already done. A part then sits on the canvas exactly where it sits on its assembly, and a build is just PNGs drawn at 0,0. Both halves get verified: every body and part sprite in a facing shares one ortho scale, and stacking an asset's own layers reproduces its full render at **0.000% alpha error across all 88 restacks**.",
     },
     {
       type: 'paragraph',
@@ -217,12 +217,12 @@ cam.data.clip_end = dist + depth*2 + S*4`,
     },
     {
       type: 'paragraph',
-      text: "The fix is to measure one joint on every asset — the neck, taken as the centroid of the head vertices nearest the body, never the lowest band of the head, which a forward horn wins — and translate each whole asset so that joint lands on one reference point. Freeze the reference as a constant so adding assets never moves the ones already aligned. Heads then seat on any body to **0.00 px**. What is left is anatomy: shoulders sat a median 0.10 m from another bot's across 462 pairings, which only per-combination sockets would remove.",
+      text: "The fix is to measure one joint on every asset — the neck, taken as the centroid of the head vertices nearest the body, never the lowest band of the head, which a forward horn wins — and translate each whole asset so that joint lands on one reference point. Freeze the reference as a constant so adding assets never moves the ones already aligned. Heads then seat on any body to **0.00 px**. What is left is anatomy: shoulders sit a median 0.089 m from another bot's across 1,892 pairings, which only per-combination sockets would remove.",
     },
     {
       type: 'callout',
       label: 'A Trade With No Right Answer',
-      text: "Translation kept the size convention but cost the common floor — feet end up to 0.23 m apart. Scaling each asset to align the joint height would keep the floor and break the sizes. That trade belongs to whoever is designing the game, not to the pipeline.",
+      text: "Translation keeps every size but costs the common floor — feet end up between 0.39 m below and 0.37 m above the reference bot's. Scaling each asset to align the joint height would keep the floor and break the sizes. That trade belongs to whoever is designing the game, not to the pipeline.",
     },
     {
       type: 'figure',
@@ -236,7 +236,7 @@ cam.data.clip_end = dist + depth*2 + S*4`,
     },
     {
       type: 'paragraph',
-      text: "And **measure the draw order** rather than fixing it. On every overlap between two layers the full render already knows which is on top. A fixed order was wrong on **5 of 166 overlaps** — shoulder-mounted weapons put even the far arm in front of the body — so the back layer's slot is scored per asset and per facing against the full render and stored in the manifest. After that, **0 of 115 overlaps disagreed**.",
+      text: "And **measure the draw order** rather than fixing it. On every overlap between two layers the full render already knows which is on top. A fixed order was wrong on **5 of 166 overlaps** — shoulder-mounted weapons put even the far arm in front of the body — so the back layer's slot is scored per asset and per facing against the full render and stored in the manifest. After that, **0 of 115 overlaps disagreed**, and 0 of 395 once the second series was in.",
     },
     {
       type: 'figure',
@@ -246,14 +246,37 @@ cam.data.clip_end = dist + depth*2 + S*4`,
     },
     {
       type: 'paragraph',
-      text: "Shade differs where parts shadow each other, by up to about 4% of pixels: a part rendered alone receives no shadow from neighbours that are not there. That is the right trade — in a mixed build, a shadow cast by a part that is not present would be wrong.",
+      text: "Shade differs where parts shadow each other, by up to about 8% of pixels: a part rendered alone receives no shadow from neighbours that are not there. That is the right trade — in a mixed build, a shadow cast by a part that is not present would be wrong.",
+    },
+    {
+      type: 'sectionLabel',
+      text: 'Series Two, and Two More Constants',
+    },
+    {
+      type: 'paragraph',
+      text: "A second batch of twenty-two rips arrived a month later, and adding it exposed two more numbers that had to stop moving. The first was **the camera**. Fitted to the union of the kit, it would have re-fitted itself around the newcomers: one mermaid's tail alone would have shrunk every existing sprite by 12%, and without her the canvas centre still shifted 25 px. So the camera was frozen the way the neck reference was, and the renderer now refuses any asset whose outermost vertex lands within 1 px of the canvas edge, just past the reach of EEVEE's 1.5 px pixel filter. Every file of the first series came through byte-identical.",
+    },
+    {
+      type: 'paragraph',
+      text: "The second was **the size of each bot**. The kit had been normalised so every bot's bounding box stood exactly 1.213 m tall, and that is where the heads that rode too high on other bodies came from. A tail spike counts toward a box, so a bot with one was shrunk and a squat one enlarged: 0.72x to 1.56x of their size in the game. The rips turned out to share one scale all along: raw head heights agree, and raw necks sit on one body axis to about 2 cm. One factor for every bot, anchored on the reference bot, fixed it. The reference bot re-rendered byte-identical, the shoulder fit improved from 0.108 m to 0.089 m, and the mermaid fit after all.",
+    },
+    {
+      type: 'callout',
+      label: 'Freeze What Others Stack On',
+      text: "Anything a consumer composes against — a joint, a camera, a scale — becomes a constant the day the set ships. Recomputing it from the current roster feels tidy and silently moves every sprite already in use.",
+    },
+    {
+      type: 'figure',
+      src: '/blog-posts/harness/medabot-series2-heads.png',
+      alt: 'Metabee’s body wearing each of the twenty-two Series 2 heads in turn',
+      caption: 'One body, twenty-three heads: Metabee’s own first, then every Series 2 head on the same neck point, at one game scale.',
     },
     {
       type: 'harnessEmbed',
       src: '/harness/iso/medabot/',
-      title: 'Medabot part sprites — 22 bots as body, stacking layers and portraits',
+      title: 'Medabot part sprites — 44 bots in two series, as body, stacking layers and portraits',
       height: 680,
-      note: 'Three sets: body (the whole bot), regular (each part as a stacking layer), and portrait (each part framed for showcasing).',
+      note: 'Grouped by series. Mix series draws a build from both, and every build has a code (head.arms.legs) that pastes back in.',
     },
 
     { type: 'sectionLabel', text: 'The Best Lesson Is Not Technical' },
@@ -281,8 +304,8 @@ cam.data.clip_end = dist + depth*2 + S*4`,
       rows: [
         ['KayKit', '183 props across 5 categories', '366', '56.7 MB'],
         ['Digimon', '40 rigged characters, body + portrait', '160', '39.2 MB'],
-        ['Medabots', '22 bots as body / layers / portraits', '396', '53.3 MB'],
-        ['**total**', '', '**922**', '**149 MB**'],
+        ['Medabots', '44 bots in two series, as body / layers / portraits', '792', '102.7 MB'],
+        ['**total**', '', '**1,318**', '**199 MB**'],
       ],
     },
     {
@@ -291,7 +314,7 @@ cam.data.clip_end = dist + depth*2 + S*4`,
     },
     {
       type: 'paragraph',
-      text: "One measurement is load-bearing for everything above. A 512 px sprite averages **159 KB**; a 256 px WebP thumbnail averages **4.1 KB**. That **38x gap** is the entire reason an all-in-one HTML review sheet is possible at all — each of the three pages carries every thumbnail inline as a data URI and still comes in around 2 MB, which is why they open instantly here and worked as standalone Artifacts before that. The full-resolution PNGs sit alongside them, addressable by the paths the manifest records, but the sheet itself never needs to touch one.",
+      text: "One measurement is load-bearing for everything above. A 512 px sprite averages **159 KB**; a 256 px WebP thumbnail averages **4.1 KB**. That **38x gap** is the entire reason an all-in-one HTML review sheet is possible at all — each of the three pages carries every thumbnail inline as a data URI and still comes in between 2 and 4.3 MB, which is why they open instantly here and worked as standalone Artifacts before that. The full-resolution PNGs sit alongside them, addressable by the paths the manifest records, but the sheet itself never needs to touch one.",
     },
 
     { type: 'sectionLabel', text: 'Deliberately Not Done' },
@@ -309,7 +332,7 @@ cam.data.clip_end = dist + depth*2 + S*4`,
 
   footer: {
     nextLabel: 'The PlayCanvas harness — same name, different engine',
-    meta: '922 SPRITES / 10 STAGES',
+    meta: '1,318 SPRITES / 10 STAGES',
     region: 'Harness 003',
   },
 };
