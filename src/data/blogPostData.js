@@ -72,7 +72,7 @@ export const blogPosts = [
     title: 'Ten Stages to an Isometric Sprite: KayKit, Digimon, Medabots',
     date: '2026-09-13',
     excerpt:
-      'One rendering method, run five times and extended twice — for rigged characters, then for parts meant to be mixed across assemblies. 922 sprites, and the measurements that prove them.',
+      'One rendering method, run five times and extended twice — for rigged characters, then for parts meant to be mixed across assemblies. 1,318 sprites, and the measurements that prove them.',
     route: ROUTES.isoSpriteHarness,
     category: 'Harness',
     status: 'PUBLISHED',
